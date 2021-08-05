@@ -149,9 +149,9 @@ func (o *CheckpointAttributes) SetIpv4Addresses(v []string) {
 }
 
 // GetIpV6Addresses returns the IpV6Addresses field value if set, zero value otherwise.
-func (o *CheckpointAttributes) GetIpV6Addresses() []IPv6Address {
+func (o *CheckpointAttributes) GetIpV6Addresses() []string {
 	if o == nil || o.IpV6Addresses == nil {
-		var ret []IPv6Address
+		var ret []string
 		return ret
 	}
 	return *o.IpV6Addresses
@@ -159,7 +159,7 @@ func (o *CheckpointAttributes) GetIpV6Addresses() []IPv6Address {
 
 // GetIpV6AddressesOk returns a tuple with the IpV6Addresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckpointAttributes) GetIpV6AddressesOk() (*[]IPv6Address, bool) {
+func (o *CheckpointAttributes) GetIpV6AddressesOk() (*[]string, bool) {
 	if o == nil || o.IpV6Addresses == nil {
 		return nil, false
 	}
@@ -176,7 +176,7 @@ func (o *CheckpointAttributes) HasIpV6Addresses() bool {
 }
 
 // SetIpV6Addresses gets a reference to the given []IPv6Address and assigns it to the IpV6Addresses field.
-func (o *CheckpointAttributes) SetIpV6Addresses(v []IPv6Address) {
+func (o *CheckpointAttributes) SetIpV6Addresses(v []string) {
 	o.IpV6Addresses = &v
 }
 
