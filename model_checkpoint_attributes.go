@@ -23,7 +23,7 @@ type CheckpointAttributes struct {
 	// Ipv4 addresses of the checkpoint 
 	Ipv4Addresses *[]string `json:"Ipv4Addresses,omitempty"`
 	// Ipv6 addresses of the checkpoint
-	IpV6Addresses *[]IPv6Address `json:"IpV6Addresses,omitempty"`
+	IpV6Addresses *[]string `json:"IpV6Addresses,omitempty"`
 	// Checkpoint is primary
 	IsPrimaryCheckpoint bool `json:"IsPrimaryCheckpoint"`
 	// Checkpoint supports IPv6
