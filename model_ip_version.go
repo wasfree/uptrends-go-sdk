@@ -20,8 +20,8 @@ type IpVersion string
 
 // List of IpVersion
 const (
-	IP_V4 IpVersion = "IpV4"
-	IP_V6 IpVersion = "IpV6"
+	IPVERSION_IP_V4 IpVersion = "IpV4"
+	IPVERSION_IP_V6 IpVersion = "IpV6"
 )
 
 var allowedIpVersionEnumValues = []IpVersion{

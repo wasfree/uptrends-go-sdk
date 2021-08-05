@@ -20,8 +20,8 @@ type MsaStepType string
 
 // List of MsaStepType
 const (
-	HTTP_REQUEST MsaStepType = "HttpRequest"
-	DELAY MsaStepType = "Delay"
+	MSASTEPTYPE_HTTP_REQUEST MsaStepType = "HttpRequest"
+	MSASTEPTYPE_DELAY MsaStepType = "Delay"
 )
 
 var allowedMsaStepTypeEnumValues = []MsaStepType{

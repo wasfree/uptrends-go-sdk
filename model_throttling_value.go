@@ -20,12 +20,12 @@ type ThrottlingValue string
 
 // List of ThrottlingValue
 const (
-	ADSL ThrottlingValue = "Adsl"
-	FIBER ThrottlingValue = "Fiber"
-	CABLE ThrottlingValue = "Cable"
-	_2_G ThrottlingValue = "2G"
-	_3_G ThrottlingValue = "3G"
-	_4_G ThrottlingValue = "4G"
+	THROTTLINGVALUE_ADSL ThrottlingValue = "Adsl"
+	THROTTLINGVALUE_FIBER ThrottlingValue = "Fiber"
+	THROTTLINGVALUE_CABLE ThrottlingValue = "Cable"
+	THROTTLINGVALUE__2_G ThrottlingValue = "2G"
+	THROTTLINGVALUE__3_G ThrottlingValue = "3G"
+	THROTTLINGVALUE__4_G ThrottlingValue = "4G"
 )
 
 var allowedThrottlingValueEnumValues = []ThrottlingValue{

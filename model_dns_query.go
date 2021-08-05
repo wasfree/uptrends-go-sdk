@@ -20,15 +20,15 @@ type DnsQuery string
 
 // List of DnsQuery
 const (
-	A_RECORD DnsQuery = "ARecord"
-	CNAME_RECORD DnsQuery = "CnameRecord"
-	MX_RECORD DnsQuery = "MxRecord"
-	NS_RECORD DnsQuery = "NsRecord"
-	TXT_RECORD DnsQuery = "TxtRecord"
-	SOA_RECORD DnsQuery = "SoaRecord"
-	ROOT_SERVER DnsQuery = "RootServer"
-	AAAA_RECORD DnsQuery = "AaaaRecord"
-	SRV_RECORD DnsQuery = "SrvRecord"
+	DNSQUERY_A_RECORD DnsQuery = "ARecord"
+	DNSQUERY_CNAME_RECORD DnsQuery = "CnameRecord"
+	DNSQUERY_MX_RECORD DnsQuery = "MxRecord"
+	DNSQUERY_NS_RECORD DnsQuery = "NsRecord"
+	DNSQUERY_TXT_RECORD DnsQuery = "TxtRecord"
+	DNSQUERY_SOA_RECORD DnsQuery = "SoaRecord"
+	DNSQUERY_ROOT_SERVER DnsQuery = "RootServer"
+	DNSQUERY_AAAA_RECORD DnsQuery = "AaaaRecord"
+	DNSQUERY_SRV_RECORD DnsQuery = "SrvRecord"
 )
 
 var allowedDnsQueryEnumValues = []DnsQuery{

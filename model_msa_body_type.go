@@ -20,8 +20,8 @@ type MsaBodyType string
 
 // List of MsaBodyType
 const (
-	RAW MsaBodyType = "Raw"
-	VAULT_FILES MsaBodyType = "VaultFiles"
+	MSABODYTYPE_RAW MsaBodyType = "Raw"
+	MSABODYTYPE_VAULT_FILES MsaBodyType = "VaultFiles"
 )
 
 var allowedMsaBodyTypeEnumValues = []MsaBodyType{

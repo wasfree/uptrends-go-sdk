@@ -20,11 +20,11 @@ type SmsProvider string
 
 // List of SmsProvider
 const (
-	USE_ACCOUNT_SETTING SmsProvider = "UseAccountSetting"
-	SMS_PROVIDER_EUROPE SmsProvider = "SmsProviderEurope"
-	SMS_PROVIDER_INTERNATIONAL SmsProvider = "SmsProviderInternational"
-	SMS_PROVIDER_EUROPE2 SmsProvider = "SmsProviderEurope2"
-	SMS_PROVIDER_USA SmsProvider = "SmsProviderUSA"
+	SMSPROVIDER_USE_ACCOUNT_SETTING SmsProvider = "UseAccountSetting"
+	SMSPROVIDER_SMS_PROVIDER_EUROPE SmsProvider = "SmsProviderEurope"
+	SMSPROVIDER_SMS_PROVIDER_INTERNATIONAL SmsProvider = "SmsProviderInternational"
+	SMSPROVIDER_SMS_PROVIDER_EUROPE2 SmsProvider = "SmsProviderEurope2"
+	SMSPROVIDER_SMS_PROVIDER_USA SmsProvider = "SmsProviderUSA"
 )
 
 var allowedSmsProviderEnumValues = []SmsProvider{

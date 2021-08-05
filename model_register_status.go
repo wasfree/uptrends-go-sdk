@@ -20,8 +20,8 @@ type RegisterStatus string
 
 // List of RegisterStatus
 const (
-	OK RegisterStatus = "OK"
-	UNEXPECTED_ERROR RegisterStatus = "UnexpectedError"
+	REGISTERSTATUS_OK RegisterStatus = "OK"
+	REGISTERSTATUS_UNEXPECTED_ERROR RegisterStatus = "UnexpectedError"
 )
 
 var allowedRegisterStatusEnumValues = []RegisterStatus{

@@ -20,9 +20,9 @@ type ErrorLevelFilter string
 
 // List of ErrorLevelFilter
 const (
-	NO_ERROR ErrorLevelFilter = "NoError"
-	UNCONFIRMED ErrorLevelFilter = "Unconfirmed"
-	CONFIRMED ErrorLevelFilter = "Confirmed"
+	ERRORLEVELFILTER_NO_ERROR ErrorLevelFilter = "NoError"
+	ERRORLEVELFILTER_UNCONFIRMED ErrorLevelFilter = "Unconfirmed"
+	ERRORLEVELFILTER_CONFIRMED ErrorLevelFilter = "Confirmed"
 )
 
 var allowedErrorLevelFilterEnumValues = []ErrorLevelFilter{

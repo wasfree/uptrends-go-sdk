@@ -20,13 +20,13 @@ type IntegrationTypeEnum string
 
 // List of IntegrationTypeEnum
 const (
-	SLACK IntegrationTypeEnum = "Slack"
-	PAGER_DUTY IntegrationTypeEnum = "PagerDuty"
-	SMS IntegrationTypeEnum = "Sms"
-	EMAIL IntegrationTypeEnum = "Email"
-	PHONE IntegrationTypeEnum = "Phone"
-	STATUSHUB IntegrationTypeEnum = "Statushub"
-	GENERIC_WEBHOOK IntegrationTypeEnum = "GenericWebhook"
+	INTEGRATIONTYPEENUM_SLACK IntegrationTypeEnum = "Slack"
+	INTEGRATIONTYPEENUM_PAGER_DUTY IntegrationTypeEnum = "PagerDuty"
+	INTEGRATIONTYPEENUM_SMS IntegrationTypeEnum = "Sms"
+	INTEGRATIONTYPEENUM_EMAIL IntegrationTypeEnum = "Email"
+	INTEGRATIONTYPEENUM_PHONE IntegrationTypeEnum = "Phone"
+	INTEGRATIONTYPEENUM_STATUSHUB IntegrationTypeEnum = "Statushub"
+	INTEGRATIONTYPEENUM_GENERIC_WEBHOOK IntegrationTypeEnum = "GenericWebhook"
 )
 
 var allowedIntegrationTypeEnumEnumValues = []IntegrationTypeEnum{

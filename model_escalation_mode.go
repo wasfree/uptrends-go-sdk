@@ -20,8 +20,8 @@ type EscalationMode string
 
 // List of EscalationMode
 const (
-	ALERT_ON_ERROR_COUNT EscalationMode = "AlertOnErrorCount"
-	ALERT_ON_ERROR_DURATION EscalationMode = "AlertOnErrorDuration"
+	ESCALATIONMODE_ALERT_ON_ERROR_COUNT EscalationMode = "AlertOnErrorCount"
+	ESCALATIONMODE_ALERT_ON_ERROR_DURATION EscalationMode = "AlertOnErrorDuration"
 )
 
 var allowedEscalationModeEnumValues = []EscalationMode{

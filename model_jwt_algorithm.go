@@ -20,9 +20,9 @@ type JwtAlgorithm string
 
 // List of JwtAlgorithm
 const (
-	HS256 JwtAlgorithm = "HS256"
-	HS384 JwtAlgorithm = "HS384"
-	HS512 JwtAlgorithm = "HS512"
+	JWTALGORITHM_HS256 JwtAlgorithm = "HS256"
+	JWTALGORITHM_HS384 JwtAlgorithm = "HS384"
+	JWTALGORITHM_HS512 JwtAlgorithm = "HS512"
 )
 
 var allowedJwtAlgorithmEnumValues = []JwtAlgorithm{

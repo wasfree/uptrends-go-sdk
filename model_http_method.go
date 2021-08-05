@@ -20,8 +20,8 @@ type HttpMethod string
 
 // List of HttpMethod
 const (
-	GET HttpMethod = "Get"
-	POST HttpMethod = "Post"
+	HTTPMETHOD_GET HttpMethod = "Get"
+	HTTPMETHOD_POST HttpMethod = "Post"
 )
 
 var allowedHttpMethodEnumValues = []HttpMethod{

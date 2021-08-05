@@ -20,7 +20,7 @@ type PSPAuthorizationType string
 
 // List of PSPAuthorizationType
 const (
-	VIEW_PUBLIC_DASHBOARD PSPAuthorizationType = "ViewPublicDashboard"
+	PSPAUTHORIZATIONTYPE_VIEW_PUBLIC_DASHBOARD PSPAuthorizationType = "ViewPublicDashboard"
 )
 
 var allowedPSPAuthorizationTypeEnumValues = []PSPAuthorizationType{

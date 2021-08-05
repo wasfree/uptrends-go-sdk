@@ -20,12 +20,12 @@ type OperatorGroupAuthorizationType string
 
 // List of OperatorGroupAuthorizationType
 const (
-	SHARE_DASHBOARDS OperatorGroupAuthorizationType = "ShareDashboards"
-	ALLOW_INFRA OperatorGroupAuthorizationType = "AllowInfra"
-	ADMINISTRATOR OperatorGroupAuthorizationType = "Administrator"
-	TECHNICAL_CONTACT OperatorGroupAuthorizationType = "TechnicalContact"
-	FINANCIAL_OPERATOR OperatorGroupAuthorizationType = "FinancialOperator"
-	BASIC_OPERATOR OperatorGroupAuthorizationType = "BasicOperator"
+	OPERATORGROUPAUTHORIZATIONTYPE_SHARE_DASHBOARDS OperatorGroupAuthorizationType = "ShareDashboards"
+	OPERATORGROUPAUTHORIZATIONTYPE_ALLOW_INFRA OperatorGroupAuthorizationType = "AllowInfra"
+	OPERATORGROUPAUTHORIZATIONTYPE_ADMINISTRATOR OperatorGroupAuthorizationType = "Administrator"
+	OPERATORGROUPAUTHORIZATIONTYPE_TECHNICAL_CONTACT OperatorGroupAuthorizationType = "TechnicalContact"
+	OPERATORGROUPAUTHORIZATIONTYPE_FINANCIAL_OPERATOR OperatorGroupAuthorizationType = "FinancialOperator"
+	OPERATORGROUPAUTHORIZATIONTYPE_BASIC_OPERATOR OperatorGroupAuthorizationType = "BasicOperator"
 )
 
 var allowedOperatorGroupAuthorizationTypeEnumValues = []OperatorGroupAuthorizationType{

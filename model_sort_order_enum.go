@@ -20,8 +20,8 @@ type SortOrderEnum string
 
 // List of SortOrderEnum
 const (
-	ALPHABETICAL SortOrderEnum = "Alphabetical"
-	BY_STATUS SortOrderEnum = "ByStatus"
+	SORTORDERENUM_ALPHABETICAL SortOrderEnum = "Alphabetical"
+	SORTORDERENUM_BY_STATUS SortOrderEnum = "ByStatus"
 )
 
 var allowedSortOrderEnumEnumValues = []SortOrderEnum{

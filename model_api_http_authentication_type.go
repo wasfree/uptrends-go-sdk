@@ -20,10 +20,10 @@ type ApiHttpAuthenticationType string
 
 // List of ApiHttpAuthenticationType
 const (
-	NONE ApiHttpAuthenticationType = "None"
-	BASIC ApiHttpAuthenticationType = "Basic"
-	NTLM ApiHttpAuthenticationType = "NTLM"
-	DIGEST ApiHttpAuthenticationType = "Digest"
+	APIHTTPAUTHENTICATIONTYPE_NONE ApiHttpAuthenticationType = "None"
+	APIHTTPAUTHENTICATIONTYPE_BASIC ApiHttpAuthenticationType = "Basic"
+	APIHTTPAUTHENTICATIONTYPE_NTLM ApiHttpAuthenticationType = "NTLM"
+	APIHTTPAUTHENTICATIONTYPE_DIGEST ApiHttpAuthenticationType = "Digest"
 )
 
 var allowedApiHttpAuthenticationTypeEnumValues = []ApiHttpAuthenticationType{

@@ -20,10 +20,10 @@ type UserDefinedFunctionType string
 
 // List of UserDefinedFunctionType
 const (
-	MAPPING UserDefinedFunctionType = "Mapping"
-	REGEX UserDefinedFunctionType = "Regex"
-	JWT_ENCODE UserDefinedFunctionType = "JwtEncode"
-	JWT_DECODE UserDefinedFunctionType = "JwtDecode"
+	USERDEFINEDFUNCTIONTYPE_MAPPING UserDefinedFunctionType = "Mapping"
+	USERDEFINEDFUNCTIONTYPE_REGEX UserDefinedFunctionType = "Regex"
+	USERDEFINEDFUNCTIONTYPE_JWT_ENCODE UserDefinedFunctionType = "JwtEncode"
+	USERDEFINEDFUNCTIONTYPE_JWT_DECODE UserDefinedFunctionType = "JwtDecode"
 )
 
 var allowedUserDefinedFunctionTypeEnumValues = []UserDefinedFunctionType{

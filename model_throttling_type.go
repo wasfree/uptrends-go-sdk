@@ -20,9 +20,9 @@ type ThrottlingType string
 
 // List of ThrottlingType
 const (
-	INACTIVE ThrottlingType = "Inactive"
-	BROWSER ThrottlingType = "Browser"
-	SIMULATED ThrottlingType = "Simulated"
+	THROTTLINGTYPE_INACTIVE ThrottlingType = "Inactive"
+	THROTTLINGTYPE_BROWSER ThrottlingType = "Browser"
+	THROTTLINGTYPE_SIMULATED ThrottlingType = "Simulated"
 )
 
 var allowedThrottlingTypeEnumValues = []ThrottlingType{

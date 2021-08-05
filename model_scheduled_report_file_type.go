@@ -20,9 +20,9 @@ type ScheduledReportFileType string
 
 // List of ScheduledReportFileType
 const (
-	PDF ScheduledReportFileType = "PDF"
-	EXCEL ScheduledReportFileType = "Excel"
-	HTML ScheduledReportFileType = "Html"
+	SCHEDULEDREPORTFILETYPE_PDF ScheduledReportFileType = "PDF"
+	SCHEDULEDREPORTFILETYPE_EXCEL ScheduledReportFileType = "Excel"
+	SCHEDULEDREPORTFILETYPE_HTML ScheduledReportFileType = "Html"
 )
 
 var allowedScheduledReportFileTypeEnumValues = []ScheduledReportFileType{

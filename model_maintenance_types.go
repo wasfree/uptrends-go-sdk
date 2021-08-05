@@ -20,8 +20,8 @@ type MaintenanceTypes string
 
 // List of MaintenanceTypes
 const (
-	DISABLE_MONITORING MaintenanceTypes = "DisableMonitoring"
-	DISABLE_NOTIFICATIONS MaintenanceTypes = "DisableNotifications"
+	MAINTENANCETYPES_DISABLE_MONITORING MaintenanceTypes = "DisableMonitoring"
+	MAINTENANCETYPES_DISABLE_NOTIFICATIONS MaintenanceTypes = "DisableNotifications"
 )
 
 var allowedMaintenanceTypesEnumValues = []MaintenanceTypes{

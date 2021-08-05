@@ -20,16 +20,16 @@ type ApiComparisonType string
 
 // List of ApiComparisonType
 const (
-	EQUAL ApiComparisonType = "Equal"
-	DOES_NOT_EQUAL ApiComparisonType = "DoesNotEqual"
-	CONTAINS_TEXT ApiComparisonType = "ContainsText"
-	DOES_NOT_CONTAIN_TEXT ApiComparisonType = "DoesNotContainText"
-	SHOULD_BE_IGNORED ApiComparisonType = "ShouldBeIgnored"
-	LESS_THAN ApiComparisonType = "LessThan"
-	GREATER_THAN ApiComparisonType = "GreaterThan"
-	LESS_THAN_OR_EQUAL ApiComparisonType = "LessThanOrEqual"
-	GREATER_THAN_OR_EQUAL ApiComparisonType = "GreaterThanOrEqual"
-	IS_NOT_EMPTY ApiComparisonType = "IsNotEmpty"
+	APICOMPARISONTYPE_EQUAL ApiComparisonType = "Equal"
+	APICOMPARISONTYPE_DOES_NOT_EQUAL ApiComparisonType = "DoesNotEqual"
+	APICOMPARISONTYPE_CONTAINS_TEXT ApiComparisonType = "ContainsText"
+	APICOMPARISONTYPE_DOES_NOT_CONTAIN_TEXT ApiComparisonType = "DoesNotContainText"
+	APICOMPARISONTYPE_SHOULD_BE_IGNORED ApiComparisonType = "ShouldBeIgnored"
+	APICOMPARISONTYPE_LESS_THAN ApiComparisonType = "LessThan"
+	APICOMPARISONTYPE_GREATER_THAN ApiComparisonType = "GreaterThan"
+	APICOMPARISONTYPE_LESS_THAN_OR_EQUAL ApiComparisonType = "LessThanOrEqual"
+	APICOMPARISONTYPE_GREATER_THAN_OR_EQUAL ApiComparisonType = "GreaterThanOrEqual"
+	APICOMPARISONTYPE_IS_NOT_EMPTY ApiComparisonType = "IsNotEmpty"
 )
 
 var allowedApiComparisonTypeEnumValues = []ApiComparisonType{

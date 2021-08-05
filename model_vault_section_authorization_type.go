@@ -20,8 +20,8 @@ type VaultSectionAuthorizationType string
 
 // List of VaultSectionAuthorizationType
 const (
-	VIEW_VAULT_SECTION VaultSectionAuthorizationType = "ViewVaultSection"
-	CHANGE_VAULT_SECTION VaultSectionAuthorizationType = "ChangeVaultSection"
+	VAULTSECTIONAUTHORIZATIONTYPE_VIEW_VAULT_SECTION VaultSectionAuthorizationType = "ViewVaultSection"
+	VAULTSECTIONAUTHORIZATIONTYPE_CHANGE_VAULT_SECTION VaultSectionAuthorizationType = "ChangeVaultSection"
 )
 
 var allowedVaultSectionAuthorizationTypeEnumValues = []VaultSectionAuthorizationType{

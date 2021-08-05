@@ -20,10 +20,10 @@ type SftpAction string
 
 // List of SftpAction
 const (
-	CONNECT_ONLY SftpAction = "ConnectOnly"
-	TEST_FILE_EXISTS SftpAction = "TestFileExists"
-	TEST_FILE_DOES_NOT_EXIST SftpAction = "TestFileDoesNotExist"
-	DOWN_LOAD_FILE SftpAction = "DownLoadFile"
+	SFTPACTION_CONNECT_ONLY SftpAction = "ConnectOnly"
+	SFTPACTION_TEST_FILE_EXISTS SftpAction = "TestFileExists"
+	SFTPACTION_TEST_FILE_DOES_NOT_EXIST SftpAction = "TestFileDoesNotExist"
+	SFTPACTION_DOWN_LOAD_FILE SftpAction = "DownLoadFile"
 )
 
 var allowedSftpActionEnumValues = []SftpAction{

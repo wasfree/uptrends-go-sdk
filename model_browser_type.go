@@ -20,12 +20,12 @@ type BrowserType string
 
 // List of BrowserType
 const (
-	IE BrowserType = "IE"
-	FIREFOX BrowserType = "Firefox"
-	CHROME BrowserType = "Chrome"
-	SAFARI BrowserType = "Safari"
-	PHANTOM_JS BrowserType = "PhantomJS"
-	PHANTOM_JS20 BrowserType = "PhantomJS20"
+	BROWSERTYPE_IE BrowserType = "IE"
+	BROWSERTYPE_FIREFOX BrowserType = "Firefox"
+	BROWSERTYPE_CHROME BrowserType = "Chrome"
+	BROWSERTYPE_SAFARI BrowserType = "Safari"
+	BROWSERTYPE_PHANTOM_JS BrowserType = "PhantomJS"
+	BROWSERTYPE_PHANTOM_JS20 BrowserType = "PhantomJS20"
 )
 
 var allowedBrowserTypeEnumValues = []BrowserType{

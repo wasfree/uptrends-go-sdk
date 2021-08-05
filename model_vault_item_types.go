@@ -20,11 +20,11 @@ type VaultItemTypes string
 
 // List of VaultItemTypes
 const (
-	CREDENTIAL_SET VaultItemTypes = "CredentialSet"
-	CERTIFICATE VaultItemTypes = "Certificate"
-	TEXT VaultItemTypes = "Text"
-	CERTIFICATE_ARCHIVE VaultItemTypes = "CertificateArchive"
-	FILE VaultItemTypes = "File"
+	VAULTITEMTYPES_CREDENTIAL_SET VaultItemTypes = "CredentialSet"
+	VAULTITEMTYPES_CERTIFICATE VaultItemTypes = "Certificate"
+	VAULTITEMTYPES_TEXT VaultItemTypes = "Text"
+	VAULTITEMTYPES_CERTIFICATE_ARCHIVE VaultItemTypes = "CertificateArchive"
+	VAULTITEMTYPES_FILE VaultItemTypes = "File"
 )
 
 var allowedVaultItemTypesEnumValues = []VaultItemTypes{

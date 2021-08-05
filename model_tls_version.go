@@ -20,13 +20,13 @@ type TlsVersion string
 
 // List of TlsVersion
 const (
-	TLS12 TlsVersion = "Tls12"
-	TLS11 TlsVersion = "Tls11"
-	TLS10 TlsVersion = "Tls10"
-	TLS12_TLS11 TlsVersion = "Tls12_Tls11"
-	TLS11_TLS10 TlsVersion = "Tls11_Tls10"
-	TLS12_TLS11_TLS10 TlsVersion = "Tls12_Tls11_Tls10"
-	TLS12_TLS11_TLS10_WITH_FALLBACK TlsVersion = "Tls12_Tls11_Tls10_WithFallback"
+	TLSVERSION_TLS12 TlsVersion = "Tls12"
+	TLSVERSION_TLS11 TlsVersion = "Tls11"
+	TLSVERSION_TLS10 TlsVersion = "Tls10"
+	TLSVERSION_TLS12_TLS11 TlsVersion = "Tls12_Tls11"
+	TLSVERSION_TLS11_TLS10 TlsVersion = "Tls11_Tls10"
+	TLSVERSION_TLS12_TLS11_TLS10 TlsVersion = "Tls12_Tls11_Tls10"
+	TLSVERSION_TLS12_TLS11_TLS10_WITH_FALLBACK TlsVersion = "Tls12_Tls11_Tls10_WithFallback"
 )
 
 var allowedTlsVersionEnumValues = []TlsVersion{

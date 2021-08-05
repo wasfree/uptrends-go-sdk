@@ -20,8 +20,8 @@ type SelectedPeriodType string
 
 // List of SelectedPeriodType
 const (
-	PRESET_PERIOD SelectedPeriodType = "PresetPeriod"
-	SPECIFIC_DATES SelectedPeriodType = "SpecificDates"
+	SELECTEDPERIODTYPE_PRESET_PERIOD SelectedPeriodType = "PresetPeriod"
+	SELECTEDPERIODTYPE_SPECIFIC_DATES SelectedPeriodType = "SpecificDates"
 )
 
 var allowedSelectedPeriodTypeEnumValues = []SelectedPeriodType{

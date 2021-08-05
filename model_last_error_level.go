@@ -20,11 +20,11 @@ type LastErrorLevel string
 
 // List of LastErrorLevel
 const (
-	NO_ERROR LastErrorLevel = "NoError"
-	UNCONFIRMED LastErrorLevel = "Unconfirmed"
-	CONFIRMED LastErrorLevel = "Confirmed"
-	INACTIVE LastErrorLevel = "Inactive"
-	INCONCLUSIVE LastErrorLevel = "Inconclusive"
+	LASTERRORLEVEL_NO_ERROR LastErrorLevel = "NoError"
+	LASTERRORLEVEL_UNCONFIRMED LastErrorLevel = "Unconfirmed"
+	LASTERRORLEVEL_CONFIRMED LastErrorLevel = "Confirmed"
+	LASTERRORLEVEL_INACTIVE LastErrorLevel = "Inactive"
+	LASTERRORLEVEL_INCONCLUSIVE LastErrorLevel = "Inconclusive"
 )
 
 var allowedLastErrorLevelEnumValues = []LastErrorLevel{

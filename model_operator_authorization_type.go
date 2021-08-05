@@ -20,7 +20,7 @@ type OperatorAuthorizationType string
 
 // List of OperatorAuthorizationType
 const (
-	ACCOUNT_ACCESS OperatorAuthorizationType = "AccountAccess"
+	OPERATORAUTHORIZATIONTYPE_ACCOUNT_ACCESS OperatorAuthorizationType = "AccountAccess"
 )
 
 var allowedOperatorAuthorizationTypeEnumValues = []OperatorAuthorizationType{

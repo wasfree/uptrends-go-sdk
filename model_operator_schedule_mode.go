@@ -20,10 +20,10 @@ type OperatorScheduleMode string
 
 // List of OperatorScheduleMode
 const (
-	ONE_TIME OperatorScheduleMode = "OneTime"
-	DAILY OperatorScheduleMode = "Daily"
-	WEEKLY OperatorScheduleMode = "Weekly"
-	MONTHLY OperatorScheduleMode = "Monthly"
+	OPERATORSCHEDULEMODE_ONE_TIME OperatorScheduleMode = "OneTime"
+	OPERATORSCHEDULEMODE_DAILY OperatorScheduleMode = "Daily"
+	OPERATORSCHEDULEMODE_WEEKLY OperatorScheduleMode = "Weekly"
+	OPERATORSCHEDULEMODE_MONTHLY OperatorScheduleMode = "Monthly"
 )
 
 var allowedOperatorScheduleModeEnumValues = []OperatorScheduleMode{

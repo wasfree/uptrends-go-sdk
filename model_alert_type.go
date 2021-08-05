@@ -20,9 +20,9 @@ type AlertType string
 
 // List of AlertType
 const (
-	OK AlertType = "Ok"
-	ERROR AlertType = "Error"
-	REMINDER AlertType = "Reminder"
+	ALERTTYPE_OK AlertType = "Ok"
+	ALERTTYPE_ERROR AlertType = "Error"
+	ALERTTYPE_REMINDER AlertType = "Reminder"
 )
 
 var allowedAlertTypeEnumValues = []AlertType{

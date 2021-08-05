@@ -20,13 +20,13 @@ type DayOfWeek string
 
 // List of DayOfWeek
 const (
-	SUNDAY DayOfWeek = "Sunday"
-	MONDAY DayOfWeek = "Monday"
-	TUESDAY DayOfWeek = "Tuesday"
-	WEDNESDAY DayOfWeek = "Wednesday"
-	THURSDAY DayOfWeek = "Thursday"
-	FRIDAY DayOfWeek = "Friday"
-	SATURDAY DayOfWeek = "Saturday"
+	DAYOFWEEK_SUNDAY DayOfWeek = "Sunday"
+	DAYOFWEEK_MONDAY DayOfWeek = "Monday"
+	DAYOFWEEK_TUESDAY DayOfWeek = "Tuesday"
+	DAYOFWEEK_WEDNESDAY DayOfWeek = "Wednesday"
+	DAYOFWEEK_THURSDAY DayOfWeek = "Thursday"
+	DAYOFWEEK_FRIDAY DayOfWeek = "Friday"
+	DAYOFWEEK_SATURDAY DayOfWeek = "Saturday"
 )
 
 var allowedDayOfWeekEnumValues = []DayOfWeek{

@@ -20,9 +20,9 @@ type ScheduleType string
 
 // List of ScheduleType
 const (
-	DAILY ScheduleType = "Daily"
-	WEEKLY ScheduleType = "Weekly"
-	MONTHLY ScheduleType = "Monthly"
+	SCHEDULETYPE_DAILY ScheduleType = "Daily"
+	SCHEDULETYPE_WEEKLY ScheduleType = "Weekly"
+	SCHEDULETYPE_MONTHLY ScheduleType = "Monthly"
 )
 
 var allowedScheduleTypeEnumValues = []ScheduleType{

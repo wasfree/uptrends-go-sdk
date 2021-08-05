@@ -20,10 +20,10 @@ type CapabilityFilterEnum string
 
 // List of CapabilityFilterEnum
 const (
-	IPV6 CapabilityFilterEnum = "IPv6"
-	NATIVE_IPV6 CapabilityFilterEnum = "NativeIPv6"
-	PRIMARY_SERVER CapabilityFilterEnum = "PrimaryServer"
-	HIGH_AVAILABILITY CapabilityFilterEnum = "HighAvailability"
+	CAPABILITYFILTERENUM_IPV6 CapabilityFilterEnum = "IPv6"
+	CAPABILITYFILTERENUM_NATIVE_IPV6 CapabilityFilterEnum = "NativeIPv6"
+	CAPABILITYFILTERENUM_PRIMARY_SERVER CapabilityFilterEnum = "PrimaryServer"
+	CAPABILITYFILTERENUM_HIGH_AVAILABILITY CapabilityFilterEnum = "HighAvailability"
 )
 
 var allowedCapabilityFilterEnumEnumValues = []CapabilityFilterEnum{

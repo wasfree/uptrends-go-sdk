@@ -20,8 +20,8 @@ type SortDirection string
 
 // List of SortDirection
 const (
-	ASCENDING SortDirection = "Ascending"
-	DESCENDING SortDirection = "Descending"
+	SORTDIRECTION_ASCENDING SortDirection = "Ascending"
+	SORTDIRECTION_DESCENDING SortDirection = "Descending"
 )
 
 var allowedSortDirectionEnumValues = []SortDirection{

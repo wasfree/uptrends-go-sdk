@@ -20,9 +20,9 @@ type MonitorMode string
 
 // List of MonitorMode
 const (
-	DEVELOPMENT MonitorMode = "Development"
-	STAGING MonitorMode = "Staging"
-	PRODUCTION MonitorMode = "Production"
+	MONITORMODE_DEVELOPMENT MonitorMode = "Development"
+	MONITORMODE_STAGING MonitorMode = "Staging"
+	MONITORMODE_PRODUCTION MonitorMode = "Production"
 )
 
 var allowedMonitorModeEnumValues = []MonitorMode{

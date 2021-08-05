@@ -20,10 +20,10 @@ type ScheduleMode string
 
 // List of ScheduleMode
 const (
-	ONE_TIME ScheduleMode = "OneTime"
-	DAILY ScheduleMode = "Daily"
-	WEEKLY ScheduleMode = "Weekly"
-	MONTHLY ScheduleMode = "Monthly"
+	SCHEDULEMODE_ONE_TIME ScheduleMode = "OneTime"
+	SCHEDULEMODE_DAILY ScheduleMode = "Daily"
+	SCHEDULEMODE_WEEKLY ScheduleMode = "Weekly"
+	SCHEDULEMODE_MONTHLY ScheduleMode = "Monthly"
 )
 
 var allowedScheduleModeEnumValues = []ScheduleMode{
