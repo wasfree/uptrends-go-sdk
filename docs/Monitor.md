@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **MonitorMode** | Pointer to [**MonitorMode**](MonitorMode.md) |  | [optional] 
 **Notes** | Pointer to **string** |  | [optional] 
 **Hash** | Pointer to **string** | Hash corresponding with this monitor. | [optional] 
-**SelfServiceTransactionScript** | Pointer to **string** |  | [optional] 
+**TransactionStepDefinition** | Pointer to [**TransactionStepDefinition**](TransactionStepDefinition.md) | Only valid for Transaction monitors: the data structure that specifies the transaction steps (and sub steps) to execute. | [optional] 
 **BlockUptrendsRum** | Pointer to **bool** |  | [optional] 
 **BlockGoogleAnalytics** | Pointer to **bool** |  | [optional] 
 **BlockUrls** | Pointer to **[]string** |  | [optional] 
@@ -36,10 +36,10 @@ Name | Type | Description | Notes
 **MsaSteps** | Pointer to [**[]MsaStep**](MsaStep.md) |  | [optional] 
 **UserDefinedFunctions** | Pointer to [**[]UserDefinedFunction**](UserDefinedFunction.md) |  | [optional] 
 **CustomMetrics** | Pointer to [**[]CustomMetric**](CustomMetric.md) |  | [optional] 
+**SelfServiceTransactionScript** | Pointer to **string** |  | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
 **NameForPhoneAlerts** | Pointer to **string** |  | [optional] 
 **ThrottlingOptions** | Pointer to [**ThrottlingOptions**](ThrottlingOptions.md) |  | [optional] 
-**TransactionStepDefinition** | Pointer to [**TransactionStepDefinition**](TransactionStepDefinition.md) | Only valid for Transaction monitors: the data structure that specifies the transaction steps (and sub steps) to execute. | [optional] 
 **CertificateName** | Pointer to **string** |  | [optional] 
 **CertificateOrganization** | Pointer to **string** |  | [optional] 
 **CertificateOrganizationalUnit** | Pointer to **string** |  | [optional] 
@@ -428,30 +428,30 @@ SetHash sets Hash field to given value.
 
 HasHash returns a boolean if a field has been set.
 
-### GetSelfServiceTransactionScript
+### GetTransactionStepDefinition
 
-`func (o *Monitor) GetSelfServiceTransactionScript() string`
+`func (o *Monitor) GetTransactionStepDefinition() TransactionStepDefinition`
 
-GetSelfServiceTransactionScript returns the SelfServiceTransactionScript field if non-nil, zero value otherwise.
+GetTransactionStepDefinition returns the TransactionStepDefinition field if non-nil, zero value otherwise.
 
-### GetSelfServiceTransactionScriptOk
+### GetTransactionStepDefinitionOk
 
-`func (o *Monitor) GetSelfServiceTransactionScriptOk() (*string, bool)`
+`func (o *Monitor) GetTransactionStepDefinitionOk() (*TransactionStepDefinition, bool)`
 
-GetSelfServiceTransactionScriptOk returns a tuple with the SelfServiceTransactionScript field if it's non-nil, zero value otherwise
+GetTransactionStepDefinitionOk returns a tuple with the TransactionStepDefinition field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSelfServiceTransactionScript
+### SetTransactionStepDefinition
 
-`func (o *Monitor) SetSelfServiceTransactionScript(v string)`
+`func (o *Monitor) SetTransactionStepDefinition(v TransactionStepDefinition)`
 
-SetSelfServiceTransactionScript sets SelfServiceTransactionScript field to given value.
+SetTransactionStepDefinition sets TransactionStepDefinition field to given value.
 
-### HasSelfServiceTransactionScript
+### HasTransactionStepDefinition
 
-`func (o *Monitor) HasSelfServiceTransactionScript() bool`
+`func (o *Monitor) HasTransactionStepDefinition() bool`
 
-HasSelfServiceTransactionScript returns a boolean if a field has been set.
+HasTransactionStepDefinition returns a boolean if a field has been set.
 
 ### GetBlockUptrendsRum
 
@@ -903,6 +903,31 @@ SetCustomMetrics sets CustomMetrics field to given value.
 
 HasCustomMetrics returns a boolean if a field has been set.
 
+### GetSelfServiceTransactionScript
+
+`func (o *Monitor) GetSelfServiceTransactionScript() string`
+
+GetSelfServiceTransactionScript returns the SelfServiceTransactionScript field if non-nil, zero value otherwise.
+
+### GetSelfServiceTransactionScriptOk
+
+`func (o *Monitor) GetSelfServiceTransactionScriptOk() (*string, bool)`
+
+GetSelfServiceTransactionScriptOk returns a tuple with the SelfServiceTransactionScript field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSelfServiceTransactionScript
+
+`func (o *Monitor) SetSelfServiceTransactionScript(v string)`
+
+SetSelfServiceTransactionScript sets SelfServiceTransactionScript field to given value.
+
+### HasSelfServiceTransactionScript
+
+`func (o *Monitor) HasSelfServiceTransactionScript() bool`
+
+HasSelfServiceTransactionScript returns a boolean if a field has been set.
+
 ### GetPassword
 
 `func (o *Monitor) GetPassword() string`
@@ -977,31 +1002,6 @@ SetThrottlingOptions sets ThrottlingOptions field to given value.
 `func (o *Monitor) HasThrottlingOptions() bool`
 
 HasThrottlingOptions returns a boolean if a field has been set.
-
-### GetTransactionStepDefinition
-
-`func (o *Monitor) GetTransactionStepDefinition() TransactionStepDefinition`
-
-GetTransactionStepDefinition returns the TransactionStepDefinition field if non-nil, zero value otherwise.
-
-### GetTransactionStepDefinitionOk
-
-`func (o *Monitor) GetTransactionStepDefinitionOk() (*TransactionStepDefinition, bool)`
-
-GetTransactionStepDefinitionOk returns a tuple with the TransactionStepDefinition field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTransactionStepDefinition
-
-`func (o *Monitor) SetTransactionStepDefinition(v TransactionStepDefinition)`
-
-SetTransactionStepDefinition sets TransactionStepDefinition field to given value.
-
-### HasTransactionStepDefinition
-
-`func (o *Monitor) HasTransactionStepDefinition() bool`
-
-HasTransactionStepDefinition returns a boolean if a field has been set.
 
 ### GetCertificateName
 

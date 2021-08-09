@@ -12986,8 +12986,12 @@ components:
         Hash:
           description: Hash corresponding with this monitor.
           type: string
-        SelfServiceTransactionScript:
-          type: string
+        TransactionStepDefinition:
+          allOf:
+          - $ref: '#/components/schemas/TransactionStepDefinition'
+          description: 'Only valid for Transaction monitors: the data structure that
+            specifies the transaction steps (and sub steps) to execute.'
+          type: object
         BlockUptrendsRum:
           type: boolean
         BlockGoogleAnalytics:
@@ -13039,18 +13043,14 @@ components:
           items:
             $ref: '#/components/schemas/CustomMetric'
           type: array
+        SelfServiceTransactionScript:
+          type: string
         Password:
           type: string
         NameForPhoneAlerts:
           type: string
         ThrottlingOptions:
           $ref: '#/components/schemas/ThrottlingOptions'
-        TransactionStepDefinition:
-          allOf:
-          - $ref: '#/components/schemas/TransactionStepDefinition'
-          description: 'Only valid for Transaction monitors: the data structure that
-            specifies the transaction steps (and sub steps) to execute.'
-          type: object
         CertificateName:
           type: string
         CertificateOrganization:
@@ -13239,6 +13239,69 @@ components:
       - Development
       - Staging
       - Production
+    TransactionStepDefinition:
+      properties:
+        Steps:
+          items:
+            $ref: '#/components/schemas/TransactionStep2'
+          type: array
+      type: object
+    TransactionStep2:
+      properties:
+        Name:
+          type: string
+        HasScreenshot:
+          type: boolean
+        HasWaterfall:
+          type: boolean
+        SubSteps:
+          items:
+            $ref: '#/components/schemas/TransactionSubStep'
+          type: array
+      required:
+      - HasScreenshot
+      - HasWaterfall
+      type: object
+    TransactionSubStep:
+      properties:
+        Name:
+          type: string
+        Type:
+          $ref: '#/components/schemas/SubStepType'
+        Url:
+          type: string
+        SetValue:
+          type: string
+      required:
+      - Type
+      type: object
+    SubStepType:
+      description: ""
+      enum:
+      - Navigate
+      - Click
+      - Set
+      - Test
+      - Script
+      - Hover
+      - Screenshot
+      - ScrollTo
+      - WaitForElement
+      - SwitchToFrame
+      - SwitchToTab
+      type: string
+      x-enumNames:
+      - Navigate
+      - Click
+      - Set
+      - Test
+      - Script
+      - Hover
+      - Screenshot
+      - ScrollTo
+      - WaitForElement
+      - SwitchToFrame
+      - SwitchToTab
     RequestHeader:
       example:
         Value: Value
@@ -13755,69 +13818,6 @@ components:
       - _2G
       - _3G
       - _4G
-    TransactionStepDefinition:
-      properties:
-        Steps:
-          items:
-            $ref: '#/components/schemas/TransactionStep2'
-          type: array
-      type: object
-    TransactionStep2:
-      properties:
-        Name:
-          type: string
-        HasScreenshot:
-          type: boolean
-        HasWaterfall:
-          type: boolean
-        SubSteps:
-          items:
-            $ref: '#/components/schemas/TransactionSubStep'
-          type: array
-      required:
-      - HasScreenshot
-      - HasWaterfall
-      type: object
-    TransactionSubStep:
-      properties:
-        Name:
-          type: string
-        Type:
-          $ref: '#/components/schemas/SubStepType'
-        Url:
-          type: string
-        SetValue:
-          type: string
-      required:
-      - Type
-      type: object
-    SubStepType:
-      description: ""
-      enum:
-      - Navigate
-      - Click
-      - Set
-      - Test
-      - Script
-      - Hover
-      - Screenshot
-      - ScrollTo
-      - WaitForElement
-      - SwitchToFrame
-      - SwitchToTab
-      type: string
-      x-enumNames:
-      - Navigate
-      - Click
-      - Set
-      - Test
-      - Script
-      - Hover
-      - Screenshot
-      - ScrollTo
-      - WaitForElement
-      - SwitchToFrame
-      - SwitchToTab
     DnsQuery:
       description: ""
       enum:

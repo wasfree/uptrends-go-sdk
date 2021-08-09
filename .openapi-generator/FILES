@@ -92,7 +92,6 @@ docs/IntegrationApi.md
 docs/IntegrationServiceMap.md
 docs/IntegrationTypeEnum.md
 docs/IpVersion.md
-docs/Ipv6Address.md
 docs/JwtAlgorithm.md
 docs/LastErrorLevel.md
 docs/LinksData.md
@@ -201,8 +200,6 @@ docs/VaultSectionAuthorizationType.md
 docs/WaterfallInfo.md
 docs/WaterfallResponse.md
 git_push.sh
-go.mod
-go.sum
 model_account_statistics.go
 model_alert.go
 model_alert_attributes.go
