@@ -10441,7 +10441,7 @@ components:
         IpV6Addresses:
           description: Ipv6 addresses of the checkpoint
           items:
-            $ref: '#/components/schemas/IPv6Address'
+            $ref: '#/components/schemas/Ipv6Address'
           type: array
         IsPrimaryCheckpoint:
           description: Checkpoint is primary
@@ -10456,21 +10456,6 @@ components:
       - HasHighAvailability
       - IsPrimaryCheckpoint
       - SupportsIpv6
-      type: object
-    IPv6Address:
-      description: Ipv6 address
-      example:
-        IsNative: true
-        IpAddress: IpAddress
-      properties:
-        IpAddress:
-          description: The Ipv6 address
-          type: string
-        IsNative:
-          description: Is this a native v6 address?
-          type: boolean
-      required:
-      - IsNative
       type: object
     CheckpointResponse:
       example:
