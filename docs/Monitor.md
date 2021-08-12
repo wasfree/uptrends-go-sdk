@@ -6,40 +6,38 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MonitorGuid** | Pointer to **string** | The unique key of this monitor. | [optional] 
 **Name** | Pointer to **string** | The name of this monitor. | [optional] 
-**MonitorType** | Pointer to [**MonitorType**](MonitorType.md) |  | [optional] 
-**GenerateAlert** | Pointer to **bool** | Indicates whether this monitor should generate alerts. | [optional] [default to true]
 **IsActive** | Pointer to **bool** | Indicates whether this monitor is actively running according to the monitoring interval. | [optional] [default to true]
-**IsLocked** | Pointer to **bool** | Indicates whether this monitor is locked. | [optional] 
-**CustomFields** | Pointer to [**[]CustomField**](CustomField.md) |  | [optional] 
-**SelectedCheckpoints** | Pointer to [**SelectedCheckpoints**](SelectedCheckpoints.md) |  | [optional] 
-**UsePrimaryCheckpointsOnly** | Pointer to **bool** |  | [optional] 
-**CheckInterval** | Pointer to **int32** | Indicates the interval in seconds | [optional] 
-**MonitorMode** | Pointer to [**MonitorMode**](MonitorMode.md) |  | [optional] 
-**Notes** | Pointer to **string** |  | [optional] 
 **Hash** | Pointer to **string** | Hash corresponding with this monitor. | [optional] 
-**TransactionStepDefinition** | Pointer to [**TransactionStepDefinition**](TransactionStepDefinition.md) | Only valid for Transaction monitors: the data structure that specifies the transaction steps (and sub steps) to execute. | [optional] 
-**BlockUptrendsRum** | Pointer to **bool** |  | [optional] 
-**BlockGoogleAnalytics** | Pointer to **bool** |  | [optional] 
-**BlockUrls** | Pointer to **[]string** |  | [optional] 
-**RequestHeaders** | Pointer to [**[]RequestHeader**](RequestHeader.md) |  | [optional] 
-**UserAgent** | Pointer to **string** |  | [optional] 
-**LoadTimeLimit1** | Pointer to **int32** |  | [optional] 
-**AlertOnLoadTimeLimit1** | Pointer to **bool** |  | [optional] 
-**LoadTimeLimit2** | Pointer to **int32** |  | [optional] 
-**AlertOnLoadTimeLimit2** | Pointer to **bool** |  | [optional] 
-**Username** | Pointer to **string** |  | [optional] 
-**AuthenticationType** | Pointer to [**ApiHttpAuthenticationType**](ApiHttpAuthenticationType.md) |  | [optional] 
-**BrowserType** | Pointer to [**BrowserType**](BrowserType.md) |  | [optional] 
-**BrowserWindowDimensions** | Pointer to [**BrowserWindowDimensions**](BrowserWindowDimensions.md) |  | [optional] 
+**GenerateAlert** | Pointer to **bool** | Indicates whether this monitor should generate alerts. | [optional] [default to true]
+**IsLocked** | Pointer to **bool** | Indicates whether this monitor is locked. | [optional] 
+**CheckInterval** | Pointer to **int32** | Indicates the interval in seconds | [optional] 
 **Credits** | Pointer to **int32** |  | [optional] 
+**MonitorMode** | Pointer to [**MonitorMode**](MonitorMode.md) |  | [optional] 
 **PredefinedVariables** | Pointer to [**[]PredefinedVariable**](PredefinedVariable.md) |  | [optional] 
 **MsaSteps** | Pointer to [**[]MsaStep**](MsaStep.md) |  | [optional] 
 **UserDefinedFunctions** | Pointer to [**[]UserDefinedFunction**](UserDefinedFunction.md) |  | [optional] 
 **CustomMetrics** | Pointer to [**[]CustomMetric**](CustomMetric.md) |  | [optional] 
+**CustomFields** | Pointer to [**[]CustomField**](CustomField.md) |  | [optional] 
+**SelectedCheckpoints** | Pointer to [**SelectedCheckpoints**](SelectedCheckpoints.md) |  | [optional] 
+**UsePrimaryCheckpointsOnly** | Pointer to **bool** |  | [optional] 
 **SelfServiceTransactionScript** | Pointer to **string** |  | [optional] 
+**MonitorType** | Pointer to [**MonitorType**](MonitorType.md) |  | [optional] 
+**Notes** | Pointer to **string** |  | [optional] 
+**AlertOnLoadTimeLimit1** | Pointer to **bool** |  | [optional] 
+**LoadTimeLimit1** | Pointer to **int32** |  | [optional] 
+**AlertOnLoadTimeLimit2** | Pointer to **bool** |  | [optional] 
+**LoadTimeLimit2** | Pointer to **int32** |  | [optional] 
+**BlockGoogleAnalytics** | Pointer to **bool** |  | [optional] 
+**BlockUptrendsRum** | Pointer to **bool** |  | [optional] 
+**BlockUrls** | Pointer to **[]string** |  | [optional] 
+**RequestHeaders** | Pointer to [**[]RequestHeader**](RequestHeader.md) |  | [optional] 
+**UserAgent** | Pointer to **string** |  | [optional] 
+**Username** | Pointer to **string** |  | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
 **NameForPhoneAlerts** | Pointer to **string** |  | [optional] 
+**AuthenticationType** | Pointer to [**ApiHttpAuthenticationType**](ApiHttpAuthenticationType.md) |  | [optional] 
 **ThrottlingOptions** | Pointer to [**ThrottlingOptions**](ThrottlingOptions.md) |  | [optional] 
+**TransactionStepDefinition** | Pointer to [**TransactionStepDefinition**](TransactionStepDefinition.md) | Only valid for Transaction monitors: the data structure that specifies the transaction steps (and sub steps) to execute. | [optional] 
 **CertificateName** | Pointer to **string** |  | [optional] 
 **CertificateOrganization** | Pointer to **string** |  | [optional] 
 **CertificateOrganizationalUnit** | Pointer to **string** |  | [optional] 
@@ -80,6 +78,8 @@ Name | Type | Description | Notes
 **RequestBody** | Pointer to **string** |  | [optional] 
 **MatchPatterns** | Pointer to [**[]PatternMatch**](PatternMatch.md) |  | [optional] 
 **Url** | Pointer to **string** |  | [optional] 
+**BrowserType** | Pointer to [**BrowserType**](BrowserType.md) |  | [optional] 
+**BrowserWindowDimensions** | Pointer to [**BrowserWindowDimensions**](BrowserWindowDimensions.md) |  | [optional] 
 **UseConcurrentMonitoring** | Pointer to **bool** |  | [optional] 
 **ConcurrentUnconfirmedErrorThreshold** | Pointer to **int32** |  | [optional] 
 **ConcurrentConfirmedErrorThreshold** | Pointer to **int32** |  | [optional] 
@@ -153,56 +153,6 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetMonitorType
-
-`func (o *Monitor) GetMonitorType() MonitorType`
-
-GetMonitorType returns the MonitorType field if non-nil, zero value otherwise.
-
-### GetMonitorTypeOk
-
-`func (o *Monitor) GetMonitorTypeOk() (*MonitorType, bool)`
-
-GetMonitorTypeOk returns a tuple with the MonitorType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMonitorType
-
-`func (o *Monitor) SetMonitorType(v MonitorType)`
-
-SetMonitorType sets MonitorType field to given value.
-
-### HasMonitorType
-
-`func (o *Monitor) HasMonitorType() bool`
-
-HasMonitorType returns a boolean if a field has been set.
-
-### GetGenerateAlert
-
-`func (o *Monitor) GetGenerateAlert() bool`
-
-GetGenerateAlert returns the GenerateAlert field if non-nil, zero value otherwise.
-
-### GetGenerateAlertOk
-
-`func (o *Monitor) GetGenerateAlertOk() (*bool, bool)`
-
-GetGenerateAlertOk returns a tuple with the GenerateAlert field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGenerateAlert
-
-`func (o *Monitor) SetGenerateAlert(v bool)`
-
-SetGenerateAlert sets GenerateAlert field to given value.
-
-### HasGenerateAlert
-
-`func (o *Monitor) HasGenerateAlert() bool`
-
-HasGenerateAlert returns a boolean if a field has been set.
-
 ### GetIsActive
 
 `func (o *Monitor) GetIsActive() bool`
@@ -227,181 +177,6 @@ SetIsActive sets IsActive field to given value.
 `func (o *Monitor) HasIsActive() bool`
 
 HasIsActive returns a boolean if a field has been set.
-
-### GetIsLocked
-
-`func (o *Monitor) GetIsLocked() bool`
-
-GetIsLocked returns the IsLocked field if non-nil, zero value otherwise.
-
-### GetIsLockedOk
-
-`func (o *Monitor) GetIsLockedOk() (*bool, bool)`
-
-GetIsLockedOk returns a tuple with the IsLocked field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsLocked
-
-`func (o *Monitor) SetIsLocked(v bool)`
-
-SetIsLocked sets IsLocked field to given value.
-
-### HasIsLocked
-
-`func (o *Monitor) HasIsLocked() bool`
-
-HasIsLocked returns a boolean if a field has been set.
-
-### GetCustomFields
-
-`func (o *Monitor) GetCustomFields() []CustomField`
-
-GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
-
-### GetCustomFieldsOk
-
-`func (o *Monitor) GetCustomFieldsOk() (*[]CustomField, bool)`
-
-GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomFields
-
-`func (o *Monitor) SetCustomFields(v []CustomField)`
-
-SetCustomFields sets CustomFields field to given value.
-
-### HasCustomFields
-
-`func (o *Monitor) HasCustomFields() bool`
-
-HasCustomFields returns a boolean if a field has been set.
-
-### GetSelectedCheckpoints
-
-`func (o *Monitor) GetSelectedCheckpoints() SelectedCheckpoints`
-
-GetSelectedCheckpoints returns the SelectedCheckpoints field if non-nil, zero value otherwise.
-
-### GetSelectedCheckpointsOk
-
-`func (o *Monitor) GetSelectedCheckpointsOk() (*SelectedCheckpoints, bool)`
-
-GetSelectedCheckpointsOk returns a tuple with the SelectedCheckpoints field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSelectedCheckpoints
-
-`func (o *Monitor) SetSelectedCheckpoints(v SelectedCheckpoints)`
-
-SetSelectedCheckpoints sets SelectedCheckpoints field to given value.
-
-### HasSelectedCheckpoints
-
-`func (o *Monitor) HasSelectedCheckpoints() bool`
-
-HasSelectedCheckpoints returns a boolean if a field has been set.
-
-### GetUsePrimaryCheckpointsOnly
-
-`func (o *Monitor) GetUsePrimaryCheckpointsOnly() bool`
-
-GetUsePrimaryCheckpointsOnly returns the UsePrimaryCheckpointsOnly field if non-nil, zero value otherwise.
-
-### GetUsePrimaryCheckpointsOnlyOk
-
-`func (o *Monitor) GetUsePrimaryCheckpointsOnlyOk() (*bool, bool)`
-
-GetUsePrimaryCheckpointsOnlyOk returns a tuple with the UsePrimaryCheckpointsOnly field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsePrimaryCheckpointsOnly
-
-`func (o *Monitor) SetUsePrimaryCheckpointsOnly(v bool)`
-
-SetUsePrimaryCheckpointsOnly sets UsePrimaryCheckpointsOnly field to given value.
-
-### HasUsePrimaryCheckpointsOnly
-
-`func (o *Monitor) HasUsePrimaryCheckpointsOnly() bool`
-
-HasUsePrimaryCheckpointsOnly returns a boolean if a field has been set.
-
-### GetCheckInterval
-
-`func (o *Monitor) GetCheckInterval() int32`
-
-GetCheckInterval returns the CheckInterval field if non-nil, zero value otherwise.
-
-### GetCheckIntervalOk
-
-`func (o *Monitor) GetCheckIntervalOk() (*int32, bool)`
-
-GetCheckIntervalOk returns a tuple with the CheckInterval field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCheckInterval
-
-`func (o *Monitor) SetCheckInterval(v int32)`
-
-SetCheckInterval sets CheckInterval field to given value.
-
-### HasCheckInterval
-
-`func (o *Monitor) HasCheckInterval() bool`
-
-HasCheckInterval returns a boolean if a field has been set.
-
-### GetMonitorMode
-
-`func (o *Monitor) GetMonitorMode() MonitorMode`
-
-GetMonitorMode returns the MonitorMode field if non-nil, zero value otherwise.
-
-### GetMonitorModeOk
-
-`func (o *Monitor) GetMonitorModeOk() (*MonitorMode, bool)`
-
-GetMonitorModeOk returns a tuple with the MonitorMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMonitorMode
-
-`func (o *Monitor) SetMonitorMode(v MonitorMode)`
-
-SetMonitorMode sets MonitorMode field to given value.
-
-### HasMonitorMode
-
-`func (o *Monitor) HasMonitorMode() bool`
-
-HasMonitorMode returns a boolean if a field has been set.
-
-### GetNotes
-
-`func (o *Monitor) GetNotes() string`
-
-GetNotes returns the Notes field if non-nil, zero value otherwise.
-
-### GetNotesOk
-
-`func (o *Monitor) GetNotesOk() (*string, bool)`
-
-GetNotesOk returns a tuple with the Notes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNotes
-
-`func (o *Monitor) SetNotes(v string)`
-
-SetNotes sets Notes field to given value.
-
-### HasNotes
-
-`func (o *Monitor) HasNotes() bool`
-
-HasNotes returns a boolean if a field has been set.
 
 ### GetHash
 
@@ -428,355 +203,80 @@ SetHash sets Hash field to given value.
 
 HasHash returns a boolean if a field has been set.
 
-### GetTransactionStepDefinition
+### GetGenerateAlert
 
-`func (o *Monitor) GetTransactionStepDefinition() TransactionStepDefinition`
+`func (o *Monitor) GetGenerateAlert() bool`
 
-GetTransactionStepDefinition returns the TransactionStepDefinition field if non-nil, zero value otherwise.
+GetGenerateAlert returns the GenerateAlert field if non-nil, zero value otherwise.
 
-### GetTransactionStepDefinitionOk
+### GetGenerateAlertOk
 
-`func (o *Monitor) GetTransactionStepDefinitionOk() (*TransactionStepDefinition, bool)`
+`func (o *Monitor) GetGenerateAlertOk() (*bool, bool)`
 
-GetTransactionStepDefinitionOk returns a tuple with the TransactionStepDefinition field if it's non-nil, zero value otherwise
+GetGenerateAlertOk returns a tuple with the GenerateAlert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTransactionStepDefinition
+### SetGenerateAlert
 
-`func (o *Monitor) SetTransactionStepDefinition(v TransactionStepDefinition)`
+`func (o *Monitor) SetGenerateAlert(v bool)`
 
-SetTransactionStepDefinition sets TransactionStepDefinition field to given value.
+SetGenerateAlert sets GenerateAlert field to given value.
 
-### HasTransactionStepDefinition
+### HasGenerateAlert
 
-`func (o *Monitor) HasTransactionStepDefinition() bool`
+`func (o *Monitor) HasGenerateAlert() bool`
 
-HasTransactionStepDefinition returns a boolean if a field has been set.
+HasGenerateAlert returns a boolean if a field has been set.
 
-### GetBlockUptrendsRum
+### GetIsLocked
 
-`func (o *Monitor) GetBlockUptrendsRum() bool`
+`func (o *Monitor) GetIsLocked() bool`
 
-GetBlockUptrendsRum returns the BlockUptrendsRum field if non-nil, zero value otherwise.
+GetIsLocked returns the IsLocked field if non-nil, zero value otherwise.
 
-### GetBlockUptrendsRumOk
+### GetIsLockedOk
 
-`func (o *Monitor) GetBlockUptrendsRumOk() (*bool, bool)`
+`func (o *Monitor) GetIsLockedOk() (*bool, bool)`
 
-GetBlockUptrendsRumOk returns a tuple with the BlockUptrendsRum field if it's non-nil, zero value otherwise
+GetIsLockedOk returns a tuple with the IsLocked field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBlockUptrendsRum
+### SetIsLocked
 
-`func (o *Monitor) SetBlockUptrendsRum(v bool)`
+`func (o *Monitor) SetIsLocked(v bool)`
 
-SetBlockUptrendsRum sets BlockUptrendsRum field to given value.
+SetIsLocked sets IsLocked field to given value.
 
-### HasBlockUptrendsRum
+### HasIsLocked
 
-`func (o *Monitor) HasBlockUptrendsRum() bool`
+`func (o *Monitor) HasIsLocked() bool`
 
-HasBlockUptrendsRum returns a boolean if a field has been set.
+HasIsLocked returns a boolean if a field has been set.
 
-### GetBlockGoogleAnalytics
+### GetCheckInterval
 
-`func (o *Monitor) GetBlockGoogleAnalytics() bool`
+`func (o *Monitor) GetCheckInterval() int32`
 
-GetBlockGoogleAnalytics returns the BlockGoogleAnalytics field if non-nil, zero value otherwise.
+GetCheckInterval returns the CheckInterval field if non-nil, zero value otherwise.
 
-### GetBlockGoogleAnalyticsOk
+### GetCheckIntervalOk
 
-`func (o *Monitor) GetBlockGoogleAnalyticsOk() (*bool, bool)`
+`func (o *Monitor) GetCheckIntervalOk() (*int32, bool)`
 
-GetBlockGoogleAnalyticsOk returns a tuple with the BlockGoogleAnalytics field if it's non-nil, zero value otherwise
+GetCheckIntervalOk returns a tuple with the CheckInterval field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBlockGoogleAnalytics
+### SetCheckInterval
 
-`func (o *Monitor) SetBlockGoogleAnalytics(v bool)`
+`func (o *Monitor) SetCheckInterval(v int32)`
 
-SetBlockGoogleAnalytics sets BlockGoogleAnalytics field to given value.
+SetCheckInterval sets CheckInterval field to given value.
 
-### HasBlockGoogleAnalytics
+### HasCheckInterval
 
-`func (o *Monitor) HasBlockGoogleAnalytics() bool`
+`func (o *Monitor) HasCheckInterval() bool`
 
-HasBlockGoogleAnalytics returns a boolean if a field has been set.
-
-### GetBlockUrls
-
-`func (o *Monitor) GetBlockUrls() []string`
-
-GetBlockUrls returns the BlockUrls field if non-nil, zero value otherwise.
-
-### GetBlockUrlsOk
-
-`func (o *Monitor) GetBlockUrlsOk() (*[]string, bool)`
-
-GetBlockUrlsOk returns a tuple with the BlockUrls field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBlockUrls
-
-`func (o *Monitor) SetBlockUrls(v []string)`
-
-SetBlockUrls sets BlockUrls field to given value.
-
-### HasBlockUrls
-
-`func (o *Monitor) HasBlockUrls() bool`
-
-HasBlockUrls returns a boolean if a field has been set.
-
-### GetRequestHeaders
-
-`func (o *Monitor) GetRequestHeaders() []RequestHeader`
-
-GetRequestHeaders returns the RequestHeaders field if non-nil, zero value otherwise.
-
-### GetRequestHeadersOk
-
-`func (o *Monitor) GetRequestHeadersOk() (*[]RequestHeader, bool)`
-
-GetRequestHeadersOk returns a tuple with the RequestHeaders field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRequestHeaders
-
-`func (o *Monitor) SetRequestHeaders(v []RequestHeader)`
-
-SetRequestHeaders sets RequestHeaders field to given value.
-
-### HasRequestHeaders
-
-`func (o *Monitor) HasRequestHeaders() bool`
-
-HasRequestHeaders returns a boolean if a field has been set.
-
-### GetUserAgent
-
-`func (o *Monitor) GetUserAgent() string`
-
-GetUserAgent returns the UserAgent field if non-nil, zero value otherwise.
-
-### GetUserAgentOk
-
-`func (o *Monitor) GetUserAgentOk() (*string, bool)`
-
-GetUserAgentOk returns a tuple with the UserAgent field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserAgent
-
-`func (o *Monitor) SetUserAgent(v string)`
-
-SetUserAgent sets UserAgent field to given value.
-
-### HasUserAgent
-
-`func (o *Monitor) HasUserAgent() bool`
-
-HasUserAgent returns a boolean if a field has been set.
-
-### GetLoadTimeLimit1
-
-`func (o *Monitor) GetLoadTimeLimit1() int32`
-
-GetLoadTimeLimit1 returns the LoadTimeLimit1 field if non-nil, zero value otherwise.
-
-### GetLoadTimeLimit1Ok
-
-`func (o *Monitor) GetLoadTimeLimit1Ok() (*int32, bool)`
-
-GetLoadTimeLimit1Ok returns a tuple with the LoadTimeLimit1 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLoadTimeLimit1
-
-`func (o *Monitor) SetLoadTimeLimit1(v int32)`
-
-SetLoadTimeLimit1 sets LoadTimeLimit1 field to given value.
-
-### HasLoadTimeLimit1
-
-`func (o *Monitor) HasLoadTimeLimit1() bool`
-
-HasLoadTimeLimit1 returns a boolean if a field has been set.
-
-### GetAlertOnLoadTimeLimit1
-
-`func (o *Monitor) GetAlertOnLoadTimeLimit1() bool`
-
-GetAlertOnLoadTimeLimit1 returns the AlertOnLoadTimeLimit1 field if non-nil, zero value otherwise.
-
-### GetAlertOnLoadTimeLimit1Ok
-
-`func (o *Monitor) GetAlertOnLoadTimeLimit1Ok() (*bool, bool)`
-
-GetAlertOnLoadTimeLimit1Ok returns a tuple with the AlertOnLoadTimeLimit1 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAlertOnLoadTimeLimit1
-
-`func (o *Monitor) SetAlertOnLoadTimeLimit1(v bool)`
-
-SetAlertOnLoadTimeLimit1 sets AlertOnLoadTimeLimit1 field to given value.
-
-### HasAlertOnLoadTimeLimit1
-
-`func (o *Monitor) HasAlertOnLoadTimeLimit1() bool`
-
-HasAlertOnLoadTimeLimit1 returns a boolean if a field has been set.
-
-### GetLoadTimeLimit2
-
-`func (o *Monitor) GetLoadTimeLimit2() int32`
-
-GetLoadTimeLimit2 returns the LoadTimeLimit2 field if non-nil, zero value otherwise.
-
-### GetLoadTimeLimit2Ok
-
-`func (o *Monitor) GetLoadTimeLimit2Ok() (*int32, bool)`
-
-GetLoadTimeLimit2Ok returns a tuple with the LoadTimeLimit2 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLoadTimeLimit2
-
-`func (o *Monitor) SetLoadTimeLimit2(v int32)`
-
-SetLoadTimeLimit2 sets LoadTimeLimit2 field to given value.
-
-### HasLoadTimeLimit2
-
-`func (o *Monitor) HasLoadTimeLimit2() bool`
-
-HasLoadTimeLimit2 returns a boolean if a field has been set.
-
-### GetAlertOnLoadTimeLimit2
-
-`func (o *Monitor) GetAlertOnLoadTimeLimit2() bool`
-
-GetAlertOnLoadTimeLimit2 returns the AlertOnLoadTimeLimit2 field if non-nil, zero value otherwise.
-
-### GetAlertOnLoadTimeLimit2Ok
-
-`func (o *Monitor) GetAlertOnLoadTimeLimit2Ok() (*bool, bool)`
-
-GetAlertOnLoadTimeLimit2Ok returns a tuple with the AlertOnLoadTimeLimit2 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAlertOnLoadTimeLimit2
-
-`func (o *Monitor) SetAlertOnLoadTimeLimit2(v bool)`
-
-SetAlertOnLoadTimeLimit2 sets AlertOnLoadTimeLimit2 field to given value.
-
-### HasAlertOnLoadTimeLimit2
-
-`func (o *Monitor) HasAlertOnLoadTimeLimit2() bool`
-
-HasAlertOnLoadTimeLimit2 returns a boolean if a field has been set.
-
-### GetUsername
-
-`func (o *Monitor) GetUsername() string`
-
-GetUsername returns the Username field if non-nil, zero value otherwise.
-
-### GetUsernameOk
-
-`func (o *Monitor) GetUsernameOk() (*string, bool)`
-
-GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsername
-
-`func (o *Monitor) SetUsername(v string)`
-
-SetUsername sets Username field to given value.
-
-### HasUsername
-
-`func (o *Monitor) HasUsername() bool`
-
-HasUsername returns a boolean if a field has been set.
-
-### GetAuthenticationType
-
-`func (o *Monitor) GetAuthenticationType() ApiHttpAuthenticationType`
-
-GetAuthenticationType returns the AuthenticationType field if non-nil, zero value otherwise.
-
-### GetAuthenticationTypeOk
-
-`func (o *Monitor) GetAuthenticationTypeOk() (*ApiHttpAuthenticationType, bool)`
-
-GetAuthenticationTypeOk returns a tuple with the AuthenticationType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuthenticationType
-
-`func (o *Monitor) SetAuthenticationType(v ApiHttpAuthenticationType)`
-
-SetAuthenticationType sets AuthenticationType field to given value.
-
-### HasAuthenticationType
-
-`func (o *Monitor) HasAuthenticationType() bool`
-
-HasAuthenticationType returns a boolean if a field has been set.
-
-### GetBrowserType
-
-`func (o *Monitor) GetBrowserType() BrowserType`
-
-GetBrowserType returns the BrowserType field if non-nil, zero value otherwise.
-
-### GetBrowserTypeOk
-
-`func (o *Monitor) GetBrowserTypeOk() (*BrowserType, bool)`
-
-GetBrowserTypeOk returns a tuple with the BrowserType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBrowserType
-
-`func (o *Monitor) SetBrowserType(v BrowserType)`
-
-SetBrowserType sets BrowserType field to given value.
-
-### HasBrowserType
-
-`func (o *Monitor) HasBrowserType() bool`
-
-HasBrowserType returns a boolean if a field has been set.
-
-### GetBrowserWindowDimensions
-
-`func (o *Monitor) GetBrowserWindowDimensions() BrowserWindowDimensions`
-
-GetBrowserWindowDimensions returns the BrowserWindowDimensions field if non-nil, zero value otherwise.
-
-### GetBrowserWindowDimensionsOk
-
-`func (o *Monitor) GetBrowserWindowDimensionsOk() (*BrowserWindowDimensions, bool)`
-
-GetBrowserWindowDimensionsOk returns a tuple with the BrowserWindowDimensions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBrowserWindowDimensions
-
-`func (o *Monitor) SetBrowserWindowDimensions(v BrowserWindowDimensions)`
-
-SetBrowserWindowDimensions sets BrowserWindowDimensions field to given value.
-
-### HasBrowserWindowDimensions
-
-`func (o *Monitor) HasBrowserWindowDimensions() bool`
-
-HasBrowserWindowDimensions returns a boolean if a field has been set.
+HasCheckInterval returns a boolean if a field has been set.
 
 ### GetCredits
 
@@ -802,6 +302,31 @@ SetCredits sets Credits field to given value.
 `func (o *Monitor) HasCredits() bool`
 
 HasCredits returns a boolean if a field has been set.
+
+### GetMonitorMode
+
+`func (o *Monitor) GetMonitorMode() MonitorMode`
+
+GetMonitorMode returns the MonitorMode field if non-nil, zero value otherwise.
+
+### GetMonitorModeOk
+
+`func (o *Monitor) GetMonitorModeOk() (*MonitorMode, bool)`
+
+GetMonitorModeOk returns a tuple with the MonitorMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonitorMode
+
+`func (o *Monitor) SetMonitorMode(v MonitorMode)`
+
+SetMonitorMode sets MonitorMode field to given value.
+
+### HasMonitorMode
+
+`func (o *Monitor) HasMonitorMode() bool`
+
+HasMonitorMode returns a boolean if a field has been set.
 
 ### GetPredefinedVariables
 
@@ -903,6 +428,81 @@ SetCustomMetrics sets CustomMetrics field to given value.
 
 HasCustomMetrics returns a boolean if a field has been set.
 
+### GetCustomFields
+
+`func (o *Monitor) GetCustomFields() []CustomField`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *Monitor) GetCustomFieldsOk() (*[]CustomField, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *Monitor) SetCustomFields(v []CustomField)`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *Monitor) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
+
+### GetSelectedCheckpoints
+
+`func (o *Monitor) GetSelectedCheckpoints() SelectedCheckpoints`
+
+GetSelectedCheckpoints returns the SelectedCheckpoints field if non-nil, zero value otherwise.
+
+### GetSelectedCheckpointsOk
+
+`func (o *Monitor) GetSelectedCheckpointsOk() (*SelectedCheckpoints, bool)`
+
+GetSelectedCheckpointsOk returns a tuple with the SelectedCheckpoints field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSelectedCheckpoints
+
+`func (o *Monitor) SetSelectedCheckpoints(v SelectedCheckpoints)`
+
+SetSelectedCheckpoints sets SelectedCheckpoints field to given value.
+
+### HasSelectedCheckpoints
+
+`func (o *Monitor) HasSelectedCheckpoints() bool`
+
+HasSelectedCheckpoints returns a boolean if a field has been set.
+
+### GetUsePrimaryCheckpointsOnly
+
+`func (o *Monitor) GetUsePrimaryCheckpointsOnly() bool`
+
+GetUsePrimaryCheckpointsOnly returns the UsePrimaryCheckpointsOnly field if non-nil, zero value otherwise.
+
+### GetUsePrimaryCheckpointsOnlyOk
+
+`func (o *Monitor) GetUsePrimaryCheckpointsOnlyOk() (*bool, bool)`
+
+GetUsePrimaryCheckpointsOnlyOk returns a tuple with the UsePrimaryCheckpointsOnly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsePrimaryCheckpointsOnly
+
+`func (o *Monitor) SetUsePrimaryCheckpointsOnly(v bool)`
+
+SetUsePrimaryCheckpointsOnly sets UsePrimaryCheckpointsOnly field to given value.
+
+### HasUsePrimaryCheckpointsOnly
+
+`func (o *Monitor) HasUsePrimaryCheckpointsOnly() bool`
+
+HasUsePrimaryCheckpointsOnly returns a boolean if a field has been set.
+
 ### GetSelfServiceTransactionScript
 
 `func (o *Monitor) GetSelfServiceTransactionScript() string`
@@ -927,6 +527,306 @@ SetSelfServiceTransactionScript sets SelfServiceTransactionScript field to given
 `func (o *Monitor) HasSelfServiceTransactionScript() bool`
 
 HasSelfServiceTransactionScript returns a boolean if a field has been set.
+
+### GetMonitorType
+
+`func (o *Monitor) GetMonitorType() MonitorType`
+
+GetMonitorType returns the MonitorType field if non-nil, zero value otherwise.
+
+### GetMonitorTypeOk
+
+`func (o *Monitor) GetMonitorTypeOk() (*MonitorType, bool)`
+
+GetMonitorTypeOk returns a tuple with the MonitorType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonitorType
+
+`func (o *Monitor) SetMonitorType(v MonitorType)`
+
+SetMonitorType sets MonitorType field to given value.
+
+### HasMonitorType
+
+`func (o *Monitor) HasMonitorType() bool`
+
+HasMonitorType returns a boolean if a field has been set.
+
+### GetNotes
+
+`func (o *Monitor) GetNotes() string`
+
+GetNotes returns the Notes field if non-nil, zero value otherwise.
+
+### GetNotesOk
+
+`func (o *Monitor) GetNotesOk() (*string, bool)`
+
+GetNotesOk returns a tuple with the Notes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotes
+
+`func (o *Monitor) SetNotes(v string)`
+
+SetNotes sets Notes field to given value.
+
+### HasNotes
+
+`func (o *Monitor) HasNotes() bool`
+
+HasNotes returns a boolean if a field has been set.
+
+### GetAlertOnLoadTimeLimit1
+
+`func (o *Monitor) GetAlertOnLoadTimeLimit1() bool`
+
+GetAlertOnLoadTimeLimit1 returns the AlertOnLoadTimeLimit1 field if non-nil, zero value otherwise.
+
+### GetAlertOnLoadTimeLimit1Ok
+
+`func (o *Monitor) GetAlertOnLoadTimeLimit1Ok() (*bool, bool)`
+
+GetAlertOnLoadTimeLimit1Ok returns a tuple with the AlertOnLoadTimeLimit1 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlertOnLoadTimeLimit1
+
+`func (o *Monitor) SetAlertOnLoadTimeLimit1(v bool)`
+
+SetAlertOnLoadTimeLimit1 sets AlertOnLoadTimeLimit1 field to given value.
+
+### HasAlertOnLoadTimeLimit1
+
+`func (o *Monitor) HasAlertOnLoadTimeLimit1() bool`
+
+HasAlertOnLoadTimeLimit1 returns a boolean if a field has been set.
+
+### GetLoadTimeLimit1
+
+`func (o *Monitor) GetLoadTimeLimit1() int32`
+
+GetLoadTimeLimit1 returns the LoadTimeLimit1 field if non-nil, zero value otherwise.
+
+### GetLoadTimeLimit1Ok
+
+`func (o *Monitor) GetLoadTimeLimit1Ok() (*int32, bool)`
+
+GetLoadTimeLimit1Ok returns a tuple with the LoadTimeLimit1 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLoadTimeLimit1
+
+`func (o *Monitor) SetLoadTimeLimit1(v int32)`
+
+SetLoadTimeLimit1 sets LoadTimeLimit1 field to given value.
+
+### HasLoadTimeLimit1
+
+`func (o *Monitor) HasLoadTimeLimit1() bool`
+
+HasLoadTimeLimit1 returns a boolean if a field has been set.
+
+### GetAlertOnLoadTimeLimit2
+
+`func (o *Monitor) GetAlertOnLoadTimeLimit2() bool`
+
+GetAlertOnLoadTimeLimit2 returns the AlertOnLoadTimeLimit2 field if non-nil, zero value otherwise.
+
+### GetAlertOnLoadTimeLimit2Ok
+
+`func (o *Monitor) GetAlertOnLoadTimeLimit2Ok() (*bool, bool)`
+
+GetAlertOnLoadTimeLimit2Ok returns a tuple with the AlertOnLoadTimeLimit2 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlertOnLoadTimeLimit2
+
+`func (o *Monitor) SetAlertOnLoadTimeLimit2(v bool)`
+
+SetAlertOnLoadTimeLimit2 sets AlertOnLoadTimeLimit2 field to given value.
+
+### HasAlertOnLoadTimeLimit2
+
+`func (o *Monitor) HasAlertOnLoadTimeLimit2() bool`
+
+HasAlertOnLoadTimeLimit2 returns a boolean if a field has been set.
+
+### GetLoadTimeLimit2
+
+`func (o *Monitor) GetLoadTimeLimit2() int32`
+
+GetLoadTimeLimit2 returns the LoadTimeLimit2 field if non-nil, zero value otherwise.
+
+### GetLoadTimeLimit2Ok
+
+`func (o *Monitor) GetLoadTimeLimit2Ok() (*int32, bool)`
+
+GetLoadTimeLimit2Ok returns a tuple with the LoadTimeLimit2 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLoadTimeLimit2
+
+`func (o *Monitor) SetLoadTimeLimit2(v int32)`
+
+SetLoadTimeLimit2 sets LoadTimeLimit2 field to given value.
+
+### HasLoadTimeLimit2
+
+`func (o *Monitor) HasLoadTimeLimit2() bool`
+
+HasLoadTimeLimit2 returns a boolean if a field has been set.
+
+### GetBlockGoogleAnalytics
+
+`func (o *Monitor) GetBlockGoogleAnalytics() bool`
+
+GetBlockGoogleAnalytics returns the BlockGoogleAnalytics field if non-nil, zero value otherwise.
+
+### GetBlockGoogleAnalyticsOk
+
+`func (o *Monitor) GetBlockGoogleAnalyticsOk() (*bool, bool)`
+
+GetBlockGoogleAnalyticsOk returns a tuple with the BlockGoogleAnalytics field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlockGoogleAnalytics
+
+`func (o *Monitor) SetBlockGoogleAnalytics(v bool)`
+
+SetBlockGoogleAnalytics sets BlockGoogleAnalytics field to given value.
+
+### HasBlockGoogleAnalytics
+
+`func (o *Monitor) HasBlockGoogleAnalytics() bool`
+
+HasBlockGoogleAnalytics returns a boolean if a field has been set.
+
+### GetBlockUptrendsRum
+
+`func (o *Monitor) GetBlockUptrendsRum() bool`
+
+GetBlockUptrendsRum returns the BlockUptrendsRum field if non-nil, zero value otherwise.
+
+### GetBlockUptrendsRumOk
+
+`func (o *Monitor) GetBlockUptrendsRumOk() (*bool, bool)`
+
+GetBlockUptrendsRumOk returns a tuple with the BlockUptrendsRum field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlockUptrendsRum
+
+`func (o *Monitor) SetBlockUptrendsRum(v bool)`
+
+SetBlockUptrendsRum sets BlockUptrendsRum field to given value.
+
+### HasBlockUptrendsRum
+
+`func (o *Monitor) HasBlockUptrendsRum() bool`
+
+HasBlockUptrendsRum returns a boolean if a field has been set.
+
+### GetBlockUrls
+
+`func (o *Monitor) GetBlockUrls() []string`
+
+GetBlockUrls returns the BlockUrls field if non-nil, zero value otherwise.
+
+### GetBlockUrlsOk
+
+`func (o *Monitor) GetBlockUrlsOk() (*[]string, bool)`
+
+GetBlockUrlsOk returns a tuple with the BlockUrls field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlockUrls
+
+`func (o *Monitor) SetBlockUrls(v []string)`
+
+SetBlockUrls sets BlockUrls field to given value.
+
+### HasBlockUrls
+
+`func (o *Monitor) HasBlockUrls() bool`
+
+HasBlockUrls returns a boolean if a field has been set.
+
+### GetRequestHeaders
+
+`func (o *Monitor) GetRequestHeaders() []RequestHeader`
+
+GetRequestHeaders returns the RequestHeaders field if non-nil, zero value otherwise.
+
+### GetRequestHeadersOk
+
+`func (o *Monitor) GetRequestHeadersOk() (*[]RequestHeader, bool)`
+
+GetRequestHeadersOk returns a tuple with the RequestHeaders field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestHeaders
+
+`func (o *Monitor) SetRequestHeaders(v []RequestHeader)`
+
+SetRequestHeaders sets RequestHeaders field to given value.
+
+### HasRequestHeaders
+
+`func (o *Monitor) HasRequestHeaders() bool`
+
+HasRequestHeaders returns a boolean if a field has been set.
+
+### GetUserAgent
+
+`func (o *Monitor) GetUserAgent() string`
+
+GetUserAgent returns the UserAgent field if non-nil, zero value otherwise.
+
+### GetUserAgentOk
+
+`func (o *Monitor) GetUserAgentOk() (*string, bool)`
+
+GetUserAgentOk returns a tuple with the UserAgent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserAgent
+
+`func (o *Monitor) SetUserAgent(v string)`
+
+SetUserAgent sets UserAgent field to given value.
+
+### HasUserAgent
+
+`func (o *Monitor) HasUserAgent() bool`
+
+HasUserAgent returns a boolean if a field has been set.
+
+### GetUsername
+
+`func (o *Monitor) GetUsername() string`
+
+GetUsername returns the Username field if non-nil, zero value otherwise.
+
+### GetUsernameOk
+
+`func (o *Monitor) GetUsernameOk() (*string, bool)`
+
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsername
+
+`func (o *Monitor) SetUsername(v string)`
+
+SetUsername sets Username field to given value.
+
+### HasUsername
+
+`func (o *Monitor) HasUsername() bool`
+
+HasUsername returns a boolean if a field has been set.
 
 ### GetPassword
 
@@ -978,6 +878,31 @@ SetNameForPhoneAlerts sets NameForPhoneAlerts field to given value.
 
 HasNameForPhoneAlerts returns a boolean if a field has been set.
 
+### GetAuthenticationType
+
+`func (o *Monitor) GetAuthenticationType() ApiHttpAuthenticationType`
+
+GetAuthenticationType returns the AuthenticationType field if non-nil, zero value otherwise.
+
+### GetAuthenticationTypeOk
+
+`func (o *Monitor) GetAuthenticationTypeOk() (*ApiHttpAuthenticationType, bool)`
+
+GetAuthenticationTypeOk returns a tuple with the AuthenticationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthenticationType
+
+`func (o *Monitor) SetAuthenticationType(v ApiHttpAuthenticationType)`
+
+SetAuthenticationType sets AuthenticationType field to given value.
+
+### HasAuthenticationType
+
+`func (o *Monitor) HasAuthenticationType() bool`
+
+HasAuthenticationType returns a boolean if a field has been set.
+
 ### GetThrottlingOptions
 
 `func (o *Monitor) GetThrottlingOptions() ThrottlingOptions`
@@ -1002,6 +927,31 @@ SetThrottlingOptions sets ThrottlingOptions field to given value.
 `func (o *Monitor) HasThrottlingOptions() bool`
 
 HasThrottlingOptions returns a boolean if a field has been set.
+
+### GetTransactionStepDefinition
+
+`func (o *Monitor) GetTransactionStepDefinition() TransactionStepDefinition`
+
+GetTransactionStepDefinition returns the TransactionStepDefinition field if non-nil, zero value otherwise.
+
+### GetTransactionStepDefinitionOk
+
+`func (o *Monitor) GetTransactionStepDefinitionOk() (*TransactionStepDefinition, bool)`
+
+GetTransactionStepDefinitionOk returns a tuple with the TransactionStepDefinition field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTransactionStepDefinition
+
+`func (o *Monitor) SetTransactionStepDefinition(v TransactionStepDefinition)`
+
+SetTransactionStepDefinition sets TransactionStepDefinition field to given value.
+
+### HasTransactionStepDefinition
+
+`func (o *Monitor) HasTransactionStepDefinition() bool`
+
+HasTransactionStepDefinition returns a boolean if a field has been set.
 
 ### GetCertificateName
 
@@ -2002,6 +1952,56 @@ SetUrl sets Url field to given value.
 `func (o *Monitor) HasUrl() bool`
 
 HasUrl returns a boolean if a field has been set.
+
+### GetBrowserType
+
+`func (o *Monitor) GetBrowserType() BrowserType`
+
+GetBrowserType returns the BrowserType field if non-nil, zero value otherwise.
+
+### GetBrowserTypeOk
+
+`func (o *Monitor) GetBrowserTypeOk() (*BrowserType, bool)`
+
+GetBrowserTypeOk returns a tuple with the BrowserType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBrowserType
+
+`func (o *Monitor) SetBrowserType(v BrowserType)`
+
+SetBrowserType sets BrowserType field to given value.
+
+### HasBrowserType
+
+`func (o *Monitor) HasBrowserType() bool`
+
+HasBrowserType returns a boolean if a field has been set.
+
+### GetBrowserWindowDimensions
+
+`func (o *Monitor) GetBrowserWindowDimensions() BrowserWindowDimensions`
+
+GetBrowserWindowDimensions returns the BrowserWindowDimensions field if non-nil, zero value otherwise.
+
+### GetBrowserWindowDimensionsOk
+
+`func (o *Monitor) GetBrowserWindowDimensionsOk() (*BrowserWindowDimensions, bool)`
+
+GetBrowserWindowDimensionsOk returns a tuple with the BrowserWindowDimensions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBrowserWindowDimensions
+
+`func (o *Monitor) SetBrowserWindowDimensions(v BrowserWindowDimensions)`
+
+SetBrowserWindowDimensions sets BrowserWindowDimensions field to given value.
+
+### HasBrowserWindowDimensions
+
+`func (o *Monitor) HasBrowserWindowDimensions() bool`
+
+HasBrowserWindowDimensions returns a boolean if a field has been set.
 
 ### GetUseConcurrentMonitoring
 

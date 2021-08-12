@@ -12735,30 +12735,30 @@ components:
     Monitor:
       example:
         ThrottlingOptions:
-          ThrottlingSpeedUp: 1
-          ThrottlingSpeedDown: 1
-          ThrottlingLatency: 1
+          ThrottlingSpeedUp: 2
+          ThrottlingSpeedDown: 4
+          ThrottlingLatency: 7
         BlockUrls:
         - BlockUrls
         - BlockUrls
         BrowserWindowDimensions:
-          PixelRatio: 3
+          PixelRatio: 8
           MobileDevice: MobileDevice
-          Height: 9
+          Height: 6
           IsMobile: true
-          Width: 7
+          Width: 9
         MatchPatterns:
         - Pattern: Pattern
           DateTime:
-            MaxDifference: 8
-            OffsetUTC: 6
+            MaxDifference: 9
+            OffsetUTC: 5
           IsPositive: true
         - Pattern: Pattern
           DateTime:
-            MaxDifference: 8
-            OffsetUTC: 6
+            MaxDifference: 9
+            OffsetUTC: 5
           IsPositive: true
-        Port: 5
+        Port: 7
         CheckCertificateErrors: true
         Hash: Hash
         NameForPhoneAlerts: NameForPhoneAlerts
@@ -12804,15 +12804,15 @@ components:
         SelfServiceTransactionScript: SelfServiceTransactionScript
         ConcurrentConfirmedErrorThreshold: 6
         DnsExpectedResult: DnsExpectedResult
-        MaximumBytes: 7
+        MaximumBytes: 1
         AlertOnPercentageFail: true
         IsActive: true
-        CheckInterval: 5
+        CheckInterval: 0
         DomainGroupGuid: DomainGroupGuid
         AlertOnLoadTimeLimit1: true
         CertificateOrganizationalUnit: CertificateOrganizationalUnit
         AlertOnLoadTimeLimit2: true
-        MinimumBytes: 9
+        MinimumBytes: 1
         CustomMetrics:
         - VariableName: VariableName
           Name: Name
@@ -12823,10 +12823,10 @@ components:
         SftpActionPath: SftpActionPath
         CertificateIssuerOrganizationalUnit: CertificateIssuerOrganizationalUnit
         NetworkAddress: NetworkAddress
-        ExpectedHttpStatusCode: 9
+        ExpectedHttpStatusCode: 4
         UserAgent: UserAgent
         CertificateFingerprint: CertificateFingerprint
-        FailedObjectPercentage: 4
+        FailedObjectPercentage: 6
         PredefinedVariables:
         - Value: Value
           Key: Key
@@ -12847,23 +12847,23 @@ components:
         NativeIPv6Only: true
         SelectedCheckpoints:
           Checkpoints:
-          - 0
-          - 0
+          - 5
+          - 5
           ExcludeLocations:
-          - 1
-          - 1
+          - 7
+          - 7
           Regions:
-          - 6
-          - 6
+          - 2
+          - 2
         DnsServer: DnsServer
         BlockGoogleAnalytics: true
         DnsTestValue: DnsTestValue
         ImapSecureConnection: true
         MonitorMode: '{}'
-        LoadTimeLimit1: 5
-        CertificateExpirationWarningDays: 6
-        LoadTimeLimit2: 2
-        Credits: 2
+        LoadTimeLimit1: 9
+        CertificateExpirationWarningDays: 1
+        Credits: 6
+        LoadTimeLimit2: 3
         Username: Username
         MsaSteps:
         - UseFixedClientCertificate: true
@@ -12878,9 +12878,9 @@ components:
           - TargetValue: TargetValue
             Property: Property
           Url: Url
-          Delay: 4
+          Delay: 1
           Name: Name
-          MaxAttempts: 7
+          MaxAttempts: 5
           Variables:
           - Arguments:
             - null
@@ -12916,9 +12916,9 @@ components:
           - TargetValue: TargetValue
             Property: Property
           Url: Url
-          Delay: 4
+          Delay: 1
           Name: Name
-          MaxAttempts: 7
+          MaxAttempts: 5
           Variables:
           - Arguments:
             - null
@@ -12952,81 +12952,31 @@ components:
         Name:
           description: The name of this monitor.
           type: string
-        MonitorType:
-          $ref: '#/components/schemas/MonitorType'
-        GenerateAlert:
-          default: true
-          description: Indicates whether this monitor should generate alerts.
-          type: boolean
         IsActive:
           default: true
           description: Indicates whether this monitor is actively running according
             to the monitoring interval.
           type: boolean
+        Hash:
+          description: Hash corresponding with this monitor.
+          type: string
+        GenerateAlert:
+          default: true
+          description: Indicates whether this monitor should generate alerts.
+          type: boolean
         IsLocked:
           description: Indicates whether this monitor is locked.
           type: boolean
-        CustomFields:
-          items:
-            $ref: '#/components/schemas/CustomField'
-          type: array
-        SelectedCheckpoints:
-          $ref: '#/components/schemas/SelectedCheckpoints'
-        UsePrimaryCheckpointsOnly:
-          type: boolean
         CheckInterval:
           description: Indicates the interval in seconds
+          type: integer
+        Credits:
+          format: int32
           type: integer
         MonitorMode:
           allOf:
           - $ref: '#/components/schemas/MonitorMode'
           type: object
-        Notes:
-          type: string
-        Hash:
-          description: Hash corresponding with this monitor.
-          type: string
-        TransactionStepDefinition:
-          allOf:
-          - $ref: '#/components/schemas/TransactionStepDefinition'
-          description: 'Only valid for Transaction monitors: the data structure that
-            specifies the transaction steps (and sub steps) to execute.'
-          type: object
-        BlockUptrendsRum:
-          type: boolean
-        BlockGoogleAnalytics:
-          type: boolean
-        BlockUrls:
-          items:
-            type: string
-          type: array
-        RequestHeaders:
-          items:
-            $ref: '#/components/schemas/RequestHeader'
-          type: array
-        UserAgent:
-          type: string
-        LoadTimeLimit1:
-          format: int32
-          type: integer
-        AlertOnLoadTimeLimit1:
-          type: boolean
-        LoadTimeLimit2:
-          format: int32
-          type: integer
-        AlertOnLoadTimeLimit2:
-          type: boolean
-        Username:
-          type: string
-        AuthenticationType:
-          $ref: '#/components/schemas/ApiHttpAuthenticationType'
-        BrowserType:
-          $ref: '#/components/schemas/BrowserType'
-        BrowserWindowDimensions:
-          $ref: '#/components/schemas/BrowserWindowDimensions'
-        Credits:
-          format: int32
-          type: integer
         PredefinedVariables:
           items:
             $ref: '#/components/schemas/PredefinedVariable'
@@ -13043,14 +12993,60 @@ components:
           items:
             $ref: '#/components/schemas/CustomMetric'
           type: array
+        CustomFields:
+          items:
+            $ref: '#/components/schemas/CustomField'
+          type: array
+        SelectedCheckpoints:
+          $ref: '#/components/schemas/SelectedCheckpoints'
+        UsePrimaryCheckpointsOnly:
+          type: boolean
         SelfServiceTransactionScript:
+          type: string
+        MonitorType:
+          $ref: '#/components/schemas/MonitorType'
+        Notes:
+          type: string
+        AlertOnLoadTimeLimit1:
+          type: boolean
+        LoadTimeLimit1:
+          format: int32
+          type: integer
+        AlertOnLoadTimeLimit2:
+          type: boolean
+        LoadTimeLimit2:
+          format: int32
+          type: integer
+        BlockGoogleAnalytics:
+          type: boolean
+        BlockUptrendsRum:
+          type: boolean
+        BlockUrls:
+          items:
+            type: string
+          type: array
+        RequestHeaders:
+          items:
+            $ref: '#/components/schemas/RequestHeader'
+          type: array
+        UserAgent:
+          type: string
+        Username:
           type: string
         Password:
           type: string
         NameForPhoneAlerts:
           type: string
+        AuthenticationType:
+          $ref: '#/components/schemas/ApiHttpAuthenticationType'
         ThrottlingOptions:
           $ref: '#/components/schemas/ThrottlingOptions'
+        TransactionStepDefinition:
+          allOf:
+          - $ref: '#/components/schemas/TransactionStepDefinition'
+          description: 'Only valid for Transaction monitors: the data structure that
+            specifies the transaction steps (and sub steps) to execute.'
+          type: object
         CertificateName:
           type: string
         CertificateOrganization:
@@ -13141,6 +13137,10 @@ components:
           type: array
         Url:
           type: string
+        BrowserType:
+          $ref: '#/components/schemas/BrowserType'
+        BrowserWindowDimensions:
+          $ref: '#/components/schemas/BrowserWindowDimensions'
         UseConcurrentMonitoring:
           type: boolean
         ConcurrentUnconfirmedErrorThreshold:
@@ -13149,84 +13149,6 @@ components:
         ConcurrentConfirmedErrorThreshold:
           format: int32
           type: integer
-      type: object
-    MonitorType:
-      description: ""
-      enum:
-      - Http
-      - Https
-      - Connect
-      - Ping
-      - POP3
-      - SMTP
-      - FTP
-      - MySQL
-      - MSSQL
-      - WebserviceHttp
-      - WebserviceHttps
-      - Transaction
-      - DNS
-      - FullPageCheck
-      - RealBrowserCheck
-      - Certificate
-      - SFTP
-      - MultiStepApi
-      - IMAP
-      type: string
-      x-enumNames:
-      - Http
-      - Https
-      - Connect
-      - Ping
-      - POP3
-      - SMTP
-      - FTP
-      - MySQL
-      - MSSQL
-      - WebserviceHttp
-      - WebserviceHttps
-      - Transaction
-      - DNS
-      - FullPageCheck
-      - RealBrowserCheck
-      - Certificate
-      - SFTP
-      - MultiStepApi
-      - IMAP
-    CustomField:
-      example:
-        Value: Value
-        Name: Name
-      properties:
-        Name:
-          type: string
-        Value:
-          type: string
-      type: object
-    SelectedCheckpoints:
-      example:
-        Checkpoints:
-        - 0
-        - 0
-        ExcludeLocations:
-        - 1
-        - 1
-        Regions:
-        - 6
-        - 6
-      properties:
-        Checkpoints:
-          items:
-            type: integer
-          type: array
-        Regions:
-          items:
-            type: integer
-          type: array
-        ExcludeLocations:
-          items:
-            type: integer
-          type: array
       type: object
     MonitorMode:
       description: ""
@@ -13239,136 +13161,6 @@ components:
       - Development
       - Staging
       - Production
-    TransactionStepDefinition:
-      properties:
-        Steps:
-          items:
-            $ref: '#/components/schemas/TransactionStep2'
-          type: array
-      type: object
-    TransactionStep2:
-      properties:
-        Name:
-          type: string
-        HasScreenshot:
-          type: boolean
-        HasWaterfall:
-          type: boolean
-        SubSteps:
-          items:
-            $ref: '#/components/schemas/TransactionSubStep'
-          type: array
-      required:
-      - HasScreenshot
-      - HasWaterfall
-      type: object
-    TransactionSubStep:
-      properties:
-        Name:
-          type: string
-        Type:
-          $ref: '#/components/schemas/SubStepType'
-        Url:
-          type: string
-        SetValue:
-          type: string
-      required:
-      - Type
-      type: object
-    SubStepType:
-      description: ""
-      enum:
-      - Navigate
-      - Click
-      - Set
-      - Test
-      - Script
-      - Hover
-      - Screenshot
-      - ScrollTo
-      - WaitForElement
-      - SwitchToFrame
-      - SwitchToTab
-      type: string
-      x-enumNames:
-      - Navigate
-      - Click
-      - Set
-      - Test
-      - Script
-      - Hover
-      - Screenshot
-      - ScrollTo
-      - WaitForElement
-      - SwitchToFrame
-      - SwitchToTab
-    RequestHeader:
-      example:
-        Value: Value
-        Name: Name
-      properties:
-        Name:
-          type: string
-        Value:
-          type: string
-      type: object
-    ApiHttpAuthenticationType:
-      description: ""
-      enum:
-      - None
-      - Basic
-      - NTLM
-      - Digest
-      type: string
-      x-enumNames:
-      - None
-      - Basic
-      - NTLM
-      - Digest
-    BrowserType:
-      description: ""
-      enum:
-      - IE
-      - Firefox
-      - Chrome
-      - Safari
-      - PhantomJS
-      - PhantomJS20
-      type: string
-      x-enumNames:
-      - IE
-      - Firefox
-      - Chrome
-      - Safari
-      - PhantomJS
-      - PhantomJS20
-    BrowserWindowDimensions:
-      example:
-        PixelRatio: 3
-        MobileDevice: MobileDevice
-        Height: 9
-        IsMobile: true
-        Width: 7
-      properties:
-        IsMobile:
-          type: boolean
-        Width:
-          format: int32
-          type: integer
-        Height:
-          format: int32
-          type: integer
-        PixelRatio:
-          format: int32
-          type: integer
-        MobileDevice:
-          type: string
-      required:
-      - Height
-      - IsMobile
-      - PixelRatio
-      - Width
-      type: object
     PredefinedVariable:
       example:
         Value: Value
@@ -13393,9 +13185,9 @@ components:
         - TargetValue: TargetValue
           Property: Property
         Url: Url
-        Delay: 4
+        Delay: 1
         Name: Name
-        MaxAttempts: 7
+        MaxAttempts: 5
         Variables:
         - Arguments:
           - null
@@ -13684,6 +13476,19 @@ components:
       - Id
       - PasswordSpecified
       type: object
+    ApiHttpAuthenticationType:
+      description: ""
+      enum:
+      - None
+      - Basic
+      - NTLM
+      - Digest
+      type: string
+      x-enumNames:
+      - None
+      - Basic
+      - NTLM
+      - Digest
     MsaStepType:
       description: ""
       enum:
@@ -13770,11 +13575,99 @@ components:
         VariableName:
           type: string
       type: object
+    CustomField:
+      example:
+        Value: Value
+        Name: Name
+      properties:
+        Name:
+          type: string
+        Value:
+          type: string
+      type: object
+    SelectedCheckpoints:
+      example:
+        Checkpoints:
+        - 5
+        - 5
+        ExcludeLocations:
+        - 7
+        - 7
+        Regions:
+        - 2
+        - 2
+      properties:
+        Checkpoints:
+          items:
+            type: integer
+          type: array
+        Regions:
+          items:
+            type: integer
+          type: array
+        ExcludeLocations:
+          items:
+            type: integer
+          type: array
+      type: object
+    MonitorType:
+      description: ""
+      enum:
+      - Http
+      - Https
+      - Connect
+      - Ping
+      - POP3
+      - SMTP
+      - FTP
+      - MySQL
+      - MSSQL
+      - WebserviceHttp
+      - WebserviceHttps
+      - Transaction
+      - DNS
+      - FullPageCheck
+      - RealBrowserCheck
+      - Certificate
+      - SFTP
+      - MultiStepApi
+      - IMAP
+      type: string
+      x-enumNames:
+      - Http
+      - Https
+      - Connect
+      - Ping
+      - POP3
+      - SMTP
+      - FTP
+      - MySQL
+      - MSSQL
+      - WebserviceHttp
+      - WebserviceHttps
+      - Transaction
+      - DNS
+      - FullPageCheck
+      - RealBrowserCheck
+      - Certificate
+      - SFTP
+      - MultiStepApi
+      - IMAP
+    RequestHeader:
+      example:
+        Value: Value
+        Name: Name
+      properties:
+        Name:
+          type: string
+        Value:
+          type: string
+      type: object
     ThrottlingOptions:
       example:
-        ThrottlingSpeedUp: 1
-        ThrottlingSpeedDown: 1
-        ThrottlingLatency: 1
+        ThrottlingSpeedUp: 2
+        ThrottlingSpeedDown: 4
+        ThrottlingLatency: 7
       properties:
         ThrottlingType:
           $ref: '#/components/schemas/ThrottlingType'
@@ -13818,6 +13711,69 @@ components:
       - _2G
       - _3G
       - _4G
+    TransactionStepDefinition:
+      properties:
+        Steps:
+          items:
+            $ref: '#/components/schemas/TransactionStep2'
+          type: array
+      type: object
+    TransactionStep2:
+      properties:
+        Name:
+          type: string
+        HasScreenshot:
+          type: boolean
+        HasWaterfall:
+          type: boolean
+        SubSteps:
+          items:
+            $ref: '#/components/schemas/TransactionSubStep'
+          type: array
+      required:
+      - HasScreenshot
+      - HasWaterfall
+      type: object
+    TransactionSubStep:
+      properties:
+        Name:
+          type: string
+        Type:
+          $ref: '#/components/schemas/SubStepType'
+        Url:
+          type: string
+        SetValue:
+          type: string
+      required:
+      - Type
+      type: object
+    SubStepType:
+      description: ""
+      enum:
+      - Navigate
+      - Click
+      - Set
+      - Test
+      - Script
+      - Hover
+      - Screenshot
+      - ScrollTo
+      - WaitForElement
+      - SwitchToFrame
+      - SwitchToTab
+      type: string
+      x-enumNames:
+      - Navigate
+      - Click
+      - Set
+      - Test
+      - Script
+      - Hover
+      - Screenshot
+      - ScrollTo
+      - WaitForElement
+      - SwitchToFrame
+      - SwitchToTab
     DnsQuery:
       description: ""
       enum:
@@ -13895,8 +13851,8 @@ components:
       example:
         Pattern: Pattern
         DateTime:
-          MaxDifference: 8
-          OffsetUTC: 6
+          MaxDifference: 9
+          OffsetUTC: 5
         IsPositive: true
       properties:
         Pattern:
@@ -13910,8 +13866,8 @@ components:
       type: object
     DateTimePatternMatch:
       example:
-        MaxDifference: 8
-        OffsetUTC: 6
+        MaxDifference: 9
+        OffsetUTC: 5
       properties:
         OffsetUTC:
           format: int32
@@ -13922,6 +13878,50 @@ components:
       required:
       - MaxDifference
       - OffsetUTC
+      type: object
+    BrowserType:
+      description: ""
+      enum:
+      - IE
+      - Firefox
+      - Chrome
+      - Safari
+      - PhantomJS
+      - PhantomJS20
+      type: string
+      x-enumNames:
+      - IE
+      - Firefox
+      - Chrome
+      - Safari
+      - PhantomJS
+      - PhantomJS20
+    BrowserWindowDimensions:
+      example:
+        PixelRatio: 8
+        MobileDevice: MobileDevice
+        Height: 6
+        IsMobile: true
+        Width: 9
+      properties:
+        IsMobile:
+          type: boolean
+        Width:
+          format: int32
+          type: integer
+        Height:
+          format: int32
+          type: integer
+        PixelRatio:
+          format: int32
+          type: integer
+        MobileDevice:
+          type: string
+      required:
+      - Height
+      - IsMobile
+      - PixelRatio
+      - Width
       type: object
     RegistrationResponse:
       example:
