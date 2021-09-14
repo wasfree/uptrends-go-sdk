@@ -20,3 +20,4 @@
 # For example, you can ignore all files in a docs folder with the file extension .md:
 go.sum
 go.mod
+docs/Ipv6Address.md
