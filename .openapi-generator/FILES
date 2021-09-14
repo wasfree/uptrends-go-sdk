@@ -92,6 +92,7 @@ docs/IntegrationApi.md
 docs/IntegrationServiceMap.md
 docs/IntegrationTypeEnum.md
 docs/IpVersion.md
+docs/Ipv6Address.md
 docs/JwtAlgorithm.md
 docs/LastErrorLevel.md
 docs/LinksData.md
