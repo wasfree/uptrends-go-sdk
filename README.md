@@ -304,7 +304,6 @@ Class | Method | HTTP request | Description
  - [HttpEngineCheckDetails](docs/HttpEngineCheckDetails.md)
  - [HttpEngineStep](docs/HttpEngineStep.md)
  - [HttpMethod](docs/HttpMethod.md)
- - [IPv6Address](docs/IPv6Address.md)
  - [Integration](docs/Integration.md)
  - [IntegrationServiceMap](docs/IntegrationServiceMap.md)
  - [IntegrationTypeEnum](docs/IntegrationTypeEnum.md)

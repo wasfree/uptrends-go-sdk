@@ -86,12 +86,12 @@ docs/HttpEngineAttributes.md
 docs/HttpEngineCheckDetails.md
 docs/HttpEngineStep.md
 docs/HttpMethod.md
-docs/IPv6Address.md
 docs/Integration.md
 docs/IntegrationApi.md
 docs/IntegrationServiceMap.md
 docs/IntegrationTypeEnum.md
 docs/IpVersion.md
+docs/Ipv6Address.md
 docs/JwtAlgorithm.md
 docs/LastErrorLevel.md
 docs/LinksData.md
@@ -262,7 +262,6 @@ model_integration.go
 model_integration_service_map.go
 model_integration_type_enum.go
 model_ip_version.go
-model_ipv6_address.go
 model_ipv6_address.go
 model_jwt_algorithm.go
 model_last_error_level.go

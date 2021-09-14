@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **CheckpointName** | Pointer to **string** | The name of the checkpoint | [optional] 
 **Code** | Pointer to **string** | Location code of the checkpoint | [optional] 
 **Ipv4Addresses** | Pointer to **[]string** | Ipv4 addresses of the checkpoint  | [optional] 
-**IpV6Addresses** | Pointer to [**[]IPv6Address**](IPv6Address.md) | Ipv6 addresses of the checkpoint | [optional] 
+**IpV6Addresses** | Pointer to [**[]Ipv6Address**](Ipv6Address.md) | Ipv6 addresses of the checkpoint | [optional] 
 **IsPrimaryCheckpoint** | **bool** | Checkpoint is primary | 
 **SupportsIpv6** | **bool** | Checkpoint supports IPv6 | 
 **HasHighAvailability** | **bool** | Checkpoint has high availability | 
@@ -108,20 +108,20 @@ HasIpv4Addresses returns a boolean if a field has been set.
 
 ### GetIpV6Addresses
 
-`func (o *CheckpointAttributes) GetIpV6Addresses() []IPv6Address`
+`func (o *CheckpointAttributes) GetIpV6Addresses() []Ipv6Address`
 
 GetIpV6Addresses returns the IpV6Addresses field if non-nil, zero value otherwise.
 
 ### GetIpV6AddressesOk
 
-`func (o *CheckpointAttributes) GetIpV6AddressesOk() (*[]IPv6Address, bool)`
+`func (o *CheckpointAttributes) GetIpV6AddressesOk() (*[]Ipv6Address, bool)`
 
 GetIpV6AddressesOk returns a tuple with the IpV6Addresses field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpV6Addresses
 
-`func (o *CheckpointAttributes) SetIpV6Addresses(v []IPv6Address)`
+`func (o *CheckpointAttributes) SetIpV6Addresses(v []Ipv6Address)`
 
 SetIpV6Addresses sets IpV6Addresses field to given value.
 
