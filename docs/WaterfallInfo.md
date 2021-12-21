@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**PageLoadMetrics** | Pointer to [**PageLoadMetrics**](PageLoadMetrics.md) | Metrics for describing the load cycle of the entire web page.  Includes CoreWebVitals and other related metrics. | [optional] 
+**W3CNavigationTiming** | Pointer to [**W3CNavigationTiming**](W3CNavigationTiming.md) | W3C Navigation Timing metrics | [optional] 
 **Elements** | Pointer to [**[]PageElement**](PageElement.md) | Elements in the waterfall | [optional] 
 **DomainGroupNames** | Pointer to **[]string** | List of domain groups used in the waterfall elements | [optional] 
 
@@ -25,6 +27,56 @@ will change when the set of required properties is changed
 NewWaterfallInfoWithDefaults instantiates a new WaterfallInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetPageLoadMetrics
+
+`func (o *WaterfallInfo) GetPageLoadMetrics() PageLoadMetrics`
+
+GetPageLoadMetrics returns the PageLoadMetrics field if non-nil, zero value otherwise.
+
+### GetPageLoadMetricsOk
+
+`func (o *WaterfallInfo) GetPageLoadMetricsOk() (*PageLoadMetrics, bool)`
+
+GetPageLoadMetricsOk returns a tuple with the PageLoadMetrics field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPageLoadMetrics
+
+`func (o *WaterfallInfo) SetPageLoadMetrics(v PageLoadMetrics)`
+
+SetPageLoadMetrics sets PageLoadMetrics field to given value.
+
+### HasPageLoadMetrics
+
+`func (o *WaterfallInfo) HasPageLoadMetrics() bool`
+
+HasPageLoadMetrics returns a boolean if a field has been set.
+
+### GetW3CNavigationTiming
+
+`func (o *WaterfallInfo) GetW3CNavigationTiming() W3CNavigationTiming`
+
+GetW3CNavigationTiming returns the W3CNavigationTiming field if non-nil, zero value otherwise.
+
+### GetW3CNavigationTimingOk
+
+`func (o *WaterfallInfo) GetW3CNavigationTimingOk() (*W3CNavigationTiming, bool)`
+
+GetW3CNavigationTimingOk returns a tuple with the W3CNavigationTiming field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetW3CNavigationTiming
+
+`func (o *WaterfallInfo) SetW3CNavigationTiming(v W3CNavigationTiming)`
+
+SetW3CNavigationTiming sets W3CNavigationTiming field to given value.
+
+### HasW3CNavigationTiming
+
+`func (o *WaterfallInfo) HasW3CNavigationTiming() bool`
+
+HasW3CNavigationTiming returns a boolean if a field has been set.
 
 ### GetElements
 

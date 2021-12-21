@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Index** | **int32** | Index of the element in the waterfall context | 
 **StartTime** | **int32** | Starting time in milliseconds | 
+**QueueTime** | **int32** | Number of milliseconds this element has been queueing, when appropriate. | 
 **ResolveTime** | **int32** | Number of milliseconds needed to perform the DNS query for this element, when appropriate. | 
 **ConnectTime** | **int32** | Number of milliseconds needed to establish a connection. | 
 **StaleTime** | **int32** | Number of milliseconds the connection was stale | 
@@ -29,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewPageElement
 
-`func NewPageElement(index int32, startTime int32, resolveTime int32, connectTime int32, staleTime int32, httpsHandshakeTime int32, sendTime int32, waitTime int32, receiveTime int32, timeoutTime int32, totalTime int32, httpStatusCode int32, totalBytes int32, urlIsBlocked bool, ) *PageElement`
+`func NewPageElement(index int32, startTime int32, queueTime int32, resolveTime int32, connectTime int32, staleTime int32, httpsHandshakeTime int32, sendTime int32, waitTime int32, receiveTime int32, timeoutTime int32, totalTime int32, httpStatusCode int32, totalBytes int32, urlIsBlocked bool, ) *PageElement`
 
 NewPageElement instantiates a new PageElement object
 This constructor will assign default values to properties that have it defined,
@@ -82,6 +83,26 @@ and a boolean to check if the value has been set.
 `func (o *PageElement) SetStartTime(v int32)`
 
 SetStartTime sets StartTime field to given value.
+
+
+### GetQueueTime
+
+`func (o *PageElement) GetQueueTime() int32`
+
+GetQueueTime returns the QueueTime field if non-nil, zero value otherwise.
+
+### GetQueueTimeOk
+
+`func (o *PageElement) GetQueueTimeOk() (*int32, bool)`
+
+GetQueueTimeOk returns a tuple with the QueueTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQueueTime
+
+`func (o *PageElement) SetQueueTime(v int32)`
+
+SetQueueTime sets QueueTime field to given value.
 
 
 ### GetResolveTime

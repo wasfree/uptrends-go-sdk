@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **AllowSingleSignon** | Pointer to **bool** | This can only be set to true if the account has SSO enabled. Ommitting or providing null will use the account default | [optional] 
 **AllowSingleSignonSpecified** | Pointer to **bool** |  | [optional] 
 **DefaultDashboard** | Pointer to **string** |  | [optional] 
+**SetupMode** | Pointer to [**OperatorSetupMode**](OperatorSetupMode.md) |  | [optional] 
 
 ## Methods
 
@@ -621,6 +622,31 @@ SetDefaultDashboard sets DefaultDashboard field to given value.
 `func (o *Operator) HasDefaultDashboard() bool`
 
 HasDefaultDashboard returns a boolean if a field has been set.
+
+### GetSetupMode
+
+`func (o *Operator) GetSetupMode() OperatorSetupMode`
+
+GetSetupMode returns the SetupMode field if non-nil, zero value otherwise.
+
+### GetSetupModeOk
+
+`func (o *Operator) GetSetupModeOk() (*OperatorSetupMode, bool)`
+
+GetSetupModeOk returns a tuple with the SetupMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSetupMode
+
+`func (o *Operator) SetSetupMode(v OperatorSetupMode)`
+
+SetSetupMode sets SetupMode field to given value.
+
+### HasSetupMode
+
+`func (o *Operator) HasSetupMode() bool`
+
+HasSetupMode returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

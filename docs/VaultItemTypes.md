@@ -7,8 +7,6 @@
 
 * `CERTIFICATE` (value: `"Certificate"`)
 
-* `TEXT` (value: `"Text"`)
-
 * `CERTIFICATE_ARCHIVE` (value: `"CertificateArchive"`)
 
 * `FILE` (value: `"File"`)

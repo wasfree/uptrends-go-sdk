@@ -7,7 +7,9 @@ Name | Type | Description | Notes
 **ScheduleType** | Pointer to [**ScheduleType**](ScheduleType.md) |  | [optional] 
 **Time** | Pointer to **string** |  | [optional] 
 **WeekDay** | Pointer to [**DayOfWeek**](DayOfWeek.md) |  | [optional] 
+**Month** | Pointer to **int32** |  | [optional] 
 **MonthDay** | Pointer to **int32** |  | [optional] 
+**QuarterStartMonth** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -103,6 +105,31 @@ SetWeekDay sets WeekDay field to given value.
 
 HasWeekDay returns a boolean if a field has been set.
 
+### GetMonth
+
+`func (o *Schedule) GetMonth() int32`
+
+GetMonth returns the Month field if non-nil, zero value otherwise.
+
+### GetMonthOk
+
+`func (o *Schedule) GetMonthOk() (*int32, bool)`
+
+GetMonthOk returns a tuple with the Month field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonth
+
+`func (o *Schedule) SetMonth(v int32)`
+
+SetMonth sets Month field to given value.
+
+### HasMonth
+
+`func (o *Schedule) HasMonth() bool`
+
+HasMonth returns a boolean if a field has been set.
+
 ### GetMonthDay
 
 `func (o *Schedule) GetMonthDay() int32`
@@ -127,6 +154,31 @@ SetMonthDay sets MonthDay field to given value.
 `func (o *Schedule) HasMonthDay() bool`
 
 HasMonthDay returns a boolean if a field has been set.
+
+### GetQuarterStartMonth
+
+`func (o *Schedule) GetQuarterStartMonth() int32`
+
+GetQuarterStartMonth returns the QuarterStartMonth field if non-nil, zero value otherwise.
+
+### GetQuarterStartMonthOk
+
+`func (o *Schedule) GetQuarterStartMonthOk() (*int32, bool)`
+
+GetQuarterStartMonthOk returns a tuple with the QuarterStartMonth field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuarterStartMonth
+
+`func (o *Schedule) SetQuarterStartMonth(v int32)`
+
+SetQuarterStartMonth sets QuarterStartMonth field to given value.
+
+### HasQuarterStartMonth
+
+`func (o *Schedule) HasQuarterStartMonth() bool`
+
+HasQuarterStartMonth returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

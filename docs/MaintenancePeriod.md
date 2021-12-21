@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **StartTime** | Pointer to **string** | The start time of this maintenance period | [optional] 
 **EndTime** | Pointer to **string** | The end time of this maintenance period | [optional] 
 **MaintenanceType** | [**MaintenanceTypes**](MaintenanceTypes.md) | Indicates whether, during the maintenance periods, only alerting will be disabled, or if the entire monitor will be stopped | 
+**Description** | Pointer to **string** | The description for this maintenance period | [optional] 
 
 ## Methods
 
@@ -242,6 +243,31 @@ and a boolean to check if the value has been set.
 
 SetMaintenanceType sets MaintenanceType field to given value.
 
+
+### GetDescription
+
+`func (o *MaintenancePeriod) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *MaintenancePeriod) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *MaintenancePeriod) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *MaintenancePeriod) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

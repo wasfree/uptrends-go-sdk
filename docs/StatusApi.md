@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## StatusGetMonitorGroupStatus
 
-> MonitorStatusListResponse StatusGetMonitorGroupStatus(ctx, monitorGroupGuid).Execute()
+> MonitorStatusListResponse StatusGetMonitorGroupStatus(ctx, monitorGroupGuid).Skip(skip).Take(take).Execute()
 
 Gets a list of all monitor group status data.
 
@@ -29,10 +29,12 @@ import (
 
 func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The Guid of the monitor group.
+    skip := int32(56) // int32 | The number of monitors in the monitor group that should be skipped. (optional) (default to 0)
+    take := int32(56) // int32 | The maximum number of monitors in the monitor group to get data from. (optional) (default to 10000)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StatusApi.StatusGetMonitorGroupStatus(context.Background(), monitorGroupGuid).Execute()
+    resp, r, err := api_client.StatusApi.StatusGetMonitorGroupStatus(context.Background(), monitorGroupGuid).Skip(skip).Take(take).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StatusApi.StatusGetMonitorGroupStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,6 +60,8 @@ Other parameters are passed through a pointer to a apiStatusGetMonitorGroupStatu
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **skip** | **int32** | The number of monitors in the monitor group that should be skipped. | [default to 0]
+ **take** | **int32** | The maximum number of monitors in the monitor group to get data from. | [default to 10000]
 
 ### Return type
 

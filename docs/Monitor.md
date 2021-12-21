@@ -6,27 +6,30 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MonitorGuid** | Pointer to **string** | The unique key of this monitor. | [optional] 
 **Name** | Pointer to **string** | The name of this monitor. | [optional] 
+**MonitorType** | Pointer to [**MonitorType**](MonitorType.md) |  | [optional] 
 **IsActive** | Pointer to **bool** | Indicates whether this monitor is actively running according to the monitoring interval. | [optional] [default to true]
+**CustomFields** | Pointer to [**[]CustomField**](CustomField.md) |  | [optional] 
+**CheckInterval** | Pointer to **int32** | Indicates the interval in seconds | [optional] 
+**MonitorMode** | Pointer to [**MonitorMode**](MonitorMode.md) |  | [optional] 
 **Hash** | Pointer to **string** | Hash corresponding with this monitor. | [optional] 
+**LoadTimeLimit1** | Pointer to **int32** |  | [optional] 
+**LoadTimeLimit2** | Pointer to **int32** |  | [optional] 
+**Url** | Pointer to **string** |  | [optional] 
+**Port** | Pointer to **int32** |  | [optional] 
+**NetworkAddress** | Pointer to **string** |  | [optional] 
 **GenerateAlert** | Pointer to **bool** | Indicates whether this monitor should generate alerts. | [optional] [default to true]
 **IsLocked** | Pointer to **bool** | Indicates whether this monitor is locked. | [optional] 
-**CheckInterval** | Pointer to **int32** | Indicates the interval in seconds | [optional] 
 **Credits** | Pointer to **int32** |  | [optional] 
-**MonitorMode** | Pointer to [**MonitorMode**](MonitorMode.md) |  | [optional] 
 **PredefinedVariables** | Pointer to [**[]PredefinedVariable**](PredefinedVariable.md) |  | [optional] 
 **MsaSteps** | Pointer to [**[]MsaStep**](MsaStep.md) |  | [optional] 
 **UserDefinedFunctions** | Pointer to [**[]UserDefinedFunction**](UserDefinedFunction.md) |  | [optional] 
 **CustomMetrics** | Pointer to [**[]CustomMetric**](CustomMetric.md) |  | [optional] 
-**CustomFields** | Pointer to [**[]CustomField**](CustomField.md) |  | [optional] 
 **SelectedCheckpoints** | Pointer to [**SelectedCheckpoints**](SelectedCheckpoints.md) |  | [optional] 
 **UsePrimaryCheckpointsOnly** | Pointer to **bool** |  | [optional] 
 **SelfServiceTransactionScript** | Pointer to **string** |  | [optional] 
-**MonitorType** | Pointer to [**MonitorType**](MonitorType.md) |  | [optional] 
 **Notes** | Pointer to **string** |  | [optional] 
 **AlertOnLoadTimeLimit1** | Pointer to **bool** |  | [optional] 
-**LoadTimeLimit1** | Pointer to **int32** |  | [optional] 
 **AlertOnLoadTimeLimit2** | Pointer to **bool** |  | [optional] 
-**LoadTimeLimit2** | Pointer to **int32** |  | [optional] 
 **BlockGoogleAnalytics** | Pointer to **bool** |  | [optional] 
 **BlockUptrendsRum** | Pointer to **bool** |  | [optional] 
 **BlockUrls** | Pointer to **[]string** |  | [optional] 
@@ -61,13 +64,11 @@ Name | Type | Description | Notes
 **DnsQuery** | Pointer to [**DnsQuery**](DnsQuery.md) |  | [optional] 
 **DnsExpectedResult** | Pointer to **string** |  | [optional] 
 **DnsTestValue** | Pointer to **string** |  | [optional] 
-**Port** | Pointer to **int32** |  | [optional] 
 **IpVersion** | Pointer to [**IpVersion**](IpVersion.md) |  | [optional] 
 **NativeIPv6Only** | Pointer to **bool** |  | [optional] 
 **AlertOnMinimumBytes** | Pointer to **bool** |  | [optional] 
 **MinimumBytes** | Pointer to **int32** |  | [optional] 
 **DatabaseName** | Pointer to **string** |  | [optional] 
-**NetworkAddress** | Pointer to **string** |  | [optional] 
 **ImapSecureConnection** | Pointer to **bool** |  | [optional] 
 **SftpAction** | Pointer to [**SftpAction**](SftpAction.md) |  | [optional] 
 **SftpActionPath** | Pointer to **string** |  | [optional] 
@@ -77,7 +78,6 @@ Name | Type | Description | Notes
 **TlsVersion** | Pointer to [**TlsVersion**](TlsVersion.md) |  | [optional] 
 **RequestBody** | Pointer to **string** |  | [optional] 
 **MatchPatterns** | Pointer to [**[]PatternMatch**](PatternMatch.md) |  | [optional] 
-**Url** | Pointer to **string** |  | [optional] 
 **BrowserType** | Pointer to [**BrowserType**](BrowserType.md) |  | [optional] 
 **BrowserWindowDimensions** | Pointer to [**BrowserWindowDimensions**](BrowserWindowDimensions.md) |  | [optional] 
 **UseConcurrentMonitoring** | Pointer to **bool** |  | [optional] 
@@ -153,6 +153,31 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### GetMonitorType
+
+`func (o *Monitor) GetMonitorType() MonitorType`
+
+GetMonitorType returns the MonitorType field if non-nil, zero value otherwise.
+
+### GetMonitorTypeOk
+
+`func (o *Monitor) GetMonitorTypeOk() (*MonitorType, bool)`
+
+GetMonitorTypeOk returns a tuple with the MonitorType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonitorType
+
+`func (o *Monitor) SetMonitorType(v MonitorType)`
+
+SetMonitorType sets MonitorType field to given value.
+
+### HasMonitorType
+
+`func (o *Monitor) HasMonitorType() bool`
+
+HasMonitorType returns a boolean if a field has been set.
+
 ### GetIsActive
 
 `func (o *Monitor) GetIsActive() bool`
@@ -178,6 +203,81 @@ SetIsActive sets IsActive field to given value.
 
 HasIsActive returns a boolean if a field has been set.
 
+### GetCustomFields
+
+`func (o *Monitor) GetCustomFields() []CustomField`
+
+GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
+
+### GetCustomFieldsOk
+
+`func (o *Monitor) GetCustomFieldsOk() (*[]CustomField, bool)`
+
+GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFields
+
+`func (o *Monitor) SetCustomFields(v []CustomField)`
+
+SetCustomFields sets CustomFields field to given value.
+
+### HasCustomFields
+
+`func (o *Monitor) HasCustomFields() bool`
+
+HasCustomFields returns a boolean if a field has been set.
+
+### GetCheckInterval
+
+`func (o *Monitor) GetCheckInterval() int32`
+
+GetCheckInterval returns the CheckInterval field if non-nil, zero value otherwise.
+
+### GetCheckIntervalOk
+
+`func (o *Monitor) GetCheckIntervalOk() (*int32, bool)`
+
+GetCheckIntervalOk returns a tuple with the CheckInterval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckInterval
+
+`func (o *Monitor) SetCheckInterval(v int32)`
+
+SetCheckInterval sets CheckInterval field to given value.
+
+### HasCheckInterval
+
+`func (o *Monitor) HasCheckInterval() bool`
+
+HasCheckInterval returns a boolean if a field has been set.
+
+### GetMonitorMode
+
+`func (o *Monitor) GetMonitorMode() MonitorMode`
+
+GetMonitorMode returns the MonitorMode field if non-nil, zero value otherwise.
+
+### GetMonitorModeOk
+
+`func (o *Monitor) GetMonitorModeOk() (*MonitorMode, bool)`
+
+GetMonitorModeOk returns a tuple with the MonitorMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonitorMode
+
+`func (o *Monitor) SetMonitorMode(v MonitorMode)`
+
+SetMonitorMode sets MonitorMode field to given value.
+
+### HasMonitorMode
+
+`func (o *Monitor) HasMonitorMode() bool`
+
+HasMonitorMode returns a boolean if a field has been set.
+
 ### GetHash
 
 `func (o *Monitor) GetHash() string`
@@ -202,6 +302,131 @@ SetHash sets Hash field to given value.
 `func (o *Monitor) HasHash() bool`
 
 HasHash returns a boolean if a field has been set.
+
+### GetLoadTimeLimit1
+
+`func (o *Monitor) GetLoadTimeLimit1() int32`
+
+GetLoadTimeLimit1 returns the LoadTimeLimit1 field if non-nil, zero value otherwise.
+
+### GetLoadTimeLimit1Ok
+
+`func (o *Monitor) GetLoadTimeLimit1Ok() (*int32, bool)`
+
+GetLoadTimeLimit1Ok returns a tuple with the LoadTimeLimit1 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLoadTimeLimit1
+
+`func (o *Monitor) SetLoadTimeLimit1(v int32)`
+
+SetLoadTimeLimit1 sets LoadTimeLimit1 field to given value.
+
+### HasLoadTimeLimit1
+
+`func (o *Monitor) HasLoadTimeLimit1() bool`
+
+HasLoadTimeLimit1 returns a boolean if a field has been set.
+
+### GetLoadTimeLimit2
+
+`func (o *Monitor) GetLoadTimeLimit2() int32`
+
+GetLoadTimeLimit2 returns the LoadTimeLimit2 field if non-nil, zero value otherwise.
+
+### GetLoadTimeLimit2Ok
+
+`func (o *Monitor) GetLoadTimeLimit2Ok() (*int32, bool)`
+
+GetLoadTimeLimit2Ok returns a tuple with the LoadTimeLimit2 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLoadTimeLimit2
+
+`func (o *Monitor) SetLoadTimeLimit2(v int32)`
+
+SetLoadTimeLimit2 sets LoadTimeLimit2 field to given value.
+
+### HasLoadTimeLimit2
+
+`func (o *Monitor) HasLoadTimeLimit2() bool`
+
+HasLoadTimeLimit2 returns a boolean if a field has been set.
+
+### GetUrl
+
+`func (o *Monitor) GetUrl() string`
+
+GetUrl returns the Url field if non-nil, zero value otherwise.
+
+### GetUrlOk
+
+`func (o *Monitor) GetUrlOk() (*string, bool)`
+
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrl
+
+`func (o *Monitor) SetUrl(v string)`
+
+SetUrl sets Url field to given value.
+
+### HasUrl
+
+`func (o *Monitor) HasUrl() bool`
+
+HasUrl returns a boolean if a field has been set.
+
+### GetPort
+
+`func (o *Monitor) GetPort() int32`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *Monitor) GetPortOk() (*int32, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPort
+
+`func (o *Monitor) SetPort(v int32)`
+
+SetPort sets Port field to given value.
+
+### HasPort
+
+`func (o *Monitor) HasPort() bool`
+
+HasPort returns a boolean if a field has been set.
+
+### GetNetworkAddress
+
+`func (o *Monitor) GetNetworkAddress() string`
+
+GetNetworkAddress returns the NetworkAddress field if non-nil, zero value otherwise.
+
+### GetNetworkAddressOk
+
+`func (o *Monitor) GetNetworkAddressOk() (*string, bool)`
+
+GetNetworkAddressOk returns a tuple with the NetworkAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetworkAddress
+
+`func (o *Monitor) SetNetworkAddress(v string)`
+
+SetNetworkAddress sets NetworkAddress field to given value.
+
+### HasNetworkAddress
+
+`func (o *Monitor) HasNetworkAddress() bool`
+
+HasNetworkAddress returns a boolean if a field has been set.
 
 ### GetGenerateAlert
 
@@ -253,31 +478,6 @@ SetIsLocked sets IsLocked field to given value.
 
 HasIsLocked returns a boolean if a field has been set.
 
-### GetCheckInterval
-
-`func (o *Monitor) GetCheckInterval() int32`
-
-GetCheckInterval returns the CheckInterval field if non-nil, zero value otherwise.
-
-### GetCheckIntervalOk
-
-`func (o *Monitor) GetCheckIntervalOk() (*int32, bool)`
-
-GetCheckIntervalOk returns a tuple with the CheckInterval field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCheckInterval
-
-`func (o *Monitor) SetCheckInterval(v int32)`
-
-SetCheckInterval sets CheckInterval field to given value.
-
-### HasCheckInterval
-
-`func (o *Monitor) HasCheckInterval() bool`
-
-HasCheckInterval returns a boolean if a field has been set.
-
 ### GetCredits
 
 `func (o *Monitor) GetCredits() int32`
@@ -302,31 +502,6 @@ SetCredits sets Credits field to given value.
 `func (o *Monitor) HasCredits() bool`
 
 HasCredits returns a boolean if a field has been set.
-
-### GetMonitorMode
-
-`func (o *Monitor) GetMonitorMode() MonitorMode`
-
-GetMonitorMode returns the MonitorMode field if non-nil, zero value otherwise.
-
-### GetMonitorModeOk
-
-`func (o *Monitor) GetMonitorModeOk() (*MonitorMode, bool)`
-
-GetMonitorModeOk returns a tuple with the MonitorMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMonitorMode
-
-`func (o *Monitor) SetMonitorMode(v MonitorMode)`
-
-SetMonitorMode sets MonitorMode field to given value.
-
-### HasMonitorMode
-
-`func (o *Monitor) HasMonitorMode() bool`
-
-HasMonitorMode returns a boolean if a field has been set.
 
 ### GetPredefinedVariables
 
@@ -428,31 +603,6 @@ SetCustomMetrics sets CustomMetrics field to given value.
 
 HasCustomMetrics returns a boolean if a field has been set.
 
-### GetCustomFields
-
-`func (o *Monitor) GetCustomFields() []CustomField`
-
-GetCustomFields returns the CustomFields field if non-nil, zero value otherwise.
-
-### GetCustomFieldsOk
-
-`func (o *Monitor) GetCustomFieldsOk() (*[]CustomField, bool)`
-
-GetCustomFieldsOk returns a tuple with the CustomFields field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomFields
-
-`func (o *Monitor) SetCustomFields(v []CustomField)`
-
-SetCustomFields sets CustomFields field to given value.
-
-### HasCustomFields
-
-`func (o *Monitor) HasCustomFields() bool`
-
-HasCustomFields returns a boolean if a field has been set.
-
 ### GetSelectedCheckpoints
 
 `func (o *Monitor) GetSelectedCheckpoints() SelectedCheckpoints`
@@ -528,31 +678,6 @@ SetSelfServiceTransactionScript sets SelfServiceTransactionScript field to given
 
 HasSelfServiceTransactionScript returns a boolean if a field has been set.
 
-### GetMonitorType
-
-`func (o *Monitor) GetMonitorType() MonitorType`
-
-GetMonitorType returns the MonitorType field if non-nil, zero value otherwise.
-
-### GetMonitorTypeOk
-
-`func (o *Monitor) GetMonitorTypeOk() (*MonitorType, bool)`
-
-GetMonitorTypeOk returns a tuple with the MonitorType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMonitorType
-
-`func (o *Monitor) SetMonitorType(v MonitorType)`
-
-SetMonitorType sets MonitorType field to given value.
-
-### HasMonitorType
-
-`func (o *Monitor) HasMonitorType() bool`
-
-HasMonitorType returns a boolean if a field has been set.
-
 ### GetNotes
 
 `func (o *Monitor) GetNotes() string`
@@ -603,31 +728,6 @@ SetAlertOnLoadTimeLimit1 sets AlertOnLoadTimeLimit1 field to given value.
 
 HasAlertOnLoadTimeLimit1 returns a boolean if a field has been set.
 
-### GetLoadTimeLimit1
-
-`func (o *Monitor) GetLoadTimeLimit1() int32`
-
-GetLoadTimeLimit1 returns the LoadTimeLimit1 field if non-nil, zero value otherwise.
-
-### GetLoadTimeLimit1Ok
-
-`func (o *Monitor) GetLoadTimeLimit1Ok() (*int32, bool)`
-
-GetLoadTimeLimit1Ok returns a tuple with the LoadTimeLimit1 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLoadTimeLimit1
-
-`func (o *Monitor) SetLoadTimeLimit1(v int32)`
-
-SetLoadTimeLimit1 sets LoadTimeLimit1 field to given value.
-
-### HasLoadTimeLimit1
-
-`func (o *Monitor) HasLoadTimeLimit1() bool`
-
-HasLoadTimeLimit1 returns a boolean if a field has been set.
-
 ### GetAlertOnLoadTimeLimit2
 
 `func (o *Monitor) GetAlertOnLoadTimeLimit2() bool`
@@ -652,31 +752,6 @@ SetAlertOnLoadTimeLimit2 sets AlertOnLoadTimeLimit2 field to given value.
 `func (o *Monitor) HasAlertOnLoadTimeLimit2() bool`
 
 HasAlertOnLoadTimeLimit2 returns a boolean if a field has been set.
-
-### GetLoadTimeLimit2
-
-`func (o *Monitor) GetLoadTimeLimit2() int32`
-
-GetLoadTimeLimit2 returns the LoadTimeLimit2 field if non-nil, zero value otherwise.
-
-### GetLoadTimeLimit2Ok
-
-`func (o *Monitor) GetLoadTimeLimit2Ok() (*int32, bool)`
-
-GetLoadTimeLimit2Ok returns a tuple with the LoadTimeLimit2 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLoadTimeLimit2
-
-`func (o *Monitor) SetLoadTimeLimit2(v int32)`
-
-SetLoadTimeLimit2 sets LoadTimeLimit2 field to given value.
-
-### HasLoadTimeLimit2
-
-`func (o *Monitor) HasLoadTimeLimit2() bool`
-
-HasLoadTimeLimit2 returns a boolean if a field has been set.
 
 ### GetBlockGoogleAnalytics
 
@@ -1528,31 +1603,6 @@ SetDnsTestValue sets DnsTestValue field to given value.
 
 HasDnsTestValue returns a boolean if a field has been set.
 
-### GetPort
-
-`func (o *Monitor) GetPort() int32`
-
-GetPort returns the Port field if non-nil, zero value otherwise.
-
-### GetPortOk
-
-`func (o *Monitor) GetPortOk() (*int32, bool)`
-
-GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPort
-
-`func (o *Monitor) SetPort(v int32)`
-
-SetPort sets Port field to given value.
-
-### HasPort
-
-`func (o *Monitor) HasPort() bool`
-
-HasPort returns a boolean if a field has been set.
-
 ### GetIpVersion
 
 `func (o *Monitor) GetIpVersion() IpVersion`
@@ -1677,31 +1727,6 @@ SetDatabaseName sets DatabaseName field to given value.
 `func (o *Monitor) HasDatabaseName() bool`
 
 HasDatabaseName returns a boolean if a field has been set.
-
-### GetNetworkAddress
-
-`func (o *Monitor) GetNetworkAddress() string`
-
-GetNetworkAddress returns the NetworkAddress field if non-nil, zero value otherwise.
-
-### GetNetworkAddressOk
-
-`func (o *Monitor) GetNetworkAddressOk() (*string, bool)`
-
-GetNetworkAddressOk returns a tuple with the NetworkAddress field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkAddress
-
-`func (o *Monitor) SetNetworkAddress(v string)`
-
-SetNetworkAddress sets NetworkAddress field to given value.
-
-### HasNetworkAddress
-
-`func (o *Monitor) HasNetworkAddress() bool`
-
-HasNetworkAddress returns a boolean if a field has been set.
 
 ### GetImapSecureConnection
 
@@ -1927,31 +1952,6 @@ SetMatchPatterns sets MatchPatterns field to given value.
 `func (o *Monitor) HasMatchPatterns() bool`
 
 HasMatchPatterns returns a boolean if a field has been set.
-
-### GetUrl
-
-`func (o *Monitor) GetUrl() string`
-
-GetUrl returns the Url field if non-nil, zero value otherwise.
-
-### GetUrlOk
-
-`func (o *Monitor) GetUrlOk() (*string, bool)`
-
-GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrl
-
-`func (o *Monitor) SetUrl(v string)`
-
-SetUrl sets Url field to given value.
-
-### HasUrl
-
-`func (o *Monitor) HasUrl() bool`
-
-HasUrl returns a boolean if a field has been set.
 
 ### GetBrowserType
 

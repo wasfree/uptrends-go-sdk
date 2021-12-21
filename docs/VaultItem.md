@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **Value** | Pointer to **string** | The value that is stored in this vault item. Not used for Certificate Archives | [optional] 
 **VaultSectionGuid** | Pointer to **string** | The unique identifier of the vault section that this vault item belongs to | [optional] 
 **VaultItemType** | Pointer to [**VaultItemTypes**](VaultItemTypes.md) | The vault item type | [optional] 
-**IsSensitive** | Pointer to **bool** | Whether or not the vault item is considered sensitive.  | [optional] 
 **Notes** | Pointer to **string** | Notes about this vault item | [optional] 
 **UserName** | Pointer to **string** | The UserName of a credentialset | [optional] 
 **Password** | Pointer to **string** | The password associated with a credentialset | [optional] 
@@ -185,31 +184,6 @@ SetVaultItemType sets VaultItemType field to given value.
 `func (o *VaultItem) HasVaultItemType() bool`
 
 HasVaultItemType returns a boolean if a field has been set.
-
-### GetIsSensitive
-
-`func (o *VaultItem) GetIsSensitive() bool`
-
-GetIsSensitive returns the IsSensitive field if non-nil, zero value otherwise.
-
-### GetIsSensitiveOk
-
-`func (o *VaultItem) GetIsSensitiveOk() (*bool, bool)`
-
-GetIsSensitiveOk returns a tuple with the IsSensitive field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsSensitive
-
-`func (o *VaultItem) SetIsSensitive(v bool)`
-
-SetIsSensitive sets IsSensitive field to given value.
-
-### HasIsSensitive
-
-`func (o *VaultItem) HasIsSensitive() bool`
-
-HasIsSensitive returns a boolean if a field has been set.
 
 ### GetNotes
 

@@ -8,14 +8,14 @@ Method | HTTP request | Description
 [**OperatorGroupAddOperatorToOperatorGroup**](OperatorGroupApi.md#OperatorGroupAddOperatorToOperatorGroup) | **Post** /OperatorGroup/{operatorGroupGuid}/Member/{operatorGuid} | Adds the specified operator to the operator group 
 [**OperatorGroupAllOperatorsInGroupOffDuty**](OperatorGroupApi.md#OperatorGroupAllOperatorsInGroupOffDuty) | **Post** /OperatorGroup/{operatorGroupGuid}/AllOperatorsOffDuty | Set the OnDuty flag to off for all operators that are a member of the operator group specified by the operator group GUID
 [**OperatorGroupAllOperatorsInGroupOnDuty**](OperatorGroupApi.md#OperatorGroupAllOperatorsInGroupOnDuty) | **Post** /OperatorGroup/{operatorGroupGuid}/AllOperatorsOnDuty | Set the OnDuty flag to on for all operators that are a member of the operator group specified by the operator group GUID
-[**OperatorGroupCreateAuthorizationForOperatorGroup**](OperatorGroupApi.md#OperatorGroupCreateAuthorizationForOperatorGroup) | **Post** /OperatorGroup/{operatorGroupGuid}/Authorization | Creates a new authorization for the specified operator group
 [**OperatorGroupCreateOperatorGroup**](OperatorGroupApi.md#OperatorGroupCreateOperatorGroup) | **Post** /OperatorGroup | Creates a new operator group
-[**OperatorGroupDeleteAuthorizationForOperatorGroup**](OperatorGroupApi.md#OperatorGroupDeleteAuthorizationForOperatorGroup) | **Delete** /OperatorGroup/{operatorGroupGuid}/Authorization/{authorizationGuid} | Deletes the specified authorization for the specified operator group
+[**OperatorGroupDeleteAuthorizationForOperatorGroup**](OperatorGroupApi.md#OperatorGroupDeleteAuthorizationForOperatorGroup) | **Delete** /OperatorGroup/{operatorGroupGuid}/Authorization/{authorizationType} | Removes the specified authorization of the operator group.
 [**OperatorGroupDeleteOperatorGroup**](OperatorGroupApi.md#OperatorGroupDeleteOperatorGroup) | **Delete** /OperatorGroup/{operatorGroupGuid} | Deletes the specified operator group
 [**OperatorGroupGetAllOperatorGroups**](OperatorGroupApi.md#OperatorGroupGetAllOperatorGroups) | **Get** /OperatorGroup | Gets all operator groups
-[**OperatorGroupGetAuthorizationsForOperatorGroup**](OperatorGroupApi.md#OperatorGroupGetAuthorizationsForOperatorGroup) | **Get** /OperatorGroup/{operatorGroupGuid}/Authorization | Returns all authorizations for the specified operator group
+[**OperatorGroupGetAuthorizationsForOperatorGroup**](OperatorGroupApi.md#OperatorGroupGetAuthorizationsForOperatorGroup) | **Get** /OperatorGroup/{operatorGroupGuid}/Authorization | Gets all authorizations for the specified operator group.
 [**OperatorGroupGetOperatorGroup**](OperatorGroupApi.md#OperatorGroupGetOperatorGroup) | **Get** /OperatorGroup/{operatorGroupGuid} | Gets the details of a operator group
 [**OperatorGroupGetOperatorGroupMembers**](OperatorGroupApi.md#OperatorGroupGetOperatorGroupMembers) | **Get** /OperatorGroup/{operatorGroupGuid}/Member | Gets a list of all members of an operator group
+[**OperatorGroupPostAuthorizationForOperatorGroup**](OperatorGroupApi.md#OperatorGroupPostAuthorizationForOperatorGroup) | **Post** /OperatorGroup/{operatorGroupGuid}/Authorization/{authorizationType} | Assigns the specified authorization to the operator group.
 [**OperatorGroupRemoveOperatorFromOperatorGroup**](OperatorGroupApi.md#OperatorGroupRemoveOperatorFromOperatorGroup) | **Delete** /OperatorGroup/{operatorGroupGuid}/Member/{operatorGuid} | Removes the specified operator from the operator group
 [**OperatorGroupUpdateOperatorGroup**](OperatorGroupApi.md#OperatorGroupUpdateOperatorGroup) | **Put** /OperatorGroup/{operatorGroupGuid} | Updates the operator group with the Guid specified
 
@@ -290,78 +290,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OperatorGroupCreateAuthorizationForOperatorGroup
-
-> OperatorGroupAuthorization OperatorGroupCreateAuthorizationForOperatorGroup(ctx, operatorGroupGuid).Authorization(authorization).Execute()
-
-Creates a new authorization for the specified operator group
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    operatorGroupGuid := "operatorGroupGuid_example" // string | The Guid of the operator group for which to create the new authorization.
-    authorization := *openapiclient.NewOperatorGroupAuthorization(openapiclient.OperatorGroupAuthorizationType("ShareDashboards")) // OperatorGroupAuthorization | 
-
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupCreateAuthorizationForOperatorGroup(context.Background(), operatorGroupGuid).Authorization(authorization).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupCreateAuthorizationForOperatorGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `OperatorGroupCreateAuthorizationForOperatorGroup`: OperatorGroupAuthorization
-    fmt.Fprintf(os.Stdout, "Response from `OperatorGroupApi.OperatorGroupCreateAuthorizationForOperatorGroup`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**operatorGroupGuid** | **string** | The Guid of the operator group for which to create the new authorization. | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOperatorGroupCreateAuthorizationForOperatorGroupRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **authorization** | [**OperatorGroupAuthorization**](OperatorGroupAuthorization.md) |  | 
-
-### Return type
-
-[**OperatorGroupAuthorization**](OperatorGroupAuthorization.md)
-
-### Authorization
-
-[basicauth](../README.md#basicauth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, application/xml
-- **Accept**: application/json, application/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## OperatorGroupCreateOperatorGroup
 
 > OperatorGroup OperatorGroupCreateOperatorGroup(ctx).OperatorGroup(operatorGroup).Execute()
@@ -428,9 +356,9 @@ Name | Type | Description  | Notes
 
 ## OperatorGroupDeleteAuthorizationForOperatorGroup
 
-> OperatorGroupDeleteAuthorizationForOperatorGroup(ctx, operatorGroupGuid, authorizationGuid).Execute()
+> OperatorGroupDeleteAuthorizationForOperatorGroup(ctx, operatorGroupGuid, authorizationType).Execute()
 
-Deletes the specified authorization for the specified operator group
+Removes the specified authorization of the operator group.
 
 ### Example
 
@@ -445,12 +373,12 @@ import (
 )
 
 func main() {
-    operatorGroupGuid := "operatorGroupGuid_example" // string | The Guid of the operator group for which the authorization should be deleted.
-    authorizationGuid := "authorizationGuid_example" // string | The Guid of the authorization that should be deleted.
+    operatorGroupGuid := "operatorGroupGuid_example" // string | The Guid of the operator group
+    authorizationType := "authorizationType_example" // string | The type of authorization
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupDeleteAuthorizationForOperatorGroup(context.Background(), operatorGroupGuid, authorizationGuid).Execute()
+    resp, r, err := api_client.OperatorGroupApi.OperatorGroupDeleteAuthorizationForOperatorGroup(context.Background(), operatorGroupGuid, authorizationType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupDeleteAuthorizationForOperatorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -464,8 +392,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**operatorGroupGuid** | **string** | The Guid of the operator group for which the authorization should be deleted. | 
-**authorizationGuid** | **string** | The Guid of the authorization that should be deleted. | 
+**operatorGroupGuid** | **string** | The Guid of the operator group | 
+**authorizationType** | **string** | The type of authorization | 
 
 ### Other Parameters
 
@@ -622,9 +550,9 @@ Other parameters are passed through a pointer to a apiOperatorGroupGetAllOperato
 
 ## OperatorGroupGetAuthorizationsForOperatorGroup
 
-> OperatorGroupAuthorization OperatorGroupGetAuthorizationsForOperatorGroup(ctx, operatorGroupGuid).Execute()
+> []OperatorGroupAuthorizationType OperatorGroupGetAuthorizationsForOperatorGroup(ctx, operatorGroupGuid).Execute()
 
-Returns all authorizations for the specified operator group
+Gets all authorizations for the specified operator group.
 
 ### Example
 
@@ -639,7 +567,7 @@ import (
 )
 
 func main() {
-    operatorGroupGuid := "operatorGroupGuid_example" // string | The Guid of the operatorgroup for which to return authorizations.
+    operatorGroupGuid := "operatorGroupGuid_example" // string | The Guid of the operator group
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -648,7 +576,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupGetAuthorizationsForOperatorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `OperatorGroupGetAuthorizationsForOperatorGroup`: OperatorGroupAuthorization
+    // response from `OperatorGroupGetAuthorizationsForOperatorGroup`: []OperatorGroupAuthorizationType
     fmt.Fprintf(os.Stdout, "Response from `OperatorGroupApi.OperatorGroupGetAuthorizationsForOperatorGroup`: %v\n", resp)
 }
 ```
@@ -659,7 +587,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**operatorGroupGuid** | **string** | The Guid of the operatorgroup for which to return authorizations. | 
+**operatorGroupGuid** | **string** | The Guid of the operator group | 
 
 ### Other Parameters
 
@@ -672,7 +600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperatorGroupAuthorization**](OperatorGroupAuthorization.md)
+[**[]OperatorGroupAuthorizationType**](OperatorGroupAuthorizationType.md)
 
 ### Authorization
 
@@ -809,6 +737,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OperatorGroupMember**](OperatorGroupMember.md)
+
+### Authorization
+
+[basicauth](../README.md#basicauth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## OperatorGroupPostAuthorizationForOperatorGroup
+
+> OperatorGroupPostAuthorizationForOperatorGroup(ctx, operatorGroupGuid, authorizationType).Execute()
+
+Assigns the specified authorization to the operator group.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    operatorGroupGuid := "operatorGroupGuid_example" // string | The Guid of the operator group
+    authorizationType := "authorizationType_example" // string | The type of authorization
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.OperatorGroupApi.OperatorGroupPostAuthorizationForOperatorGroup(context.Background(), operatorGroupGuid, authorizationType).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupPostAuthorizationForOperatorGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**operatorGroupGuid** | **string** | The Guid of the operator group | 
+**authorizationType** | **string** | The type of authorization | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiOperatorGroupPostAuthorizationForOperatorGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
 
 ### Authorization
 

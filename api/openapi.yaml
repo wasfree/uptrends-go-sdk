@@ -115,14 +115,12 @@ paths:
       operationId: CheckpointRegion_GetSpecifiedCheckpointRegion
       parameters:
       - description: The id for the specified checkpoint region.
-        explode: false
         in: path
         name: checkpointRegionId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -162,14 +160,12 @@ paths:
       operationId: CheckpointRegion_GetCheckpointRegionCheckpoints
       parameters:
       - description: The id for the specified checkpoint region.
-        explode: false
         in: path
         name: checkpointRegionId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -245,7 +241,6 @@ paths:
       operationId: Dashboard_DeleteDashboard
       parameters:
       - description: The guid of the specified dashboard.
-        explode: false
         in: path
         name: dashboardGuid
         required: true
@@ -253,7 +248,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -286,7 +280,6 @@ paths:
       operationId: Dashboard_GetOneDashboard
       parameters:
       - description: The guid of the specified dashboard.
-        explode: false
         in: path
         name: dashboardGuid
         required: true
@@ -294,7 +287,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -333,7 +325,6 @@ paths:
       operationId: Dashboard_PartiallyUpdateDashboard
       parameters:
       - description: The guid of the specified dashboard.
-        explode: false
         in: path
         name: dashboardGuid
         required: true
@@ -341,7 +332,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -385,7 +375,6 @@ paths:
       operationId: Dashboard_UpdateDashboard
       parameters:
       - description: The guid of the specified dashboard.
-        explode: false
         in: path
         name: dashboardGuid
         required: true
@@ -393,7 +382,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -438,7 +426,6 @@ paths:
       operationId: Dashboard_CloneDashboard
       parameters:
       - description: The guid of the specified dashboard.
-        explode: false
         in: path
         name: dashboardGuid
         required: true
@@ -446,7 +433,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "201":
           content:
@@ -567,7 +553,6 @@ paths:
       operationId: PublicStatusPage_DeletePublicStatusPage
       parameters:
       - description: The Guid of the public status page that should be updated.
-        explode: false
         in: path
         name: publicStatusPageGuid
         required: true
@@ -575,7 +560,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -608,7 +592,6 @@ paths:
       operationId: PublicStatusPage_GetPublicStatusPage
       parameters:
       - description: The Guid of the requested public status page.
-        explode: false
         in: path
         name: publicStatusPageGuid
         required: true
@@ -616,7 +599,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -659,7 +641,6 @@ paths:
       operationId: PublicStatusPage_PatchPublicStatusPage
       parameters:
       - description: The Guid of the public status page that should be updated.
-        explode: false
         in: path
         name: publicStatusPageGuid
         required: true
@@ -667,7 +648,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -716,7 +696,6 @@ paths:
       operationId: PublicStatusPage_PutPublicStatusPage
       parameters:
       - description: The Guid of the public status page that should be updated.
-        explode: false
         in: path
         name: publicStatusPageGuid
         required: true
@@ -724,7 +703,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -770,7 +748,6 @@ paths:
       operationId: PublicStatusPage_GetAuthorizationsForPublicStatusPage
       parameters:
       - description: The Guid of the public status page.
-        explode: false
         in: path
         name: publicStatusPageGuid
         required: true
@@ -778,7 +755,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -826,7 +802,6 @@ paths:
       operationId: PublicStatusPage_AddAuthorizationToPublicStatusPage
       parameters:
       - description: The Guid of the public status page.
-        explode: false
         in: path
         name: publicStatusPageGuid
         required: true
@@ -834,7 +809,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -900,7 +874,6 @@ paths:
       operationId: PublicStatusPage_RemoveAuthorizationFromPublicStatusPage
       parameters:
       - description: The Guid of the public status page.
-        explode: false
         in: path
         name: publicStatusPageGuid
         required: true
@@ -908,9 +881,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The Guid of the authorization.
-        explode: false
         in: path
         name: authorizationGuid
         required: true
@@ -918,7 +889,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -1032,7 +1002,6 @@ paths:
       operationId: ScheduledReport_DeleteSpecifiedScheduledReport
       parameters:
       - description: The guid of the specified scheduled report.
-        explode: false
         in: path
         name: scheduledReportGuid
         required: true
@@ -1040,7 +1009,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -1073,7 +1041,6 @@ paths:
       operationId: ScheduledReport_GetSpecifiedScheduledReport
       parameters:
       - description: The guid of the specified scheduled report.
-        explode: false
         in: path
         name: scheduledReportGuid
         required: true
@@ -1081,7 +1048,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -1120,7 +1086,6 @@ paths:
       operationId: ScheduledReport_PartiallyUpdateScheduledReport
       parameters:
       - description: The guid of the specified scheduled report.
-        explode: false
         in: path
         name: scheduledReportGuid
         required: true
@@ -1128,7 +1093,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -1178,7 +1142,6 @@ paths:
       operationId: ScheduledReport_UpdateScheduledReport
       parameters:
       - description: The guid of the specified scheduled report.
-        explode: false
         in: path
         name: scheduledReportGuid
         required: true
@@ -1186,7 +1149,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -1316,7 +1278,6 @@ paths:
       operationId: Sla_DeleteSla
       parameters:
       - description: The Guid of the SLA definition that should be deleted.
-        explode: false
         in: path
         name: slaGuid
         required: true
@@ -1324,7 +1285,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -1366,7 +1326,6 @@ paths:
       operationId: Sla_GetSla
       parameters:
       - description: The Guid of the SLA definition.
-        explode: false
         in: path
         name: slaGuid
         required: true
@@ -1374,7 +1333,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -1426,7 +1384,6 @@ paths:
       operationId: Sla_PatchSla
       parameters:
       - description: The Guid of the SLA that should be updated.
-        explode: false
         in: path
         name: slaGuid
         required: true
@@ -1434,7 +1391,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -1482,7 +1438,6 @@ paths:
       operationId: Sla_PutSla
       parameters:
       - description: The Guid of the SLA that should be updated.
-        explode: false
         in: path
         name: slaGuid
         required: true
@@ -1490,7 +1445,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -1535,7 +1489,6 @@ paths:
       operationId: Sla_GetExclusionPeriods
       parameters:
       - description: The Guid of the SLA definition.
-        explode: false
         in: path
         name: slaGuid
         required: true
@@ -1543,7 +1496,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -1586,7 +1538,6 @@ paths:
       operationId: Sla_PostExclusionPeriod
       parameters:
       - description: The Guid of the SLA definition.
-        explode: false
         in: path
         name: slaGuid
         required: true
@@ -1594,7 +1545,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -1645,7 +1595,6 @@ paths:
       operationId: Sla_DeleteExclusionPeriod
       parameters:
       - description: The Guid of the sla definition.
-        explode: false
         in: path
         name: slaGuid
         required: true
@@ -1653,9 +1602,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The id of the exclusion period.
-        explode: false
         in: path
         name: exclusionPeriodId
         required: true
@@ -1663,7 +1610,6 @@ paths:
           format: int32
           nullable: false
           type: integer
-        style: simple
       responses:
         "204":
           content: {}
@@ -1706,7 +1652,6 @@ paths:
       operationId: Sla_GetExclusionPeriod
       parameters:
       - description: The Guid of the SLA definition.
-        explode: false
         in: path
         name: slaGuid
         required: true
@@ -1714,9 +1659,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The id of the exclusion period.
-        explode: false
         in: path
         name: exclusionPeriodId
         required: true
@@ -1724,7 +1667,6 @@ paths:
           format: int32
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -1773,7 +1715,6 @@ paths:
       operationId: Sla_PatchExclusionPeriod
       parameters:
       - description: The Guid of the SLA definition.
-        explode: false
         in: path
         name: slaGuid
         required: true
@@ -1781,9 +1722,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The id of the exclusion period.
-        explode: false
         in: path
         name: exclusionPeriodId
         required: true
@@ -1791,7 +1730,6 @@ paths:
           format: int32
           nullable: false
           type: integer
-        style: simple
       requestBody:
         content:
           application/json:
@@ -1846,7 +1784,6 @@ paths:
       operationId: Sla_PutExclusionPeriod
       parameters:
       - description: The Guid of the SLA definition.
-        explode: false
         in: path
         name: slaGuid
         required: true
@@ -1854,9 +1791,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The id of the exclusion period.
-        explode: false
         in: path
         name: exclusionPeriodId
         required: true
@@ -1864,7 +1799,6 @@ paths:
           format: int32
           nullable: false
           type: integer
-        style: simple
       requestBody:
         content:
           application/json:
@@ -1919,7 +1853,6 @@ paths:
       operationId: Statistics_GetMonitorStatistics
       parameters:
       - description: The Guid of the monitor.
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -1927,42 +1860,30 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The filter for the requested response fields. E.g. "Alerts,SlaTarget".
-        explode: true
         in: query
         name: Filter
-        required: false
         schema:
           nullable: true
           type: string
-        style: form
       - description: The start of a custom period (can't be used together with the
           PresetPeriod parameter)
-        explode: true
         in: query
         name: Start
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The end of a custom period
-        explode: true
         in: query
         name: End
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The requested time period.
-        explode: true
         in: query
         name: PresetPeriod
-        required: false
         schema:
           default: Last24Hours
           enum:
@@ -1990,7 +1911,6 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/PresetPeriodType'
-        style: form
         x-schema:
           $ref: '#/definitions/PresetPeriodType'
       responses:
@@ -2032,7 +1952,6 @@ paths:
       operationId: Statistics_GetMonitorGroupStatistics
       parameters:
       - description: The Guid of the monitor group.
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -2040,42 +1959,30 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The filter for the requested response fields. E.g. "Alerts,SlaTarget".
-        explode: true
         in: query
         name: Filter
-        required: false
         schema:
           nullable: true
           type: string
-        style: form
       - description: The start of a custom period (can't be used together with the
           PresetPeriod parameter)
-        explode: true
         in: query
         name: Start
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The end of a custom period
-        explode: true
         in: query
         name: End
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The requested time period.
-        explode: true
         in: query
         name: PresetPeriod
-        required: false
         schema:
           default: Last24Hours
           enum:
@@ -2103,7 +2010,6 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/PresetPeriodType'
-        style: form
         x-schema:
           $ref: '#/definitions/PresetPeriodType'
       responses:
@@ -2145,7 +2051,6 @@ paths:
       operationId: Alert_GetMonitorAlerts
       parameters:
       - description: The Guid of the monitor to get alerts for.
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -2153,31 +2058,22 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: When true reminder alerts will be included in the results
-        explode: true
         in: query
         name: IncludeReminders
-        required: false
         schema:
           default: false
           nullable: false
           type: boolean
-        style: form
       - description: A cursor value that should be used for traversing the dataset.
-        explode: true
         in: query
         name: Cursor
-        required: false
         schema:
           nullable: true
           type: string
-        style: form
       - description: Sorting direction based on timestamp.
-        explode: true
         in: query
         name: Sorting
-        required: false
         schema:
           default: Descending
           enum:
@@ -2187,14 +2083,11 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/SortDirection'
-        style: form
         x-schema:
           $ref: '#/definitions/SortDirection'
       - description: The number of records to return (Max value = 100)
-        explode: true
         in: query
         name: Take
-        required: false
         schema:
           default: 100
           format: int32
@@ -2202,33 +2095,24 @@ paths:
           minimum: 0.0
           nullable: false
           type: integer
-        style: form
       - description: The start of a custom period (can't be used together with the
           PresetPeriod parameter)
-        explode: true
         in: query
         name: Start
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The end of a custom period
-        explode: true
         in: query
         name: End
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The requested time period.
-        explode: true
         in: query
         name: PresetPeriod
-        required: false
         schema:
           default: Last24Hours
           enum:
@@ -2256,7 +2140,6 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/PresetPeriodType'
-        style: form
         x-schema:
           $ref: '#/definitions/PresetPeriodType'
       responses:
@@ -2298,7 +2181,6 @@ paths:
       operationId: Alert_GetMonitorGroupAlerts
       parameters:
       - description: The Guid of the monitor group to get alerts for.
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -2306,31 +2188,22 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: When true reminder alerts will be included in the results
-        explode: true
         in: query
         name: IncludeReminders
-        required: false
         schema:
           default: false
           nullable: false
           type: boolean
-        style: form
       - description: A cursor value that should be used for traversing the dataset.
-        explode: true
         in: query
         name: Cursor
-        required: false
         schema:
           nullable: true
           type: string
-        style: form
       - description: Sorting direction based on timestamp.
-        explode: true
         in: query
         name: Sorting
-        required: false
         schema:
           default: Descending
           enum:
@@ -2340,14 +2213,11 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/SortDirection'
-        style: form
         x-schema:
           $ref: '#/definitions/SortDirection'
       - description: The number of records to return (Max value = 100)
-        explode: true
         in: query
         name: Take
-        required: false
         schema:
           default: 100
           format: int32
@@ -2355,33 +2225,24 @@ paths:
           minimum: 0.0
           nullable: false
           type: integer
-        style: form
       - description: The start of a custom period (can't be used together with the
           PresetPeriod parameter)
-        explode: true
         in: query
         name: Start
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The end of a custom period
-        explode: true
         in: query
         name: End
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The requested time period.
-        explode: true
         in: query
         name: PresetPeriod
-        required: false
         schema:
           default: Last24Hours
           enum:
@@ -2409,7 +2270,6 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/PresetPeriodType'
-        style: form
         x-schema:
           $ref: '#/definitions/PresetPeriodType'
       responses:
@@ -2483,7 +2343,6 @@ paths:
       operationId: Status_GetMonitorStatus
       parameters:
       - description: The Guid of the monitor.
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -2491,7 +2350,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -2531,7 +2389,6 @@ paths:
       operationId: Status_GetMonitorGroupStatus
       parameters:
       - description: The Guid of the monitor group.
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -2539,7 +2396,23 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
+      - description: The number of monitors in the monitor group that should be skipped.
+        in: query
+        name: skip
+        schema:
+          default: 0
+          format: int32
+          nullable: false
+          type: integer
+      - description: The maximum number of monitors in the monitor group to get data
+          from.
+        in: query
+        name: take
+        schema:
+          default: 10000
+          format: int32
+          nullable: false
+          type: integer
       responses:
         "200":
           content:
@@ -2667,7 +2540,6 @@ paths:
       operationId: AlertDefinition_DeleteAlertDefinition
       parameters:
       - description: The Guid of the alert definition to remove.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -2675,7 +2547,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -2717,7 +2588,6 @@ paths:
       operationId: AlertDefinition_GetSpecifiedAlertDefinitions
       parameters:
       - description: The Guid of the alert definition.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -2725,7 +2595,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -2766,7 +2635,6 @@ paths:
       operationId: AlertDefinition_PatchAlertDefinition
       parameters:
       - description: The Guid of the alert definition that should be updated.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -2774,7 +2642,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -2830,7 +2697,6 @@ paths:
       operationId: AlertDefinition_PutAlertDefinition
       parameters:
       - description: The Guid of the alert definition that should be updated.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -2838,7 +2704,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -2893,7 +2758,6 @@ paths:
       operationId: AlertDefinition_GetAllMembers
       parameters:
       - description: The Guid of the alert definition for which to return the members.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -2901,7 +2765,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -2955,7 +2818,6 @@ paths:
       operationId: AlertDefinition_RemoveMonitorFromAlertDefinition
       parameters:
       - description: The Guid of the alert definition to modify.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -2963,9 +2825,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The Guid of the monitor to remove.
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -2973,7 +2833,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -3015,7 +2874,6 @@ paths:
       operationId: AlertDefinition_AddMonitorToAlertDefinition
       parameters:
       - description: The Guid of the alert definition to modify.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3023,9 +2881,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The Guid of the monitor to add.
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -3033,7 +2889,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "201":
           content:
@@ -3082,7 +2937,6 @@ paths:
       operationId: AlertDefinition_RemoveMonitorGroupFromAlertDefinition
       parameters:
       - description: The Guid of the alert definition to modify.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3090,9 +2944,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The Guid of the monitor group to remove.
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -3100,7 +2952,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -3142,7 +2993,6 @@ paths:
       operationId: AlertDefinition_AddMonitorGroupToAlertDefinition
       parameters:
       - description: The Guid of the alert definition to modify.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3150,9 +3000,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The Guid of the monitor group to add.
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -3160,7 +3008,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "201":
           content:
@@ -3209,7 +3056,6 @@ paths:
       operationId: AlertDefinition_GetEscalationLevel
       parameters:
       - description: The Guid of the alert definition.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3217,16 +3063,13 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The escalation level id.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -3276,7 +3119,6 @@ paths:
       operationId: AlertDefinition_PatchAlertDefinitionEscalation
       parameters:
       - description: The Guid of the alert definition that should be updated.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3284,16 +3126,13 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The level number of the escalation that should be updated.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       requestBody:
         content:
           application/json:
@@ -3349,7 +3188,6 @@ paths:
       operationId: AlertDefinition_PutAlertDefinitionEscalation
       parameters:
       - description: The Guid of the alert definition that should be updated.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3357,16 +3195,13 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The level number of the escalation that should be updated.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       requestBody:
         content:
           application/json:
@@ -3422,7 +3257,6 @@ paths:
       parameters:
       - description: The Guid of the alert definition for which to return all escalation
           levels.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3430,7 +3264,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -3483,7 +3316,6 @@ paths:
       operationId: AlertDefinition_GetEscalationLevelOperator
       parameters:
       - description: The Guid of the alert definition.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3491,16 +3323,13 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The escalation level id.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -3554,7 +3383,6 @@ paths:
       operationId: AlertDefinition_RemoveOperatorFromEscalationLevel
       parameters:
       - description: The Guid of the alert definition.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3562,18 +3390,14 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The escalation level id.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       - description: The Guid of the operator to remove.
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -3581,7 +3405,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -3623,7 +3446,6 @@ paths:
       operationId: AlertDefinition_AddOperatorToEscalationLevel
       parameters:
       - description: The Guid of the alert definition.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3631,18 +3453,14 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The escalation level id.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       - description: The Guid of the operator to add.
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -3650,7 +3468,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "201":
           content:
@@ -3699,7 +3516,6 @@ paths:
       operationId: AlertDefinition_RemoveOperatorGroupFromEscalationLevel
       parameters:
       - description: The Guid of the alert definition.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3707,18 +3523,14 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The escalation level id.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       - description: The Guid of the operator group to remove.
-        explode: false
         in: path
         name: operatorGroupGuid
         required: true
@@ -3726,7 +3538,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -3768,7 +3579,6 @@ paths:
       operationId: AlertDefinition_AddOperatorGroupToEscalationLevel
       parameters:
       - description: The Guid of the alert definition.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3776,18 +3586,14 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The escalation level id.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       - description: The Guid of the operator group to add.
-        explode: false
         in: path
         name: operatorGroupGuid
         required: true
@@ -3795,7 +3601,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "201":
           content:
@@ -3844,7 +3649,6 @@ paths:
       operationId: AlertDefinition_GetAllEscalationLevelIntegrations
       parameters:
       - description: The Guid of the alert definition.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3852,16 +3656,13 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The escalation level id.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -3913,7 +3714,6 @@ paths:
       operationId: AlertDefinition_AddIntegrationToEscalationLevel
       parameters:
       - description: The Guid of the alert definition.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3921,16 +3721,13 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The escalation level id.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       requestBody:
         content:
           application/json:
@@ -3990,7 +3787,6 @@ paths:
       operationId: AlertDefinition_RemoveIntegrationFromEscalationLevel
       parameters:
       - description: The Guid of the alert definition.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -3998,18 +3794,14 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The escalation level id.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       - description: The Guid of the integration to remove.
-        explode: false
         in: path
         name: integrationGuid
         required: true
@@ -4017,7 +3809,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -4059,7 +3850,6 @@ paths:
       operationId: AlertDefinition_GetEscalationLevelIntegration
       parameters:
       - description: The Guid of the alert definition.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -4067,18 +3857,14 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The escalation level id.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       - description: The Guid of the integration.
-        explode: false
         in: path
         name: integrationGuid
         required: true
@@ -4086,7 +3872,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -4134,7 +3919,6 @@ paths:
       operationId: AlertDefinition_UpdateIntegrationForEscalationWithPatch
       parameters:
       - description: The Guid of the alert definition.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -4142,18 +3926,14 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The escalation level id.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       - description: The Guid of the integration to update.
-        explode: false
         in: path
         name: integrationGuid
         required: true
@@ -4161,7 +3941,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -4214,7 +3993,6 @@ paths:
       operationId: AlertDefinition_UpdateIntegrationForEscalationWithPut
       parameters:
       - description: The Guid of the alert definition.
-        explode: false
         in: path
         name: alertDefinitionGuid
         required: true
@@ -4222,18 +4000,14 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The escalation level id.
-        explode: false
         in: path
         name: escalationLevelId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       - description: The Guid of the integration to update.
-        explode: false
         in: path
         name: integrationGuid
         required: true
@@ -4241,7 +4015,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -4323,14 +4096,12 @@ paths:
       operationId: Checkpoint_GetCheckpoint
       parameters:
       - description: The Id of the requested checkpoint.
-        explode: false
         in: path
         name: checkpointId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -4370,14 +4141,12 @@ paths:
       operationId: CheckpointServer_GetServer
       parameters:
       - description: The Id of the requested server.
-        explode: false
         in: path
         name: serverId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -4530,7 +4299,6 @@ paths:
       operationId: MonitorGroup_DeleteMonitorGroup
       parameters:
       - description: The Guid of the monitor group to be deleted
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -4538,7 +4306,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -4581,7 +4348,6 @@ paths:
       operationId: MonitorGroup_GetMonitorGroup
       parameters:
       - description: The Guid of the monitor group to be retrieved
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -4589,7 +4355,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -4628,7 +4393,6 @@ paths:
       operationId: MonitorGroup_UpdateMonitorGroup
       parameters:
       - description: The Guid of the monitor group to be updated
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -4636,7 +4400,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -4696,7 +4459,6 @@ paths:
       operationId: MonitorGroup_GetMonitorGroupMembers
       parameters:
       - description: The Guid of the monitor group to retrieve the members for
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -4704,7 +4466,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -4743,15 +4504,13 @@ paths:
     post:
       operationId: MonitorGroup_AddMaintenancePeriodToAllMembers
       parameters:
-      - explode: false
-        in: path
+      - in: path
         name: monitorGroupGuid
         required: true
         schema:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -4796,7 +4555,6 @@ paths:
       operationId: MonitorGroup_RemoveMonitorFromMonitorGroup
       parameters:
       - description: The Guid of the monitor group to remove the monitor from
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -4804,9 +4562,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The monitor Guid to be removed
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -4814,7 +4570,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -4857,7 +4612,6 @@ paths:
       operationId: MonitorGroup_AddMonitorToMonitorGroup
       parameters:
       - description: The Guid of the monitor group to add the monitor to
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -4865,9 +4619,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The monitor Guid
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -4875,7 +4627,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "201":
           content: {}
@@ -4909,7 +4660,6 @@ paths:
       operationId: MonitorGroup_StopAllMonitorsInGroup
       parameters:
       - description: The monitor group GUID
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -4917,7 +4667,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -4952,7 +4701,6 @@ paths:
       operationId: MonitorGroup_StartAllMonitorsInGroup
       parameters:
       - description: The monitor group GUID
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -4960,7 +4708,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -4995,7 +4742,6 @@ paths:
       operationId: MonitorGroup_StopAllMonitorAlertsInGroup
       parameters:
       - description: The monitor group GUID
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -5003,7 +4749,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -5038,7 +4783,6 @@ paths:
       operationId: MonitorGroup_StartAllMonitorAlertsInGroup
       parameters:
       - description: The monitor group GUID
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -5046,7 +4790,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -5074,6 +4817,166 @@ paths:
         - ""
       summary: Starts alerting for all monitors that are a member of the monitor group
         specified by the monitor group GUID
+      tags:
+      - MonitorGroup
+  /MonitorGroup/{monitorGroupGuid}/Authorizations:
+    get:
+      operationId: MonitorGroup_GetAuthorizationsOfMonitorGroup
+      parameters:
+      - description: The monitor group GUID
+        in: path
+        name: monitorGroupGuid
+        required: true
+        schema:
+          format: guid
+          nullable: false
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/MonitorGroupAuthorization'
+                type: array
+            application/xml:
+              schema:
+                items:
+                  $ref: '#/components/schemas/MonitorGroupAuthorization'
+                type: array
+          description: The request completed successfully.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The request failed.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The requested monitor group was not found.
+      security:
+      - basicauth:
+        - ""
+      summary: Get monitor authorizations of monitor group
+      tags:
+      - MonitorGroup
+    post:
+      operationId: MonitorGroup_CreateAuthorizationForMonitorGroup
+      parameters:
+      - description: The monitor group GUID
+        in: path
+        name: monitorGroupGuid
+        required: true
+        schema:
+          format: guid
+          nullable: false
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonitorGroupAuthorization'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/MonitorGroupAuthorization'
+        description: Authorization to add
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/MonitorGroupAuthorization'
+                type: array
+            application/xml:
+              schema:
+                items:
+                  $ref: '#/components/schemas/MonitorGroupAuthorization'
+                type: array
+          description: The request completed successfully.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The request failed.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The requested monitor group was not found.
+      security:
+      - basicauth:
+        - ""
+      summary: |-
+        Create monitor authorizations for monitor group
+        If the wanted authorizations requires other authorizations, these will be added as well
+      tags:
+      - MonitorGroup
+      x-codegen-request-body-name: monitorGroupAuthorization
+  /MonitorGroup/{monitorGroupGuid}/Authorizations/{authorizationGuid}:
+    delete:
+      operationId: MonitorGroup_DeleteAuthorizationForMonitorGroup
+      parameters:
+      - description: The monitor group GUID
+        in: path
+        name: monitorGroupGuid
+        required: true
+        schema:
+          format: guid
+          nullable: false
+          type: string
+      - description: The authorization GUID that needs to be deleted
+        in: path
+        name: authorizationGuid
+        required: true
+        schema:
+          format: guid
+          nullable: false
+          type: string
+      responses:
+        "204":
+          content: {}
+          description: The request completed successfully. No content is returned.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The request failed.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The requested monitor group or authorization was not found.
+      security:
+      - basicauth:
+        - ""
+      summary: Delete monitor authorization for monitor group
       tags:
       - MonitorGroup
   /Operator:
@@ -5160,7 +5063,6 @@ paths:
       operationId: Operator_DeleteOperator
       parameters:
       - description: The Guid of the operator to delete
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -5168,7 +5070,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -5210,7 +5111,6 @@ paths:
       operationId: Operator_GetOperator
       parameters:
       - description: The Guid of the operator for which to retrieve the details
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -5218,7 +5118,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -5257,7 +5156,6 @@ paths:
       operationId: Operator_UpdateOperatorWithPatch
       parameters:
       - description: The Guid of the operator to update
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -5265,7 +5163,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -5309,7 +5206,6 @@ paths:
       operationId: Operator_UpdateOperator
       parameters:
       - description: The Guid of the operator to update
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -5317,7 +5213,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -5363,7 +5258,6 @@ paths:
       parameters:
       - description: The Guid of the operator for which to retrieve the operator group
           guids
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -5371,7 +5265,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -5415,7 +5308,6 @@ paths:
       operationId: Operator_GetAuthorizationsForOperator
       parameters:
       - description: The Guid of the operator
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -5423,7 +5315,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -5467,7 +5358,6 @@ paths:
       operationId: Operator_DeleteAuthorizationForOperator
       parameters:
       - description: The Guid of the operator
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -5475,20 +5365,22 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The type of authorization
-        explode: false
         in: path
         name: authorizationType
         required: true
         schema:
           enum:
           - AccountAccess
+          - AccountAdministrator
+          - AllowInfra
+          - FinancialOperator
+          - TechnicalContact
+          - ShareDashboards
           nullable: false
           type: string
           x-schema:
             $ref: '#/definitions/OperatorAuthorizationType'
-        style: simple
         x-schema:
           $ref: '#/definitions/OperatorAuthorizationType'
       responses:
@@ -5523,7 +5415,6 @@ paths:
       operationId: Operator_PostAuthorizationForOperator
       parameters:
       - description: The Guid of the operator
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -5531,24 +5422,26 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The type of authorization
-        explode: false
         in: path
         name: authorizationType
         required: true
         schema:
           enum:
           - AccountAccess
+          - AccountAdministrator
+          - AllowInfra
+          - FinancialOperator
+          - TechnicalContact
+          - ShareDashboards
           nullable: false
           type: string
           x-schema:
             $ref: '#/definitions/OperatorAuthorizationType'
-        style: simple
         x-schema:
           $ref: '#/definitions/OperatorAuthorizationType'
       responses:
-        "204":
+        "201":
           content: {}
           description: The request completed successfully.
         "400":
@@ -5580,7 +5473,6 @@ paths:
       operationId: Operator_GetDutyScheduleForOperator
       parameters:
       - description: The Guid of the operator to get the duty schedule for
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -5588,7 +5480,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -5631,7 +5522,6 @@ paths:
       operationId: Operator_AddDutyPeriodForOperator
       parameters:
       - description: The Guid of the operator to add the duty schedule to
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -5639,7 +5529,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -5683,24 +5572,20 @@ paths:
     delete:
       operationId: Operator_DeleteDutyScheduleFromOperator
       parameters:
-      - explode: false
-        in: path
+      - in: path
         name: operatorGuid
         required: true
         schema:
           format: guid
           nullable: false
           type: string
-        style: simple
-      - explode: false
-        in: path
+      - in: path
         name: dutyScheduleId
         required: true
         schema:
           format: int32
           nullable: false
           type: integer
-        style: simple
       responses:
         "204":
           content: {}
@@ -5732,24 +5617,20 @@ paths:
     put:
       operationId: Operator_UpdateDutyPeriodForOperator
       parameters:
-      - explode: false
-        in: path
+      - in: path
         name: operatorGuid
         required: true
         schema:
           format: guid
           nullable: false
           type: string
-        style: simple
-      - explode: false
-        in: path
+      - in: path
         name: dutyScheduleId
         required: true
         schema:
           format: int32
           nullable: false
           type: integer
-        style: simple
       requestBody:
         content:
           application/json:
@@ -5824,14 +5705,12 @@ paths:
     get:
       operationId: Miscellaneous_GetTimezoneById
       parameters:
-      - explode: false
-        in: path
+      - in: path
         name: timezoneId
         required: true
         schema:
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -5964,7 +5843,6 @@ paths:
       operationId: OperatorGroup_DeleteOperatorGroup
       parameters:
       - description: The Guid of the operator group to be deleted
-        explode: false
         in: path
         name: operatorGroupGuid
         required: true
@@ -5972,7 +5850,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -6015,7 +5892,6 @@ paths:
       operationId: OperatorGroup_GetOperatorGroup
       parameters:
       - description: The Guid of the operator group to be retrieved
-        explode: false
         in: path
         name: operatorGroupGuid
         required: true
@@ -6023,7 +5899,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -6062,7 +5937,6 @@ paths:
       operationId: OperatorGroup_UpdateOperatorGroup
       parameters:
       - description: The Guid of the operator group to be updated
-        explode: false
         in: path
         name: operatorGroupGuid
         required: true
@@ -6070,7 +5944,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -6130,7 +6003,6 @@ paths:
       operationId: OperatorGroup_GetOperatorGroupMembers
       parameters:
       - description: The Guid of the operator group to retrieve the members for
-        explode: false
         in: path
         name: operatorGroupGuid
         required: true
@@ -6138,7 +6010,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -6177,15 +6048,13 @@ paths:
     post:
       operationId: OperatorGroup_AddDutyScheduleToAllMembers
       parameters:
-      - explode: false
-        in: path
+      - in: path
         name: operatorGroupGuid
         required: true
         schema:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -6229,7 +6098,6 @@ paths:
       operationId: OperatorGroup_RemoveOperatorFromOperatorGroup
       parameters:
       - description: The Guid of the operator group to remove the operator from
-        explode: false
         in: path
         name: operatorGroupGuid
         required: true
@@ -6237,9 +6105,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The operator Guid to be removed
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -6247,7 +6113,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -6290,7 +6155,6 @@ paths:
       operationId: OperatorGroup_AddOperatorToOperatorGroup
       parameters:
       - description: The Guid of the operator group to add the operator to
-        explode: false
         in: path
         name: operatorGroupGuid
         required: true
@@ -6298,9 +6162,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The operator Guid
-        explode: false
         in: path
         name: operatorGuid
         required: true
@@ -6308,7 +6170,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "201":
           content: {}
@@ -6342,7 +6203,6 @@ paths:
       operationId: OperatorGroup_AllOperatorsInGroupOnDuty
       parameters:
       - description: The operator group GUID
-        explode: false
         in: path
         name: operatorGroupGuid
         required: true
@@ -6350,7 +6210,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -6385,7 +6244,6 @@ paths:
       operationId: OperatorGroup_AllOperatorsInGroupOffDuty
       parameters:
       - description: The operator group GUID
-        explode: false
         in: path
         name: operatorGroupGuid
         required: true
@@ -6393,7 +6251,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -6427,8 +6284,7 @@ paths:
     get:
       operationId: OperatorGroup_GetAuthorizationsForOperatorGroup
       parameters:
-      - description: The Guid of the operatorgroup for which to return authorizations.
-        explode: false
+      - description: The Guid of the operator group
         in: path
         name: operatorGroupGuid
         required: true
@@ -6436,16 +6292,19 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OperatorGroupAuthorization'
+                items:
+                  $ref: '#/components/schemas/OperatorGroupAuthorizationType'
+                type: array
             application/xml:
               schema:
-                $ref: '#/components/schemas/OperatorGroupAuthorization'
+                items:
+                  $ref: '#/components/schemas/OperatorGroupAuthorizationType'
+                type: array
           description: The request completed successfully.
         "400":
           content:
@@ -6464,82 +6323,18 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/MessageList'
-          description: The requested vault section does not exist.
+          description: The specified operator group was not found.
       security:
       - basicauth:
         - ""
-      summary: Returns all authorizations for the specified operator group
+      summary: Gets all authorizations for the specified operator group.
       tags:
       - OperatorGroup
-    post:
-      description: The AuthorizationId attribute should be omitted in the request
-        body. The newly created authorization will be returned in the response. An
-        authorization should be granted to an operator group. Therefore, either specify
-        the OperatorGroupGuid attribute. The OperatorGuid attribute is not used for
-        this endpoint
-      operationId: OperatorGroup_CreateAuthorizationForOperatorGroup
-      parameters:
-      - description: The Guid of the operator group for which to create the new authorization.
-        explode: false
-        in: path
-        name: operatorGroupGuid
-        required: true
-        schema:
-          format: guid
-          nullable: false
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OperatorGroupAuthorization'
-          application/xml:
-            schema:
-              $ref: '#/components/schemas/OperatorGroupAuthorization'
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/OperatorGroupAuthorization'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/OperatorGroupAuthorization'
-          description: The request completed successfully.
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageList'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/MessageList'
-          description: The request failed.
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageList'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/MessageList'
-          description: The requested vault section does not exist.
-      security:
-      - basicauth:
-        - ""
-      summary: Creates a new authorization for the specified operator group
-      tags:
-      - OperatorGroup
-      x-codegen-request-body-name: authorization
-  /OperatorGroup/{operatorGroupGuid}/Authorization/{authorizationGuid}:
+  /OperatorGroup/{operatorGroupGuid}/Authorization/{authorizationType}:
     delete:
       operationId: OperatorGroup_DeleteAuthorizationForOperatorGroup
       parameters:
-      - description: The Guid of the operator group for which the authorization should
-          be deleted.
-        explode: false
+      - description: The Guid of the operator group
         in: path
         name: operatorGroupGuid
         required: true
@@ -6547,21 +6342,28 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
-      - description: The Guid of the authorization that should be deleted.
-        explode: false
+      - description: The type of authorization
         in: path
-        name: authorizationGuid
+        name: authorizationType
         required: true
         schema:
-          format: guid
+          enum:
+          - ShareDashboards
+          - AllowInfra
+          - Administrator
+          - TechnicalContact
+          - FinancialOperator
+          - BasicOperator
           nullable: false
           type: string
-        style: simple
+          x-schema:
+            $ref: '#/definitions/OperatorGroupAuthorizationType'
+        x-schema:
+          $ref: '#/definitions/OperatorGroupAuthorizationType'
       responses:
         "204":
           content: {}
-          description: The request completed successfully. No content is returned.
+          description: The request completed successfully.
         "400":
           content:
             application/json:
@@ -6580,20 +6382,77 @@ paths:
               schema:
                 $ref: '#/components/schemas/MessageList'
           description: |-
-            The requested vault section does not exist.
+            The specified operator group was not found.
             or
-            The requested vault section authorization does not exist.
+            The specified operator group authorization was not found.
           x-expectedSchemas:
-          - description: The requested vault section does not exist.
+          - description: The specified operator group was not found.
             schema:
               $ref: '#/definitions/MessageList'
-          - description: The requested vault section authorization does not exist.
+          - description: The specified operator group authorization was not found.
             schema:
               $ref: '#/definitions/MessageList'
       security:
       - basicauth:
         - ""
-      summary: Deletes the specified authorization for the specified operator group
+      summary: Removes the specified authorization of the operator group.
+      tags:
+      - OperatorGroup
+    post:
+      operationId: OperatorGroup_PostAuthorizationForOperatorGroup
+      parameters:
+      - description: The Guid of the operator group
+        in: path
+        name: operatorGroupGuid
+        required: true
+        schema:
+          format: guid
+          nullable: false
+          type: string
+      - description: The type of authorization
+        in: path
+        name: authorizationType
+        required: true
+        schema:
+          enum:
+          - ShareDashboards
+          - AllowInfra
+          - Administrator
+          - TechnicalContact
+          - FinancialOperator
+          - BasicOperator
+          nullable: false
+          type: string
+          x-schema:
+            $ref: '#/definitions/OperatorGroupAuthorizationType'
+        x-schema:
+          $ref: '#/definitions/OperatorGroupAuthorizationType'
+      responses:
+        "201":
+          content: {}
+          description: The request completed successfully.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The request failed.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The specified operator group was not found.
+      security:
+      - basicauth:
+        - ""
+      summary: Assigns the specified authorization to the operator group.
       tags:
       - OperatorGroup
   /MonitorCheck:
@@ -6602,10 +6461,8 @@ paths:
       parameters:
       - description: Error level filter that should be applied. (default = NoError
           and above)
-        explode: true
         in: query
         name: ErrorLevel
-        required: false
         schema:
           enum:
           - NoError
@@ -6615,32 +6472,23 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/ErrorLevelFilter'
-        style: form
         x-schema:
           $ref: '#/definitions/ErrorLevelFilter'
       - description: Show partial measurements from concurrent monitors
-        explode: true
         in: query
         name: ShowPartialMeasurements
-        required: false
         schema:
           nullable: false
           type: boolean
-        style: form
       - description: A cursor value that should be used for traversing the dataset.
-        explode: true
         in: query
         name: Cursor
-        required: false
         schema:
           nullable: true
           type: string
-        style: form
       - description: Sorting direction based on timestamp.
-        explode: true
         in: query
         name: Sorting
-        required: false
         schema:
           default: Descending
           enum:
@@ -6650,14 +6498,11 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/SortDirection'
-        style: form
         x-schema:
           $ref: '#/definitions/SortDirection'
       - description: The number of records to return (Max value = 100)
-        explode: true
         in: query
         name: Take
-        required: false
         schema:
           default: 100
           format: int32
@@ -6665,33 +6510,24 @@ paths:
           minimum: 0.0
           nullable: false
           type: integer
-        style: form
       - description: The start of a custom period (can't be used together with the
           PresetPeriod parameter)
-        explode: true
         in: query
         name: Start
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The end of a custom period
-        explode: true
         in: query
         name: End
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The requested time period.
-        explode: true
         in: query
         name: PresetPeriod
-        required: false
         schema:
           default: Last24Hours
           enum:
@@ -6719,7 +6555,6 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/PresetPeriodType'
-        style: form
         x-schema:
           $ref: '#/definitions/PresetPeriodType'
       responses:
@@ -6752,7 +6587,6 @@ paths:
       operationId: MonitorCheck_GetSingleMonitorCheck
       parameters:
       - description: The Id of the monitor check to get the data for.
-        explode: false
         in: path
         name: monitorCheckId
         required: true
@@ -6760,7 +6594,6 @@ paths:
           format: int64
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -6791,7 +6624,6 @@ paths:
       operationId: MonitorCheck_GetMonitorCheck
       parameters:
       - description: The Guid of the monitor to get monitor checks for.
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -6799,13 +6631,10 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: Error level filter that should be applied. (default = NoError
           and above)
-        explode: true
         in: query
         name: ErrorLevel
-        required: false
         schema:
           enum:
           - NoError
@@ -6815,32 +6644,23 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/ErrorLevelFilter'
-        style: form
         x-schema:
           $ref: '#/definitions/ErrorLevelFilter'
       - description: Show partial measurements from concurrent monitors
-        explode: true
         in: query
         name: ShowPartialMeasurements
-        required: false
         schema:
           nullable: false
           type: boolean
-        style: form
       - description: A cursor value that should be used for traversing the dataset.
-        explode: true
         in: query
         name: Cursor
-        required: false
         schema:
           nullable: true
           type: string
-        style: form
       - description: Sorting direction based on timestamp.
-        explode: true
         in: query
         name: Sorting
-        required: false
         schema:
           default: Descending
           enum:
@@ -6850,14 +6670,11 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/SortDirection'
-        style: form
         x-schema:
           $ref: '#/definitions/SortDirection'
       - description: The number of records to return (Max value = 100)
-        explode: true
         in: query
         name: Take
-        required: false
         schema:
           default: 100
           format: int32
@@ -6865,33 +6682,24 @@ paths:
           minimum: 0.0
           nullable: false
           type: integer
-        style: form
       - description: The start of a custom period (can't be used together with the
           PresetPeriod parameter)
-        explode: true
         in: query
         name: Start
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The end of a custom period
-        explode: true
         in: query
         name: End
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The requested time period.
-        explode: true
         in: query
         name: PresetPeriod
-        required: false
         schema:
           default: Last24Hours
           enum:
@@ -6919,7 +6727,6 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/PresetPeriodType'
-        style: form
         x-schema:
           $ref: '#/definitions/PresetPeriodType'
       responses:
@@ -6952,7 +6759,6 @@ paths:
       operationId: MonitorCheck_GetMonitorGroupData
       parameters:
       - description: The Guid of the monitor group to get monitor checks for.
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -6960,13 +6766,10 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: Error level filter that should be applied. (default = NoError
           and above)
-        explode: true
         in: query
         name: ErrorLevel
-        required: false
         schema:
           enum:
           - NoError
@@ -6976,32 +6779,23 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/ErrorLevelFilter'
-        style: form
         x-schema:
           $ref: '#/definitions/ErrorLevelFilter'
       - description: Show partial measurements from concurrent monitors
-        explode: true
         in: query
         name: ShowPartialMeasurements
-        required: false
         schema:
           nullable: false
           type: boolean
-        style: form
       - description: A cursor value that should be used for traversing the dataset.
-        explode: true
         in: query
         name: Cursor
-        required: false
         schema:
           nullable: true
           type: string
-        style: form
       - description: Sorting direction based on timestamp.
-        explode: true
         in: query
         name: Sorting
-        required: false
         schema:
           default: Descending
           enum:
@@ -7011,14 +6805,11 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/SortDirection'
-        style: form
         x-schema:
           $ref: '#/definitions/SortDirection'
       - description: The number of records to return (Max value = 100)
-        explode: true
         in: query
         name: Take
-        required: false
         schema:
           default: 100
           format: int32
@@ -7026,33 +6817,24 @@ paths:
           minimum: 0.0
           nullable: false
           type: integer
-        style: form
       - description: The start of a custom period (can't be used together with the
           PresetPeriod parameter)
-        explode: true
         in: query
         name: Start
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The end of a custom period
-        explode: true
         in: query
         name: End
-        required: false
         schema:
           format: date-time
           nullable: true
           type: string
-        style: form
       - description: The requested time period.
-        explode: true
         in: query
         name: PresetPeriod
-        required: false
         schema:
           default: Last24Hours
           enum:
@@ -7080,7 +6862,6 @@ paths:
           type: string
           x-schema:
             $ref: '#/definitions/PresetPeriodType'
-        style: form
         x-schema:
           $ref: '#/definitions/PresetPeriodType'
       responses:
@@ -7113,7 +6894,6 @@ paths:
       operationId: MonitorCheck_GetHttpDetails
       parameters:
       - description: The monitor check Id to get the detailed data for.
-        explode: false
         in: path
         name: monitorCheckId
         required: true
@@ -7121,7 +6901,6 @@ paths:
           format: int64
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -7152,7 +6931,6 @@ paths:
       operationId: MonitorCheck_GetMultistepDetails
       parameters:
       - description: The monitor check Id to get the detailed data for.
-        explode: false
         in: path
         name: monitorCheckId
         required: true
@@ -7160,7 +6938,6 @@ paths:
           format: int64
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -7191,7 +6968,6 @@ paths:
       operationId: MonitorCheck_GetTransactionDetails
       parameters:
       - description: The monitor check Id to get the detailed data for.
-        explode: false
         in: path
         name: monitorCheckId
         required: true
@@ -7199,7 +6975,6 @@ paths:
           format: int64
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -7230,7 +7005,6 @@ paths:
       operationId: MonitorCheck_GetWaterfallInfo
       parameters:
       - description: The monitor check Id to get the detailed data for.
-        explode: false
         in: path
         name: monitorCheckId
         required: true
@@ -7238,18 +7012,14 @@ paths:
           format: int64
           nullable: false
           type: integer
-        style: simple
       - description: 'For transaction waterfalls only: the transaction step to get
           the waterfall for.'
-        explode: true
         in: query
         name: step
-        required: false
         schema:
           format: int32
           nullable: true
           type: integer
-        style: form
       responses:
         "200":
           content:
@@ -7280,7 +7050,6 @@ paths:
       operationId: MonitorCheck_GetPageSourceInfo
       parameters:
       - description: The monitor check Id to get the detailed data for.
-        explode: false
         in: path
         name: monitorCheckId
         required: true
@@ -7288,18 +7057,14 @@ paths:
           format: int64
           nullable: false
           type: integer
-        style: simple
       - description: 'For transactions only: the transaction step to get the page
           source for.'
-        explode: true
         in: query
         name: step
-        required: false
         schema:
           format: int32
           nullable: true
           type: integer
-        style: form
       responses:
         "200":
           content:
@@ -7330,7 +7095,6 @@ paths:
       operationId: MonitorCheck_GetConsoleLogInfo
       parameters:
       - description: The monitor check Id to get the detailed data for.
-        explode: false
         in: path
         name: monitorCheckId
         required: true
@@ -7338,18 +7102,14 @@ paths:
           format: int64
           nullable: false
           type: integer
-        style: simple
       - description: 'For transactions only: the transaction step to get the console
           log for.'
-        explode: true
         in: query
         name: step
-        required: false
         schema:
           format: int32
           nullable: true
           type: integer
-        style: form
       responses:
         "200":
           content:
@@ -7380,7 +7140,6 @@ paths:
       operationId: MonitorCheck_GetScreenshots
       parameters:
       - description: The monitor check Id to get the screenshot data for.
-        explode: false
         in: path
         name: monitorCheckId
         required: true
@@ -7388,9 +7147,7 @@ paths:
           format: int64
           nullable: false
           type: integer
-        style: simple
       - description: The screenshot Id of the screenshot to get.
-        explode: false
         in: path
         name: screenshotId
         required: true
@@ -7398,7 +7155,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -7429,7 +7185,6 @@ paths:
       operationId: MonitorCheck_GetConcurrentMonitorPartialChecks
       parameters:
       - description: The monitor check Id to get the partial checks for.
-        explode: false
         in: path
         name: monitorCheckId
         required: true
@@ -7437,7 +7192,6 @@ paths:
           format: int64
           nullable: false
           type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -7469,14 +7223,11 @@ paths:
       parameters:
       - description: Provide the option to only retrieve the requested fields. E.g.
           "Name,IsActive".
-        explode: true
         in: query
         name: filter
-        required: false
         schema:
           nullable: true
           type: string
-        style: form
       responses:
         "200":
           content:
@@ -7559,7 +7310,6 @@ paths:
       parameters:
       - description: The Guid of the requested monitor group to retrieve the monitors
           of.
-        explode: false
         in: path
         name: monitorGroupGuid
         required: true
@@ -7567,17 +7317,13 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: Provide the option to only retrieve the requested fields. E.g.
           "Name,IsActive".
-        explode: true
         in: query
         name: filter
-        required: false
         schema:
           nullable: true
           type: string
-        style: form
       responses:
         "200":
           content:
@@ -7622,7 +7368,6 @@ paths:
       operationId: Monitor_DeleteMonitor
       parameters:
       - description: The guid of the monitor you want to delete.
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -7630,7 +7375,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -7663,7 +7407,6 @@ paths:
       operationId: Monitor_GetMonitor
       parameters:
       - description: The Guid of the requested monitor.
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -7671,17 +7414,13 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: Provide the option to only retrieve the requested fields. E.g.
           "Name,IsActive".
-        explode: true
         in: query
         name: filter
-        required: false
         schema:
           nullable: true
           type: string
-        style: form
       responses:
         "200":
           content:
@@ -7724,7 +7463,6 @@ paths:
       operationId: Monitor_PatchMonitor
       parameters:
       - description: The Guid of the monitor that should be updated.
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -7732,7 +7470,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -7780,7 +7517,6 @@ paths:
       operationId: Monitor_PutMonitor
       parameters:
       - description: The Guid of the monitor that should be updated.
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -7788,7 +7524,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -7833,7 +7568,6 @@ paths:
       operationId: Monitor_GetMonitorGroups
       parameters:
       - description: The Guid of the requested monitor.
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -7841,16 +7575,21 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Monitor'
+                items:
+                  format: guid
+                  type: string
+                type: array
             application/xml:
               schema:
-                $ref: '#/components/schemas/Monitor'
+                items:
+                  format: guid
+                  type: string
+                type: array
           description: The request completed successfully.
         "400":
           content:
@@ -7885,7 +7624,6 @@ paths:
       operationId: Monitor_CloneMonitor
       parameters:
       - description: The guid of the monitor you want to clone.
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -7893,29 +7631,22 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: Whether or not to also copy the maintenance periods into the
           clone.
-        explode: true
         in: query
         name: includeMaintenancePeriods
-        required: false
         schema:
           default: true
           nullable: false
           type: boolean
-        style: form
       - description: Whether or not to also copy the monitor group memberships into
           the clone.
-        explode: true
         in: query
         name: includeMonitorGroups
-        required: false
         schema:
           default: true
           nullable: false
           type: boolean
-        style: form
       responses:
         "201":
           content:
@@ -7956,7 +7687,6 @@ paths:
       parameters:
       - description: The guid of the monitor you want to find the maintenance periods
           of.
-        explode: false
         in: path
         name: monitorGuid
         required: true
@@ -7964,7 +7694,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -8006,15 +7735,13 @@ paths:
     post:
       operationId: Monitor_CreateMaintenancePeriodForMonitor
       parameters:
-      - explode: false
-        in: path
+      - in: path
         name: monitorGuid
         required: true
         schema:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -8063,24 +7790,20 @@ paths:
     delete:
       operationId: Monitor_DeleteMaintenancePeriodFromMonitor
       parameters:
-      - explode: false
-        in: path
+      - in: path
         name: monitorGuid
         required: true
         schema:
           format: guid
           nullable: false
           type: string
-        style: simple
-      - explode: false
-        in: path
+      - in: path
         name: maintenancePeriodId
         required: true
         schema:
           format: int32
           nullable: false
           type: integer
-        style: simple
       responses:
         "204":
           content: {}
@@ -8112,24 +7835,20 @@ paths:
     put:
       operationId: Monitor_UpdateMaintenancePeriodForMonitor
       parameters:
-      - explode: false
-        in: path
+      - in: path
         name: monitorGuid
         required: true
         schema:
           format: guid
           nullable: false
           type: string
-        style: simple
-      - explode: false
-        in: path
+      - in: path
         name: maintenancePeriodId
         required: true
         schema:
           format: int32
           nullable: false
           type: integer
-        style: simple
       requestBody:
         content:
           application/json:
@@ -8172,17 +7891,14 @@ paths:
     post:
       operationId: Monitor_CleanupMaintenancePeriods
       parameters:
-      - explode: false
-        in: path
+      - in: path
         name: monitorGuid
         required: true
         schema:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: A string representing the date, formatted as "yyyy-MM-dd"
-        explode: false
         in: path
         name: beforeDate
         required: true
@@ -8190,7 +7906,6 @@ paths:
           format: date-time
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -8218,6 +7933,166 @@ paths:
         - ""
       summary: Clears out all one-time maintenance periods for the specified monitor
         older than the specified date
+      tags:
+      - Monitor
+  /Monitor/{monitorGuid}/Authorizations:
+    get:
+      operationId: Monitor_GetAuthorizationsOfMonitor
+      parameters:
+      - description: The monitor GUID
+        in: path
+        name: monitorGuid
+        required: true
+        schema:
+          format: guid
+          nullable: false
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/MonitorAuthorization'
+                type: array
+            application/xml:
+              schema:
+                items:
+                  $ref: '#/components/schemas/MonitorAuthorization'
+                type: array
+          description: The request completed successfully.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The request failed.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The requested monitor was not found.
+      security:
+      - basicauth:
+        - ""
+      summary: Get monitor authorizations of monitor
+      tags:
+      - Monitor
+    post:
+      operationId: Monitor_CreateAuthorizationForMonitor
+      parameters:
+      - description: The monitor GUID
+        in: path
+        name: monitorGuid
+        required: true
+        schema:
+          format: guid
+          nullable: false
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonitorAuthorization'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/MonitorAuthorization'
+        description: Authorization to add
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/MonitorAuthorization'
+                type: array
+            application/xml:
+              schema:
+                items:
+                  $ref: '#/components/schemas/MonitorAuthorization'
+                type: array
+          description: The request completed successfully.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The request failed.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The requested monitor was not found.
+      security:
+      - basicauth:
+        - ""
+      summary: |-
+        Create monitor authorizations for monitor
+        If the wanted authorizations requires other authorizations, these will be added as well
+      tags:
+      - Monitor
+      x-codegen-request-body-name: monitorAuthorization
+  /Monitor/{monitorGuid}/Authorizations/{authorizationGuid}:
+    delete:
+      operationId: Monitor_DeleteAuthorizationForMonitorGroup
+      parameters:
+      - description: The monitor GUID
+        in: path
+        name: monitorGuid
+        required: true
+        schema:
+          format: guid
+          nullable: false
+          type: string
+      - description: The authorization GUID that needs to be deleted
+        in: path
+        name: authorizationGuid
+        required: true
+        schema:
+          format: guid
+          nullable: false
+          type: string
+      responses:
+        "204":
+          content: {}
+          description: The request completed successfully. No content is returned.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The request failed.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/MessageList'
+          description: The requested monitor or authorization was not found.
+      security:
+      - basicauth:
+        - ""
+      summary: Delete monitor authorization for monitor
       tags:
       - Monitor
   /Register:
@@ -8319,7 +8194,6 @@ paths:
       operationId: Vault_DeleteVaultItem
       parameters:
       - description: The Guid of the vault item that should be deleted.
-        explode: false
         in: path
         name: vaultItemGuid
         required: true
@@ -8327,7 +8201,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -8360,7 +8233,6 @@ paths:
       operationId: Vault_GetVaultItem
       parameters:
       - description: The Guid of the requested vault item.
-        explode: false
         in: path
         name: vaultItemGuid
         required: true
@@ -8368,7 +8240,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -8408,7 +8279,6 @@ paths:
       operationId: Vault_PartiallyUpdateVaultItem
       parameters:
       - description: The Guid of the vault item that should be updated.
-        explode: false
         in: path
         name: vaultItemGuid
         required: true
@@ -8416,7 +8286,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -8462,7 +8331,6 @@ paths:
       operationId: Vault_UpdateVaultItem
       parameters:
       - description: The Guid of the vault item that should be updated.
-        explode: false
         in: path
         name: vaultItemGuid
         required: true
@@ -8470,7 +8338,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -8589,7 +8456,6 @@ paths:
       operationId: Vault_DeleteVaultSection
       parameters:
       - description: The Guid of the vault section that should be deleted.
-        explode: false
         in: path
         name: vaultSectionGuid
         required: true
@@ -8597,7 +8463,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -8630,7 +8495,6 @@ paths:
       operationId: Vault_GetVaultSection
       parameters:
       - description: The Guid of the requested vault section.
-        explode: false
         in: path
         name: vaultSectionGuid
         required: true
@@ -8638,7 +8502,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -8677,7 +8540,6 @@ paths:
       operationId: Vault_UpdateVaultSection
       parameters:
       - description: The Guid of the vault section that should be updated.
-        explode: false
         in: path
         name: vaultSectionGuid
         required: true
@@ -8685,7 +8547,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -8729,7 +8590,6 @@ paths:
       operationId: Vault_GetAuthorizationsForVaultSection
       parameters:
       - description: The Guid of the vault section for which to return authorizations.
-        explode: false
         in: path
         name: vaultSectionGuid
         required: true
@@ -8737,7 +8597,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "200":
           content:
@@ -8781,7 +8640,6 @@ paths:
       operationId: Vault_CreateAuthorizationForVaultSection
       parameters:
       - description: The Guid of the vault section for which to create the new authorization.
-        explode: false
         in: path
         name: vaultSectionGuid
         required: true
@@ -8789,7 +8647,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -8840,7 +8697,6 @@ paths:
       parameters:
       - description: The Guid of the vault section for which the authorization should
           be deleted.
-        explode: false
         in: path
         name: vaultSectionGuid
         required: true
@@ -8848,9 +8704,7 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       - description: The Guid of the authorization that should be deleted.
-        explode: false
         in: path
         name: authorizationGuid
         required: true
@@ -8858,7 +8712,6 @@ paths:
           format: guid
           nullable: false
           type: string
-        style: simple
       responses:
         "204":
           content: {}
@@ -9179,6 +9032,7 @@ components:
           type: object
       type: object
     SelectedPeriodType:
+      description: ""
       enum:
       - PresetPeriod
       - SpecificDates
@@ -9187,6 +9041,7 @@ components:
       - PresetPeriod
       - SpecificDates
     PresetPeriodType:
+      description: ""
       enum:
       - CurrentDay
       - CurrentWeek
@@ -9314,6 +9169,7 @@ components:
       - SortRowsProperty
       type: object
     SortOrderEnum:
+      description: ""
       enum:
       - Alphabetical
       - ByStatus
@@ -9342,6 +9198,7 @@ components:
       - AuthorizationType
       type: object
     PSPAuthorizationType:
+      description: ""
       enum:
       - ViewPublicDashboard
       type: string
@@ -9363,8 +9220,10 @@ components:
           - ExtraEmailAddresses
         IsActive: true
         Schedule:
+          Month: 0
+          QuarterStartMonth: 1
           Time: Time
-          MonthDay: 0
+          MonthDay: 6
         InternalNotes: InternalNotes
         ScheduledReportGuid: ScheduledReportGuid
         Hash: Hash
@@ -9396,6 +9255,7 @@ components:
           $ref: '#/components/schemas/Recipients'
       type: object
     ScheduledReportFileType:
+      description: ""
       enum:
       - PDF
       - Excel
@@ -9407,8 +9267,10 @@ components:
       - Html
     Schedule:
       example:
+        Month: 0
+        QuarterStartMonth: 1
         Time: Time
-        MonthDay: 0
+        MonthDay: 6
       properties:
         ScheduleType:
           $ref: '#/components/schemas/ScheduleType'
@@ -9417,21 +9279,33 @@ components:
           type: string
         WeekDay:
           $ref: '#/components/schemas/DayOfWeek'
+        Month:
+          format: int32
+          type: integer
         MonthDay:
+          format: int32
+          type: integer
+        QuarterStartMonth:
           format: int32
           type: integer
       type: object
     ScheduleType:
+      description: ""
       enum:
       - Daily
       - Weekly
       - Monthly
+      - Quarterly
+      - Yearly
       type: string
       x-enumNames:
       - Daily
       - Weekly
       - Monthly
+      - Quarterly
+      - Yearly
     DayOfWeek:
+      description: ""
       enum:
       - Sunday
       - Monday
@@ -9450,6 +9324,7 @@ components:
       - Friday
       - Saturday
     PresetPeriodTypeWithExclusive:
+      description: ""
       enum:
       - CurrentDay
       - CurrentWeek
@@ -10149,6 +10024,7 @@ components:
       - Timestamp
       type: object
     AlertType:
+      description: ""
       enum:
       - Ok
       - Error
@@ -10170,6 +10046,7 @@ components:
           type: string
       type: object
     SortDirection:
+      description: ""
       enum:
       - Ascending
       - Descending
@@ -10226,6 +10103,7 @@ components:
       - Type
       type: object
     IntegrationTypeEnum:
+      description: ""
       enum:
       - Slack
       - PagerDuty
@@ -10422,6 +10300,7 @@ components:
       - UptimePercentage
       type: object
     LastErrorLevel:
+      description: ""
       enum:
       - NoError
       - Unconfirmed
@@ -10639,6 +10518,7 @@ components:
           type: string
       type: object
     EscalationMode:
+      description: ""
       enum:
       - AlertOnErrorCount
       - AlertOnErrorDuration
@@ -11180,6 +11060,7 @@ components:
           type: array
       type: object
     CapabilityFilterEnum:
+      description: ""
       enum:
       - IPv6
       - NativeIPv6
@@ -11236,6 +11117,7 @@ components:
           $ref: '#/components/schemas/MetaData'
       type: object
     MonitorGroup:
+      description: Monitor group
       example:
         Description: Description
         IsAll: true
@@ -11255,6 +11137,7 @@ components:
       - IsAll
       type: object
     MonitorGroupMember:
+      description: Monitor group member
       example:
         MonitorGuid: MonitorGuid
       properties:
@@ -11269,6 +11152,7 @@ components:
       example:
         WeekDay: '{}'
         StartDateTime: 2000-01-23T04:56:07.000+00:00
+        Description: Description
         EndTime: EndTime
         EndDateTime: 2000-01-23T04:56:07.000+00:00
         ScheduleMode: '{}'
@@ -11319,12 +11203,16 @@ components:
           description: Indicates whether, during the maintenance periods, only alerting
             will be disabled, or if the entire monitor will be stopped
           type: object
+        Description:
+          description: The description for this maintenance period
+          type: string
       required:
       - Id
       - MaintenanceType
       - ScheduleMode
       type: object
     ScheduleMode:
+      description: ""
       enum:
       - OneTime
       - Daily
@@ -11337,6 +11225,7 @@ components:
       - Weekly
       - Monthly
     MaintenanceTypes:
+      description: ""
       enum:
       - DisableMonitoring
       - DisableNotifications
@@ -11344,6 +11233,40 @@ components:
       x-enumNames:
       - DisableMonitoring
       - DisableNotifications
+    MonitorGroupAuthorization:
+      description: Monitor group authorization
+      example:
+        AuthorizationId: AuthorizationId
+        OperatorGuid: OperatorGuid
+        OperatorGroupGuid: OperatorGroupGuid
+      properties:
+        AuthorizationId:
+          format: guid
+          type: string
+        AuthorizationType:
+          $ref: '#/components/schemas/MonitorGroupAuthorizationType'
+        OperatorGuid:
+          format: guid
+          type: string
+        OperatorGroupGuid:
+          format: guid
+          type: string
+      required:
+      - AuthorizationType
+      type: object
+    MonitorGroupAuthorizationType:
+      description: ""
+      enum:
+      - ViewMonitorDataInGroup
+      - ViewMonitorsInGroup
+      - EditMonitorsInGroup
+      - CreateAndDeleteMonitorsInGroup
+      type: string
+      x-enumNames:
+      - ViewMonitorDataInGroup
+      - ViewMonitorsInGroup
+      - EditMonitorsInGroup
+      - CreateAndDeleteMonitorsInGroup
     Operator:
       description: Operator
       example:
@@ -11447,8 +11370,11 @@ components:
           type: boolean
         DefaultDashboard:
           type: string
+        SetupMode:
+          $ref: '#/components/schemas/OperatorSetupMode'
       type: object
     SmsProvider:
+      description: ""
       enum:
       - UseAccountSetting
       - SmsProviderEurope
@@ -11462,6 +11388,15 @@ components:
       - SmsProviderInternational
       - SmsProviderEurope2
       - SmsProviderUSA
+    OperatorSetupMode:
+      description: ""
+      enum:
+      - Manual
+      - Invitation
+      type: string
+      x-enumNames:
+      - Manual
+      - Invitation
     OperatorMember:
       example:
         OperatorGroupGuid: OperatorGroupGuid
@@ -11474,11 +11409,22 @@ components:
       - OperatorGroupGuid
       type: object
     OperatorAuthorizationType:
+      description: ""
       enum:
       - AccountAccess
+      - AccountAdministrator
+      - AllowInfra
+      - FinancialOperator
+      - TechnicalContact
+      - ShareDashboards
       type: string
       x-enumNames:
       - AccountAccess
+      - AccountAdministrator
+      - AllowInfra
+      - FinancialOperator
+      - TechnicalContact
+      - ShareDashboards
     OperatorDutySchedule:
       example:
         WeekDay: '{}'
@@ -11531,6 +11477,7 @@ components:
       - ScheduleMode
       type: object
     OperatorScheduleMode:
+      description: ""
       enum:
       - OneTime
       - Daily
@@ -11620,27 +11567,8 @@ components:
       required:
       - OperatorGuid
       type: object
-    OperatorGroupAuthorization:
-      example:
-        AuthorizationId: AuthorizationId
-        OperatorGuid: OperatorGuid
-        OperatorGroupGuid: OperatorGroupGuid
-      properties:
-        AuthorizationId:
-          format: guid
-          type: string
-        AuthorizationType:
-          $ref: '#/components/schemas/OperatorGroupAuthorizationType'
-        OperatorGuid:
-          format: guid
-          type: string
-        OperatorGroupGuid:
-          format: guid
-          type: string
-      required:
-      - AuthorizationType
-      type: object
     OperatorGroupAuthorizationType:
+      description: ""
       enum:
       - ShareDashboards
       - AllowInfra
@@ -11950,6 +11878,7 @@ components:
       - TotalTime
       type: object
     ErrorLevel:
+      description: ""
       enum:
       - NoError
       - Unconfirmed
@@ -11960,6 +11889,7 @@ components:
       - Unconfirmed
       - Confirmed
     ErrorLevelFilter:
+      description: ""
       enum:
       - NoError
       - Unconfirmed
@@ -12927,49 +12857,53 @@ components:
             key: Links
           Id: '{}'
         Attributes:
+          W3CNavigationTiming: '{}'
+          PageLoadMetrics: '{}'
           Elements:
-          - HttpsHandshakeTime: 2
-            SendTime: 7
+          - HttpsHandshakeTime: 7
+            SendTime: 9
             ElementType: ElementType
-            TimeoutTime: 2
+            TimeoutTime: 4
             StartTime: 6
             Index: 0
             ResponseHeaders: ResponseHeaders
             Url: Url
             ResolvedIpAddress: '{}'
-            StaleTime: 5
+            StaleTime: 2
             GroupIds:
             - 1
             - 1
-            ResolveTime: 1
+            ResolveTime: 5
             TotalBytes: 1
-            TotalTime: 4
-            HttpStatusCode: 7
+            TotalTime: 7
+            HttpStatusCode: 1
             UrlIsBlocked: true
-            ReceiveTime: 3
-            WaitTime: 9
+            ReceiveTime: 2
+            QueueTime: 1
+            WaitTime: 3
             ConnectTime: 5
             RequestHeaders: RequestHeaders
-          - HttpsHandshakeTime: 2
-            SendTime: 7
+          - HttpsHandshakeTime: 7
+            SendTime: 9
             ElementType: ElementType
-            TimeoutTime: 2
+            TimeoutTime: 4
             StartTime: 6
             Index: 0
             ResponseHeaders: ResponseHeaders
             Url: Url
             ResolvedIpAddress: '{}'
-            StaleTime: 5
+            StaleTime: 2
             GroupIds:
             - 1
             - 1
-            ResolveTime: 1
+            ResolveTime: 5
             TotalBytes: 1
-            TotalTime: 4
-            HttpStatusCode: 7
+            TotalTime: 7
+            HttpStatusCode: 1
             UrlIsBlocked: true
-            ReceiveTime: 3
-            WaitTime: 9
+            ReceiveTime: 2
+            QueueTime: 1
+            WaitTime: 3
             ConnectTime: 5
             RequestHeaders: RequestHeaders
           DomainGroupNames:
@@ -12977,7 +12911,7 @@ components:
           - DomainGroupNames
         Links:
           key: Links
-        Id: 1
+        Id: 6
       properties:
         Attributes:
           $ref: '#/components/schemas/WaterfallInfo'
@@ -12999,55 +12933,70 @@ components:
       type: object
     WaterfallInfo:
       example:
+        W3CNavigationTiming: '{}'
+        PageLoadMetrics: '{}'
         Elements:
-        - HttpsHandshakeTime: 2
-          SendTime: 7
+        - HttpsHandshakeTime: 7
+          SendTime: 9
           ElementType: ElementType
-          TimeoutTime: 2
+          TimeoutTime: 4
           StartTime: 6
           Index: 0
           ResponseHeaders: ResponseHeaders
           Url: Url
           ResolvedIpAddress: '{}'
-          StaleTime: 5
+          StaleTime: 2
           GroupIds:
           - 1
           - 1
-          ResolveTime: 1
+          ResolveTime: 5
           TotalBytes: 1
-          TotalTime: 4
-          HttpStatusCode: 7
+          TotalTime: 7
+          HttpStatusCode: 1
           UrlIsBlocked: true
-          ReceiveTime: 3
-          WaitTime: 9
+          ReceiveTime: 2
+          QueueTime: 1
+          WaitTime: 3
           ConnectTime: 5
           RequestHeaders: RequestHeaders
-        - HttpsHandshakeTime: 2
-          SendTime: 7
+        - HttpsHandshakeTime: 7
+          SendTime: 9
           ElementType: ElementType
-          TimeoutTime: 2
+          TimeoutTime: 4
           StartTime: 6
           Index: 0
           ResponseHeaders: ResponseHeaders
           Url: Url
           ResolvedIpAddress: '{}'
-          StaleTime: 5
+          StaleTime: 2
           GroupIds:
           - 1
           - 1
-          ResolveTime: 1
+          ResolveTime: 5
           TotalBytes: 1
-          TotalTime: 4
-          HttpStatusCode: 7
+          TotalTime: 7
+          HttpStatusCode: 1
           UrlIsBlocked: true
-          ReceiveTime: 3
-          WaitTime: 9
+          ReceiveTime: 2
+          QueueTime: 1
+          WaitTime: 3
           ConnectTime: 5
           RequestHeaders: RequestHeaders
         DomainGroupNames:
         - DomainGroupNames
         - DomainGroupNames
       properties:
+        PageLoadMetrics:
+          allOf:
+          - $ref: '#/components/schemas/PageLoadMetrics'
+          description: "Metrics for describing the load cycle of the entire web page.\
+            \ \nIncludes CoreWebVitals and other related metrics."
+          type: object
+        W3CNavigationTiming:
+          allOf:
+          - $ref: '#/components/schemas/W3CNavigationTiming'
+          description: W3C Navigation Timing metrics
+          type: object
         Elements:
           description: Elements in the waterfall
           items:
@@ -13059,29 +13008,121 @@ components:
             type: string
           type: array
       type: object
+    PageLoadMetrics:
+      properties:
+        CumulativeLayoutShift:
+          description: |-
+            Measures the sum total of all individual layout shift scores for every unexpected layout shift that occurs during the entire lifespan of the page.
+            A score lower than 0.1 is considered a good score.
+            Between 0.1 and 0.25 could use some improvement.
+            0.25 or higher is a poor score.
+            https://web.dev/cls/?utm_source=devtools
+
+            In case the data was inconclusive null is returned.
+          format: decimal
+          type: number
+        FirstContentfulPaint:
+          description: |-
+            Measures the time from when the page starts loading to when any of the page's content is rendered on screen.
+            A score lower than 1000ms is considered a good score.
+            https://web.dev/fcp/
+
+            In case the data was inconclusive null is returned.
+          format: int32
+          type: integer
+        LargestContentfulPaint:
+          description: |-
+            The render timestamp of the largest image or text block visible within the viewport.
+            A score lower than 2500ms is good.
+            Between 2500ms and 4000ms needs improvement.
+            4000ms or higher is poor
+            https://web.dev/lcp/
+
+            In case the data was inconclusive null is returned.
+          format: int32
+          type: integer
+        TotalBlockingTime:
+          description: |-
+            The Total Blocking Time (TBT) metric measures the total amount of time between First Contentful Paint (FCP) and Time to Interactive (TTI) where the main thread was blocked for long enough to prevent input responsiveness.
+
+            https://web.dev/tbt/
+
+            In case the data was inconclusive null is returned.
+          format: int32
+          type: integer
+        TimeToInteractive:
+          description: "TTI measures how long it takes a page to become fully interactive.\
+            \ \n\nhttps://web.dev/interactive/\n\nIn case the data was inconclusive\
+            \ null is returned."
+          format: int32
+          type: integer
+      type: object
+    W3CNavigationTiming:
+      properties:
+        RequestStart:
+          description: "Equal to the requestStart as defined by the W3C. \nIt is a\
+            \ timestamp indicating when the browser starts requesting the resource\
+            \ from the webserver after the DNS lookup and TCP connection."
+          format: int32
+          type: integer
+        TimeToFirstByte:
+          description: "Equal to the difference between requestStart and responseStart\
+            \ as defined by the W3C. \nIn short, it's the time between when the first\
+            \ request was sent from browser to server, and when the first bytes of\
+            \ the following response were received by the browser."
+          format: int32
+          type: integer
+        DomInteractive:
+          description: "Equal to domInteractive as defined by W3C. \nIt is a timestamp,\
+            \ indicating the document readiness is set to 'interactive', to indicate\
+            \ that the browser has stopped parsing the page and the user can start\
+            \ interacting with it. \nResources such as scripts, images, stylesheets,\
+            \ or frames may still be loading."
+          format: int32
+          type: integer
+        DomComplete:
+          description: "Equal to the domComplete as defined by W3C. \nIt is a timestamp,\
+            \ indicating when the main document has been parsed, the DOM has been\
+            \ fully loaded, and the page readiness is set to 'complete'."
+          format: int32
+          type: integer
+        LoadEvent:
+          description: "Equal to loadEventEnd as defined by W3C. \nIt is a timestamp,\
+            \ indicating when the load event of the current document has completed,\
+            \ including all dependent resources such as stylesheets and images."
+          format: int32
+          type: integer
+      required:
+      - DomComplete
+      - DomInteractive
+      - LoadEvent
+      - RequestStart
+      - TimeToFirstByte
+      type: object
     PageElement:
       description: Page element describes a page load/request (in a waterfall)
       example:
-        HttpsHandshakeTime: 2
-        SendTime: 7
+        HttpsHandshakeTime: 7
+        SendTime: 9
         ElementType: ElementType
-        TimeoutTime: 2
+        TimeoutTime: 4
         StartTime: 6
         Index: 0
         ResponseHeaders: ResponseHeaders
         Url: Url
         ResolvedIpAddress: '{}'
-        StaleTime: 5
+        StaleTime: 2
         GroupIds:
         - 1
         - 1
-        ResolveTime: 1
+        ResolveTime: 5
         TotalBytes: 1
-        TotalTime: 4
-        HttpStatusCode: 7
+        TotalTime: 7
+        HttpStatusCode: 1
         UrlIsBlocked: true
-        ReceiveTime: 3
-        WaitTime: 9
+        ReceiveTime: 2
+        QueueTime: 1
+        WaitTime: 3
         ConnectTime: 5
         RequestHeaders: RequestHeaders
       properties:
@@ -13091,6 +13132,11 @@ components:
           type: integer
         StartTime:
           description: Starting time in milliseconds
+          format: int32
+          type: integer
+        QueueTime:
+          description: Number of milliseconds this element has been queueing, when
+            appropriate.
           format: int32
           type: integer
         ResolveTime:
@@ -13169,6 +13215,7 @@ components:
       - HttpStatusCode
       - HttpsHandshakeTime
       - Index
+      - QueueTime
       - ReceiveTime
       - ResolveTime
       - SendTime
@@ -13223,9 +13270,9 @@ components:
     Monitor:
       example:
         ThrottlingOptions:
-          ThrottlingSpeedUp: 2
-          ThrottlingSpeedDown: 4
-          ThrottlingLatency: 7
+          ThrottlingSpeedUp: 4
+          ThrottlingSpeedDown: 7
+          ThrottlingLatency: 1
         BlockUrls:
         - BlockUrls
         - BlockUrls
@@ -13246,7 +13293,7 @@ components:
             MaxDifference: 9
             OffsetUTC: 5
           IsPositive: true
-        Port: 7
+        Port: 5
         CheckCertificateErrors: true
         Hash: Hash
         NameForPhoneAlerts: NameForPhoneAlerts
@@ -13301,12 +13348,12 @@ components:
         CertificateOrganizationalUnit: CertificateOrganizationalUnit
         AlertOnLoadTimeLimit2: true
         MinimumBytes: 1
+        Url: Url
         CustomMetrics:
         - VariableName: VariableName
           Name: Name
         - VariableName: VariableName
           Name: Name
-        Url: Url
         TransactionStepDefinition: '{}'
         SftpActionPath: SftpActionPath
         CertificateIssuerOrganizationalUnit: CertificateIssuerOrganizationalUnit
@@ -13314,7 +13361,7 @@ components:
         ExpectedHttpStatusCode: 4
         UserAgent: UserAgent
         CertificateFingerprint: CertificateFingerprint
-        FailedObjectPercentage: 6
+        FailedObjectPercentage: 7
         PredefinedVariables:
         - Value: Value
           Key: Key
@@ -13327,7 +13374,7 @@ components:
         Password: Password
         RequestBody: RequestBody
         CertificateOrganization: CertificateOrganization
-        ElementMaximumSize: 1
+        ElementMaximumSize: 6
         UseConcurrentMonitoring: true
         MonitorGuid: MonitorGuid
         IsLocked: true
@@ -13335,23 +13382,23 @@ components:
         NativeIPv6Only: true
         SelectedCheckpoints:
           Checkpoints:
-          - 5
-          - 5
+          - 9
+          - 9
           ExcludeLocations:
-          - 7
-          - 7
+          - 2
+          - 2
           Regions:
-          - 2
-          - 2
+          - 3
+          - 3
         DnsServer: DnsServer
         BlockGoogleAnalytics: true
         DnsTestValue: DnsTestValue
         ImapSecureConnection: true
         MonitorMode: '{}'
-        LoadTimeLimit1: 9
+        LoadTimeLimit1: 6
         CertificateExpirationWarningDays: 1
-        Credits: 6
-        LoadTimeLimit2: 3
+        LoadTimeLimit2: 1
+        Credits: 5
         Username: Username
         MsaSteps:
         - UseFixedClientCertificate: true
@@ -13366,9 +13413,9 @@ components:
           - TargetValue: TargetValue
             Property: Property
           Url: Url
-          Delay: 1
+          Delay: 2
           Name: Name
-          MaxAttempts: 5
+          MaxAttempts: 7
           Variables:
           - Arguments:
             - null
@@ -13404,9 +13451,9 @@ components:
           - TargetValue: TargetValue
             Property: Property
           Url: Url
-          Delay: 1
+          Delay: 2
           Name: Name
-          MaxAttempts: 5
+          MaxAttempts: 7
           Variables:
           - Arguments:
             - null
@@ -13440,13 +13487,39 @@ components:
         Name:
           description: The name of this monitor.
           type: string
+        MonitorType:
+          $ref: '#/components/schemas/MonitorType'
         IsActive:
           default: true
           description: Indicates whether this monitor is actively running according
             to the monitoring interval.
           type: boolean
+        CustomFields:
+          items:
+            $ref: '#/components/schemas/CustomField'
+          type: array
+        CheckInterval:
+          description: Indicates the interval in seconds
+          type: integer
+        MonitorMode:
+          allOf:
+          - $ref: '#/components/schemas/MonitorMode'
+          type: object
         Hash:
           description: Hash corresponding with this monitor.
+          type: string
+        LoadTimeLimit1:
+          format: int32
+          type: integer
+        LoadTimeLimit2:
+          format: int32
+          type: integer
+        Url:
+          type: string
+        Port:
+          format: int32
+          type: integer
+        NetworkAddress:
           type: string
         GenerateAlert:
           default: true
@@ -13455,16 +13528,9 @@ components:
         IsLocked:
           description: Indicates whether this monitor is locked.
           type: boolean
-        CheckInterval:
-          description: Indicates the interval in seconds
-          type: integer
         Credits:
           format: int32
           type: integer
-        MonitorMode:
-          allOf:
-          - $ref: '#/components/schemas/MonitorMode'
-          type: object
         PredefinedVariables:
           items:
             $ref: '#/components/schemas/PredefinedVariable'
@@ -13481,30 +13547,18 @@ components:
           items:
             $ref: '#/components/schemas/CustomMetric'
           type: array
-        CustomFields:
-          items:
-            $ref: '#/components/schemas/CustomField'
-          type: array
         SelectedCheckpoints:
           $ref: '#/components/schemas/SelectedCheckpoints'
         UsePrimaryCheckpointsOnly:
           type: boolean
         SelfServiceTransactionScript:
           type: string
-        MonitorType:
-          $ref: '#/components/schemas/MonitorType'
         Notes:
           type: string
         AlertOnLoadTimeLimit1:
           type: boolean
-        LoadTimeLimit1:
-          format: int32
-          type: integer
         AlertOnLoadTimeLimit2:
           type: boolean
-        LoadTimeLimit2:
-          format: int32
-          type: integer
         BlockGoogleAnalytics:
           type: boolean
         BlockUptrendsRum:
@@ -13586,9 +13640,6 @@ components:
           type: string
         DnsTestValue:
           type: string
-        Port:
-          format: int32
-          type: integer
         IpVersion:
           $ref: '#/components/schemas/IpVersion'
         NativeIPv6Only:
@@ -13599,8 +13650,6 @@ components:
           format: int32
           type: integer
         DatabaseName:
-          type: string
-        NetworkAddress:
           type: string
         ImapSecureConnection:
           type: boolean
@@ -13623,8 +13672,6 @@ components:
           items:
             $ref: '#/components/schemas/PatternMatch'
           type: array
-        Url:
-          type: string
         BrowserType:
           $ref: '#/components/schemas/BrowserType'
         BrowserWindowDimensions:
@@ -13638,7 +13685,61 @@ components:
           format: int32
           type: integer
       type: object
+    MonitorType:
+      description: ""
+      enum:
+      - Http
+      - Https
+      - Connect
+      - Ping
+      - POP3
+      - SMTP
+      - FTP
+      - MySQL
+      - MSSQL
+      - WebserviceHttp
+      - WebserviceHttps
+      - Transaction
+      - DNS
+      - FullPageCheck
+      - RealBrowserCheck
+      - Certificate
+      - SFTP
+      - MultiStepApi
+      - IMAP
+      type: string
+      x-enumNames:
+      - Http
+      - Https
+      - Connect
+      - Ping
+      - POP3
+      - SMTP
+      - FTP
+      - MySQL
+      - MSSQL
+      - WebserviceHttp
+      - WebserviceHttps
+      - Transaction
+      - DNS
+      - FullPageCheck
+      - RealBrowserCheck
+      - Certificate
+      - SFTP
+      - MultiStepApi
+      - IMAP
+    CustomField:
+      example:
+        Value: Value
+        Name: Name
+      properties:
+        Name:
+          type: string
+        Value:
+          type: string
+      type: object
     MonitorMode:
+      description: ""
       enum:
       - Development
       - Staging
@@ -13672,9 +13773,9 @@ components:
         - TargetValue: TargetValue
           Property: Property
         Url: Url
-        Delay: 1
+        Delay: 2
         Name: Name
-        MaxAttempts: 5
+        MaxAttempts: 7
         Variables:
         - Arguments:
           - null
@@ -13759,6 +13860,7 @@ components:
       - UseFixedClientCertificate
       type: object
     MsaBodyType:
+      description: ""
       enum:
       - Raw
       - VaultFiles
@@ -13798,6 +13900,7 @@ components:
       - Source
       type: object
     ApiVariableSourceType:
+      description: ""
       enum:
       - None
       - Constant
@@ -13865,6 +13968,7 @@ components:
       - Source
       type: object
     ApiAssertionSourceType:
+      description: ""
       enum:
       - None
       - Constant
@@ -13913,6 +14017,7 @@ components:
       - CumulativeDuration
       - ResponseHasException
     ApiComparisonType:
+      description: ""
       enum:
       - Equal
       - DoesNotEqual
@@ -13960,6 +14065,7 @@ components:
       - PasswordSpecified
       type: object
     ApiHttpAuthenticationType:
+      description: ""
       enum:
       - None
       - Basic
@@ -13972,6 +14078,7 @@ components:
       - NTLM
       - Digest
     MsaStepType:
+      description: ""
       enum:
       - HttpRequest
       - Delay
@@ -14013,6 +14120,7 @@ components:
       - Type
       type: object
     UserDefinedFunctionType:
+      description: ""
       enum:
       - Mapping
       - Regex
@@ -14035,6 +14143,7 @@ components:
           type: string
       type: object
     JwtAlgorithm:
+      description: ""
       enum:
       - HS256
       - HS384
@@ -14054,27 +14163,17 @@ components:
         VariableName:
           type: string
       type: object
-    CustomField:
-      example:
-        Value: Value
-        Name: Name
-      properties:
-        Name:
-          type: string
-        Value:
-          type: string
-      type: object
     SelectedCheckpoints:
       example:
         Checkpoints:
-        - 5
-        - 5
+        - 9
+        - 9
         ExcludeLocations:
-        - 7
-        - 7
+        - 2
+        - 2
         Regions:
-        - 2
-        - 2
+        - 3
+        - 3
       properties:
         Checkpoints:
           items:
@@ -14089,48 +14188,6 @@ components:
             type: integer
           type: array
       type: object
-    MonitorType:
-      enum:
-      - Http
-      - Https
-      - Connect
-      - Ping
-      - POP3
-      - SMTP
-      - FTP
-      - MySQL
-      - MSSQL
-      - WebserviceHttp
-      - WebserviceHttps
-      - Transaction
-      - DNS
-      - FullPageCheck
-      - RealBrowserCheck
-      - Certificate
-      - SFTP
-      - MultiStepApi
-      - IMAP
-      type: string
-      x-enumNames:
-      - Http
-      - Https
-      - Connect
-      - Ping
-      - POP3
-      - SMTP
-      - FTP
-      - MySQL
-      - MSSQL
-      - WebserviceHttp
-      - WebserviceHttps
-      - Transaction
-      - DNS
-      - FullPageCheck
-      - RealBrowserCheck
-      - Certificate
-      - SFTP
-      - MultiStepApi
-      - IMAP
     RequestHeader:
       example:
         Value: Value
@@ -14143,9 +14200,9 @@ components:
       type: object
     ThrottlingOptions:
       example:
-        ThrottlingSpeedUp: 2
-        ThrottlingSpeedDown: 4
-        ThrottlingLatency: 7
+        ThrottlingSpeedUp: 4
+        ThrottlingSpeedDown: 7
+        ThrottlingLatency: 1
       properties:
         ThrottlingType:
           $ref: '#/components/schemas/ThrottlingType'
@@ -14162,6 +14219,7 @@ components:
           type: integer
       type: object
     ThrottlingType:
+      description: ""
       enum:
       - Inactive
       - Browser
@@ -14172,6 +14230,7 @@ components:
       - Browser
       - Simulated
     ThrottlingValue:
+      description: ""
       enum:
       - Adsl
       - Fiber
@@ -14224,6 +14283,7 @@ components:
       - Type
       type: object
     SubStepType:
+      description: ""
       enum:
       - Navigate
       - Click
@@ -14250,6 +14310,7 @@ components:
       - SwitchToFrame
       - SwitchToTab
     DnsQuery:
+      description: ""
       enum:
       - ARecord
       - CnameRecord
@@ -14272,6 +14333,7 @@ components:
       - AaaaRecord
       - SrvRecord
     IpVersion:
+      description: ""
       enum:
       - IpV4
       - IpV6
@@ -14280,6 +14342,7 @@ components:
       - IpV4
       - IpV6
     SftpAction:
+      description: ""
       enum:
       - ConnectOnly
       - TestFileExists
@@ -14292,6 +14355,7 @@ components:
       - TestFileDoesNotExist
       - DownLoadFile
     HttpMethod:
+      description: ""
       enum:
       - Get
       - Post
@@ -14300,6 +14364,7 @@ components:
       - Get
       - Post
     TlsVersion:
+      description: ""
       enum:
       - Tls12
       - Tls11
@@ -14350,6 +14415,7 @@ components:
       - OffsetUTC
       type: object
     BrowserType:
+      description: ""
       enum:
       - IE
       - Firefox
@@ -14357,6 +14423,7 @@ components:
       - Safari
       - PhantomJS
       - PhantomJS20
+      - ChromeWithExtraMetrics
       type: string
       x-enumNames:
       - IE
@@ -14365,6 +14432,7 @@ components:
       - Safari
       - PhantomJS
       - PhantomJS20
+      - ChromeWithExtraMetrics
     BrowserWindowDimensions:
       example:
         PixelRatio: 8
@@ -14392,6 +14460,38 @@ components:
       - PixelRatio
       - Width
       type: object
+    MonitorAuthorization:
+      description: Monitor group authorization
+      example:
+        AuthorizationId: AuthorizationId
+        OperatorGuid: OperatorGuid
+        OperatorGroupGuid: OperatorGroupGuid
+      properties:
+        AuthorizationId:
+          format: guid
+          type: string
+        AuthorizationType:
+          $ref: '#/components/schemas/MonitorAuthorizationType'
+        OperatorGuid:
+          format: guid
+          type: string
+        OperatorGroupGuid:
+          format: guid
+          type: string
+      required:
+      - AuthorizationType
+      type: object
+    MonitorAuthorizationType:
+      description: ""
+      enum:
+      - ViewMonitorData
+      - ViewMonitor
+      - EditMonitor
+      type: string
+      x-enumNames:
+      - ViewMonitorData
+      - ViewMonitor
+      - EditMonitor
     RegistrationResponse:
       example:
         OperatorName: OperatorName
@@ -14421,6 +14521,7 @@ components:
       - status
       type: object
     RegisterStatus:
+      description: ""
       enum:
       - OK
       - UnexpectedError
@@ -14436,7 +14537,6 @@ components:
         VaultItemGuid: VaultItemGuid
         CertificateArchive: '{}'
         Value: Value
-        IsSensitive: true
         Hash: Hash
         VaultItemType: '{}'
         Notes: Notes
@@ -14467,9 +14567,6 @@ components:
           - $ref: '#/components/schemas/VaultItemTypes'
           description: The vault item type
           type: object
-        IsSensitive:
-          description: 'Whether or not the vault item is considered sensitive. '
-          type: boolean
         Notes:
           description: Notes about this vault item
           type: string
@@ -14492,17 +14589,16 @@ components:
           type: object
       type: object
     VaultItemTypes:
+      description: ""
       enum:
       - CredentialSet
       - Certificate
-      - Text
       - CertificateArchive
       - File
       type: string
       x-enumNames:
       - CredentialSet
       - Certificate
-      - Text
       - CertificateArchive
       - File
     CertificateArchive:
@@ -14582,6 +14678,7 @@ components:
       - AuthorizationType
       type: object
     VaultSectionAuthorizationType:
+      description: ""
       enum:
       - ViewVaultSection
       - ChangeVaultSection

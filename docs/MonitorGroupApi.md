@@ -6,9 +6,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**MonitorGroupAddMaintenancePeriodToAllMembers**](MonitorGroupApi.md#MonitorGroupAddMaintenancePeriodToAllMembers) | **Post** /MonitorGroup/{monitorGroupGuid}/AddMaintenancePeriodToAllMembers | Adds the provided maintenance period to all monitors in the group specified 
 [**MonitorGroupAddMonitorToMonitorGroup**](MonitorGroupApi.md#MonitorGroupAddMonitorToMonitorGroup) | **Post** /MonitorGroup/{monitorGroupGuid}/Member/{monitorGuid} | Adds the specified monitor to the monitor group 
+[**MonitorGroupCreateAuthorizationForMonitorGroup**](MonitorGroupApi.md#MonitorGroupCreateAuthorizationForMonitorGroup) | **Post** /MonitorGroup/{monitorGroupGuid}/Authorizations | Create monitor authorizations for monitor group If the wanted authorizations requires other authorizations, these will be added as well
 [**MonitorGroupCreateMonitorGroup**](MonitorGroupApi.md#MonitorGroupCreateMonitorGroup) | **Post** /MonitorGroup | Creates a new monitor group
+[**MonitorGroupDeleteAuthorizationForMonitorGroup**](MonitorGroupApi.md#MonitorGroupDeleteAuthorizationForMonitorGroup) | **Delete** /MonitorGroup/{monitorGroupGuid}/Authorizations/{authorizationGuid} | Delete monitor authorization for monitor group
 [**MonitorGroupDeleteMonitorGroup**](MonitorGroupApi.md#MonitorGroupDeleteMonitorGroup) | **Delete** /MonitorGroup/{monitorGroupGuid} | Deletes the specified monitor group
 [**MonitorGroupGetAllMonitorGroups**](MonitorGroupApi.md#MonitorGroupGetAllMonitorGroups) | **Get** /MonitorGroup | Gets all monitor groups
+[**MonitorGroupGetAuthorizationsOfMonitorGroup**](MonitorGroupApi.md#MonitorGroupGetAuthorizationsOfMonitorGroup) | **Get** /MonitorGroup/{monitorGroupGuid}/Authorizations | Get monitor authorizations of monitor group
 [**MonitorGroupGetMonitorGroup**](MonitorGroupApi.md#MonitorGroupGetMonitorGroup) | **Get** /MonitorGroup/{monitorGroupGuid} | Gets the details of a monitor group
 [**MonitorGroupGetMonitorGroupMembers**](MonitorGroupApi.md#MonitorGroupGetMonitorGroupMembers) | **Get** /MonitorGroup/{monitorGroupGuid}/Member | Gets a list of all members of a monitor group
 [**MonitorGroupRemoveMonitorFromMonitorGroup**](MonitorGroupApi.md#MonitorGroupRemoveMonitorFromMonitorGroup) | **Delete** /MonitorGroup/{monitorGroupGuid}/Member/{monitorGuid} | Removes the specified monitor from the monitor group
@@ -157,6 +160,76 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## MonitorGroupCreateAuthorizationForMonitorGroup
+
+> []MonitorGroupAuthorization MonitorGroupCreateAuthorizationForMonitorGroup(ctx, monitorGroupGuid).MonitorGroupAuthorization(monitorGroupAuthorization).Execute()
+
+Create monitor authorizations for monitor group If the wanted authorizations requires other authorizations, these will be added as well
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    monitorGroupGuid := "monitorGroupGuid_example" // string | The monitor group GUID
+    monitorGroupAuthorization := *openapiclient.NewMonitorGroupAuthorization(openapiclient.MonitorGroupAuthorizationType("ViewMonitorDataInGroup")) // MonitorGroupAuthorization | Authorization to add
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.MonitorGroupApi.MonitorGroupCreateAuthorizationForMonitorGroup(context.Background(), monitorGroupGuid).MonitorGroupAuthorization(monitorGroupAuthorization).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupCreateAuthorizationForMonitorGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `MonitorGroupCreateAuthorizationForMonitorGroup`: []MonitorGroupAuthorization
+    fmt.Fprintf(os.Stdout, "Response from `MonitorGroupApi.MonitorGroupCreateAuthorizationForMonitorGroup`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**monitorGroupGuid** | **string** | The monitor group GUID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMonitorGroupCreateAuthorizationForMonitorGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **monitorGroupAuthorization** | [**MonitorGroupAuthorization**](MonitorGroupAuthorization.md) | Authorization to add | 
+
+### Return type
+
+[**[]MonitorGroupAuthorization**](MonitorGroupAuthorization.md)
+
+### Authorization
+
+[basicauth](../README.md#basicauth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## MonitorGroupCreateMonitorGroup
 
 > MonitorGroup MonitorGroupCreateMonitorGroup(ctx).MonitorGroup(monitorGroup).Execute()
@@ -214,6 +287,75 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MonitorGroupDeleteAuthorizationForMonitorGroup
+
+> MonitorGroupDeleteAuthorizationForMonitorGroup(ctx, monitorGroupGuid, authorizationGuid).Execute()
+
+Delete monitor authorization for monitor group
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    monitorGroupGuid := "monitorGroupGuid_example" // string | The monitor group GUID
+    authorizationGuid := "authorizationGuid_example" // string | The authorization GUID that needs to be deleted
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.MonitorGroupApi.MonitorGroupDeleteAuthorizationForMonitorGroup(context.Background(), monitorGroupGuid, authorizationGuid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupDeleteAuthorizationForMonitorGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**monitorGroupGuid** | **string** | The monitor group GUID | 
+**authorizationGuid** | **string** | The authorization GUID that needs to be deleted | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMonitorGroupDeleteAuthorizationForMonitorGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[basicauth](../README.md#basicauth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -331,6 +473,74 @@ Other parameters are passed through a pointer to a apiMonitorGroupGetAllMonitorG
 ### Return type
 
 [**[]MonitorGroup**](MonitorGroup.md)
+
+### Authorization
+
+[basicauth](../README.md#basicauth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MonitorGroupGetAuthorizationsOfMonitorGroup
+
+> []MonitorGroupAuthorization MonitorGroupGetAuthorizationsOfMonitorGroup(ctx, monitorGroupGuid).Execute()
+
+Get monitor authorizations of monitor group
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    monitorGroupGuid := "monitorGroupGuid_example" // string | The monitor group GUID
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.MonitorGroupApi.MonitorGroupGetAuthorizationsOfMonitorGroup(context.Background(), monitorGroupGuid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupGetAuthorizationsOfMonitorGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `MonitorGroupGetAuthorizationsOfMonitorGroup`: []MonitorGroupAuthorization
+    fmt.Fprintf(os.Stdout, "Response from `MonitorGroupApi.MonitorGroupGetAuthorizationsOfMonitorGroup`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**monitorGroupGuid** | **string** | The monitor group GUID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMonitorGroupGetAuthorizationsOfMonitorGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**[]MonitorGroupAuthorization**](MonitorGroupAuthorization.md)
 
 ### Authorization
 
