@@ -1,0 +1,124 @@
+# HttpEngineCheckDetailsAttributes
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**StepResults** | Pointer to [**[]HttpEngineStep**](HttpEngineStep.md) | The results of the steps  | [optional] 
+**TimingInfo** | Pointer to [**HttpEngineAttributesTimingInfo**](HttpEngineAttributesTimingInfo.md) |  | [optional] 
+**TotalSteps** | **int32** | Number of total steps | 
+**PassedSteps** | **int32** | Number of passed/succeed tests | 
+
+## Methods
+
+### NewHttpEngineCheckDetailsAttributes
+
+`func NewHttpEngineCheckDetailsAttributes(totalSteps int32, passedSteps int32, ) *HttpEngineCheckDetailsAttributes`
+
+NewHttpEngineCheckDetailsAttributes instantiates a new HttpEngineCheckDetailsAttributes object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewHttpEngineCheckDetailsAttributesWithDefaults
+
+`func NewHttpEngineCheckDetailsAttributesWithDefaults() *HttpEngineCheckDetailsAttributes`
+
+NewHttpEngineCheckDetailsAttributesWithDefaults instantiates a new HttpEngineCheckDetailsAttributes object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetStepResults
+
+`func (o *HttpEngineCheckDetailsAttributes) GetStepResults() []HttpEngineStep`
+
+GetStepResults returns the StepResults field if non-nil, zero value otherwise.
+
+### GetStepResultsOk
+
+`func (o *HttpEngineCheckDetailsAttributes) GetStepResultsOk() (*[]HttpEngineStep, bool)`
+
+GetStepResultsOk returns a tuple with the StepResults field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStepResults
+
+`func (o *HttpEngineCheckDetailsAttributes) SetStepResults(v []HttpEngineStep)`
+
+SetStepResults sets StepResults field to given value.
+
+### HasStepResults
+
+`func (o *HttpEngineCheckDetailsAttributes) HasStepResults() bool`
+
+HasStepResults returns a boolean if a field has been set.
+
+### GetTimingInfo
+
+`func (o *HttpEngineCheckDetailsAttributes) GetTimingInfo() HttpEngineAttributesTimingInfo`
+
+GetTimingInfo returns the TimingInfo field if non-nil, zero value otherwise.
+
+### GetTimingInfoOk
+
+`func (o *HttpEngineCheckDetailsAttributes) GetTimingInfoOk() (*HttpEngineAttributesTimingInfo, bool)`
+
+GetTimingInfoOk returns a tuple with the TimingInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimingInfo
+
+`func (o *HttpEngineCheckDetailsAttributes) SetTimingInfo(v HttpEngineAttributesTimingInfo)`
+
+SetTimingInfo sets TimingInfo field to given value.
+
+### HasTimingInfo
+
+`func (o *HttpEngineCheckDetailsAttributes) HasTimingInfo() bool`
+
+HasTimingInfo returns a boolean if a field has been set.
+
+### GetTotalSteps
+
+`func (o *HttpEngineCheckDetailsAttributes) GetTotalSteps() int32`
+
+GetTotalSteps returns the TotalSteps field if non-nil, zero value otherwise.
+
+### GetTotalStepsOk
+
+`func (o *HttpEngineCheckDetailsAttributes) GetTotalStepsOk() (*int32, bool)`
+
+GetTotalStepsOk returns a tuple with the TotalSteps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalSteps
+
+`func (o *HttpEngineCheckDetailsAttributes) SetTotalSteps(v int32)`
+
+SetTotalSteps sets TotalSteps field to given value.
+
+
+### GetPassedSteps
+
+`func (o *HttpEngineCheckDetailsAttributes) GetPassedSteps() int32`
+
+GetPassedSteps returns the PassedSteps field if non-nil, zero value otherwise.
+
+### GetPassedStepsOk
+
+`func (o *HttpEngineCheckDetailsAttributes) GetPassedStepsOk() (*int32, bool)`
+
+GetPassedStepsOk returns a tuple with the PassedSteps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPassedSteps
+
+`func (o *HttpEngineCheckDetailsAttributes) SetPassedSteps(v int32)`
+
+SetPassedSteps sets PassedSteps field to given value.
+
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

@@ -33,8 +33,8 @@ func main() {
     take := int32(56) // int32 | The maximum number of monitors in the monitor group to get data from. (optional) (default to 10000)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StatusApi.StatusGetMonitorGroupStatus(context.Background(), monitorGroupGuid).Skip(skip).Take(take).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StatusApi.StatusGetMonitorGroupStatus(context.Background(), monitorGroupGuid).Skip(skip).Take(take).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StatusApi.StatusGetMonitorGroupStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -103,8 +103,8 @@ func main() {
     monitorGuid := "monitorGuid_example" // string | The Guid of the monitor.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StatusApi.StatusGetMonitorStatus(context.Background(), monitorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StatusApi.StatusGetMonitorStatus(context.Background(), monitorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StatusApi.StatusGetMonitorStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

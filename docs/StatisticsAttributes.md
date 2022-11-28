@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StartDateTime** | **time.Time** |  | 
-**EndDateTime** | **time.Time** |  | 
+**StartDateTime** | **map[string]interface{}** |  | 
+**EndDateTime** | **map[string]interface{}** |  | 
 **Alerts** | Pointer to **int32** |  | [optional] 
 **SlaTarget** | Pointer to **float64** |  | [optional] 
 **SlaTargetTotalTime** | Pointer to **float64** |  | [optional] 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewStatisticsAttributes
 
-`func NewStatisticsAttributes(startDateTime time.Time, endDateTime time.Time, ) *StatisticsAttributes`
+`func NewStatisticsAttributes(startDateTime map[string]interface{}, endDateTime map[string]interface{}, ) *StatisticsAttributes`
 
 NewStatisticsAttributes instantiates a new StatisticsAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -45,40 +45,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStartDateTime
 
-`func (o *StatisticsAttributes) GetStartDateTime() time.Time`
+`func (o *StatisticsAttributes) GetStartDateTime() map[string]interface{}`
 
 GetStartDateTime returns the StartDateTime field if non-nil, zero value otherwise.
 
 ### GetStartDateTimeOk
 
-`func (o *StatisticsAttributes) GetStartDateTimeOk() (*time.Time, bool)`
+`func (o *StatisticsAttributes) GetStartDateTimeOk() (*map[string]interface{}, bool)`
 
 GetStartDateTimeOk returns a tuple with the StartDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStartDateTime
 
-`func (o *StatisticsAttributes) SetStartDateTime(v time.Time)`
+`func (o *StatisticsAttributes) SetStartDateTime(v map[string]interface{})`
 
 SetStartDateTime sets StartDateTime field to given value.
 
 
 ### GetEndDateTime
 
-`func (o *StatisticsAttributes) GetEndDateTime() time.Time`
+`func (o *StatisticsAttributes) GetEndDateTime() map[string]interface{}`
 
 GetEndDateTime returns the EndDateTime field if non-nil, zero value otherwise.
 
 ### GetEndDateTimeOk
 
-`func (o *StatisticsAttributes) GetEndDateTimeOk() (*time.Time, bool)`
+`func (o *StatisticsAttributes) GetEndDateTimeOk() (*map[string]interface{}, bool)`
 
 GetEndDateTimeOk returns a tuple with the EndDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndDateTime
 
-`func (o *StatisticsAttributes) SetEndDateTime(v time.Time)`
+`func (o *StatisticsAttributes) SetEndDateTime(v map[string]interface{})`
 
 SetEndDateTime sets EndDateTime field to given value.
 

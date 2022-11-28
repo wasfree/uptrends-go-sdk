@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Url** | Pointer to **string** |  | [optional] 
-**Method** | Pointer to **string** |  | [optional] 
+**Method** | [**HttpMethods**](HttpMethods.md) |  | 
 **Body** | Pointer to **string** | The body that will be send in the request. Only used if BodyType equals Raw | [optional] 
 **BodyType** | Pointer to [**MsaBodyType**](MsaBodyType.md) | Determines what kind of body the request will have. | [optional] 
 **VaultFileId** | Pointer to **string** | The guid of the vaultfile that will be send in the request. Only used if BodyType equals VaultFiles | [optional] 
@@ -21,12 +21,13 @@ Name | Type | Description | Notes
 **StepType** | [**MsaStepType**](MsaStepType.md) |  | 
 **RetryUntilSuccessful** | **bool** |  | 
 **MaxAttempts** | **int32** |  | 
+**RetryWaitMilliseconds** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
 ### NewMsaStep
 
-`func NewMsaStep(useFixedClientCertificate bool, ignoreCertificateErrors bool, delay int32, stepType MsaStepType, retryUntilSuccessful bool, maxAttempts int32, ) *MsaStep`
+`func NewMsaStep(method HttpMethods, useFixedClientCertificate bool, ignoreCertificateErrors bool, delay int32, stepType MsaStepType, retryUntilSuccessful bool, maxAttempts int32, ) *MsaStep`
 
 NewMsaStep instantiates a new MsaStep object
 This constructor will assign default values to properties that have it defined,
@@ -68,28 +69,23 @@ HasUrl returns a boolean if a field has been set.
 
 ### GetMethod
 
-`func (o *MsaStep) GetMethod() string`
+`func (o *MsaStep) GetMethod() HttpMethods`
 
 GetMethod returns the Method field if non-nil, zero value otherwise.
 
 ### GetMethodOk
 
-`func (o *MsaStep) GetMethodOk() (*string, bool)`
+`func (o *MsaStep) GetMethodOk() (*HttpMethods, bool)`
 
 GetMethodOk returns a tuple with the Method field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMethod
 
-`func (o *MsaStep) SetMethod(v string)`
+`func (o *MsaStep) SetMethod(v HttpMethods)`
 
 SetMethod sets Method field to given value.
 
-### HasMethod
-
-`func (o *MsaStep) HasMethod() bool`
-
-HasMethod returns a boolean if a field has been set.
 
 ### GetBody
 
@@ -435,6 +431,31 @@ and a boolean to check if the value has been set.
 
 SetMaxAttempts sets MaxAttempts field to given value.
 
+
+### GetRetryWaitMilliseconds
+
+`func (o *MsaStep) GetRetryWaitMilliseconds() int32`
+
+GetRetryWaitMilliseconds returns the RetryWaitMilliseconds field if non-nil, zero value otherwise.
+
+### GetRetryWaitMillisecondsOk
+
+`func (o *MsaStep) GetRetryWaitMillisecondsOk() (*int32, bool)`
+
+GetRetryWaitMillisecondsOk returns a tuple with the RetryWaitMilliseconds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRetryWaitMilliseconds
+
+`func (o *MsaStep) SetRetryWaitMilliseconds(v int32)`
+
+SetRetryWaitMilliseconds sets RetryWaitMilliseconds field to given value.
+
+### HasRetryWaitMilliseconds
+
+`func (o *MsaStep) HasRetryWaitMilliseconds() bool`
+
+HasRetryWaitMilliseconds returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

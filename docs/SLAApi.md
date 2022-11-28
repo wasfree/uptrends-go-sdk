@@ -38,11 +38,11 @@ import (
 )
 
 func main() {
-    sla := *openapiclient.NewSla() // Sla | The complete SLA definition that should be created.
+    sla := *openapiclient.NewSla() // Sla | The complete SLA definition that should be created. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SLAApi.SlaCreateSla(context.Background()).Sla(sla).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SLAApi.SlaCreateSla(context.Background()).Sla(sla).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SLAApi.SlaCreateSla``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -106,8 +106,8 @@ func main() {
     exclusionPeriodId := int32(56) // int32 | The id of the exclusion period.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SLAApi.SlaDeleteExclusionPeriod(context.Background(), slaGuid, exclusionPeriodId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SLAApi.SlaDeleteExclusionPeriod(context.Background(), slaGuid, exclusionPeriodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SLAApi.SlaDeleteExclusionPeriod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -174,8 +174,8 @@ func main() {
     slaGuid := "slaGuid_example" // string | The Guid of the SLA definition that should be deleted.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SLAApi.SlaDeleteSla(context.Background(), slaGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SLAApi.SlaDeleteSla(context.Background(), slaGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SLAApi.SlaDeleteSla``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -241,8 +241,8 @@ func main() {
     exclusionPeriodId := int32(56) // int32 | The id of the exclusion period.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SLAApi.SlaGetExclusionPeriod(context.Background(), slaGuid, exclusionPeriodId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SLAApi.SlaGetExclusionPeriod(context.Background(), slaGuid, exclusionPeriodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SLAApi.SlaGetExclusionPeriod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -311,8 +311,8 @@ func main() {
     slaGuid := "slaGuid_example" // string | The Guid of the SLA definition.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SLAApi.SlaGetExclusionPeriods(context.Background(), slaGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SLAApi.SlaGetExclusionPeriods(context.Background(), slaGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SLAApi.SlaGetExclusionPeriods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -379,8 +379,8 @@ func main() {
     slaGuid := "slaGuid_example" // string | The Guid of the SLA definition.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SLAApi.SlaGetSla(context.Background(), slaGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SLAApi.SlaGetSla(context.Background(), slaGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SLAApi.SlaGetSla``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -446,8 +446,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SLAApi.SlaGetSlas(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SLAApi.SlaGetSlas(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SLAApi.SlaGetSlas``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -505,11 +505,11 @@ import (
 func main() {
     slaGuid := "slaGuid_example" // string | The Guid of the SLA definition.
     exclusionPeriodId := int32(56) // int32 | The id of the exclusion period.
-    exclusionPeriod := *openapiclient.NewExclusionPeriod() // ExclusionPeriod | The complete definition of the exclusion period.
+    exclusionPeriod := *openapiclient.NewExclusionPeriod() // ExclusionPeriod | The complete definition of the exclusion period. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SLAApi.SlaPatchExclusionPeriod(context.Background(), slaGuid, exclusionPeriodId).ExclusionPeriod(exclusionPeriod).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SLAApi.SlaPatchExclusionPeriod(context.Background(), slaGuid, exclusionPeriodId).ExclusionPeriod(exclusionPeriod).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SLAApi.SlaPatchExclusionPeriod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -577,11 +577,11 @@ import (
 
 func main() {
     slaGuid := "slaGuid_example" // string | The Guid of the SLA that should be updated.
-    sla := *openapiclient.NewSla() // Sla | The partial definition for the SLA that should be updated.
+    sla := *openapiclient.NewSla() // Sla | The partial definition for the SLA that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SLAApi.SlaPatchSla(context.Background(), slaGuid).Sla(sla).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SLAApi.SlaPatchSla(context.Background(), slaGuid).Sla(sla).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SLAApi.SlaPatchSla``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -645,11 +645,11 @@ import (
 
 func main() {
     slaGuid := "slaGuid_example" // string | The Guid of the SLA definition.
-    exclusionPeriod := *openapiclient.NewExclusionPeriod() // ExclusionPeriod | The complete definition of the exclusion period.
+    exclusionPeriod := *openapiclient.NewExclusionPeriod() // ExclusionPeriod | The complete definition of the exclusion period. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SLAApi.SlaPostExclusionPeriod(context.Background(), slaGuid).ExclusionPeriod(exclusionPeriod).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SLAApi.SlaPostExclusionPeriod(context.Background(), slaGuid).ExclusionPeriod(exclusionPeriod).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SLAApi.SlaPostExclusionPeriod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -716,11 +716,11 @@ import (
 func main() {
     slaGuid := "slaGuid_example" // string | The Guid of the SLA definition.
     exclusionPeriodId := int32(56) // int32 | The id of the exclusion period.
-    exclusionPeriod := *openapiclient.NewExclusionPeriod() // ExclusionPeriod | The complete definition of the exclusion period.
+    exclusionPeriod := *openapiclient.NewExclusionPeriod() // ExclusionPeriod | The complete definition of the exclusion period. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SLAApi.SlaPutExclusionPeriod(context.Background(), slaGuid, exclusionPeriodId).ExclusionPeriod(exclusionPeriod).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SLAApi.SlaPutExclusionPeriod(context.Background(), slaGuid, exclusionPeriodId).ExclusionPeriod(exclusionPeriod).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SLAApi.SlaPutExclusionPeriod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -788,11 +788,11 @@ import (
 
 func main() {
     slaGuid := "slaGuid_example" // string | The Guid of the SLA that should be updated.
-    sla := *openapiclient.NewSla() // Sla | The complete definition for the SLA that should be updated.
+    sla := *openapiclient.NewSla() // Sla | The complete definition for the SLA that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SLAApi.SlaPutSla(context.Background(), slaGuid).Sla(sla).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SLAApi.SlaPutSla(context.Background(), slaGuid).Sla(sla).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SLAApi.SlaPutSla``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

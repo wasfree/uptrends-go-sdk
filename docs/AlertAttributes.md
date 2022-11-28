@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AlertType** | [**AlertType**](AlertType.md) | Alert type indicating if this was an Error or Ok alert. | 
 **MonitorGuid** | **string** | The monitor identifier. | 
-**Timestamp** | **time.Time** | Date/time stamp of the alert. | 
-**FirstError** | **time.Time** | Date/time stamp of the first monitor check. | 
+**Timestamp** | **map[string]interface{}** | Date/time stamp of the alert. | 
+**FirstError** | **map[string]interface{}** | Date/time stamp of the first monitor check. | 
 **MonitorCheckId** | **int64** | The Id of the monitor check that triggered this alert. | 
 **FirstErrorMonitorCheckId** | **int64** | The Id of the first monitor check error that led to this alert. | 
 **ErrorDescription** | Pointer to **string** | A text value that describes the error that was found, or OK if no error was found. | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewAlertAttributes
 
-`func NewAlertAttributes(alertType AlertType, monitorGuid string, timestamp time.Time, firstError time.Time, monitorCheckId int64, firstErrorMonitorCheckId int64, ) *AlertAttributes`
+`func NewAlertAttributes(alertType AlertType, monitorGuid string, timestamp map[string]interface{}, firstError map[string]interface{}, monitorCheckId int64, firstErrorMonitorCheckId int64, ) *AlertAttributes`
 
 NewAlertAttributes instantiates a new AlertAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -75,40 +75,40 @@ SetMonitorGuid sets MonitorGuid field to given value.
 
 ### GetTimestamp
 
-`func (o *AlertAttributes) GetTimestamp() time.Time`
+`func (o *AlertAttributes) GetTimestamp() map[string]interface{}`
 
 GetTimestamp returns the Timestamp field if non-nil, zero value otherwise.
 
 ### GetTimestampOk
 
-`func (o *AlertAttributes) GetTimestampOk() (*time.Time, bool)`
+`func (o *AlertAttributes) GetTimestampOk() (*map[string]interface{}, bool)`
 
 GetTimestampOk returns a tuple with the Timestamp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimestamp
 
-`func (o *AlertAttributes) SetTimestamp(v time.Time)`
+`func (o *AlertAttributes) SetTimestamp(v map[string]interface{})`
 
 SetTimestamp sets Timestamp field to given value.
 
 
 ### GetFirstError
 
-`func (o *AlertAttributes) GetFirstError() time.Time`
+`func (o *AlertAttributes) GetFirstError() map[string]interface{}`
 
 GetFirstError returns the FirstError field if non-nil, zero value otherwise.
 
 ### GetFirstErrorOk
 
-`func (o *AlertAttributes) GetFirstErrorOk() (*time.Time, bool)`
+`func (o *AlertAttributes) GetFirstErrorOk() (*map[string]interface{}, bool)`
 
 GetFirstErrorOk returns a tuple with the FirstError field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFirstError
 
-`func (o *AlertAttributes) SetFirstError(v time.Time)`
+`func (o *AlertAttributes) SetFirstError(v map[string]interface{})`
 
 SetFirstError sets FirstError field to given value.
 

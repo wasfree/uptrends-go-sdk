@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**HttpEngineCheckDetails**](HttpEngineCheckDetails.md) |  | [optional] 
-**Links** | Pointer to [**LinksData**](LinksData.md) |  | [optional] 
-**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) |  | [optional] 
-**Meta** | Pointer to [**MetaData**](MetaData.md) |  | [optional] 
+**Data** | Pointer to [**MsaDetailsResponseData**](MsaDetailsResponseData.md) |  | [optional] 
+**Links** | Pointer to [**StatisticsResponseLinks**](StatisticsResponseLinks.md) |  | [optional] 
+**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) | Relationships of the object | [optional] 
+**Meta** | Pointer to [**StatisticsResponseMeta**](StatisticsResponseMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *MsaDetailsResponse) GetData() HttpEngineCheckDetails`
+`func (o *MsaDetailsResponse) GetData() MsaDetailsResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *MsaDetailsResponse) GetDataOk() (*HttpEngineCheckDetails, bool)`
+`func (o *MsaDetailsResponse) GetDataOk() (*MsaDetailsResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *MsaDetailsResponse) SetData(v HttpEngineCheckDetails)`
+`func (o *MsaDetailsResponse) SetData(v MsaDetailsResponseData)`
 
 SetData sets Data field to given value.
 
@@ -55,20 +55,20 @@ HasData returns a boolean if a field has been set.
 
 ### GetLinks
 
-`func (o *MsaDetailsResponse) GetLinks() LinksData`
+`func (o *MsaDetailsResponse) GetLinks() StatisticsResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *MsaDetailsResponse) GetLinksOk() (*LinksData, bool)`
+`func (o *MsaDetailsResponse) GetLinksOk() (*StatisticsResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *MsaDetailsResponse) SetLinks(v LinksData)`
+`func (o *MsaDetailsResponse) SetLinks(v StatisticsResponseLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -105,20 +105,20 @@ HasRelationships returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *MsaDetailsResponse) GetMeta() MetaData`
+`func (o *MsaDetailsResponse) GetMeta() StatisticsResponseMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *MsaDetailsResponse) GetMetaOk() (*MetaData, bool)`
+`func (o *MsaDetailsResponse) GetMetaOk() (*StatisticsResponseMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *MsaDetailsResponse) SetMeta(v MetaData)`
+`func (o *MsaDetailsResponse) SetMeta(v StatisticsResponseMeta)`
 
 SetMeta sets Meta field to given value.
 

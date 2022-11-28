@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Attributes** | Pointer to [**StatisticsAttributes**](StatisticsAttributes.md) |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
-**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) |  | [optional] 
-**Links** | Pointer to **map[string]string** |  | [optional] 
+**Id** | Pointer to **string** | Identifier  | [optional] 
+**Type** | Pointer to **string** | Object type | [optional] 
+**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) | Relationships of the object | [optional] 
+**Links** | Pointer to **map[string]string** | Links related to the object | [optional] 
 
 ## Methods
 

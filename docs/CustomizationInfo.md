@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **TextColor** | Pointer to **string** |  | [optional] 
 **TitleText** | Pointer to **string** |  | [optional] 
 **FooterText** | Pointer to **string** |  | [optional] 
+**MonitorNameOverrideFieldName** | Pointer to **string** |  | [optional] 
 **SortColumnsNewToOld** | **bool** |  | 
 **SortRowsProperty** | [**SortOrderEnum**](SortOrderEnum.md) |  | 
 **CommentTitle** | Pointer to **string** |  | [optional] 
@@ -157,6 +158,31 @@ SetFooterText sets FooterText field to given value.
 `func (o *CustomizationInfo) HasFooterText() bool`
 
 HasFooterText returns a boolean if a field has been set.
+
+### GetMonitorNameOverrideFieldName
+
+`func (o *CustomizationInfo) GetMonitorNameOverrideFieldName() string`
+
+GetMonitorNameOverrideFieldName returns the MonitorNameOverrideFieldName field if non-nil, zero value otherwise.
+
+### GetMonitorNameOverrideFieldNameOk
+
+`func (o *CustomizationInfo) GetMonitorNameOverrideFieldNameOk() (*string, bool)`
+
+GetMonitorNameOverrideFieldNameOk returns a tuple with the MonitorNameOverrideFieldName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonitorNameOverrideFieldName
+
+`func (o *CustomizationInfo) SetMonitorNameOverrideFieldName(v string)`
+
+SetMonitorNameOverrideFieldName sets MonitorNameOverrideFieldName field to given value.
+
+### HasMonitorNameOverrideFieldName
+
+`func (o *CustomizationInfo) HasMonitorNameOverrideFieldName() bool`
+
+HasMonitorNameOverrideFieldName returns a boolean if a field has been set.
 
 ### GetSortColumnsNewToOld
 

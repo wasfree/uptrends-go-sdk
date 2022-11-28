@@ -24,7 +24,6 @@ import (
     "context"
     "fmt"
     "os"
-    "time"
     openapiclient "./openapi"
 )
 
@@ -34,13 +33,13 @@ func main() {
     cursor := "cursor_example" // string | A cursor value that should be used for traversing the dataset. (optional)
     sorting := "sorting_example" // string | Sorting direction based on timestamp. (optional) (default to "Descending")
     take := int32(56) // int32 | The number of records to return (Max value = 100) (optional) (default to 100)
-    start := time.Now() // time.Time | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
-    end := time.Now() // time.Time | The end of a custom period (optional)
+    start := TODO // interface{} | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
+    end := TODO // interface{} | The end of a custom period (optional)
     presetPeriod := "presetPeriod_example" // string | The requested time period. (optional) (default to "Last24Hours")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertApi.AlertGetMonitorAlerts(context.Background(), monitorGuid).IncludeReminders(includeReminders).Cursor(cursor).Sorting(sorting).Take(take).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertApi.AlertGetMonitorAlerts(context.Background(), monitorGuid).IncludeReminders(includeReminders).Cursor(cursor).Sorting(sorting).Take(take).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertApi.AlertGetMonitorAlerts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -70,8 +69,8 @@ Name | Type | Description  | Notes
  **cursor** | **string** | A cursor value that should be used for traversing the dataset. | 
  **sorting** | **string** | Sorting direction based on timestamp. | [default to &quot;Descending&quot;]
  **take** | **int32** | The number of records to return (Max value &#x3D; 100) | [default to 100]
- **start** | **time.Time** | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
- **end** | **time.Time** | The end of a custom period | 
+ **start** | [**interface{}**](interface{}.md) | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
+ **end** | [**interface{}**](interface{}.md) | The end of a custom period | 
  **presetPeriod** | **string** | The requested time period. | [default to &quot;Last24Hours&quot;]
 
 ### Return type
@@ -107,7 +106,6 @@ import (
     "context"
     "fmt"
     "os"
-    "time"
     openapiclient "./openapi"
 )
 
@@ -117,13 +115,13 @@ func main() {
     cursor := "cursor_example" // string | A cursor value that should be used for traversing the dataset. (optional)
     sorting := "sorting_example" // string | Sorting direction based on timestamp. (optional) (default to "Descending")
     take := int32(56) // int32 | The number of records to return (Max value = 100) (optional) (default to 100)
-    start := time.Now() // time.Time | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
-    end := time.Now() // time.Time | The end of a custom period (optional)
+    start := TODO // interface{} | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
+    end := TODO // interface{} | The end of a custom period (optional)
     presetPeriod := "presetPeriod_example" // string | The requested time period. (optional) (default to "Last24Hours")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertApi.AlertGetMonitorGroupAlerts(context.Background(), monitorGroupGuid).IncludeReminders(includeReminders).Cursor(cursor).Sorting(sorting).Take(take).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertApi.AlertGetMonitorGroupAlerts(context.Background(), monitorGroupGuid).IncludeReminders(includeReminders).Cursor(cursor).Sorting(sorting).Take(take).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertApi.AlertGetMonitorGroupAlerts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -153,8 +151,8 @@ Name | Type | Description  | Notes
  **cursor** | **string** | A cursor value that should be used for traversing the dataset. | 
  **sorting** | **string** | Sorting direction based on timestamp. | [default to &quot;Descending&quot;]
  **take** | **int32** | The number of records to return (Max value &#x3D; 100) | [default to 100]
- **start** | **time.Time** | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
- **end** | **time.Time** | The end of a custom period | 
+ **start** | [**interface{}**](interface{}.md) | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
+ **end** | [**interface{}**](interface{}.md) | The end of a custom period | 
  **presetPeriod** | **string** | The requested time period. | [default to &quot;Last24Hours&quot;]
 
 ### Return type

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountId** | Pointer to **string** |  | [optional] 
-**ExpirationDate** | Pointer to **time.Time** |  | [optional] 
+**ExpirationDate** | Pointer to **map[string]interface{}** |  | [optional] 
 **MonitorQuota** | Pointer to [**MonitorQuota**](MonitorQuota.md) |  | [optional] 
 **OperatorQuota** | Pointer to [**OperatorQuota**](OperatorQuota.md) |  | [optional] 
 **RemainingMessageCredits** | Pointer to **int32** |  | [optional] 
@@ -56,20 +56,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetExpirationDate
 
-`func (o *AccountStatistics) GetExpirationDate() time.Time`
+`func (o *AccountStatistics) GetExpirationDate() map[string]interface{}`
 
 GetExpirationDate returns the ExpirationDate field if non-nil, zero value otherwise.
 
 ### GetExpirationDateOk
 
-`func (o *AccountStatistics) GetExpirationDateOk() (*time.Time, bool)`
+`func (o *AccountStatistics) GetExpirationDateOk() (*map[string]interface{}, bool)`
 
 GetExpirationDateOk returns a tuple with the ExpirationDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExpirationDate
 
-`func (o *AccountStatistics) SetExpirationDate(v time.Time)`
+`func (o *AccountStatistics) SetExpirationDate(v map[string]interface{})`
 
 SetExpirationDate sets ExpirationDate field to given value.
 

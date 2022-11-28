@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Attributes** | Pointer to [**MonitorCheckAttributes**](MonitorCheckAttributes.md) |  | [optional] 
-**Id** | **int64** |  | 
+**Id** | **int64** | Identifier  | 
 **Type** | Pointer to **string** |  | [optional] 
-**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) |  | [optional] 
-**Links** | Pointer to **map[string]string** |  | [optional] 
+**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) | Relationships of the object | [optional] 
+**Links** | Pointer to **map[string]string** | Links related to the object | [optional] 
 
 ## Methods
 

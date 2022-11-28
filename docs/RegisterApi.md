@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## RegisterPost
 
-> RegistrationResponse RegisterPost(ctx).Execute()
+> RegistrationResponse RegisterPost(ctx).Description(description).OperatorGuid(operatorGuid).Execute()
 
 Creates a new API account.
 
@@ -29,10 +29,12 @@ import (
 )
 
 func main() {
+    description := "description_example" // string | An optional description for the new API account, e.g. \"API\". If this is empty, it will be defaulted to \"API\" (optional) (default to "API")
+    operatorGuid := "operatorGuid_example" // string | The operator guid for which the new API account needs to be created. Leave empty to create an API acount for your own operator. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RegisterApi.RegisterPost(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RegisterApi.RegisterPost(context.Background()).Description(description).OperatorGuid(operatorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RegisterApi.RegisterPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -44,12 +46,17 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiRegisterPostRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **description** | **string** | An optional description for the new API account, e.g. \&quot;API\&quot;. If this is empty, it will be defaulted to \&quot;API\&quot; | [default to &quot;API&quot;]
+ **operatorGuid** | **string** | The operator guid for which the new API account needs to be created. Leave empty to create an API acount for your own operator. | 
 
 ### Return type
 

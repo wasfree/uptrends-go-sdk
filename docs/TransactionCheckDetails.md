@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Attributes** | Pointer to [**TransactionAttributes**](TransactionAttributes.md) |  | [optional] 
-**Id** | **int64** |  | 
-**Type** | Pointer to **string** |  | [optional] 
-**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) |  | [optional] 
-**Links** | Pointer to **map[string]string** |  | [optional] 
+**Attributes** | Pointer to [**TransactionCheckDetailsAttributes**](TransactionCheckDetailsAttributes.md) |  | [optional] 
+**Id** | **int64** | Identifier  | 
+**Type** | Pointer to **string** | Object type | [optional] 
+**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) | Relationships of the object | [optional] 
+**Links** | Pointer to **map[string]string** | Links related to the object | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAttributes
 
-`func (o *TransactionCheckDetails) GetAttributes() TransactionAttributes`
+`func (o *TransactionCheckDetails) GetAttributes() TransactionCheckDetailsAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TransactionCheckDetails) GetAttributesOk() (*TransactionAttributes, bool)`
+`func (o *TransactionCheckDetails) GetAttributesOk() (*TransactionCheckDetailsAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TransactionCheckDetails) SetAttributes(v TransactionAttributes)`
+`func (o *TransactionCheckDetails) SetAttributes(v TransactionCheckDetailsAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

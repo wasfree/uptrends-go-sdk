@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**[]MonitorCheck**](MonitorCheck.md) |  | [optional] 
-**Links** | Pointer to [**LinksData**](LinksData.md) |  | [optional] 
-**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) |  | [optional] 
-**Meta** | Pointer to [**MetaData**](MetaData.md) |  | [optional] 
-**Cursors** | Pointer to [**CursorsData**](CursorsData.md) | Cursors can be used to navigate the dataset in a fixed manner | [optional] 
+**Data** | Pointer to [**[]MonitorCheck**](MonitorCheck.md) | The resposne data/monitor checks | [optional] 
+**Links** | Pointer to [**StatisticsResponseLinks**](StatisticsResponseLinks.md) |  | [optional] 
+**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) | Relationships of the object | [optional] 
+**Meta** | Pointer to [**StatisticsResponseMeta**](StatisticsResponseMeta.md) |  | [optional] 
+**Cursors** | Pointer to [**AlertResponseCursors**](AlertResponseCursors.md) |  | [optional] 
 
 ## Methods
 
@@ -56,20 +56,20 @@ HasData returns a boolean if a field has been set.
 
 ### GetLinks
 
-`func (o *MonitorCheckResponse) GetLinks() LinksData`
+`func (o *MonitorCheckResponse) GetLinks() StatisticsResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *MonitorCheckResponse) GetLinksOk() (*LinksData, bool)`
+`func (o *MonitorCheckResponse) GetLinksOk() (*StatisticsResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *MonitorCheckResponse) SetLinks(v LinksData)`
+`func (o *MonitorCheckResponse) SetLinks(v StatisticsResponseLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -106,20 +106,20 @@ HasRelationships returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *MonitorCheckResponse) GetMeta() MetaData`
+`func (o *MonitorCheckResponse) GetMeta() StatisticsResponseMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *MonitorCheckResponse) GetMetaOk() (*MetaData, bool)`
+`func (o *MonitorCheckResponse) GetMetaOk() (*StatisticsResponseMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *MonitorCheckResponse) SetMeta(v MetaData)`
+`func (o *MonitorCheckResponse) SetMeta(v StatisticsResponseMeta)`
 
 SetMeta sets Meta field to given value.
 
@@ -131,20 +131,20 @@ HasMeta returns a boolean if a field has been set.
 
 ### GetCursors
 
-`func (o *MonitorCheckResponse) GetCursors() CursorsData`
+`func (o *MonitorCheckResponse) GetCursors() AlertResponseCursors`
 
 GetCursors returns the Cursors field if non-nil, zero value otherwise.
 
 ### GetCursorsOk
 
-`func (o *MonitorCheckResponse) GetCursorsOk() (*CursorsData, bool)`
+`func (o *MonitorCheckResponse) GetCursorsOk() (*AlertResponseCursors, bool)`
 
 GetCursorsOk returns a tuple with the Cursors field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCursors
 
-`func (o *MonitorCheckResponse) SetCursors(v CursorsData)`
+`func (o *MonitorCheckResponse) SetCursors(v AlertResponseCursors)`
 
 SetCursors sets Cursors field to given value.
 

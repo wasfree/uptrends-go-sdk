@@ -4,8 +4,8 @@ All URIs are relative to *https://api.uptrends.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MonitorGroupAddMaintenancePeriodToAllMembers**](MonitorGroupApi.md#MonitorGroupAddMaintenancePeriodToAllMembers) | **Post** /MonitorGroup/{monitorGroupGuid}/AddMaintenancePeriodToAllMembers | Adds the provided maintenance period to all monitors in the group specified 
-[**MonitorGroupAddMonitorToMonitorGroup**](MonitorGroupApi.md#MonitorGroupAddMonitorToMonitorGroup) | **Post** /MonitorGroup/{monitorGroupGuid}/Member/{monitorGuid} | Adds the specified monitor to the monitor group 
+[**MonitorGroupAddMaintenancePeriodToAllMembers**](MonitorGroupApi.md#MonitorGroupAddMaintenancePeriodToAllMembers) | **Post** /MonitorGroup/{monitorGroupGuid}/AddMaintenancePeriodToAllMembers | Adds the provided maintenance period to all monitors in the group specified
+[**MonitorGroupAddMonitorToMonitorGroup**](MonitorGroupApi.md#MonitorGroupAddMonitorToMonitorGroup) | **Post** /MonitorGroup/{monitorGroupGuid}/Member/{monitorGuid} | Adds the specified monitor to the monitor group
 [**MonitorGroupCreateAuthorizationForMonitorGroup**](MonitorGroupApi.md#MonitorGroupCreateAuthorizationForMonitorGroup) | **Post** /MonitorGroup/{monitorGroupGuid}/Authorizations | Create monitor authorizations for monitor group If the wanted authorizations requires other authorizations, these will be added as well
 [**MonitorGroupCreateMonitorGroup**](MonitorGroupApi.md#MonitorGroupCreateMonitorGroup) | **Post** /MonitorGroup | Creates a new monitor group
 [**MonitorGroupDeleteAuthorizationForMonitorGroup**](MonitorGroupApi.md#MonitorGroupDeleteAuthorizationForMonitorGroup) | **Delete** /MonitorGroup/{monitorGroupGuid}/Authorizations/{authorizationGuid} | Delete monitor authorization for monitor group
@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 > MonitorGroupAddMaintenancePeriodToAllMembers(ctx, monitorGroupGuid).MaintenancePeriod(maintenancePeriod).Execute()
 
-Adds the provided maintenance period to all monitors in the group specified 
+Adds the provided maintenance period to all monitors in the group specified
 
 ### Example
 
@@ -43,11 +43,11 @@ import (
 
 func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | 
-    maintenancePeriod := *openapiclient.NewMaintenancePeriod(int32(123), openapiclient.ScheduleMode("OneTime"), openapiclient.MaintenanceTypes("DisableMonitoring")) // MaintenancePeriod | 
+    maintenancePeriod := *openapiclient.NewMaintenancePeriod(int32(123), map[string][]openapiclient.ScheduleMode{ ... }, map[string][]openapiclient.MaintenanceTypes{ ... }) // MaintenancePeriod |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupAddMaintenancePeriodToAllMembers(context.Background(), monitorGroupGuid).MaintenancePeriod(maintenancePeriod).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupAddMaintenancePeriodToAllMembers(context.Background(), monitorGroupGuid).MaintenancePeriod(maintenancePeriod).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupAddMaintenancePeriodToAllMembers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 > MonitorGroupAddMonitorToMonitorGroup(ctx, monitorGroupGuid, monitorGuid).Execute()
 
-Adds the specified monitor to the monitor group 
+Adds the specified monitor to the monitor group
 
 ### Example
 
@@ -114,8 +114,8 @@ func main() {
     monitorGuid := "monitorGuid_example" // string | The monitor Guid
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupAddMonitorToMonitorGroup(context.Background(), monitorGroupGuid, monitorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupAddMonitorToMonitorGroup(context.Background(), monitorGroupGuid, monitorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupAddMonitorToMonitorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -180,11 +180,11 @@ import (
 
 func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The monitor group GUID
-    monitorGroupAuthorization := *openapiclient.NewMonitorGroupAuthorization(openapiclient.MonitorGroupAuthorizationType("ViewMonitorDataInGroup")) // MonitorGroupAuthorization | Authorization to add
+    monitorGroupAuthorization := *openapiclient.NewMonitorGroupAuthorization(map[string][]openapiclient.MonitorGroupAuthorizationType{ ... }) // MonitorGroupAuthorization | Authorization to add (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupCreateAuthorizationForMonitorGroup(context.Background(), monitorGroupGuid).MonitorGroupAuthorization(monitorGroupAuthorization).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupCreateAuthorizationForMonitorGroup(context.Background(), monitorGroupGuid).MonitorGroupAuthorization(monitorGroupAuthorization).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupCreateAuthorizationForMonitorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -249,11 +249,11 @@ import (
 )
 
 func main() {
-    monitorGroup := *openapiclient.NewMonitorGroup(false) // MonitorGroup | The MonitorGroup object to be created
+    monitorGroup := *openapiclient.NewMonitorGroup(false) // MonitorGroup | The MonitorGroup object to be created (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupCreateMonitorGroup(context.Background()).MonitorGroup(monitorGroup).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupCreateMonitorGroup(context.Background()).MonitorGroup(monitorGroup).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupCreateMonitorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -317,8 +317,8 @@ func main() {
     authorizationGuid := "authorizationGuid_example" // string | The authorization GUID that needs to be deleted
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupDeleteAuthorizationForMonitorGroup(context.Background(), monitorGroupGuid, authorizationGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupDeleteAuthorizationForMonitorGroup(context.Background(), monitorGroupGuid, authorizationGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupDeleteAuthorizationForMonitorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -385,8 +385,8 @@ func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The Guid of the monitor group to be deleted
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupDeleteMonitorGroup(context.Background(), monitorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupDeleteMonitorGroup(context.Background(), monitorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupDeleteMonitorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -450,8 +450,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupGetAllMonitorGroups(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupGetAllMonitorGroups(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupGetAllMonitorGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -510,8 +510,8 @@ func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The monitor group GUID
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupGetAuthorizationsOfMonitorGroup(context.Background(), monitorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupGetAuthorizationsOfMonitorGroup(context.Background(), monitorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupGetAuthorizationsOfMonitorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -578,8 +578,8 @@ func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The Guid of the monitor group to be retrieved
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupGetMonitorGroup(context.Background(), monitorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupGetMonitorGroup(context.Background(), monitorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupGetMonitorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -646,8 +646,8 @@ func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The Guid of the monitor group to retrieve the members for
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupGetMonitorGroupMembers(context.Background(), monitorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupGetMonitorGroupMembers(context.Background(), monitorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupGetMonitorGroupMembers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -715,8 +715,8 @@ func main() {
     monitorGuid := "monitorGuid_example" // string | The monitor Guid to be removed
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupRemoveMonitorFromMonitorGroup(context.Background(), monitorGroupGuid, monitorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupRemoveMonitorFromMonitorGroup(context.Background(), monitorGroupGuid, monitorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupRemoveMonitorFromMonitorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -783,8 +783,8 @@ func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The monitor group GUID
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupStartAllMonitorAlertsInGroup(context.Background(), monitorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupStartAllMonitorAlertsInGroup(context.Background(), monitorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupStartAllMonitorAlertsInGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -849,8 +849,8 @@ func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The monitor group GUID
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupStartAllMonitorsInGroup(context.Background(), monitorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupStartAllMonitorsInGroup(context.Background(), monitorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupStartAllMonitorsInGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -915,8 +915,8 @@ func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The monitor group GUID
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupStopAllMonitorAlertsInGroup(context.Background(), monitorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupStopAllMonitorAlertsInGroup(context.Background(), monitorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupStopAllMonitorAlertsInGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -981,8 +981,8 @@ func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The monitor group GUID
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupStopAllMonitorsInGroup(context.Background(), monitorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupStopAllMonitorsInGroup(context.Background(), monitorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupStopAllMonitorsInGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1027,7 +1027,7 @@ Name | Type | Description  | Notes
 
 ## MonitorGroupUpdateMonitorGroup
 
-> MonitorGroupUpdateMonitorGroup(ctx, monitorGroupGuid).Item(item).Execute()
+> MonitorGroupUpdateMonitorGroup(ctx, monitorGroupGuid).MonitorGroup(monitorGroup).Execute()
 
 Updates the monitor group with the Guid specified
 
@@ -1045,11 +1045,11 @@ import (
 
 func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The Guid of the monitor group to be updated
-    item := *openapiclient.NewMonitorGroup(false) // MonitorGroup | The monitor group to be updated
+    monitorGroup := *openapiclient.NewMonitorGroup(false) // MonitorGroup | The monitor group to be updated (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorGroupApi.MonitorGroupUpdateMonitorGroup(context.Background(), monitorGroupGuid).Item(item).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorGroupApi.MonitorGroupUpdateMonitorGroup(context.Background(), monitorGroupGuid).MonitorGroup(monitorGroup).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorGroupApi.MonitorGroupUpdateMonitorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1073,7 +1073,7 @@ Other parameters are passed through a pointer to a apiMonitorGroupUpdateMonitorG
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **item** | [**MonitorGroup**](MonitorGroup.md) | The monitor group to be updated | 
+ **monitorGroup** | [**MonitorGroup**](MonitorGroup.md) | The monitor group to be updated | 
 
 ### Return type
 

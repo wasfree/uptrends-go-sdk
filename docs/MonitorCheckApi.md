@@ -34,7 +34,6 @@ import (
     "context"
     "fmt"
     "os"
-    "time"
     openapiclient "./openapi"
 )
 
@@ -44,13 +43,13 @@ func main() {
     cursor := "cursor_example" // string | A cursor value that should be used for traversing the dataset. (optional)
     sorting := "sorting_example" // string | Sorting direction based on timestamp. (optional) (default to "Descending")
     take := int32(56) // int32 | The number of records to return (Max value = 100) (optional) (default to 100)
-    start := time.Now() // time.Time | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
-    end := time.Now() // time.Time | The end of a custom period (optional)
+    start := TODO // interface{} | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
+    end := TODO // interface{} | The end of a custom period (optional)
     presetPeriod := "presetPeriod_example" // string | The requested time period. (optional) (default to "Last24Hours")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorCheckApi.MonitorCheckGetAccountMonitorChecks(context.Background()).ErrorLevel(errorLevel).ShowPartialMeasurements(showPartialMeasurements).Cursor(cursor).Sorting(sorting).Take(take).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorCheckApi.MonitorCheckGetAccountMonitorChecks(context.Background()).ErrorLevel(errorLevel).ShowPartialMeasurements(showPartialMeasurements).Cursor(cursor).Sorting(sorting).Take(take).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorCheckApi.MonitorCheckGetAccountMonitorChecks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -76,8 +75,8 @@ Name | Type | Description  | Notes
  **cursor** | **string** | A cursor value that should be used for traversing the dataset. | 
  **sorting** | **string** | Sorting direction based on timestamp. | [default to &quot;Descending&quot;]
  **take** | **int32** | The number of records to return (Max value &#x3D; 100) | [default to 100]
- **start** | **time.Time** | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
- **end** | **time.Time** | The end of a custom period | 
+ **start** | [**interface{}**](interface{}.md) | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
+ **end** | [**interface{}**](interface{}.md) | The end of a custom period | 
  **presetPeriod** | **string** | The requested time period. | [default to &quot;Last24Hours&quot;]
 
 ### Return type
@@ -120,8 +119,8 @@ func main() {
     monitorCheckId := int64(789) // int64 | The monitor check Id to get the partial checks for.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorCheckApi.MonitorCheckGetConcurrentMonitorPartialChecks(context.Background(), monitorCheckId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorCheckApi.MonitorCheckGetConcurrentMonitorPartialChecks(context.Background(), monitorCheckId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorCheckApi.MonitorCheckGetConcurrentMonitorPartialChecks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -189,8 +188,8 @@ func main() {
     step := int32(56) // int32 | For transactions only: the transaction step to get the console log for. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorCheckApi.MonitorCheckGetConsoleLogInfo(context.Background(), monitorCheckId).Step(step).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorCheckApi.MonitorCheckGetConsoleLogInfo(context.Background(), monitorCheckId).Step(step).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorCheckApi.MonitorCheckGetConsoleLogInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -258,8 +257,8 @@ func main() {
     monitorCheckId := int64(789) // int64 | The monitor check Id to get the detailed data for.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorCheckApi.MonitorCheckGetHttpDetails(context.Background(), monitorCheckId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorCheckApi.MonitorCheckGetHttpDetails(context.Background(), monitorCheckId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorCheckApi.MonitorCheckGetHttpDetails``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -319,7 +318,6 @@ import (
     "context"
     "fmt"
     "os"
-    "time"
     openapiclient "./openapi"
 )
 
@@ -330,13 +328,13 @@ func main() {
     cursor := "cursor_example" // string | A cursor value that should be used for traversing the dataset. (optional)
     sorting := "sorting_example" // string | Sorting direction based on timestamp. (optional) (default to "Descending")
     take := int32(56) // int32 | The number of records to return (Max value = 100) (optional) (default to 100)
-    start := time.Now() // time.Time | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
-    end := time.Now() // time.Time | The end of a custom period (optional)
+    start := TODO // interface{} | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
+    end := TODO // interface{} | The end of a custom period (optional)
     presetPeriod := "presetPeriod_example" // string | The requested time period. (optional) (default to "Last24Hours")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorCheckApi.MonitorCheckGetMonitorCheck(context.Background(), monitorGuid).ErrorLevel(errorLevel).ShowPartialMeasurements(showPartialMeasurements).Cursor(cursor).Sorting(sorting).Take(take).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorCheckApi.MonitorCheckGetMonitorCheck(context.Background(), monitorGuid).ErrorLevel(errorLevel).ShowPartialMeasurements(showPartialMeasurements).Cursor(cursor).Sorting(sorting).Take(take).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorCheckApi.MonitorCheckGetMonitorCheck``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -367,8 +365,8 @@ Name | Type | Description  | Notes
  **cursor** | **string** | A cursor value that should be used for traversing the dataset. | 
  **sorting** | **string** | Sorting direction based on timestamp. | [default to &quot;Descending&quot;]
  **take** | **int32** | The number of records to return (Max value &#x3D; 100) | [default to 100]
- **start** | **time.Time** | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
- **end** | **time.Time** | The end of a custom period | 
+ **start** | [**interface{}**](interface{}.md) | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
+ **end** | [**interface{}**](interface{}.md) | The end of a custom period | 
  **presetPeriod** | **string** | The requested time period. | [default to &quot;Last24Hours&quot;]
 
 ### Return type
@@ -404,7 +402,6 @@ import (
     "context"
     "fmt"
     "os"
-    "time"
     openapiclient "./openapi"
 )
 
@@ -415,13 +412,13 @@ func main() {
     cursor := "cursor_example" // string | A cursor value that should be used for traversing the dataset. (optional)
     sorting := "sorting_example" // string | Sorting direction based on timestamp. (optional) (default to "Descending")
     take := int32(56) // int32 | The number of records to return (Max value = 100) (optional) (default to 100)
-    start := time.Now() // time.Time | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
-    end := time.Now() // time.Time | The end of a custom period (optional)
+    start := TODO // interface{} | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
+    end := TODO // interface{} | The end of a custom period (optional)
     presetPeriod := "presetPeriod_example" // string | The requested time period. (optional) (default to "Last24Hours")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorCheckApi.MonitorCheckGetMonitorGroupData(context.Background(), monitorGroupGuid).ErrorLevel(errorLevel).ShowPartialMeasurements(showPartialMeasurements).Cursor(cursor).Sorting(sorting).Take(take).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorCheckApi.MonitorCheckGetMonitorGroupData(context.Background(), monitorGroupGuid).ErrorLevel(errorLevel).ShowPartialMeasurements(showPartialMeasurements).Cursor(cursor).Sorting(sorting).Take(take).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorCheckApi.MonitorCheckGetMonitorGroupData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -452,8 +449,8 @@ Name | Type | Description  | Notes
  **cursor** | **string** | A cursor value that should be used for traversing the dataset. | 
  **sorting** | **string** | Sorting direction based on timestamp. | [default to &quot;Descending&quot;]
  **take** | **int32** | The number of records to return (Max value &#x3D; 100) | [default to 100]
- **start** | **time.Time** | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
- **end** | **time.Time** | The end of a custom period | 
+ **start** | [**interface{}**](interface{}.md) | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
+ **end** | [**interface{}**](interface{}.md) | The end of a custom period | 
  **presetPeriod** | **string** | The requested time period. | [default to &quot;Last24Hours&quot;]
 
 ### Return type
@@ -496,8 +493,8 @@ func main() {
     monitorCheckId := int64(789) // int64 | The monitor check Id to get the detailed data for.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorCheckApi.MonitorCheckGetMultistepDetails(context.Background(), monitorCheckId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorCheckApi.MonitorCheckGetMultistepDetails(context.Background(), monitorCheckId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorCheckApi.MonitorCheckGetMultistepDetails``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -565,8 +562,8 @@ func main() {
     step := int32(56) // int32 | For transactions only: the transaction step to get the page source for. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorCheckApi.MonitorCheckGetPageSourceInfo(context.Background(), monitorCheckId).Step(step).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorCheckApi.MonitorCheckGetPageSourceInfo(context.Background(), monitorCheckId).Step(step).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorCheckApi.MonitorCheckGetPageSourceInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -635,8 +632,8 @@ func main() {
     screenshotId := "screenshotId_example" // string | The screenshot Id of the screenshot to get.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorCheckApi.MonitorCheckGetScreenshots(context.Background(), monitorCheckId, screenshotId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorCheckApi.MonitorCheckGetScreenshots(context.Background(), monitorCheckId, screenshotId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorCheckApi.MonitorCheckGetScreenshots``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -705,8 +702,8 @@ func main() {
     monitorCheckId := int64(789) // int64 | The Id of the monitor check to get the data for.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorCheckApi.MonitorCheckGetSingleMonitorCheck(context.Background(), monitorCheckId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorCheckApi.MonitorCheckGetSingleMonitorCheck(context.Background(), monitorCheckId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorCheckApi.MonitorCheckGetSingleMonitorCheck``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -773,8 +770,8 @@ func main() {
     monitorCheckId := int64(789) // int64 | The monitor check Id to get the detailed data for.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorCheckApi.MonitorCheckGetTransactionDetails(context.Background(), monitorCheckId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorCheckApi.MonitorCheckGetTransactionDetails(context.Background(), monitorCheckId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorCheckApi.MonitorCheckGetTransactionDetails``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -842,8 +839,8 @@ func main() {
     step := int32(56) // int32 | For transaction waterfalls only: the transaction step to get the waterfall for. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorCheckApi.MonitorCheckGetWaterfallInfo(context.Background(), monitorCheckId).Step(step).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorCheckApi.MonitorCheckGetWaterfallInfo(context.Background(), monitorCheckId).Step(step).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorCheckApi.MonitorCheckGetWaterfallInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -38,11 +38,11 @@ import (
 
 func main() {
     publicStatusPageGuid := "publicStatusPageGuid_example" // string | The Guid of the public status page.
-    authorization := *openapiclient.NewPSPAuthorization(openapiclient.PSPAuthorizationType("ViewPublicDashboard")) // PSPAuthorization | The complete definition of the authorization that should be created.
+    authorization := *openapiclient.NewPSPAuthorization(map[string][]openapiclient.PSPAuthorizationType{ ... }) // PSPAuthorization | The complete definition of the authorization that should be created. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.PublicStatusPageApi.PublicStatusPageAddAuthorizationToPublicStatusPage(context.Background(), publicStatusPageGuid).Authorization(authorization).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicStatusPageApi.PublicStatusPageAddAuthorizationToPublicStatusPage(context.Background(), publicStatusPageGuid).Authorization(authorization).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicStatusPageApi.PublicStatusPageAddAuthorizationToPublicStatusPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -110,8 +110,8 @@ func main() {
     publicStatusPageGuid := "publicStatusPageGuid_example" // string | The Guid of the public status page that should be updated.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.PublicStatusPageApi.PublicStatusPageDeletePublicStatusPage(context.Background(), publicStatusPageGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicStatusPageApi.PublicStatusPageDeletePublicStatusPage(context.Background(), publicStatusPageGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicStatusPageApi.PublicStatusPageDeletePublicStatusPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -176,8 +176,8 @@ func main() {
     publicStatusPageGuid := "publicStatusPageGuid_example" // string | The Guid of the public status page.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.PublicStatusPageApi.PublicStatusPageGetAuthorizationsForPublicStatusPage(context.Background(), publicStatusPageGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicStatusPageApi.PublicStatusPageGetAuthorizationsForPublicStatusPage(context.Background(), publicStatusPageGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicStatusPageApi.PublicStatusPageGetAuthorizationsForPublicStatusPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -244,8 +244,8 @@ func main() {
     publicStatusPageGuid := "publicStatusPageGuid_example" // string | The Guid of the requested public status page.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.PublicStatusPageApi.PublicStatusPageGetPublicStatusPage(context.Background(), publicStatusPageGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicStatusPageApi.PublicStatusPageGetPublicStatusPage(context.Background(), publicStatusPageGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicStatusPageApi.PublicStatusPageGetPublicStatusPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -311,8 +311,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.PublicStatusPageApi.PublicStatusPageGetPublicStatusPages(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicStatusPageApi.PublicStatusPageGetPublicStatusPages(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicStatusPageApi.PublicStatusPageGetPublicStatusPages``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -371,11 +371,11 @@ import (
 
 func main() {
     publicStatusPageGuid := "publicStatusPageGuid_example" // string | The Guid of the public status page that should be updated.
-    publicStatusPage := *openapiclient.NewPublicStatusPage() // PublicStatusPage | The partial definition for the public status page that should be updated.
+    publicStatusPage := *openapiclient.NewPublicStatusPage() // PublicStatusPage | The partial definition for the public status page that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.PublicStatusPageApi.PublicStatusPagePatchPublicStatusPage(context.Background(), publicStatusPageGuid).PublicStatusPage(publicStatusPage).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicStatusPageApi.PublicStatusPagePatchPublicStatusPage(context.Background(), publicStatusPageGuid).PublicStatusPage(publicStatusPage).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicStatusPageApi.PublicStatusPagePatchPublicStatusPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -438,11 +438,11 @@ import (
 )
 
 func main() {
-    publicStatusPage := *openapiclient.NewPublicStatusPage() // PublicStatusPage | The complete definition for the public status page that should be updated.
+    publicStatusPage := *openapiclient.NewPublicStatusPage() // PublicStatusPage | The complete definition for the public status page that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.PublicStatusPageApi.PublicStatusPagePostPublicStatusPage(context.Background()).PublicStatusPage(publicStatusPage).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicStatusPageApi.PublicStatusPagePostPublicStatusPage(context.Background()).PublicStatusPage(publicStatusPage).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicStatusPageApi.PublicStatusPagePostPublicStatusPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -505,11 +505,11 @@ import (
 
 func main() {
     publicStatusPageGuid := "publicStatusPageGuid_example" // string | The Guid of the public status page that should be updated.
-    publicStatusPage := *openapiclient.NewPublicStatusPage() // PublicStatusPage | The complete definition for the public status page that should be updated.
+    publicStatusPage := *openapiclient.NewPublicStatusPage() // PublicStatusPage | The complete definition for the public status page that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.PublicStatusPageApi.PublicStatusPagePutPublicStatusPage(context.Background(), publicStatusPageGuid).PublicStatusPage(publicStatusPage).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicStatusPageApi.PublicStatusPagePutPublicStatusPage(context.Background(), publicStatusPageGuid).PublicStatusPage(publicStatusPage).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicStatusPageApi.PublicStatusPagePutPublicStatusPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -576,8 +576,8 @@ func main() {
     authorizationGuid := "authorizationGuid_example" // string | The Guid of the authorization.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.PublicStatusPageApi.PublicStatusPageRemoveAuthorizationFromPublicStatusPage(context.Background(), publicStatusPageGuid, authorizationGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicStatusPageApi.PublicStatusPageRemoveAuthorizationFromPublicStatusPage(context.Background(), publicStatusPageGuid, authorizationGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicStatusPageApi.PublicStatusPageRemoveAuthorizationFromPublicStatusPage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

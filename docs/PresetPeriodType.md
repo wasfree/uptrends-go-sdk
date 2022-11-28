@@ -9,6 +9,8 @@
 
 * `CURRENT_MONTH` (value: `"CurrentMonth"`)
 
+* `CURRENT_QUARTER` (value: `"CurrentQuarter"`)
+
 * `CURRENT_YEAR` (value: `"CurrentYear"`)
 
 * `PREVIOUS_DAY` (value: `"PreviousDay"`)
@@ -17,7 +19,15 @@
 
 * `PREVIOUS_MONTH` (value: `"PreviousMonth"`)
 
+* `PREVIOUS_QUARTER` (value: `"PreviousQuarter"`)
+
 * `PREVIOUS_YEAR` (value: `"PreviousYear"`)
+
+* `LAST2_HOURS` (value: `"Last2Hours"`)
+
+* `LAST6_HOURS` (value: `"Last6Hours"`)
+
+* `LAST12_HOURS` (value: `"Last12Hours"`)
 
 * `LAST24_HOURS` (value: `"Last24Hours"`)
 

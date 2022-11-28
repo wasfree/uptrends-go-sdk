@@ -3,9 +3,13 @@
 ## Enum
 
 
-* `PDF` (value: `"PDF"`)
+* `PDF_ATTACHMENT` (value: `"PDFAttachment"`)
 
-* `EXCEL` (value: `"Excel"`)
+* `PDF_LINK` (value: `"PDFLink"`)
+
+* `EXCEL_ATTACHMENT` (value: `"ExcelAttachment"`)
+
+* `EXCEL_LINK` (value: `"ExcelLink"`)
 
 * `HTML` (value: `"Html"`)
 

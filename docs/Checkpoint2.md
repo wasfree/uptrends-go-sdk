@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Attributes** | Pointer to [**CheckpointAttributes**](CheckpointAttributes.md) |  | [optional] 
-**Id** | **int32** |  | 
-**Type** | Pointer to **string** |  | [optional] 
-**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) |  | [optional] 
-**Links** | Pointer to **map[string]string** |  | [optional] 
+**Attributes** | Pointer to [**Checkpoint2Attributes**](Checkpoint2Attributes.md) |  | [optional] 
+**Id** | **int32** | Identifier  | 
+**Type** | Pointer to **string** | Object type | [optional] 
+**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) | Relationships of the object | [optional] 
+**Links** | Pointer to **map[string]string** | Links related to the object | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAttributes
 
-`func (o *Checkpoint2) GetAttributes() CheckpointAttributes`
+`func (o *Checkpoint2) GetAttributes() Checkpoint2Attributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *Checkpoint2) GetAttributesOk() (*CheckpointAttributes, bool)`
+`func (o *Checkpoint2) GetAttributesOk() (*Checkpoint2Attributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *Checkpoint2) SetAttributes(v CheckpointAttributes)`
+`func (o *Checkpoint2) SetAttributes(v Checkpoint2Attributes)`
 
 SetAttributes sets Attributes field to given value.
 

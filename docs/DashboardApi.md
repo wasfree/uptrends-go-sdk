@@ -35,8 +35,8 @@ func main() {
     dashboardGuid := "dashboardGuid_example" // string | The guid of the specified dashboard.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DashboardApi.DashboardCloneDashboard(context.Background(), dashboardGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DashboardApi.DashboardCloneDashboard(context.Background(), dashboardGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DashboardApi.DashboardCloneDashboard``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -103,8 +103,8 @@ func main() {
     dashboardGuid := "dashboardGuid_example" // string | The guid of the specified dashboard.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DashboardApi.DashboardDeleteDashboard(context.Background(), dashboardGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DashboardApi.DashboardDeleteDashboard(context.Background(), dashboardGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DashboardApi.DashboardDeleteDashboard``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -168,8 +168,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DashboardApi.DashboardGetAllDashboards(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DashboardApi.DashboardGetAllDashboards(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DashboardApi.DashboardGetAllDashboards``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -228,8 +228,8 @@ func main() {
     dashboardGuid := "dashboardGuid_example" // string | The guid of the specified dashboard.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DashboardApi.DashboardGetOneDashboard(context.Background(), dashboardGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DashboardApi.DashboardGetOneDashboard(context.Background(), dashboardGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DashboardApi.DashboardGetOneDashboard``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -294,11 +294,11 @@ import (
 
 func main() {
     dashboardGuid := "dashboardGuid_example" // string | The guid of the specified dashboard.
-    dashboard := *openapiclient.NewDashboard() // Dashboard | The details for the dashboard.
+    dashboard := *openapiclient.NewDashboard() // Dashboard | The details for the dashboard. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DashboardApi.DashboardPartiallyUpdateDashboard(context.Background(), dashboardGuid).Dashboard(dashboard).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DashboardApi.DashboardPartiallyUpdateDashboard(context.Background(), dashboardGuid).Dashboard(dashboard).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DashboardApi.DashboardPartiallyUpdateDashboard``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -362,11 +362,11 @@ import (
 
 func main() {
     dashboardGuid := "dashboardGuid_example" // string | The guid of the specified dashboard.
-    dashboard := *openapiclient.NewDashboard() // Dashboard | The details for the dashboard.
+    dashboard := *openapiclient.NewDashboard() // Dashboard | The details for the dashboard. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DashboardApi.DashboardUpdateDashboard(context.Background(), dashboardGuid).Dashboard(dashboard).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DashboardApi.DashboardUpdateDashboard(context.Background(), dashboardGuid).Dashboard(dashboard).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DashboardApi.DashboardUpdateDashboard``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

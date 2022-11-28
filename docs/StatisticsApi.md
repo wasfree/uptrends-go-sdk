@@ -24,20 +24,19 @@ import (
     "context"
     "fmt"
     "os"
-    "time"
     openapiclient "./openapi"
 )
 
 func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The Guid of the monitor group.
     filter := "filter_example" // string | The filter for the requested response fields. E.g. \"Alerts,SlaTarget\". (optional)
-    start := time.Now() // time.Time | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
-    end := time.Now() // time.Time | The end of a custom period (optional)
+    start := TODO // interface{} | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
+    end := TODO // interface{} | The end of a custom period (optional)
     presetPeriod := "presetPeriod_example" // string | The requested time period. (optional) (default to "Last24Hours")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StatisticsApi.StatisticsGetMonitorGroupStatistics(context.Background(), monitorGroupGuid).Filter(filter).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StatisticsApi.StatisticsGetMonitorGroupStatistics(context.Background(), monitorGroupGuid).Filter(filter).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StatisticsApi.StatisticsGetMonitorGroupStatistics``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,8 +63,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **filter** | **string** | The filter for the requested response fields. E.g. \&quot;Alerts,SlaTarget\&quot;. | 
- **start** | **time.Time** | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
- **end** | **time.Time** | The end of a custom period | 
+ **start** | [**interface{}**](interface{}.md) | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
+ **end** | [**interface{}**](interface{}.md) | The end of a custom period | 
  **presetPeriod** | **string** | The requested time period. | [default to &quot;Last24Hours&quot;]
 
 ### Return type
@@ -101,20 +100,19 @@ import (
     "context"
     "fmt"
     "os"
-    "time"
     openapiclient "./openapi"
 )
 
 func main() {
     monitorGuid := "monitorGuid_example" // string | The Guid of the monitor.
     filter := "filter_example" // string | The filter for the requested response fields. E.g. \"Alerts,SlaTarget\". (optional)
-    start := time.Now() // time.Time | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
-    end := time.Now() // time.Time | The end of a custom period (optional)
+    start := TODO // interface{} | The start of a custom period (can't be used together with the PresetPeriod parameter) (optional)
+    end := TODO // interface{} | The end of a custom period (optional)
     presetPeriod := "presetPeriod_example" // string | The requested time period. (optional) (default to "Last24Hours")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StatisticsApi.StatisticsGetMonitorStatistics(context.Background(), monitorGuid).Filter(filter).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StatisticsApi.StatisticsGetMonitorStatistics(context.Background(), monitorGuid).Filter(filter).Start(start).End(end).PresetPeriod(presetPeriod).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StatisticsApi.StatisticsGetMonitorStatistics``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -141,8 +139,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **filter** | **string** | The filter for the requested response fields. E.g. \&quot;Alerts,SlaTarget\&quot;. | 
- **start** | **time.Time** | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
- **end** | **time.Time** | The end of a custom period | 
+ **start** | [**interface{}**](interface{}.md) | The start of a custom period (can&#39;t be used together with the PresetPeriod parameter) | 
+ **end** | [**interface{}**](interface{}.md) | The end of a custom period | 
  **presetPeriod** | **string** | The requested time period. | [default to &quot;Last24Hours&quot;]
 
 ### Return type

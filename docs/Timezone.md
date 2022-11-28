@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **OffsetFromUtc** | **int32** | The offset from UTC in minutes (if this time zone runs behind UTC, the number is negative) | 
 **HasDaylightSaving** | **bool** | Indicates whether or not this time zone uses Daylight Saving Time | 
 **DaylightSavingOffset** | Pointer to **int32** | The time offset for Daylight Saving Time in minutes | [optional] 
+**DaylightSavingStart** | Pointer to **map[string]interface{}** | The Daylight Saving start date/time | [optional] 
+**DaylightSavingEnd** | Pointer to **map[string]interface{}** | The Daylight Saving end date/time | [optional] 
 
 ## Methods
 
@@ -138,6 +140,56 @@ SetDaylightSavingOffset sets DaylightSavingOffset field to given value.
 `func (o *Timezone) HasDaylightSavingOffset() bool`
 
 HasDaylightSavingOffset returns a boolean if a field has been set.
+
+### GetDaylightSavingStart
+
+`func (o *Timezone) GetDaylightSavingStart() map[string]interface{}`
+
+GetDaylightSavingStart returns the DaylightSavingStart field if non-nil, zero value otherwise.
+
+### GetDaylightSavingStartOk
+
+`func (o *Timezone) GetDaylightSavingStartOk() (*map[string]interface{}, bool)`
+
+GetDaylightSavingStartOk returns a tuple with the DaylightSavingStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDaylightSavingStart
+
+`func (o *Timezone) SetDaylightSavingStart(v map[string]interface{})`
+
+SetDaylightSavingStart sets DaylightSavingStart field to given value.
+
+### HasDaylightSavingStart
+
+`func (o *Timezone) HasDaylightSavingStart() bool`
+
+HasDaylightSavingStart returns a boolean if a field has been set.
+
+### GetDaylightSavingEnd
+
+`func (o *Timezone) GetDaylightSavingEnd() map[string]interface{}`
+
+GetDaylightSavingEnd returns the DaylightSavingEnd field if non-nil, zero value otherwise.
+
+### GetDaylightSavingEndOk
+
+`func (o *Timezone) GetDaylightSavingEndOk() (*map[string]interface{}, bool)`
+
+GetDaylightSavingEndOk returns a tuple with the DaylightSavingEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDaylightSavingEnd
+
+`func (o *Timezone) SetDaylightSavingEnd(v map[string]interface{})`
+
+SetDaylightSavingEnd sets DaylightSavingEnd field to given value.
+
+### HasDaylightSavingEnd
+
+`func (o *Timezone) HasDaylightSavingEnd() bool`
+
+HasDaylightSavingEnd returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

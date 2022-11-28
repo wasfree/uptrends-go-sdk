@@ -10,11 +10,14 @@ Method | HTTP request | Description
 [**AlertDefinitionAddOperatorGroupToEscalationLevel**](AlertDefinitionApi.md#AlertDefinitionAddOperatorGroupToEscalationLevel) | **Post** /AlertDefinition/{alertDefinitionGuid}/EscalationLevel/{escalationLevelId}/Member/OperatorGroup/{operatorGroupGuid} | Adds an operator group to the specified escalation level.
 [**AlertDefinitionAddOperatorToEscalationLevel**](AlertDefinitionApi.md#AlertDefinitionAddOperatorToEscalationLevel) | **Post** /AlertDefinition/{alertDefinitionGuid}/EscalationLevel/{escalationLevelId}/Member/Operator/{operatorGuid} | Adds an operator to the specified escalation level.
 [**AlertDefinitionCreateAlertDefinition**](AlertDefinitionApi.md#AlertDefinitionCreateAlertDefinition) | **Post** /AlertDefinition | Creates a new alert definition.
+[**AlertDefinitionCreateAuthorizationForAlertDefinition**](AlertDefinitionApi.md#AlertDefinitionCreateAuthorizationForAlertDefinition) | **Post** /AlertDefinition/{alertDefinitionGuid}/Authorizations | Create authorizations for alert definition If the wanted authorizations requires other authorizations, these will be added as well
 [**AlertDefinitionDeleteAlertDefinition**](AlertDefinitionApi.md#AlertDefinitionDeleteAlertDefinition) | **Delete** /AlertDefinition/{alertDefinitionGuid} | Deletes an existing alert definition.
+[**AlertDefinitionDeleteAuthorizationForAlertDefinition**](AlertDefinitionApi.md#AlertDefinitionDeleteAuthorizationForAlertDefinition) | **Delete** /AlertDefinition/{alertDefinitionGuid}/Authorizations/{authorizationGuid} | Delete alert definition authorization for alert definition
 [**AlertDefinitionGetAllAlertDefinitions**](AlertDefinitionApi.md#AlertDefinitionGetAllAlertDefinitions) | **Get** /AlertDefinition | Gets a list of all alert definitions.
 [**AlertDefinitionGetAllEscalationLevelIntegrations**](AlertDefinitionApi.md#AlertDefinitionGetAllEscalationLevelIntegrations) | **Get** /AlertDefinition/{alertDefinitionGuid}/EscalationLevel/{escalationLevelId}/Integration | Gets all integrations for a specified escalation level.
 [**AlertDefinitionGetAllEscalationLevels**](AlertDefinitionApi.md#AlertDefinitionGetAllEscalationLevels) | **Get** /AlertDefinition/{alertDefinitionGuid}/EscalationLevel | Gets all escalation level information for the specified alert definition.
 [**AlertDefinitionGetAllMembers**](AlertDefinitionApi.md#AlertDefinitionGetAllMembers) | **Get** /AlertDefinition/{alertDefinitionGuid}/Member | Gets a list of all monitor and monitor group guids for the specified alert definition.
+[**AlertDefinitionGetAuthorizationsOfAlertDefinition**](AlertDefinitionApi.md#AlertDefinitionGetAuthorizationsOfAlertDefinition) | **Get** /AlertDefinition/{alertDefinitionGuid}/Authorizations | Get authorizations of alert definition
 [**AlertDefinitionGetEscalationLevel**](AlertDefinitionApi.md#AlertDefinitionGetEscalationLevel) | **Get** /AlertDefinition/{alertDefinitionGuid}/EscalationLevel/{escalationLevelId} | Gets the escalation level information of the specified alert definition.
 [**AlertDefinitionGetEscalationLevelIntegration**](AlertDefinitionApi.md#AlertDefinitionGetEscalationLevelIntegration) | **Get** /AlertDefinition/{alertDefinitionGuid}/EscalationLevel/{escalationLevelId}/Integration/{integrationGuid} | Gets a single integration for a specified escalation level.
 [**AlertDefinitionGetEscalationLevelOperator**](AlertDefinitionApi.md#AlertDefinitionGetEscalationLevelOperator) | **Get** /AlertDefinition/{alertDefinitionGuid}/EscalationLevel/{escalationLevelId}/Member | Gets the operator and operator group guids for the specified escalation level.
@@ -35,7 +38,7 @@ Method | HTTP request | Description
 
 ## AlertDefinitionAddIntegrationToEscalationLevel
 
-> AlertDefinitionMonitorGroup AlertDefinitionAddIntegrationToEscalationLevel(ctx, alertDefinitionGuid, escalationLevelId).EscalationLevelIntegration(escalationLevelIntegration).Execute()
+> Integration AlertDefinitionAddIntegrationToEscalationLevel(ctx, alertDefinitionGuid, escalationLevelId).EscalationLevelIntegration(escalationLevelIntegration).Execute()
 
 Adds an integration to a specified escalation level.
 
@@ -54,16 +57,16 @@ import (
 func main() {
     alertDefinitionGuid := "alertDefinitionGuid_example" // string | The Guid of the alert definition.
     escalationLevelId := int32(56) // int32 | The escalation level id.
-    escalationLevelIntegration := *openapiclient.NewEscalationLevelIntegration() // EscalationLevelIntegration | The integration to add.
+    escalationLevelIntegration := *openapiclient.NewEscalationLevelIntegration() // EscalationLevelIntegration | The integration to add. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionAddIntegrationToEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId).EscalationLevelIntegration(escalationLevelIntegration).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionAddIntegrationToEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId).EscalationLevelIntegration(escalationLevelIntegration).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionAddIntegrationToEscalationLevel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AlertDefinitionAddIntegrationToEscalationLevel`: AlertDefinitionMonitorGroup
+    // response from `AlertDefinitionAddIntegrationToEscalationLevel`: Integration
     fmt.Fprintf(os.Stdout, "Response from `AlertDefinitionApi.AlertDefinitionAddIntegrationToEscalationLevel`: %v\n", resp)
 }
 ```
@@ -90,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AlertDefinitionMonitorGroup**](AlertDefinitionMonitorGroup.md)
+[**Integration**](Integration.md)
 
 ### Authorization
 
@@ -129,8 +132,8 @@ func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The Guid of the monitor group to add.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionAddMonitorGroupToAlertDefinition(context.Background(), alertDefinitionGuid, monitorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionAddMonitorGroupToAlertDefinition(context.Background(), alertDefinitionGuid, monitorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionAddMonitorGroupToAlertDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -200,8 +203,8 @@ func main() {
     monitorGuid := "monitorGuid_example" // string | The Guid of the monitor to add.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionAddMonitorToAlertDefinition(context.Background(), alertDefinitionGuid, monitorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionAddMonitorToAlertDefinition(context.Background(), alertDefinitionGuid, monitorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionAddMonitorToAlertDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -272,8 +275,8 @@ func main() {
     operatorGroupGuid := "operatorGroupGuid_example" // string | The Guid of the operator group to add.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionAddOperatorGroupToEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId, operatorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionAddOperatorGroupToEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId, operatorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionAddOperatorGroupToEscalationLevel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -346,8 +349,8 @@ func main() {
     operatorGuid := "operatorGuid_example" // string | The Guid of the operator to add.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionAddOperatorToEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId, operatorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionAddOperatorToEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId, operatorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionAddOperatorToEscalationLevel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -415,11 +418,11 @@ import (
 )
 
 func main() {
-    alertDefinition := *openapiclient.NewAlertDefinition() // AlertDefinition | The details of the alert definition to create.
+    alertDefinition := *openapiclient.NewAlertDefinition() // AlertDefinition | The details of the alert definition to create. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionCreateAlertDefinition(context.Background()).AlertDefinition(alertDefinition).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionCreateAlertDefinition(context.Background()).AlertDefinition(alertDefinition).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionCreateAlertDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -460,6 +463,76 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## AlertDefinitionCreateAuthorizationForAlertDefinition
+
+> []AlertDefinitionAuthorization AlertDefinitionCreateAuthorizationForAlertDefinition(ctx, alertDefinitionGuid).AlertDefinitionAuthorization(alertDefinitionAuthorization).Execute()
+
+Create authorizations for alert definition If the wanted authorizations requires other authorizations, these will be added as well
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    alertDefinitionGuid := "alertDefinitionGuid_example" // string | The alert definition GUID
+    alertDefinitionAuthorization := *openapiclient.NewAlertDefinitionAuthorization(map[string][]openapiclient.AlertDefinitionAuthorizationType{ ... }) // AlertDefinitionAuthorization | Authorization to add (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionCreateAuthorizationForAlertDefinition(context.Background(), alertDefinitionGuid).AlertDefinitionAuthorization(alertDefinitionAuthorization).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionCreateAuthorizationForAlertDefinition``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AlertDefinitionCreateAuthorizationForAlertDefinition`: []AlertDefinitionAuthorization
+    fmt.Fprintf(os.Stdout, "Response from `AlertDefinitionApi.AlertDefinitionCreateAuthorizationForAlertDefinition`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**alertDefinitionGuid** | **string** | The alert definition GUID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAlertDefinitionCreateAuthorizationForAlertDefinitionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **alertDefinitionAuthorization** | [**AlertDefinitionAuthorization**](AlertDefinitionAuthorization.md) | Authorization to add | 
+
+### Return type
+
+[**[]AlertDefinitionAuthorization**](AlertDefinitionAuthorization.md)
+
+### Authorization
+
+[basicauth](../README.md#basicauth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## AlertDefinitionDeleteAlertDefinition
 
 > AlertDefinitionDeleteAlertDefinition(ctx, alertDefinitionGuid).Execute()
@@ -482,8 +555,8 @@ func main() {
     alertDefinitionGuid := "alertDefinitionGuid_example" // string | The Guid of the alert definition to remove.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionDeleteAlertDefinition(context.Background(), alertDefinitionGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionDeleteAlertDefinition(context.Background(), alertDefinitionGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionDeleteAlertDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -526,6 +599,75 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## AlertDefinitionDeleteAuthorizationForAlertDefinition
+
+> AlertDefinitionDeleteAuthorizationForAlertDefinition(ctx, alertDefinitionGuid, authorizationGuid).Execute()
+
+Delete alert definition authorization for alert definition
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    alertDefinitionGuid := "alertDefinitionGuid_example" // string | The alert definition GUID
+    authorizationGuid := "authorizationGuid_example" // string | The authorization GUID that needs to be deleted
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionDeleteAuthorizationForAlertDefinition(context.Background(), alertDefinitionGuid, authorizationGuid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionDeleteAuthorizationForAlertDefinition``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**alertDefinitionGuid** | **string** | The alert definition GUID | 
+**authorizationGuid** | **string** | The authorization GUID that needs to be deleted | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAlertDefinitionDeleteAuthorizationForAlertDefinitionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[basicauth](../README.md#basicauth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## AlertDefinitionGetAllAlertDefinitions
 
 > []AlertDefinition AlertDefinitionGetAllAlertDefinitions(ctx).Execute()
@@ -547,8 +689,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionGetAllAlertDefinitions(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionGetAllAlertDefinitions(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionGetAllAlertDefinitions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -608,8 +750,8 @@ func main() {
     escalationLevelId := int32(56) // int32 | The escalation level id.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionGetAllEscalationLevelIntegrations(context.Background(), alertDefinitionGuid, escalationLevelId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionGetAllEscalationLevelIntegrations(context.Background(), alertDefinitionGuid, escalationLevelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionGetAllEscalationLevelIntegrations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -678,8 +820,8 @@ func main() {
     alertDefinitionGuid := "alertDefinitionGuid_example" // string | The Guid of the alert definition for which to return all escalation levels.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionGetAllEscalationLevels(context.Background(), alertDefinitionGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionGetAllEscalationLevels(context.Background(), alertDefinitionGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionGetAllEscalationLevels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -746,8 +888,8 @@ func main() {
     alertDefinitionGuid := "alertDefinitionGuid_example" // string | The Guid of the alert definition for which to return the members.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionGetAllMembers(context.Background(), alertDefinitionGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionGetAllMembers(context.Background(), alertDefinitionGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionGetAllMembers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -792,6 +934,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## AlertDefinitionGetAuthorizationsOfAlertDefinition
+
+> []AlertDefinitionAuthorization AlertDefinitionGetAuthorizationsOfAlertDefinition(ctx, alertDefinitionGuid).Execute()
+
+Get authorizations of alert definition
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    alertDefinitionGuid := "alertDefinitionGuid_example" // string | The alert definition GUID
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionGetAuthorizationsOfAlertDefinition(context.Background(), alertDefinitionGuid).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionGetAuthorizationsOfAlertDefinition``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AlertDefinitionGetAuthorizationsOfAlertDefinition`: []AlertDefinitionAuthorization
+    fmt.Fprintf(os.Stdout, "Response from `AlertDefinitionApi.AlertDefinitionGetAuthorizationsOfAlertDefinition`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**alertDefinitionGuid** | **string** | The alert definition GUID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAlertDefinitionGetAuthorizationsOfAlertDefinitionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**[]AlertDefinitionAuthorization**](AlertDefinitionAuthorization.md)
+
+### Authorization
+
+[basicauth](../README.md#basicauth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## AlertDefinitionGetEscalationLevel
 
 > EscalationLevel AlertDefinitionGetEscalationLevel(ctx, alertDefinitionGuid, escalationLevelId).Execute()
@@ -815,8 +1025,8 @@ func main() {
     escalationLevelId := int32(56) // int32 | The escalation level id.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionGetEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionGetEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionGetEscalationLevel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -887,8 +1097,8 @@ func main() {
     integrationGuid := "integrationGuid_example" // string | The Guid of the integration.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionGetEscalationLevelIntegration(context.Background(), alertDefinitionGuid, escalationLevelId, integrationGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionGetEscalationLevelIntegration(context.Background(), alertDefinitionGuid, escalationLevelId, integrationGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionGetEscalationLevelIntegration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -960,8 +1170,8 @@ func main() {
     escalationLevelId := int32(56) // int32 | The escalation level id.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionGetEscalationLevelOperator(context.Background(), alertDefinitionGuid, escalationLevelId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionGetEscalationLevelOperator(context.Background(), alertDefinitionGuid, escalationLevelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionGetEscalationLevelOperator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1030,8 +1240,8 @@ func main() {
     alertDefinitionGuid := "alertDefinitionGuid_example" // string | The Guid of the alert definition.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionGetSpecifiedAlertDefinitions(context.Background(), alertDefinitionGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionGetSpecifiedAlertDefinitions(context.Background(), alertDefinitionGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionGetSpecifiedAlertDefinitions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1098,11 +1308,11 @@ import (
 
 func main() {
     alertDefinitionGuid := "alertDefinitionGuid_example" // string | The Guid of the alert definition that should be updated.
-    alertDefinition := *openapiclient.NewAlertDefinition() // AlertDefinition | The partial definition for the alert definition that should be updated.
+    alertDefinition := *openapiclient.NewAlertDefinition() // AlertDefinition | The partial definition for the alert definition that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionPatchAlertDefinition(context.Background(), alertDefinitionGuid).AlertDefinition(alertDefinition).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionPatchAlertDefinition(context.Background(), alertDefinitionGuid).AlertDefinition(alertDefinition).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionPatchAlertDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1169,11 +1379,11 @@ import (
 func main() {
     alertDefinitionGuid := "alertDefinitionGuid_example" // string | The Guid of the alert definition that should be updated.
     escalationLevelId := int32(56) // int32 | The level number of the escalation that should be updated.
-    escalationLevel := *openapiclient.NewEscalationLevel() // EscalationLevel | The escalation level for the alert definition that should be updated.
+    escalationLevel := *openapiclient.NewEscalationLevel() // EscalationLevel | The escalation level for the alert definition that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionPatchAlertDefinitionEscalation(context.Background(), alertDefinitionGuid, escalationLevelId).EscalationLevel(escalationLevel).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionPatchAlertDefinitionEscalation(context.Background(), alertDefinitionGuid, escalationLevelId).EscalationLevel(escalationLevel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionPatchAlertDefinitionEscalation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1241,11 +1451,11 @@ import (
 
 func main() {
     alertDefinitionGuid := "alertDefinitionGuid_example" // string | The Guid of the alert definition that should be updated.
-    alertDefinition := *openapiclient.NewAlertDefinition() // AlertDefinition | The partial definition for the alert definition that should be updated.
+    alertDefinition := *openapiclient.NewAlertDefinition() // AlertDefinition | The partial definition for the alert definition that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionPutAlertDefinition(context.Background(), alertDefinitionGuid).AlertDefinition(alertDefinition).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionPutAlertDefinition(context.Background(), alertDefinitionGuid).AlertDefinition(alertDefinition).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionPutAlertDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1312,11 +1522,11 @@ import (
 func main() {
     alertDefinitionGuid := "alertDefinitionGuid_example" // string | The Guid of the alert definition that should be updated.
     escalationLevelId := int32(56) // int32 | The level number of the escalation that should be updated.
-    escalationLevel := *openapiclient.NewEscalationLevel() // EscalationLevel | The escalation level for the alert definition that should be updated.
+    escalationLevel := *openapiclient.NewEscalationLevel() // EscalationLevel | The escalation level for the alert definition that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionPutAlertDefinitionEscalation(context.Background(), alertDefinitionGuid, escalationLevelId).EscalationLevel(escalationLevel).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionPutAlertDefinitionEscalation(context.Background(), alertDefinitionGuid, escalationLevelId).EscalationLevel(escalationLevel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionPutAlertDefinitionEscalation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1386,8 +1596,8 @@ func main() {
     integrationGuid := "integrationGuid_example" // string | The Guid of the integration to remove.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionRemoveIntegrationFromEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId, integrationGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionRemoveIntegrationFromEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId, integrationGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionRemoveIntegrationFromEscalationLevel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1457,8 +1667,8 @@ func main() {
     monitorGuid := "monitorGuid_example" // string | The Guid of the monitor to remove.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionRemoveMonitorFromAlertDefinition(context.Background(), alertDefinitionGuid, monitorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionRemoveMonitorFromAlertDefinition(context.Background(), alertDefinitionGuid, monitorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionRemoveMonitorFromAlertDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1526,8 +1736,8 @@ func main() {
     monitorGroupGuid := "monitorGroupGuid_example" // string | The Guid of the monitor group to remove.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionRemoveMonitorGroupFromAlertDefinition(context.Background(), alertDefinitionGuid, monitorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionRemoveMonitorGroupFromAlertDefinition(context.Background(), alertDefinitionGuid, monitorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionRemoveMonitorGroupFromAlertDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1596,8 +1806,8 @@ func main() {
     operatorGuid := "operatorGuid_example" // string | The Guid of the operator to remove.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionRemoveOperatorFromEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId, operatorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionRemoveOperatorFromEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId, operatorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionRemoveOperatorFromEscalationLevel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1668,8 +1878,8 @@ func main() {
     operatorGroupGuid := "operatorGroupGuid_example" // string | The Guid of the operator group to remove.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionRemoveOperatorGroupFromEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId, operatorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionRemoveOperatorGroupFromEscalationLevel(context.Background(), alertDefinitionGuid, escalationLevelId, operatorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionRemoveOperatorGroupFromEscalationLevel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1738,11 +1948,11 @@ func main() {
     alertDefinitionGuid := "alertDefinitionGuid_example" // string | The Guid of the alert definition.
     escalationLevelId := int32(56) // int32 | The escalation level id.
     integrationGuid := "integrationGuid_example" // string | The Guid of the integration to update.
-    escalationLevelIntegration := *openapiclient.NewEscalationLevelIntegration() // EscalationLevelIntegration | The partial definition for the integration that should be updated.
+    escalationLevelIntegration := *openapiclient.NewEscalationLevelIntegration() // EscalationLevelIntegration | The partial definition for the integration that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionUpdateIntegrationForEscalationWithPatch(context.Background(), alertDefinitionGuid, escalationLevelId, integrationGuid).EscalationLevelIntegration(escalationLevelIntegration).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionUpdateIntegrationForEscalationWithPatch(context.Background(), alertDefinitionGuid, escalationLevelId, integrationGuid).EscalationLevelIntegration(escalationLevelIntegration).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionUpdateIntegrationForEscalationWithPatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1812,11 +2022,11 @@ func main() {
     alertDefinitionGuid := "alertDefinitionGuid_example" // string | The Guid of the alert definition.
     escalationLevelId := int32(56) // int32 | The escalation level id.
     integrationGuid := "integrationGuid_example" // string | The Guid of the integration to update.
-    escalationLevelIntegration := *openapiclient.NewEscalationLevelIntegration() // EscalationLevelIntegration | The definition for the integration that should be updated.
+    escalationLevelIntegration := *openapiclient.NewEscalationLevelIntegration() // EscalationLevelIntegration | The definition for the integration that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AlertDefinitionApi.AlertDefinitionUpdateIntegrationForEscalationWithPut(context.Background(), alertDefinitionGuid, escalationLevelId, integrationGuid).EscalationLevelIntegration(escalationLevelIntegration).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AlertDefinitionApi.AlertDefinitionUpdateIntegrationForEscalationWithPut(context.Background(), alertDefinitionGuid, escalationLevelId, integrationGuid).EscalationLevelIntegration(escalationLevelIntegration).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlertDefinitionApi.AlertDefinitionUpdateIntegrationForEscalationWithPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

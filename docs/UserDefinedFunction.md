@@ -10,12 +10,14 @@ Name | Type | Description | Notes
 **Regex** | Pointer to **string** |  | [optional] 
 **JwtSigningKey** | Pointer to **string** | This property is not supported yet | [optional] 
 **JwtAlgorithm** | Pointer to [**JwtAlgorithm**](JwtAlgorithm.md) | This property is not supported yet | [optional] 
+**HashKey** | Pointer to **string** |  | [optional] 
+**HashAlgorithm** | [**EngineHashAlgorithm**](EngineHashAlgorithm.md) |  | 
 
 ## Methods
 
 ### NewUserDefinedFunction
 
-`func NewUserDefinedFunction(type_ UserDefinedFunctionType, ) *UserDefinedFunction`
+`func NewUserDefinedFunction(type_ UserDefinedFunctionType, hashAlgorithm EngineHashAlgorithm, ) *UserDefinedFunction`
 
 NewUserDefinedFunction instantiates a new UserDefinedFunction object
 This constructor will assign default values to properties that have it defined,
@@ -174,6 +176,51 @@ SetJwtAlgorithm sets JwtAlgorithm field to given value.
 `func (o *UserDefinedFunction) HasJwtAlgorithm() bool`
 
 HasJwtAlgorithm returns a boolean if a field has been set.
+
+### GetHashKey
+
+`func (o *UserDefinedFunction) GetHashKey() string`
+
+GetHashKey returns the HashKey field if non-nil, zero value otherwise.
+
+### GetHashKeyOk
+
+`func (o *UserDefinedFunction) GetHashKeyOk() (*string, bool)`
+
+GetHashKeyOk returns a tuple with the HashKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHashKey
+
+`func (o *UserDefinedFunction) SetHashKey(v string)`
+
+SetHashKey sets HashKey field to given value.
+
+### HasHashKey
+
+`func (o *UserDefinedFunction) HasHashKey() bool`
+
+HasHashKey returns a boolean if a field has been set.
+
+### GetHashAlgorithm
+
+`func (o *UserDefinedFunction) GetHashAlgorithm() EngineHashAlgorithm`
+
+GetHashAlgorithm returns the HashAlgorithm field if non-nil, zero value otherwise.
+
+### GetHashAlgorithmOk
+
+`func (o *UserDefinedFunction) GetHashAlgorithmOk() (*EngineHashAlgorithm, bool)`
+
+GetHashAlgorithmOk returns a tuple with the HashAlgorithm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHashAlgorithm
+
+`func (o *UserDefinedFunction) SetHashAlgorithm(v EngineHashAlgorithm)`
+
+SetHashAlgorithm sets HashAlgorithm field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

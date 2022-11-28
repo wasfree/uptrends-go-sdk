@@ -13,8 +13,8 @@ Method | HTTP request | Description
 [**MonitorDeleteMonitor**](MonitorApi.md#MonitorDeleteMonitor) | **Delete** /Monitor/{monitorGuid} | Deletes the specified monitor.
 [**MonitorGetAllMaintenancePeriodsForMonitor**](MonitorApi.md#MonitorGetAllMaintenancePeriodsForMonitor) | **Get** /Monitor/{monitorGuid}/MaintenancePeriod | Finds all maintenance periods for a monitor.
 [**MonitorGetAuthorizationsOfMonitor**](MonitorApi.md#MonitorGetAuthorizationsOfMonitor) | **Get** /Monitor/{monitorGuid}/Authorizations | Get monitor authorizations of monitor
-[**MonitorGetMonitor**](MonitorApi.md#MonitorGetMonitor) | **Get** /Monitor/{monitorGuid} | Returns the definition of the specified monitor. 
-[**MonitorGetMonitorGroups**](MonitorApi.md#MonitorGetMonitorGroups) | **Get** /Monitor/{monitorGuid}/MonitorGroup | Returns the Guid of each monitor group where the specified monitor is a member of. 
+[**MonitorGetMonitor**](MonitorApi.md#MonitorGetMonitor) | **Get** /Monitor/{monitorGuid} | Returns the definition of the specified monitor.
+[**MonitorGetMonitorGroups**](MonitorApi.md#MonitorGetMonitorGroups) | **Get** /Monitor/{monitorGuid}/MonitorGroup | Returns the Guid of each monitor group where the specified monitor is a member of.
 [**MonitorGetMonitors**](MonitorApi.md#MonitorGetMonitors) | **Get** /Monitor | Returns the definition of all monitors available in the account.
 [**MonitorGetMonitorsByMonitorGroup**](MonitorApi.md#MonitorGetMonitorsByMonitorGroup) | **Get** /Monitor/MonitorGroup/{monitorGroupGuid} | Returns the definition of all monitors available in the account that are a member of the specified monitor group.
 [**MonitorPatchMonitor**](MonitorApi.md#MonitorPatchMonitor) | **Patch** /Monitor/{monitorGuid} | Partially updates the definition of the specified monitor.
@@ -39,17 +39,16 @@ import (
     "context"
     "fmt"
     "os"
-    "time"
     openapiclient "./openapi"
 )
 
 func main() {
     monitorGuid := "monitorGuid_example" // string | 
-    beforeDate := time.Now() // time.Time | A string representing the date, formatted as \"yyyy-MM-dd\"
+    beforeDate := TODO // interface{} | A string representing the date, formatted as \"yyyy-MM-dd\"
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorCleanupMaintenancePeriods(context.Background(), monitorGuid, beforeDate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorCleanupMaintenancePeriods(context.Background(), monitorGuid, beforeDate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorCleanupMaintenancePeriods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,7 +63,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **monitorGuid** | **string** |  | 
-**beforeDate** | **time.Time** | A string representing the date, formatted as \&quot;yyyy-MM-dd\&quot; | 
+**beforeDate** | [**interface{}**](.md) | A string representing the date, formatted as \&quot;yyyy-MM-dd\&quot; | 
 
 ### Other Parameters
 
@@ -120,8 +119,8 @@ func main() {
     includeMonitorGroups := true // bool | Whether or not to also copy the monitor group memberships into the clone. (optional) (default to true)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorCloneMonitor(context.Background(), monitorGuid).IncludeMaintenancePeriods(includeMaintenancePeriods).IncludeMonitorGroups(includeMonitorGroups).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorCloneMonitor(context.Background(), monitorGuid).IncludeMaintenancePeriods(includeMaintenancePeriods).IncludeMonitorGroups(includeMonitorGroups).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorCloneMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -188,11 +187,11 @@ import (
 
 func main() {
     monitorGuid := "monitorGuid_example" // string | The monitor GUID
-    monitorAuthorization := *openapiclient.NewMonitorAuthorization(openapiclient.MonitorAuthorizationType("ViewMonitorData")) // MonitorAuthorization | Authorization to add
+    monitorAuthorization := *openapiclient.NewMonitorAuthorization(map[string][]openapiclient.MonitorAuthorizationType{ ... }) // MonitorAuthorization | Authorization to add (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorCreateAuthorizationForMonitor(context.Background(), monitorGuid).MonitorAuthorization(monitorAuthorization).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorCreateAuthorizationForMonitor(context.Background(), monitorGuid).MonitorAuthorization(monitorAuthorization).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorCreateAuthorizationForMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -258,11 +257,11 @@ import (
 
 func main() {
     monitorGuid := "monitorGuid_example" // string | 
-    maintenancePeriod := *openapiclient.NewMaintenancePeriod(int32(123), openapiclient.ScheduleMode("OneTime"), openapiclient.MaintenanceTypes("DisableMonitoring")) // MaintenancePeriod | 
+    maintenancePeriod := *openapiclient.NewMaintenancePeriod(int32(123), map[string][]openapiclient.ScheduleMode{ ... }, map[string][]openapiclient.MaintenanceTypes{ ... }) // MaintenancePeriod |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorCreateMaintenancePeriodForMonitor(context.Background(), monitorGuid).MaintenancePeriod(maintenancePeriod).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorCreateMaintenancePeriodForMonitor(context.Background(), monitorGuid).MaintenancePeriod(maintenancePeriod).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorCreateMaintenancePeriodForMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,8 +330,8 @@ func main() {
     authorizationGuid := "authorizationGuid_example" // string | The authorization GUID that needs to be deleted
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorDeleteAuthorizationForMonitorGroup(context.Background(), monitorGuid, authorizationGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorDeleteAuthorizationForMonitorGroup(context.Background(), monitorGuid, authorizationGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorDeleteAuthorizationForMonitorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -400,8 +399,8 @@ func main() {
     maintenancePeriodId := int32(56) // int32 | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorDeleteMaintenancePeriodFromMonitor(context.Background(), monitorGuid, maintenancePeriodId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorDeleteMaintenancePeriodFromMonitor(context.Background(), monitorGuid, maintenancePeriodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorDeleteMaintenancePeriodFromMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -468,8 +467,8 @@ func main() {
     monitorGuid := "monitorGuid_example" // string | The guid of the monitor you want to delete.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorDeleteMonitor(context.Background(), monitorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorDeleteMonitor(context.Background(), monitorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorDeleteMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -534,8 +533,8 @@ func main() {
     monitorGuid := "monitorGuid_example" // string | The guid of the monitor you want to find the maintenance periods of.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorGetAllMaintenancePeriodsForMonitor(context.Background(), monitorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorGetAllMaintenancePeriodsForMonitor(context.Background(), monitorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorGetAllMaintenancePeriodsForMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -602,8 +601,8 @@ func main() {
     monitorGuid := "monitorGuid_example" // string | The monitor GUID
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorGetAuthorizationsOfMonitor(context.Background(), monitorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorGetAuthorizationsOfMonitor(context.Background(), monitorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorGetAuthorizationsOfMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -652,7 +651,7 @@ Name | Type | Description  | Notes
 
 > Monitor MonitorGetMonitor(ctx, monitorGuid).Filter(filter).Execute()
 
-Returns the definition of the specified monitor. 
+Returns the definition of the specified monitor.
 
 ### Example
 
@@ -671,8 +670,8 @@ func main() {
     filter := "filter_example" // string | Provide the option to only retrieve the requested fields. E.g. \"Name,IsActive\". (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorGetMonitor(context.Background(), monitorGuid).Filter(filter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorGetMonitor(context.Background(), monitorGuid).Filter(filter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorGetMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -722,7 +721,7 @@ Name | Type | Description  | Notes
 
 > []string MonitorGetMonitorGroups(ctx, monitorGuid).Execute()
 
-Returns the Guid of each monitor group where the specified monitor is a member of. 
+Returns the Guid of each monitor group where the specified monitor is a member of.
 
 ### Example
 
@@ -740,8 +739,8 @@ func main() {
     monitorGuid := "monitorGuid_example" // string | The Guid of the requested monitor.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorGetMonitorGroups(context.Background(), monitorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorGetMonitorGroups(context.Background(), monitorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorGetMonitorGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -808,8 +807,8 @@ func main() {
     filter := "filter_example" // string | Provide the option to only retrieve the requested fields. E.g. \"Name,IsActive\". (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorGetMonitors(context.Background()).Filter(filter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorGetMonitors(context.Background()).Filter(filter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorGetMonitors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -873,8 +872,8 @@ func main() {
     filter := "filter_example" // string | Provide the option to only retrieve the requested fields. E.g. \"Name,IsActive\". (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorGetMonitorsByMonitorGroup(context.Background(), monitorGroupGuid).Filter(filter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorGetMonitorsByMonitorGroup(context.Background(), monitorGroupGuid).Filter(filter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorGetMonitorsByMonitorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -942,11 +941,11 @@ import (
 
 func main() {
     monitorGuid := "monitorGuid_example" // string | The Guid of the monitor that should be updated.
-    monitor := *openapiclient.NewMonitor() // Monitor | The partial definition for the monitor that should be updated.
+    monitor := *openapiclient.NewMonitor() // Monitor | The partial definition for the monitor that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorPatchMonitor(context.Background(), monitorGuid).Monitor(monitor).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorPatchMonitor(context.Background(), monitorGuid).Monitor(monitor).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorPatchMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1009,11 +1008,11 @@ import (
 )
 
 func main() {
-    monitor := *openapiclient.NewMonitor() // Monitor | The complete definition of the monitor that should be created.
+    monitor := *openapiclient.NewMonitor() // Monitor | The complete definition of the monitor that should be created. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorPostMonitor(context.Background()).Monitor(monitor).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorPostMonitor(context.Background()).Monitor(monitor).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorPostMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1076,11 +1075,11 @@ import (
 
 func main() {
     monitorGuid := "monitorGuid_example" // string | The Guid of the monitor that should be updated.
-    monitor := *openapiclient.NewMonitor() // Monitor | The complete definition for the monitor that should be updated.
+    monitor := *openapiclient.NewMonitor() // Monitor | The complete definition for the monitor that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorPutMonitor(context.Background(), monitorGuid).Monitor(monitor).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorPutMonitor(context.Background(), monitorGuid).Monitor(monitor).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorPutMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1145,11 +1144,11 @@ import (
 func main() {
     monitorGuid := "monitorGuid_example" // string | 
     maintenancePeriodId := int32(56) // int32 | 
-    maintenancePeriod := *openapiclient.NewMaintenancePeriod(int32(123), openapiclient.ScheduleMode("OneTime"), openapiclient.MaintenanceTypes("DisableMonitoring")) // MaintenancePeriod | 
+    maintenancePeriod := *openapiclient.NewMaintenancePeriod(int32(123), map[string][]openapiclient.ScheduleMode{ ... }, map[string][]openapiclient.MaintenanceTypes{ ... }) // MaintenancePeriod |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.MonitorApi.MonitorUpdateMaintenancePeriodForMonitor(context.Background(), monitorGuid, maintenancePeriodId).MaintenancePeriod(maintenancePeriod).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorApi.MonitorUpdateMaintenancePeriodForMonitor(context.Background(), monitorGuid, maintenancePeriodId).MaintenancePeriod(maintenancePeriod).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorApi.MonitorUpdateMaintenancePeriodForMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

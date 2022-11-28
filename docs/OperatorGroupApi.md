@@ -4,8 +4,8 @@ All URIs are relative to *https://api.uptrends.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OperatorGroupAddDutyScheduleToAllMembers**](OperatorGroupApi.md#OperatorGroupAddDutyScheduleToAllMembers) | **Post** /OperatorGroup/{operatorGroupGuid}/DutySchedule/AddDutyScheduleForAllMembers | Adds the provided duty schedule to all operators in the group specified 
-[**OperatorGroupAddOperatorToOperatorGroup**](OperatorGroupApi.md#OperatorGroupAddOperatorToOperatorGroup) | **Post** /OperatorGroup/{operatorGroupGuid}/Member/{operatorGuid} | Adds the specified operator to the operator group 
+[**OperatorGroupAddDutyScheduleToAllMembers**](OperatorGroupApi.md#OperatorGroupAddDutyScheduleToAllMembers) | **Post** /OperatorGroup/{operatorGroupGuid}/DutySchedule/AddDutyScheduleForAllMembers | Adds the provided duty schedule to all operators in the group specified
+[**OperatorGroupAddOperatorToOperatorGroup**](OperatorGroupApi.md#OperatorGroupAddOperatorToOperatorGroup) | **Post** /OperatorGroup/{operatorGroupGuid}/Member/{operatorGuid} | Adds the specified operator to the operator group
 [**OperatorGroupAllOperatorsInGroupOffDuty**](OperatorGroupApi.md#OperatorGroupAllOperatorsInGroupOffDuty) | **Post** /OperatorGroup/{operatorGroupGuid}/AllOperatorsOffDuty | Set the OnDuty flag to off for all operators that are a member of the operator group specified by the operator group GUID
 [**OperatorGroupAllOperatorsInGroupOnDuty**](OperatorGroupApi.md#OperatorGroupAllOperatorsInGroupOnDuty) | **Post** /OperatorGroup/{operatorGroupGuid}/AllOperatorsOnDuty | Set the OnDuty flag to on for all operators that are a member of the operator group specified by the operator group GUID
 [**OperatorGroupCreateOperatorGroup**](OperatorGroupApi.md#OperatorGroupCreateOperatorGroup) | **Post** /OperatorGroup | Creates a new operator group
@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 > OperatorGroupAddDutyScheduleToAllMembers(ctx, operatorGroupGuid).DutySchedule(dutySchedule).Execute()
 
-Adds the provided duty schedule to all operators in the group specified 
+Adds the provided duty schedule to all operators in the group specified
 
 ### Example
 
@@ -41,11 +41,11 @@ import (
 
 func main() {
     operatorGroupGuid := "operatorGroupGuid_example" // string | 
-    dutySchedule := *openapiclient.NewOperatorDutySchedule(int32(123), openapiclient.OperatorScheduleMode("OneTime")) // OperatorDutySchedule | 
+    dutySchedule := *openapiclient.NewOperatorDutySchedule(int32(123), map[string][]openapiclient.OperatorScheduleMode{ ... }) // OperatorDutySchedule |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupAddDutyScheduleToAllMembers(context.Background(), operatorGroupGuid).DutySchedule(dutySchedule).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupAddDutyScheduleToAllMembers(context.Background(), operatorGroupGuid).DutySchedule(dutySchedule).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupAddDutyScheduleToAllMembers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 > OperatorGroupAddOperatorToOperatorGroup(ctx, operatorGroupGuid, operatorGuid).Execute()
 
-Adds the specified operator to the operator group 
+Adds the specified operator to the operator group
 
 ### Example
 
@@ -112,8 +112,8 @@ func main() {
     operatorGuid := "operatorGuid_example" // string | The operator Guid
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupAddOperatorToOperatorGroup(context.Background(), operatorGroupGuid, operatorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupAddOperatorToOperatorGroup(context.Background(), operatorGroupGuid, operatorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupAddOperatorToOperatorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -180,8 +180,8 @@ func main() {
     operatorGroupGuid := "operatorGroupGuid_example" // string | The operator group GUID
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupAllOperatorsInGroupOffDuty(context.Background(), operatorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupAllOperatorsInGroupOffDuty(context.Background(), operatorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupAllOperatorsInGroupOffDuty``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -246,8 +246,8 @@ func main() {
     operatorGroupGuid := "operatorGroupGuid_example" // string | The operator group GUID
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupAllOperatorsInGroupOnDuty(context.Background(), operatorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupAllOperatorsInGroupOnDuty(context.Background(), operatorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupAllOperatorsInGroupOnDuty``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -309,11 +309,11 @@ import (
 )
 
 func main() {
-    operatorGroup := *openapiclient.NewOperatorGroup() // OperatorGroup | The operatorGroup object to be created
+    operatorGroup := *openapiclient.NewOperatorGroup() // OperatorGroup | The operatorGroup object to be created (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupCreateOperatorGroup(context.Background()).OperatorGroup(operatorGroup).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupCreateOperatorGroup(context.Background()).OperatorGroup(operatorGroup).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupCreateOperatorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -377,8 +377,8 @@ func main() {
     authorizationType := "authorizationType_example" // string | The type of authorization
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupDeleteAuthorizationForOperatorGroup(context.Background(), operatorGroupGuid, authorizationType).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupDeleteAuthorizationForOperatorGroup(context.Background(), operatorGroupGuid, authorizationType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupDeleteAuthorizationForOperatorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -445,8 +445,8 @@ func main() {
     operatorGroupGuid := "operatorGroupGuid_example" // string | The Guid of the operator group to be deleted
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupDeleteOperatorGroup(context.Background(), operatorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupDeleteOperatorGroup(context.Background(), operatorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupDeleteOperatorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -510,8 +510,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupGetAllOperatorGroups(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupGetAllOperatorGroups(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupGetAllOperatorGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -570,8 +570,8 @@ func main() {
     operatorGroupGuid := "operatorGroupGuid_example" // string | The Guid of the operator group
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupGetAuthorizationsForOperatorGroup(context.Background(), operatorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupGetAuthorizationsForOperatorGroup(context.Background(), operatorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupGetAuthorizationsForOperatorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -638,8 +638,8 @@ func main() {
     operatorGroupGuid := "operatorGroupGuid_example" // string | The Guid of the operator group to be retrieved
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupGetOperatorGroup(context.Background(), operatorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupGetOperatorGroup(context.Background(), operatorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupGetOperatorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -706,8 +706,8 @@ func main() {
     operatorGroupGuid := "operatorGroupGuid_example" // string | The Guid of the operator group to retrieve the members for
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupGetOperatorGroupMembers(context.Background(), operatorGroupGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupGetOperatorGroupMembers(context.Background(), operatorGroupGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupGetOperatorGroupMembers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -775,8 +775,8 @@ func main() {
     authorizationType := "authorizationType_example" // string | The type of authorization
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupPostAuthorizationForOperatorGroup(context.Background(), operatorGroupGuid, authorizationType).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupPostAuthorizationForOperatorGroup(context.Background(), operatorGroupGuid, authorizationType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupPostAuthorizationForOperatorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -844,8 +844,8 @@ func main() {
     operatorGuid := "operatorGuid_example" // string | The operator Guid to be removed
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupRemoveOperatorFromOperatorGroup(context.Background(), operatorGroupGuid, operatorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupRemoveOperatorFromOperatorGroup(context.Background(), operatorGroupGuid, operatorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupRemoveOperatorFromOperatorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -910,11 +910,11 @@ import (
 
 func main() {
     operatorGroupGuid := "operatorGroupGuid_example" // string | The Guid of the operator group to be updated
-    operatorGroup := *openapiclient.NewOperatorGroup() // OperatorGroup | The operator group to be updated
+    operatorGroup := *openapiclient.NewOperatorGroup() // OperatorGroup | The operator group to be updated (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorGroupApi.OperatorGroupUpdateOperatorGroup(context.Background(), operatorGroupGuid).OperatorGroup(operatorGroup).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorGroupApi.OperatorGroupUpdateOperatorGroup(context.Background(), operatorGroupGuid).OperatorGroup(operatorGroup).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorGroupApi.OperatorGroupUpdateOperatorGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

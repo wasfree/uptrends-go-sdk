@@ -11,12 +11,13 @@ Name | Type | Description | Notes
 **HttpStatusDescription** | Pointer to **string** | Step description | [optional] 
 **ResponseCompleted** | **bool** | Did the response complete? | 
 **StepExecuted** | **bool** | Was this step executed? | 
-**AssertionResultsInfo** | Pointer to [**AssertionResultsInfo**](AssertionResultsInfo.md) | Results of the assertions in this step | [optional] 
+**AssertionResultsInfo** | Pointer to [**HttpEngineStepAssertionResultsInfo**](HttpEngineStepAssertionResultsInfo.md) |  | [optional] 
 **TotalTime** | **int64** | Number of milliseconds it took for this step to succeed | 
 **ResponseHeaders** | Pointer to **string** | Response headers | [optional] 
 **ResponseBody** | Pointer to **string** | Response body | [optional] 
 **RequestHeaders** | Pointer to **string** | Request headers send | [optional] 
 **RequestBody** | Pointer to **string** | Request body send | [optional] 
+**ResolvedIpAddress** | Pointer to **string** | Resolved IP address | [optional] 
 
 ## Methods
 
@@ -204,20 +205,20 @@ SetStepExecuted sets StepExecuted field to given value.
 
 ### GetAssertionResultsInfo
 
-`func (o *HttpEngineStep) GetAssertionResultsInfo() AssertionResultsInfo`
+`func (o *HttpEngineStep) GetAssertionResultsInfo() HttpEngineStepAssertionResultsInfo`
 
 GetAssertionResultsInfo returns the AssertionResultsInfo field if non-nil, zero value otherwise.
 
 ### GetAssertionResultsInfoOk
 
-`func (o *HttpEngineStep) GetAssertionResultsInfoOk() (*AssertionResultsInfo, bool)`
+`func (o *HttpEngineStep) GetAssertionResultsInfoOk() (*HttpEngineStepAssertionResultsInfo, bool)`
 
 GetAssertionResultsInfoOk returns a tuple with the AssertionResultsInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAssertionResultsInfo
 
-`func (o *HttpEngineStep) SetAssertionResultsInfo(v AssertionResultsInfo)`
+`func (o *HttpEngineStep) SetAssertionResultsInfo(v HttpEngineStepAssertionResultsInfo)`
 
 SetAssertionResultsInfo sets AssertionResultsInfo field to given value.
 
@@ -346,6 +347,31 @@ SetRequestBody sets RequestBody field to given value.
 `func (o *HttpEngineStep) HasRequestBody() bool`
 
 HasRequestBody returns a boolean if a field has been set.
+
+### GetResolvedIpAddress
+
+`func (o *HttpEngineStep) GetResolvedIpAddress() string`
+
+GetResolvedIpAddress returns the ResolvedIpAddress field if non-nil, zero value otherwise.
+
+### GetResolvedIpAddressOk
+
+`func (o *HttpEngineStep) GetResolvedIpAddressOk() (*string, bool)`
+
+GetResolvedIpAddressOk returns a tuple with the ResolvedIpAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResolvedIpAddress
+
+`func (o *HttpEngineStep) SetResolvedIpAddress(v string)`
+
+SetResolvedIpAddress sets ResolvedIpAddress field to given value.
+
+### HasResolvedIpAddress
+
+`func (o *HttpEngineStep) HasResolvedIpAddress() bool`
+
+HasResolvedIpAddress returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

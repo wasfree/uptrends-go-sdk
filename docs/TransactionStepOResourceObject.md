@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Attributes** | Pointer to [**TransactionStep**](TransactionStep.md) |  | [optional] 
-**Id** | **int32** |  | 
-**Type** | Pointer to **string** |  | [optional] 
-**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) |  | [optional] 
-**Links** | Pointer to **map[string]string** |  | [optional] 
+**Attributes** | Pointer to [**TransactionStepOResourceObjectAttributes**](TransactionStepOResourceObjectAttributes.md) |  | [optional] 
+**Id** | **int32** | Identifier  | 
+**Type** | Pointer to **string** | Object type | [optional] 
+**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) | Relationships of the object | [optional] 
+**Links** | Pointer to **map[string]string** | Links related to the object | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAttributes
 
-`func (o *TransactionStepOResourceObject) GetAttributes() TransactionStep`
+`func (o *TransactionStepOResourceObject) GetAttributes() TransactionStepOResourceObjectAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TransactionStepOResourceObject) GetAttributesOk() (*TransactionStep, bool)`
+`func (o *TransactionStepOResourceObject) GetAttributesOk() (*TransactionStepOResourceObjectAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TransactionStepOResourceObject) SetAttributes(v TransactionStep)`
+`func (o *TransactionStepOResourceObject) SetAttributes(v TransactionStepOResourceObjectAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

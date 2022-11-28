@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **AllowNativeLoginSpecified** | Pointer to **bool** |  | [optional] 
 **AllowSingleSignon** | Pointer to **bool** | This can only be set to true if the account has SSO enabled. Ommitting or providing null will use the account default | [optional] 
 **AllowSingleSignonSpecified** | Pointer to **bool** |  | [optional] 
-**DefaultDashboard** | Pointer to **string** |  | [optional] 
+**DefaultDashboard** | Pointer to **string** | This is used to set the default dashboard for the operator.  Valid options are: UseAccountSpecifiedDashboard (This will use the dashboard specified for the account) Any built-in dashboard: e.g. AccountOverview Any custom dashboard to which the operator has access to, defined by the guid of this dashboard | [optional] 
 **SetupMode** | Pointer to [**OperatorSetupMode**](OperatorSetupMode.md) |  | [optional] 
 
 ## Methods

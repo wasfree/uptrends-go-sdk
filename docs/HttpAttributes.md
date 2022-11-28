@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ResponseBody** | Pointer to **string** | The HTML code retrieved from the target | [optional] 
 **ResponseHeaders** | Pointer to **string** | The HTTP response headers retrieved from the target  | [optional] 
+**Url** | Pointer to **string** | The URL of the HTTP Check.  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetResponseHeaders sets ResponseHeaders field to given value.
 `func (o *HttpAttributes) HasResponseHeaders() bool`
 
 HasResponseHeaders returns a boolean if a field has been set.
+
+### GetUrl
+
+`func (o *HttpAttributes) GetUrl() string`
+
+GetUrl returns the Url field if non-nil, zero value otherwise.
+
+### GetUrlOk
+
+`func (o *HttpAttributes) GetUrlOk() (*string, bool)`
+
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrl
+
+`func (o *HttpAttributes) SetUrl(v string)`
+
+SetUrl sets Url field to given value.
+
+### HasUrl
+
+`func (o *HttpAttributes) HasUrl() bool`
+
+HasUrl returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
