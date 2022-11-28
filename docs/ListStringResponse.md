@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to **[]string** |  | [optional] 
-**Links** | Pointer to [**LinksData**](LinksData.md) |  | [optional] 
-**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) |  | [optional] 
-**Meta** | Pointer to [**MetaData**](MetaData.md) |  | [optional] 
+**Data** | Pointer to **[]string** | The resposne data/monitor checks | [optional] 
+**Links** | Pointer to [**StatisticsResponseLinks**](StatisticsResponseLinks.md) |  | [optional] 
+**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) | Relationships of the object | [optional] 
+**Meta** | Pointer to [**StatisticsResponseMeta**](StatisticsResponseMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -55,20 +55,20 @@ HasData returns a boolean if a field has been set.
 
 ### GetLinks
 
-`func (o *ListStringResponse) GetLinks() LinksData`
+`func (o *ListStringResponse) GetLinks() StatisticsResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListStringResponse) GetLinksOk() (*LinksData, bool)`
+`func (o *ListStringResponse) GetLinksOk() (*StatisticsResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListStringResponse) SetLinks(v LinksData)`
+`func (o *ListStringResponse) SetLinks(v StatisticsResponseLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -105,20 +105,20 @@ HasRelationships returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListStringResponse) GetMeta() MetaData`
+`func (o *ListStringResponse) GetMeta() StatisticsResponseMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListStringResponse) GetMetaOk() (*MetaData, bool)`
+`func (o *ListStringResponse) GetMetaOk() (*StatisticsResponseMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListStringResponse) SetMeta(v MetaData)`
+`func (o *ListStringResponse) SetMeta(v StatisticsResponseMeta)`
 
 SetMeta sets Meta field to given value.
 

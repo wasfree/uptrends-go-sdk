@@ -41,11 +41,11 @@ import (
 
 func main() {
     operatorGuid := "operatorGuid_example" // string | The Guid of the operator to add the duty schedule to
-    schedule := *openapiclient.NewOperatorDutySchedule(int32(123), openapiclient.OperatorScheduleMode("OneTime")) // OperatorDutySchedule | The duty schedule to add
+    schedule := *openapiclient.NewOperatorDutySchedule(int32(123), map[string][]openapiclient.OperatorScheduleMode{ ... }) // OperatorDutySchedule | The duty schedule to add (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorAddDutyPeriodForOperator(context.Background(), operatorGuid).Schedule(schedule).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorAddDutyPeriodForOperator(context.Background(), operatorGuid).Schedule(schedule).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorAddDutyPeriodForOperator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -108,11 +108,11 @@ import (
 )
 
 func main() {
-    uptrendsOperator := *openapiclient.NewOperator() // Operator | The details of the operator to create
+    uptrendsOperator := *openapiclient.NewOperator() // Operator | The details of the operator to create (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorCreateOperator(context.Background()).UptrendsOperator(uptrendsOperator).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorCreateOperator(context.Background()).UptrendsOperator(uptrendsOperator).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorCreateOperator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -176,8 +176,8 @@ func main() {
     authorizationType := "authorizationType_example" // string | The type of authorization
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorDeleteAuthorizationForOperator(context.Background(), operatorGuid, authorizationType).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorDeleteAuthorizationForOperator(context.Background(), operatorGuid, authorizationType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorDeleteAuthorizationForOperator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -245,8 +245,8 @@ func main() {
     dutyScheduleId := int32(56) // int32 | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorDeleteDutyScheduleFromOperator(context.Background(), operatorGuid, dutyScheduleId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorDeleteDutyScheduleFromOperator(context.Background(), operatorGuid, dutyScheduleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorDeleteDutyScheduleFromOperator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -313,8 +313,8 @@ func main() {
     operatorGuid := "operatorGuid_example" // string | The Guid of the operator to delete
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorDeleteOperator(context.Background(), operatorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorDeleteOperator(context.Background(), operatorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorDeleteOperator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -378,8 +378,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorGetAllOperators(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorGetAllOperators(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorGetAllOperators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -438,8 +438,8 @@ func main() {
     operatorGuid := "operatorGuid_example" // string | The Guid of the operator
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorGetAuthorizationsForOperator(context.Background(), operatorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorGetAuthorizationsForOperator(context.Background(), operatorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorGetAuthorizationsForOperator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -506,8 +506,8 @@ func main() {
     operatorGuid := "operatorGuid_example" // string | The Guid of the operator to get the duty schedule for
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorGetDutyScheduleForOperator(context.Background(), operatorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorGetDutyScheduleForOperator(context.Background(), operatorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorGetDutyScheduleForOperator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -574,8 +574,8 @@ func main() {
     operatorGuid := "operatorGuid_example" // string | The Guid of the operator for which to retrieve the details
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorGetOperator(context.Background(), operatorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorGetOperator(context.Background(), operatorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorGetOperator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -642,8 +642,8 @@ func main() {
     operatorGuid := "operatorGuid_example" // string | The Guid of the operator for which to retrieve the operator group guids
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorGetOperatorGroupsForOperator(context.Background(), operatorGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorGetOperatorGroupsForOperator(context.Background(), operatorGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorGetOperatorGroupsForOperator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -711,8 +711,8 @@ func main() {
     authorizationType := "authorizationType_example" // string | The type of authorization
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorPostAuthorizationForOperator(context.Background(), operatorGuid, authorizationType).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorPostAuthorizationForOperator(context.Background(), operatorGuid, authorizationType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorPostAuthorizationForOperator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -778,11 +778,11 @@ import (
 func main() {
     operatorGuid := "operatorGuid_example" // string | 
     dutyScheduleId := int32(56) // int32 | 
-    schedule := *openapiclient.NewOperatorDutySchedule(int32(123), openapiclient.OperatorScheduleMode("OneTime")) // OperatorDutySchedule | 
+    schedule := *openapiclient.NewOperatorDutySchedule(int32(123), map[string][]openapiclient.OperatorScheduleMode{ ... }) // OperatorDutySchedule |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorUpdateDutyPeriodForOperator(context.Background(), operatorGuid, dutyScheduleId).Schedule(schedule).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorUpdateDutyPeriodForOperator(context.Background(), operatorGuid, dutyScheduleId).Schedule(schedule).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorUpdateDutyPeriodForOperator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -848,11 +848,11 @@ import (
 
 func main() {
     operatorGuid := "operatorGuid_example" // string | The Guid of the operator to update
-    uptrendsOperator := *openapiclient.NewOperator() // Operator | The updated details of the operator
+    uptrendsOperator := *openapiclient.NewOperator() // Operator | The updated details of the operator (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorUpdateOperator(context.Background(), operatorGuid).UptrendsOperator(uptrendsOperator).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorUpdateOperator(context.Background(), operatorGuid).UptrendsOperator(uptrendsOperator).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorUpdateOperator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -916,11 +916,11 @@ import (
 
 func main() {
     operatorGuid := "operatorGuid_example" // string | The Guid of the operator to update
-    uptrendsOperator := *openapiclient.NewOperator() // Operator | The updated details of the operator
+    uptrendsOperator := *openapiclient.NewOperator() // Operator | The updated details of the operator (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.OperatorApi.OperatorUpdateOperatorWithPatch(context.Background(), operatorGuid).UptrendsOperator(uptrendsOperator).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OperatorApi.OperatorUpdateOperatorWithPatch(context.Background(), operatorGuid).UptrendsOperator(uptrendsOperator).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OperatorApi.OperatorUpdateOperatorWithPatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

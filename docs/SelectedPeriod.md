@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SelectedPeriodType** | Pointer to [**SelectedPeriodType**](SelectedPeriodType.md) | The type of period | [optional] 
-**Start** | Pointer to **time.Time** | The start of a custom period (can&#39;t be used together with the SelectedPeriodType parameter) | [optional] 
-**End** | Pointer to **time.Time** | The end of a custom period | [optional] 
+**Start** | Pointer to **map[string]interface{}** | The start of a custom period (can&#39;t be used together with the SelectedPeriodType parameter) | [optional] 
+**End** | Pointer to **map[string]interface{}** | The end of a custom period | [optional] 
 **PresetPeriod** | Pointer to [**PresetPeriodType**](PresetPeriodType.md) | The requested time period. | [optional] 
 
 ## Methods
@@ -55,20 +55,20 @@ HasSelectedPeriodType returns a boolean if a field has been set.
 
 ### GetStart
 
-`func (o *SelectedPeriod) GetStart() time.Time`
+`func (o *SelectedPeriod) GetStart() map[string]interface{}`
 
 GetStart returns the Start field if non-nil, zero value otherwise.
 
 ### GetStartOk
 
-`func (o *SelectedPeriod) GetStartOk() (*time.Time, bool)`
+`func (o *SelectedPeriod) GetStartOk() (*map[string]interface{}, bool)`
 
 GetStartOk returns a tuple with the Start field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStart
 
-`func (o *SelectedPeriod) SetStart(v time.Time)`
+`func (o *SelectedPeriod) SetStart(v map[string]interface{})`
 
 SetStart sets Start field to given value.
 
@@ -80,20 +80,20 @@ HasStart returns a boolean if a field has been set.
 
 ### GetEnd
 
-`func (o *SelectedPeriod) GetEnd() time.Time`
+`func (o *SelectedPeriod) GetEnd() map[string]interface{}`
 
 GetEnd returns the End field if non-nil, zero value otherwise.
 
 ### GetEndOk
 
-`func (o *SelectedPeriod) GetEndOk() (*time.Time, bool)`
+`func (o *SelectedPeriod) GetEndOk() (*map[string]interface{}, bool)`
 
 GetEndOk returns a tuple with the End field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnd
 
-`func (o *SelectedPeriod) SetEnd(v time.Time)`
+`func (o *SelectedPeriod) SetEnd(v map[string]interface{})`
 
 SetEnd sets End field to given value.
 

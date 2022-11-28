@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthorizationId** | Pointer to **string** |  | [optional] 
-**AuthorizationType** | [**PSPAuthorizationType**](PSPAuthorizationType.md) |  | 
-**OperatorGuid** | Pointer to **string** |  | [optional] 
-**OperatorGroupGuid** | Pointer to **string** |  | [optional] 
+**AuthorizationId** | Pointer to **string** | The unique ID of this authorization | [optional] 
+**AuthorizationType** | [**PSPAuthorizationType**](PSPAuthorizationType.md) | The authorization type | 
+**OperatorGuid** | Pointer to **string** | The GUID of the operator (NULL if this authorization is for an operator group) | [optional] 
+**OperatorGroupGuid** | Pointer to **string** | The GUID of the operator group (NULL if this authorization is for an operator) | [optional] 
 
 ## Methods
 

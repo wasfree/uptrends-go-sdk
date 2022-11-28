@@ -4,10 +4,10 @@ All URIs are relative to *https://api.uptrends.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**VaultCreateAuthorizationForVaultSection**](VaultApi.md#VaultCreateAuthorizationForVaultSection) | **Post** /VaultSection/{vaultSectionGuid}/Authorization | Creates a new authorization for the specified vault section. 
+[**VaultCreateAuthorizationForVaultSection**](VaultApi.md#VaultCreateAuthorizationForVaultSection) | **Post** /VaultSection/{vaultSectionGuid}/Authorization | Creates a new authorization for the specified vault section.
 [**VaultCreateNewVaultItem**](VaultApi.md#VaultCreateNewVaultItem) | **Post** /VaultItem | Creates a new vault item.
 [**VaultCreateNewVaultSection**](VaultApi.md#VaultCreateNewVaultSection) | **Post** /VaultSection | Creates a new vault section.
-[**VaultDeleteAuthorizationForVaultSection**](VaultApi.md#VaultDeleteAuthorizationForVaultSection) | **Delete** /VaultSection/{vaultSectionGuid}/Authorization/{authorizationGuid} | Deletes the specified authorization for the specified vault section. 
+[**VaultDeleteAuthorizationForVaultSection**](VaultApi.md#VaultDeleteAuthorizationForVaultSection) | **Delete** /VaultSection/{vaultSectionGuid}/Authorization/{authorizationGuid} | Deletes the specified authorization for the specified vault section.
 [**VaultDeleteVaultItem**](VaultApi.md#VaultDeleteVaultItem) | **Delete** /VaultItem/{vaultItemGuid} | Deletes the specified vault item.
 [**VaultDeleteVaultSection**](VaultApi.md#VaultDeleteVaultSection) | **Delete** /VaultSection/{vaultSectionGuid} | Deletes the specified vault section.
 [**VaultGetAllVaultItems**](VaultApi.md#VaultGetAllVaultItems) | **Get** /VaultItem | Returns all vault items.
@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 > VaultSectionAuthorization VaultCreateAuthorizationForVaultSection(ctx, vaultSectionGuid).Authorization(authorization).Execute()
 
-Creates a new authorization for the specified vault section. 
+Creates a new authorization for the specified vault section.
 
 
 
@@ -43,11 +43,11 @@ import (
 
 func main() {
     vaultSectionGuid := "vaultSectionGuid_example" // string | The Guid of the vault section for which to create the new authorization.
-    authorization := *openapiclient.NewVaultSectionAuthorization(openapiclient.VaultSectionAuthorizationType("ViewVaultSection")) // VaultSectionAuthorization | 
+    authorization := *openapiclient.NewVaultSectionAuthorization(map[string][]openapiclient.VaultSectionAuthorizationType{ ... }) // VaultSectionAuthorization |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultCreateAuthorizationForVaultSection(context.Background(), vaultSectionGuid).Authorization(authorization).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultCreateAuthorizationForVaultSection(context.Background(), vaultSectionGuid).Authorization(authorization).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultCreateAuthorizationForVaultSection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -114,11 +114,11 @@ import (
 )
 
 func main() {
-    item := *openapiclient.NewVaultItem() // VaultItem | The item to create
+    item := *openapiclient.NewVaultItem() // VaultItem | The item to create (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultCreateNewVaultItem(context.Background()).Item(item).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultCreateNewVaultItem(context.Background()).Item(item).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultCreateNewVaultItem``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -180,11 +180,11 @@ import (
 )
 
 func main() {
-    section := *openapiclient.NewVaultSection("VaultSectionGuid_example") // VaultSection | The attributes of the vault section that should be created.
+    section := *openapiclient.NewVaultSection("VaultSectionGuid_example") // VaultSection | The attributes of the vault section that should be created. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultCreateNewVaultSection(context.Background()).Section(section).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultCreateNewVaultSection(context.Background()).Section(section).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultCreateNewVaultSection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 > VaultDeleteAuthorizationForVaultSection(ctx, vaultSectionGuid, authorizationGuid).Execute()
 
-Deletes the specified authorization for the specified vault section. 
+Deletes the specified authorization for the specified vault section.
 
 ### Example
 
@@ -248,8 +248,8 @@ func main() {
     authorizationGuid := "authorizationGuid_example" // string | The Guid of the authorization that should be deleted.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultDeleteAuthorizationForVaultSection(context.Background(), vaultSectionGuid, authorizationGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultDeleteAuthorizationForVaultSection(context.Background(), vaultSectionGuid, authorizationGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultDeleteAuthorizationForVaultSection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -316,8 +316,8 @@ func main() {
     vaultItemGuid := "vaultItemGuid_example" // string | The Guid of the vault item that should be deleted.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultDeleteVaultItem(context.Background(), vaultItemGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultDeleteVaultItem(context.Background(), vaultItemGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultDeleteVaultItem``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -382,8 +382,8 @@ func main() {
     vaultSectionGuid := "vaultSectionGuid_example" // string | The Guid of the vault section that should be deleted.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultDeleteVaultSection(context.Background(), vaultSectionGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultDeleteVaultSection(context.Background(), vaultSectionGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultDeleteVaultSection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -447,8 +447,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultGetAllVaultItems(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultGetAllVaultItems(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultGetAllVaultItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -506,8 +506,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultGetAllVaultSections(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultGetAllVaultSections(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultGetAllVaultSections``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -566,8 +566,8 @@ func main() {
     vaultSectionGuid := "vaultSectionGuid_example" // string | The Guid of the vault section for which to return authorizations.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultGetAuthorizationsForVaultSection(context.Background(), vaultSectionGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultGetAuthorizationsForVaultSection(context.Background(), vaultSectionGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultGetAuthorizationsForVaultSection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -634,8 +634,8 @@ func main() {
     vaultItemGuid := "vaultItemGuid_example" // string | The Guid of the requested vault item.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultGetVaultItem(context.Background(), vaultItemGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultGetVaultItem(context.Background(), vaultItemGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultGetVaultItem``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -702,8 +702,8 @@ func main() {
     vaultSectionGuid := "vaultSectionGuid_example" // string | The Guid of the requested vault section.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultGetVaultSection(context.Background(), vaultSectionGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultGetVaultSection(context.Background(), vaultSectionGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultGetVaultSection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -770,11 +770,11 @@ import (
 
 func main() {
     vaultItemGuid := "vaultItemGuid_example" // string | The Guid of the vault item that should be updated.
-    item := *openapiclient.NewVaultItem() // VaultItem | Part of the definition of the vault item that should be updated.
+    item := *openapiclient.NewVaultItem() // VaultItem | Part of the definition of the vault item that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultPartiallyUpdateVaultItem(context.Background(), vaultItemGuid).Item(item).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultPartiallyUpdateVaultItem(context.Background(), vaultItemGuid).Item(item).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultPartiallyUpdateVaultItem``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -840,11 +840,11 @@ import (
 
 func main() {
     vaultItemGuid := "vaultItemGuid_example" // string | The Guid of the vault item that should be updated.
-    item := *openapiclient.NewVaultItem() // VaultItem | The complete definition of the vault item that should be updated.
+    item := *openapiclient.NewVaultItem() // VaultItem | The complete definition of the vault item that should be updated. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultUpdateVaultItem(context.Background(), vaultItemGuid).Item(item).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultUpdateVaultItem(context.Background(), vaultItemGuid).Item(item).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultUpdateVaultItem``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -908,11 +908,11 @@ import (
 
 func main() {
     vaultSectionGuid := "vaultSectionGuid_example" // string | The Guid of the vault section that should be updated.
-    item := *openapiclient.NewVaultSection("VaultSectionGuid_example") // VaultSection | 
+    item := *openapiclient.NewVaultSection("VaultSectionGuid_example") // VaultSection |  (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VaultApi.VaultUpdateVaultSection(context.Background(), vaultSectionGuid).Item(item).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultApi.VaultUpdateVaultSection(context.Background(), vaultSectionGuid).Item(item).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VaultApi.VaultUpdateVaultSection``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

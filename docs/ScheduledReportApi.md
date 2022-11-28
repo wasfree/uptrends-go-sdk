@@ -32,11 +32,11 @@ import (
 )
 
 func main() {
-    scheduledReport := *openapiclient.NewScheduledReport() // ScheduledReport | The details for the scheduled report.
+    scheduledReport := *openapiclient.NewScheduledReport() // ScheduledReport | The details for the scheduled report. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ScheduledReportApi.ScheduledReportCreateScheduledReport(context.Background()).ScheduledReport(scheduledReport).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ScheduledReportApi.ScheduledReportCreateScheduledReport(context.Background()).ScheduledReport(scheduledReport).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ScheduledReportApi.ScheduledReportCreateScheduledReport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -99,8 +99,8 @@ func main() {
     scheduledReportGuid := "scheduledReportGuid_example" // string | The guid of the specified scheduled report.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ScheduledReportApi.ScheduledReportDeleteSpecifiedScheduledReport(context.Background(), scheduledReportGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ScheduledReportApi.ScheduledReportDeleteSpecifiedScheduledReport(context.Background(), scheduledReportGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ScheduledReportApi.ScheduledReportDeleteSpecifiedScheduledReport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -164,8 +164,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ScheduledReportApi.ScheduledReportGetAllScheduledReports(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ScheduledReportApi.ScheduledReportGetAllScheduledReports(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ScheduledReportApi.ScheduledReportGetAllScheduledReports``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -224,8 +224,8 @@ func main() {
     scheduledReportGuid := "scheduledReportGuid_example" // string | The guid of the specified scheduled report.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ScheduledReportApi.ScheduledReportGetSpecifiedScheduledReport(context.Background(), scheduledReportGuid).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ScheduledReportApi.ScheduledReportGetSpecifiedScheduledReport(context.Background(), scheduledReportGuid).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ScheduledReportApi.ScheduledReportGetSpecifiedScheduledReport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -290,11 +290,11 @@ import (
 
 func main() {
     scheduledReportGuid := "scheduledReportGuid_example" // string | The guid of the specified scheduled report.
-    scheduledReport := *openapiclient.NewScheduledReport() // ScheduledReport | The details for the scheduled report.
+    scheduledReport := *openapiclient.NewScheduledReport() // ScheduledReport | The details for the scheduled report. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ScheduledReportApi.ScheduledReportPartiallyUpdateScheduledReport(context.Background(), scheduledReportGuid).ScheduledReport(scheduledReport).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ScheduledReportApi.ScheduledReportPartiallyUpdateScheduledReport(context.Background(), scheduledReportGuid).ScheduledReport(scheduledReport).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ScheduledReportApi.ScheduledReportPartiallyUpdateScheduledReport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -360,11 +360,11 @@ import (
 
 func main() {
     scheduledReportGuid := "scheduledReportGuid_example" // string | The guid of the specified scheduled report.
-    scheduledReport := *openapiclient.NewScheduledReport() // ScheduledReport | The details for the scheduled report.
+    scheduledReport := *openapiclient.NewScheduledReport() // ScheduledReport | The details for the scheduled report. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ScheduledReportApi.ScheduledReportUpdateScheduledReport(context.Background(), scheduledReportGuid).ScheduledReport(scheduledReport).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ScheduledReportApi.ScheduledReportUpdateScheduledReport(context.Background(), scheduledReportGuid).ScheduledReport(scheduledReport).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ScheduledReportApi.ScheduledReportUpdateScheduledReport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

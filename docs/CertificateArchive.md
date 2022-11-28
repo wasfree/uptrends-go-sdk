@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Issuer** | Pointer to **string** | The issuer of this certificate | [optional] 
-**NotBefore** | **time.Time** | The start date of this certificate | 
-**NotAfter** | **time.Time** | The certificate expiry date | 
+**NotBefore** | **map[string]interface{}** | The start date of this certificate | 
+**NotAfter** | **map[string]interface{}** | The certificate expiry date | 
 **Password** | Pointer to **string** | Used to specify a new or changed password. The value will be encrypted when stored, and will not be displayed when a CertificateArchive is retrieved. | [optional] 
 **ArchiveData** | Pointer to **string** | Used to specify the certificate content as a base64 string. The value will be encrypted when stored, and will not be displayed when a CertificateArchive is retrieved. | [optional] 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewCertificateArchive
 
-`func NewCertificateArchive(notBefore time.Time, notAfter time.Time, ) *CertificateArchive`
+`func NewCertificateArchive(notBefore map[string]interface{}, notAfter map[string]interface{}, ) *CertificateArchive`
 
 NewCertificateArchive instantiates a new CertificateArchive object
 This constructor will assign default values to properties that have it defined,
@@ -56,40 +56,40 @@ HasIssuer returns a boolean if a field has been set.
 
 ### GetNotBefore
 
-`func (o *CertificateArchive) GetNotBefore() time.Time`
+`func (o *CertificateArchive) GetNotBefore() map[string]interface{}`
 
 GetNotBefore returns the NotBefore field if non-nil, zero value otherwise.
 
 ### GetNotBeforeOk
 
-`func (o *CertificateArchive) GetNotBeforeOk() (*time.Time, bool)`
+`func (o *CertificateArchive) GetNotBeforeOk() (*map[string]interface{}, bool)`
 
 GetNotBeforeOk returns a tuple with the NotBefore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotBefore
 
-`func (o *CertificateArchive) SetNotBefore(v time.Time)`
+`func (o *CertificateArchive) SetNotBefore(v map[string]interface{})`
 
 SetNotBefore sets NotBefore field to given value.
 
 
 ### GetNotAfter
 
-`func (o *CertificateArchive) GetNotAfter() time.Time`
+`func (o *CertificateArchive) GetNotAfter() map[string]interface{}`
 
 GetNotAfter returns the NotAfter field if non-nil, zero value otherwise.
 
 ### GetNotAfterOk
 
-`func (o *CertificateArchive) GetNotAfterOk() (*time.Time, bool)`
+`func (o *CertificateArchive) GetNotAfterOk() (*map[string]interface{}, bool)`
 
 GetNotAfterOk returns a tuple with the NotAfter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotAfter
 
-`func (o *CertificateArchive) SetNotAfter(v time.Time)`
+`func (o *CertificateArchive) SetNotAfter(v map[string]interface{})`
 
 SetNotAfter sets NotAfter field to given value.
 

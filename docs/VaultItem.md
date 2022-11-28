@@ -13,8 +13,9 @@ Name | Type | Description | Notes
 **Notes** | Pointer to **string** | Notes about this vault item | [optional] 
 **UserName** | Pointer to **string** | The UserName of a credentialset | [optional] 
 **Password** | Pointer to **string** | The password associated with a credentialset | [optional] 
-**CertificateArchive** | Pointer to [**CertificateArchive**](CertificateArchive.md) | The certificate archive that is stored in this vault item, if applicable | [optional] 
-**FileInfo** | Pointer to [**FileInfo**](FileInfo.md) | The file info that is stored in this vault item, if applicable | [optional] 
+**CertificateArchive** | Pointer to [**VaultItemCertificateArchive**](VaultItemCertificateArchive.md) |  | [optional] 
+**FileInfo** | Pointer to [**VaultItemFileInfo**](VaultItemFileInfo.md) |  | [optional] 
+**OneTimePasswordInfo** | Pointer to [**VaultItemOneTimePasswordInfo**](VaultItemOneTimePasswordInfo.md) |  | [optional] 
 
 ## Methods
 
@@ -262,20 +263,20 @@ HasPassword returns a boolean if a field has been set.
 
 ### GetCertificateArchive
 
-`func (o *VaultItem) GetCertificateArchive() CertificateArchive`
+`func (o *VaultItem) GetCertificateArchive() VaultItemCertificateArchive`
 
 GetCertificateArchive returns the CertificateArchive field if non-nil, zero value otherwise.
 
 ### GetCertificateArchiveOk
 
-`func (o *VaultItem) GetCertificateArchiveOk() (*CertificateArchive, bool)`
+`func (o *VaultItem) GetCertificateArchiveOk() (*VaultItemCertificateArchive, bool)`
 
 GetCertificateArchiveOk returns a tuple with the CertificateArchive field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateArchive
 
-`func (o *VaultItem) SetCertificateArchive(v CertificateArchive)`
+`func (o *VaultItem) SetCertificateArchive(v VaultItemCertificateArchive)`
 
 SetCertificateArchive sets CertificateArchive field to given value.
 
@@ -287,20 +288,20 @@ HasCertificateArchive returns a boolean if a field has been set.
 
 ### GetFileInfo
 
-`func (o *VaultItem) GetFileInfo() FileInfo`
+`func (o *VaultItem) GetFileInfo() VaultItemFileInfo`
 
 GetFileInfo returns the FileInfo field if non-nil, zero value otherwise.
 
 ### GetFileInfoOk
 
-`func (o *VaultItem) GetFileInfoOk() (*FileInfo, bool)`
+`func (o *VaultItem) GetFileInfoOk() (*VaultItemFileInfo, bool)`
 
 GetFileInfoOk returns a tuple with the FileInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFileInfo
 
-`func (o *VaultItem) SetFileInfo(v FileInfo)`
+`func (o *VaultItem) SetFileInfo(v VaultItemFileInfo)`
 
 SetFileInfo sets FileInfo field to given value.
 
@@ -309,6 +310,31 @@ SetFileInfo sets FileInfo field to given value.
 `func (o *VaultItem) HasFileInfo() bool`
 
 HasFileInfo returns a boolean if a field has been set.
+
+### GetOneTimePasswordInfo
+
+`func (o *VaultItem) GetOneTimePasswordInfo() VaultItemOneTimePasswordInfo`
+
+GetOneTimePasswordInfo returns the OneTimePasswordInfo field if non-nil, zero value otherwise.
+
+### GetOneTimePasswordInfoOk
+
+`func (o *VaultItem) GetOneTimePasswordInfoOk() (*VaultItemOneTimePasswordInfo, bool)`
+
+GetOneTimePasswordInfoOk returns a tuple with the OneTimePasswordInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOneTimePasswordInfo
+
+`func (o *VaultItem) SetOneTimePasswordInfo(v VaultItemOneTimePasswordInfo)`
+
+SetOneTimePasswordInfo sets OneTimePasswordInfo field to given value.
+
+### HasOneTimePasswordInfo
+
+`func (o *VaultItem) HasOneTimePasswordInfo() bool`
+
+HasOneTimePasswordInfo returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

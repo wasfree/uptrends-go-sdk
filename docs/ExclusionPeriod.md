@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ExclusionPeriodId** | Pointer to **int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**From** | Pointer to **time.Time** |  | [optional] 
-**Until** | Pointer to **time.Time** |  | [optional] 
+**From** | Pointer to **map[string]interface{}** |  | [optional] 
+**Until** | Pointer to **map[string]interface{}** |  | [optional] 
 **Hash** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -81,20 +81,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetFrom
 
-`func (o *ExclusionPeriod) GetFrom() time.Time`
+`func (o *ExclusionPeriod) GetFrom() map[string]interface{}`
 
 GetFrom returns the From field if non-nil, zero value otherwise.
 
 ### GetFromOk
 
-`func (o *ExclusionPeriod) GetFromOk() (*time.Time, bool)`
+`func (o *ExclusionPeriod) GetFromOk() (*map[string]interface{}, bool)`
 
 GetFromOk returns a tuple with the From field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFrom
 
-`func (o *ExclusionPeriod) SetFrom(v time.Time)`
+`func (o *ExclusionPeriod) SetFrom(v map[string]interface{})`
 
 SetFrom sets From field to given value.
 
@@ -106,20 +106,20 @@ HasFrom returns a boolean if a field has been set.
 
 ### GetUntil
 
-`func (o *ExclusionPeriod) GetUntil() time.Time`
+`func (o *ExclusionPeriod) GetUntil() map[string]interface{}`
 
 GetUntil returns the Until field if non-nil, zero value otherwise.
 
 ### GetUntilOk
 
-`func (o *ExclusionPeriod) GetUntilOk() (*time.Time, bool)`
+`func (o *ExclusionPeriod) GetUntilOk() (*map[string]interface{}, bool)`
 
 GetUntilOk returns a tuple with the Until field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUntil
 
-`func (o *ExclusionPeriod) SetUntil(v time.Time)`
+`func (o *ExclusionPeriod) SetUntil(v map[string]interface{})`
 
 SetUntil sets Until field to given value.
 

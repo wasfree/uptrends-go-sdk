@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** | The unique ID of this maintenance period | 
 **ScheduleMode** | [**OperatorScheduleMode**](OperatorScheduleMode.md) | The schedule mode (one time, daily, weekly, monthly) | 
-**StartDateTime** | Pointer to **time.Time** | The start date/time for this schedule (for one-time schedules only) | [optional] 
-**EndDateTime** | Pointer to **time.Time** | The end date/time for this maintenance period (for one-time maintenance periods only) | [optional] 
+**StartDateTime** | Pointer to **map[string]interface{}** | The start date/time for this schedule (for one-time schedules only) | [optional] 
+**EndDateTime** | Pointer to **map[string]interface{}** | The end date/time for this maintenance period (for one-time maintenance periods only) | [optional] 
 **WeekDay** | Pointer to [**DayOfWeek**](DayOfWeek.md) | The weekday for this maintenance period (for weekly maintenance periods only) | [optional] 
 **MonthDay** | Pointer to **int32** | the month day for this maintenance period (for montly maintenance periods only) | [optional] 
 **StartTime** | Pointer to **string** | The start time of this maintenance period | [optional] 
@@ -74,20 +74,20 @@ SetScheduleMode sets ScheduleMode field to given value.
 
 ### GetStartDateTime
 
-`func (o *OperatorDutySchedule) GetStartDateTime() time.Time`
+`func (o *OperatorDutySchedule) GetStartDateTime() map[string]interface{}`
 
 GetStartDateTime returns the StartDateTime field if non-nil, zero value otherwise.
 
 ### GetStartDateTimeOk
 
-`func (o *OperatorDutySchedule) GetStartDateTimeOk() (*time.Time, bool)`
+`func (o *OperatorDutySchedule) GetStartDateTimeOk() (*map[string]interface{}, bool)`
 
 GetStartDateTimeOk returns a tuple with the StartDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStartDateTime
 
-`func (o *OperatorDutySchedule) SetStartDateTime(v time.Time)`
+`func (o *OperatorDutySchedule) SetStartDateTime(v map[string]interface{})`
 
 SetStartDateTime sets StartDateTime field to given value.
 
@@ -99,20 +99,20 @@ HasStartDateTime returns a boolean if a field has been set.
 
 ### GetEndDateTime
 
-`func (o *OperatorDutySchedule) GetEndDateTime() time.Time`
+`func (o *OperatorDutySchedule) GetEndDateTime() map[string]interface{}`
 
 GetEndDateTime returns the EndDateTime field if non-nil, zero value otherwise.
 
 ### GetEndDateTimeOk
 
-`func (o *OperatorDutySchedule) GetEndDateTimeOk() (*time.Time, bool)`
+`func (o *OperatorDutySchedule) GetEndDateTimeOk() (*map[string]interface{}, bool)`
 
 GetEndDateTimeOk returns a tuple with the EndDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndDateTime
 
-`func (o *OperatorDutySchedule) SetEndDateTime(v time.Time)`
+`func (o *OperatorDutySchedule) SetEndDateTime(v map[string]interface{})`
 
 SetEndDateTime sets EndDateTime field to given value.
 

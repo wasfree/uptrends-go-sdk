@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **StepResults** | Pointer to [**[]HttpEngineStep**](HttpEngineStep.md) | The results of the steps  | [optional] 
-**TimingInfo** | Pointer to [**StepTimingInfo**](StepTimingInfo.md) | Timing info | [optional] 
+**TimingInfo** | Pointer to [**HttpEngineAttributesTimingInfo**](HttpEngineAttributesTimingInfo.md) |  | [optional] 
 **TotalSteps** | **int32** | Number of total steps | 
 **PassedSteps** | **int32** | Number of passed/succeed tests | 
 
@@ -55,20 +55,20 @@ HasStepResults returns a boolean if a field has been set.
 
 ### GetTimingInfo
 
-`func (o *HttpEngineAttributes) GetTimingInfo() StepTimingInfo`
+`func (o *HttpEngineAttributes) GetTimingInfo() HttpEngineAttributesTimingInfo`
 
 GetTimingInfo returns the TimingInfo field if non-nil, zero value otherwise.
 
 ### GetTimingInfoOk
 
-`func (o *HttpEngineAttributes) GetTimingInfoOk() (*StepTimingInfo, bool)`
+`func (o *HttpEngineAttributes) GetTimingInfoOk() (*HttpEngineAttributesTimingInfo, bool)`
 
 GetTimingInfoOk returns a tuple with the TimingInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimingInfo
 
-`func (o *HttpEngineAttributes) SetTimingInfo(v StepTimingInfo)`
+`func (o *HttpEngineAttributes) SetTimingInfo(v HttpEngineAttributesTimingInfo)`
 
 SetTimingInfo sets TimingInfo field to given value.
 

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**MonitorCheck**](MonitorCheck.md) |  | [optional] 
-**Links** | Pointer to [**LinksData**](LinksData.md) |  | [optional] 
-**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) |  | [optional] 
-**Meta** | Pointer to [**MetaData**](MetaData.md) |  | [optional] 
+**Data** | Pointer to [**SingleMonitorCheckResponseData**](SingleMonitorCheckResponseData.md) |  | [optional] 
+**Links** | Pointer to [**StatisticsResponseLinks**](StatisticsResponseLinks.md) |  | [optional] 
+**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) | Relationships of the object | [optional] 
+**Meta** | Pointer to [**StatisticsResponseMeta**](StatisticsResponseMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *SingleMonitorCheckResponse) GetData() MonitorCheck`
+`func (o *SingleMonitorCheckResponse) GetData() SingleMonitorCheckResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *SingleMonitorCheckResponse) GetDataOk() (*MonitorCheck, bool)`
+`func (o *SingleMonitorCheckResponse) GetDataOk() (*SingleMonitorCheckResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *SingleMonitorCheckResponse) SetData(v MonitorCheck)`
+`func (o *SingleMonitorCheckResponse) SetData(v SingleMonitorCheckResponseData)`
 
 SetData sets Data field to given value.
 
@@ -55,20 +55,20 @@ HasData returns a boolean if a field has been set.
 
 ### GetLinks
 
-`func (o *SingleMonitorCheckResponse) GetLinks() LinksData`
+`func (o *SingleMonitorCheckResponse) GetLinks() StatisticsResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *SingleMonitorCheckResponse) GetLinksOk() (*LinksData, bool)`
+`func (o *SingleMonitorCheckResponse) GetLinksOk() (*StatisticsResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *SingleMonitorCheckResponse) SetLinks(v LinksData)`
+`func (o *SingleMonitorCheckResponse) SetLinks(v StatisticsResponseLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -105,20 +105,20 @@ HasRelationships returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *SingleMonitorCheckResponse) GetMeta() MetaData`
+`func (o *SingleMonitorCheckResponse) GetMeta() StatisticsResponseMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *SingleMonitorCheckResponse) GetMetaOk() (*MetaData, bool)`
+`func (o *SingleMonitorCheckResponse) GetMetaOk() (*StatisticsResponseMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *SingleMonitorCheckResponse) SetMeta(v MetaData)`
+`func (o *SingleMonitorCheckResponse) SetMeta(v StatisticsResponseMeta)`
 
 SetMeta sets Meta field to given value.
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MonitorGuid** | **string** | Monitor identifier | 
-**Timestamp** | **time.Time** | Date/time stamp of the check | 
+**Timestamp** | **map[string]interface{}** | Date/time stamp of the check | 
 **ErrorCode** | **int32** | The numeric Uptrends error code in case of an error result, or 0 in case of an OK result. | 
 **TotalTime** | **float64** | The number of milliseconds needed to complete the monitor check. | 
 **ResolveTime** | **float64** | The number of milliseconds needed to perform the DNS query for this check, when appropriate. | 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewMonitorCheckAttributes
 
-`func NewMonitorCheckAttributes(monitorGuid string, timestamp time.Time, errorCode int32, totalTime float64, resolveTime float64, connectionTime float64, downloadTime float64, errorLevel ErrorLevel, stagingMode bool, isPartialCheck bool, ) *MonitorCheckAttributes`
+`func NewMonitorCheckAttributes(monitorGuid string, timestamp map[string]interface{}, errorCode int32, totalTime float64, resolveTime float64, connectionTime float64, downloadTime float64, errorLevel ErrorLevel, stagingMode bool, isPartialCheck bool, ) *MonitorCheckAttributes`
 
 NewMonitorCheckAttributes instantiates a new MonitorCheckAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -63,20 +63,20 @@ SetMonitorGuid sets MonitorGuid field to given value.
 
 ### GetTimestamp
 
-`func (o *MonitorCheckAttributes) GetTimestamp() time.Time`
+`func (o *MonitorCheckAttributes) GetTimestamp() map[string]interface{}`
 
 GetTimestamp returns the Timestamp field if non-nil, zero value otherwise.
 
 ### GetTimestampOk
 
-`func (o *MonitorCheckAttributes) GetTimestampOk() (*time.Time, bool)`
+`func (o *MonitorCheckAttributes) GetTimestampOk() (*map[string]interface{}, bool)`
 
 GetTimestampOk returns a tuple with the Timestamp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimestamp
 
-`func (o *MonitorCheckAttributes) SetTimestamp(v time.Time)`
+`func (o *MonitorCheckAttributes) SetTimestamp(v map[string]interface{})`
 
 SetTimestamp sets Timestamp field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Timestamp** | Pointer to **time.Time** |  | [optional] 
+**Timestamp** | Pointer to **map[string]interface{}** |  | [optional] 
 **Period** | Pointer to [**PeriodMetaData**](PeriodMetaData.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTimestamp
 
-`func (o *MetaData) GetTimestamp() time.Time`
+`func (o *MetaData) GetTimestamp() map[string]interface{}`
 
 GetTimestamp returns the Timestamp field if non-nil, zero value otherwise.
 
 ### GetTimestampOk
 
-`func (o *MetaData) GetTimestampOk() (*time.Time, bool)`
+`func (o *MetaData) GetTimestampOk() (*map[string]interface{}, bool)`
 
 GetTimestampOk returns a tuple with the Timestamp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimestamp
 
-`func (o *MetaData) SetTimestamp(v time.Time)`
+`func (o *MetaData) SetTimestamp(v map[string]interface{})`
 
 SetTimestamp sets Timestamp field to given value.
 

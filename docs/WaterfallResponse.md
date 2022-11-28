@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Attributes** | Pointer to [**WaterfallInfo**](WaterfallInfo.md) |  | [optional] 
-**Id** | **int64** |  | 
-**Type** | Pointer to **string** |  | [optional] 
-**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) |  | [optional] 
-**Links** | Pointer to **map[string]string** |  | [optional] 
+**Attributes** | Pointer to [**WaterfallResponseAttributes**](WaterfallResponseAttributes.md) |  | [optional] 
+**Id** | **int64** | Identifier  | 
+**Type** | Pointer to **string** | Object type | [optional] 
+**Relationships** | Pointer to [**[]RelationObject**](RelationObject.md) | Relationships of the object | [optional] 
+**Links** | Pointer to **map[string]string** | Links related to the object | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAttributes
 
-`func (o *WaterfallResponse) GetAttributes() WaterfallInfo`
+`func (o *WaterfallResponse) GetAttributes() WaterfallResponseAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *WaterfallResponse) GetAttributesOk() (*WaterfallInfo, bool)`
+`func (o *WaterfallResponse) GetAttributesOk() (*WaterfallResponseAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *WaterfallResponse) SetAttributes(v WaterfallInfo)`
+`func (o *WaterfallResponse) SetAttributes(v WaterfallResponseAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

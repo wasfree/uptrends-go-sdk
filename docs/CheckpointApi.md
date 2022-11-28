@@ -4,14 +4,16 @@ All URIs are relative to *https://api.uptrends.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CheckpointGetAllCheckpoints**](CheckpointApi.md#CheckpointGetAllCheckpoints) | **Get** /Checkpoint | Returns all the checkpoints. 
-[**CheckpointGetCheckpoint**](CheckpointApi.md#CheckpointGetCheckpoint) | **Get** /Checkpoint/{checkpointId} | Returns the specified checkpoint. 
-[**CheckpointRegionGetAllCheckpointRegions**](CheckpointApi.md#CheckpointRegionGetAllCheckpointRegions) | **Get** /CheckpointRegion | Returns all the checkpoint regions. 
-[**CheckpointRegionGetCheckpointRegionCheckpoints**](CheckpointApi.md#CheckpointRegionGetCheckpointRegionCheckpoints) | **Get** /CheckpointRegion/{checkpointRegionId}/Checkpoint | Returns the checkpoints for the specified checkpoint region. 
-[**CheckpointRegionGetSpecifiedCheckpointRegion**](CheckpointApi.md#CheckpointRegionGetSpecifiedCheckpointRegion) | **Get** /CheckpointRegion/{checkpointRegionId} | Returns the specified checkpoint region. 
-[**CheckpointServerGetAllServerIpv4Addresses**](CheckpointApi.md#CheckpointServerGetAllServerIpv4Addresses) | **Get** /Checkpoint/Server/Ipv4 | Anonymous call that returns all the IPv4 addresses of all the checkpoint servers. 
-[**CheckpointServerGetAllServerIpv6Addresses**](CheckpointApi.md#CheckpointServerGetAllServerIpv6Addresses) | **Get** /Checkpoint/Server/Ipv6 | Anonymous call that returns all the IPv6 addresses of all the checkpoint servers. 
+[**CheckpointGetAllCheckpoints**](CheckpointApi.md#CheckpointGetAllCheckpoints) | **Get** /Checkpoint | Returns all the checkpoints that are not deleted
+[**CheckpointGetCheckpoint**](CheckpointApi.md#CheckpointGetCheckpoint) | **Get** /Checkpoint/{checkpointId} | Returns the specified checkpoint, deleted or not
+[**CheckpointRegionGetAllCheckpointRegions**](CheckpointApi.md#CheckpointRegionGetAllCheckpointRegions) | **Get** /CheckpointRegion | Returns all the checkpoint regions.
+[**CheckpointRegionGetCheckpointRegionCheckpoints**](CheckpointApi.md#CheckpointRegionGetCheckpointRegionCheckpoints) | **Get** /CheckpointRegion/{checkpointRegionId}/Checkpoint | Returns the checkpoints for the specified checkpoint region.
+[**CheckpointRegionGetSpecifiedCheckpointRegion**](CheckpointApi.md#CheckpointRegionGetSpecifiedCheckpointRegion) | **Get** /CheckpointRegion/{checkpointRegionId} | Returns the specified checkpoint region.
+[**CheckpointServerGetAllServerIpv4Addresses**](CheckpointApi.md#CheckpointServerGetAllServerIpv4Addresses) | **Get** /Checkpoint/Server/Ipv4 | Anonymous call that returns all the IPv4 addresses of all the checkpoint servers.
+[**CheckpointServerGetAllServerIpv6Addresses**](CheckpointApi.md#CheckpointServerGetAllServerIpv6Addresses) | **Get** /Checkpoint/Server/Ipv6 | Anonymous call that returns all the IPv6 addresses of all the checkpoint servers.
 [**CheckpointServerGetServer**](CheckpointApi.md#CheckpointServerGetServer) | **Get** /Checkpoint/Server/{serverId} | Returns the requested checkpoint server.
+[**PrivateCheckpointHealthGetPrivateCheckpointHealthForRegion**](CheckpointApi.md#PrivateCheckpointHealthGetPrivateCheckpointHealthForRegion) | **Get** /PrivateCheckpointHealthForRegion | Returns the status of the private checkpoints in the given region.
+[**PrivateCheckpointHealthGetSpecifiedPrivateCheckpointHealth**](CheckpointApi.md#PrivateCheckpointHealthGetSpecifiedPrivateCheckpointHealth) | **Get** /PrivateCheckpointHealth | Returns the status of the specified private checkpoints.
 
 
 
@@ -19,7 +21,7 @@ Method | HTTP request | Description
 
 > CheckpointListResponse CheckpointGetAllCheckpoints(ctx).Execute()
 
-Returns all the checkpoints. 
+Returns all the checkpoints that are not deleted
 
 ### Example
 
@@ -36,8 +38,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CheckpointApi.CheckpointGetAllCheckpoints(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CheckpointApi.CheckpointGetAllCheckpoints(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckpointApi.CheckpointGetAllCheckpoints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -78,7 +80,7 @@ Other parameters are passed through a pointer to a apiCheckpointGetAllCheckpoint
 
 > CheckpointResponse CheckpointGetCheckpoint(ctx, checkpointId).Execute()
 
-Returns the specified checkpoint. 
+Returns the specified checkpoint, deleted or not
 
 ### Example
 
@@ -96,8 +98,8 @@ func main() {
     checkpointId := int32(56) // int32 | The Id of the requested checkpoint.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CheckpointApi.CheckpointGetCheckpoint(context.Background(), checkpointId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CheckpointApi.CheckpointGetCheckpoint(context.Background(), checkpointId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckpointApi.CheckpointGetCheckpoint``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -146,7 +148,7 @@ Name | Type | Description  | Notes
 
 > []CheckpointRegion CheckpointRegionGetAllCheckpointRegions(ctx).Execute()
 
-Returns all the checkpoint regions. 
+Returns all the checkpoint regions.
 
 ### Example
 
@@ -163,8 +165,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CheckpointApi.CheckpointRegionGetAllCheckpointRegions(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CheckpointApi.CheckpointRegionGetAllCheckpointRegions(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckpointApi.CheckpointRegionGetAllCheckpointRegions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -205,7 +207,7 @@ Other parameters are passed through a pointer to a apiCheckpointRegionGetAllChec
 
 > []Checkpoint CheckpointRegionGetCheckpointRegionCheckpoints(ctx, checkpointRegionId).Execute()
 
-Returns the checkpoints for the specified checkpoint region. 
+Returns the checkpoints for the specified checkpoint region.
 
 ### Example
 
@@ -223,8 +225,8 @@ func main() {
     checkpointRegionId := int32(56) // int32 | The id for the specified checkpoint region.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CheckpointApi.CheckpointRegionGetCheckpointRegionCheckpoints(context.Background(), checkpointRegionId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CheckpointApi.CheckpointRegionGetCheckpointRegionCheckpoints(context.Background(), checkpointRegionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckpointApi.CheckpointRegionGetCheckpointRegionCheckpoints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -273,7 +275,7 @@ Name | Type | Description  | Notes
 
 > CheckpointRegion CheckpointRegionGetSpecifiedCheckpointRegion(ctx, checkpointRegionId).Execute()
 
-Returns the specified checkpoint region. 
+Returns the specified checkpoint region.
 
 ### Example
 
@@ -291,8 +293,8 @@ func main() {
     checkpointRegionId := int32(56) // int32 | The id for the specified checkpoint region.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CheckpointApi.CheckpointRegionGetSpecifiedCheckpointRegion(context.Background(), checkpointRegionId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CheckpointApi.CheckpointRegionGetSpecifiedCheckpointRegion(context.Background(), checkpointRegionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckpointApi.CheckpointRegionGetSpecifiedCheckpointRegion``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -341,7 +343,7 @@ Name | Type | Description  | Notes
 
 > ListStringResponse CheckpointServerGetAllServerIpv4Addresses(ctx).Execute()
 
-Anonymous call that returns all the IPv4 addresses of all the checkpoint servers. 
+Anonymous call that returns all the IPv4 addresses of all the checkpoint servers.
 
 ### Example
 
@@ -358,8 +360,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CheckpointApi.CheckpointServerGetAllServerIpv4Addresses(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CheckpointApi.CheckpointServerGetAllServerIpv4Addresses(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckpointApi.CheckpointServerGetAllServerIpv4Addresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -400,7 +402,7 @@ No authorization required
 
 > ListStringResponse CheckpointServerGetAllServerIpv6Addresses(ctx).Execute()
 
-Anonymous call that returns all the IPv6 addresses of all the checkpoint servers. 
+Anonymous call that returns all the IPv6 addresses of all the checkpoint servers.
 
 ### Example
 
@@ -417,8 +419,8 @@ import (
 func main() {
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CheckpointApi.CheckpointServerGetAllServerIpv6Addresses(context.Background()).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CheckpointApi.CheckpointServerGetAllServerIpv6Addresses(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckpointApi.CheckpointServerGetAllServerIpv6Addresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -477,8 +479,8 @@ func main() {
     serverId := int32(56) // int32 | The Id of the requested server.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CheckpointApi.CheckpointServerGetServer(context.Background(), serverId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CheckpointApi.CheckpointServerGetServer(context.Background(), serverId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckpointApi.CheckpointServerGetServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -508,6 +510,134 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CheckpoinServerResponse**](CheckpoinServerResponse.md)
+
+### Authorization
+
+[basicauth](../README.md#basicauth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PrivateCheckpointHealthGetPrivateCheckpointHealthForRegion
+
+> CheckpointsHealth PrivateCheckpointHealthGetPrivateCheckpointHealthForRegion(ctx).RegionId(regionId).Execute()
+
+Returns the status of the private checkpoints in the given region.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    regionId := int32(56) // int32 | The id of the region.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CheckpointApi.PrivateCheckpointHealthGetPrivateCheckpointHealthForRegion(context.Background()).RegionId(regionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CheckpointApi.PrivateCheckpointHealthGetPrivateCheckpointHealthForRegion``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PrivateCheckpointHealthGetPrivateCheckpointHealthForRegion`: CheckpointsHealth
+    fmt.Fprintf(os.Stdout, "Response from `CheckpointApi.PrivateCheckpointHealthGetPrivateCheckpointHealthForRegion`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPrivateCheckpointHealthGetPrivateCheckpointHealthForRegionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **regionId** | **int32** | The id of the region. | 
+
+### Return type
+
+[**CheckpointsHealth**](CheckpointsHealth.md)
+
+### Authorization
+
+[basicauth](../README.md#basicauth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PrivateCheckpointHealthGetSpecifiedPrivateCheckpointHealth
+
+> CheckpointsHealth PrivateCheckpointHealthGetSpecifiedPrivateCheckpointHealth(ctx).Filter(filter).Execute()
+
+Returns the status of the specified private checkpoints.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    filter := "filter_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CheckpointApi.PrivateCheckpointHealthGetSpecifiedPrivateCheckpointHealth(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CheckpointApi.PrivateCheckpointHealthGetSpecifiedPrivateCheckpointHealth``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PrivateCheckpointHealthGetSpecifiedPrivateCheckpointHealth`: CheckpointsHealth
+    fmt.Fprintf(os.Stdout, "Response from `CheckpointApi.PrivateCheckpointHealthGetSpecifiedPrivateCheckpointHealth`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPrivateCheckpointHealthGetSpecifiedPrivateCheckpointHealthRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** |  | 
+
+### Return type
+
+[**CheckpointsHealth**](CheckpointsHealth.md)
 
 ### Authorization
 

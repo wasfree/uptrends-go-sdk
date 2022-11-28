@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
-**StartUtc** | **time.Time** |  | 
-**EndUtc** | **time.Time** |  | 
+**StartUtc** | **map[string]interface{}** |  | 
+**EndUtc** | **map[string]interface{}** |  | 
 **ElapsedMilliseconds** | **int64** |  | 
 **DelayMilliseconds** | **int64** |  | 
 **SubTimingInfos** | Pointer to [**[]StepTimingInfo**](StepTimingInfo.md) |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewStepTimingInfo
 
-`func NewStepTimingInfo(startUtc time.Time, endUtc time.Time, elapsedMilliseconds int64, delayMilliseconds int64, isValid bool, ) *StepTimingInfo`
+`func NewStepTimingInfo(startUtc map[string]interface{}, endUtc map[string]interface{}, elapsedMilliseconds int64, delayMilliseconds int64, isValid bool, ) *StepTimingInfo`
 
 NewStepTimingInfo instantiates a new StepTimingInfo object
 This constructor will assign default values to properties that have it defined,
@@ -58,40 +58,40 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetStartUtc
 
-`func (o *StepTimingInfo) GetStartUtc() time.Time`
+`func (o *StepTimingInfo) GetStartUtc() map[string]interface{}`
 
 GetStartUtc returns the StartUtc field if non-nil, zero value otherwise.
 
 ### GetStartUtcOk
 
-`func (o *StepTimingInfo) GetStartUtcOk() (*time.Time, bool)`
+`func (o *StepTimingInfo) GetStartUtcOk() (*map[string]interface{}, bool)`
 
 GetStartUtcOk returns a tuple with the StartUtc field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStartUtc
 
-`func (o *StepTimingInfo) SetStartUtc(v time.Time)`
+`func (o *StepTimingInfo) SetStartUtc(v map[string]interface{})`
 
 SetStartUtc sets StartUtc field to given value.
 
 
 ### GetEndUtc
 
-`func (o *StepTimingInfo) GetEndUtc() time.Time`
+`func (o *StepTimingInfo) GetEndUtc() map[string]interface{}`
 
 GetEndUtc returns the EndUtc field if non-nil, zero value otherwise.
 
 ### GetEndUtcOk
 
-`func (o *StepTimingInfo) GetEndUtcOk() (*time.Time, bool)`
+`func (o *StepTimingInfo) GetEndUtcOk() (*map[string]interface{}, bool)`
 
 GetEndUtcOk returns a tuple with the EndUtc field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndUtc
 
-`func (o *StepTimingInfo) SetEndUtc(v time.Time)`
+`func (o *StepTimingInfo) SetEndUtc(v map[string]interface{})`
 
 SetEndUtc sets EndUtc field to given value.
 
